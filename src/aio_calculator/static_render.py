@@ -17,6 +17,7 @@ from .model import CurvedBackgroundModel
 
 
 _INLINE_CODE_RE = re.compile(r"`([^`]+)`")
+_PAPER_SINGLE_RE = re.compile(r"\bPaper (\d+)\b")
 FRAMEWORK_MOTTO = "If the theory is correct, the math will just work."
 PREDICTION_SUMMARY_ITEMS = (
     "T_CMB (0.3σ from FIRAS)",
@@ -89,6 +90,52 @@ OUTPUT_SCHEMA_COMPARISONS: dict[str, dict[str, object]] = {
     },
 }
 SOURCE_REPO_URL = "https://github.com/dfife/io-calculator"
+
+
+def paper_url_map() -> dict[int, str]:
+    """Load the published Zenodo URLs keyed by paper number."""
+
+    papers_path = Path(__file__).resolve().parents[2] / "data" / "papers.json"
+    if not papers_path.exists():
+        return {}
+    try:
+        payload = json.loads(papers_path.read_text())
+    except json.JSONDecodeError:
+        return {}
+    if not isinstance(payload, list):
+        return {}
+    mapping: dict[int, str] = {}
+    for item in payload:
+        if not isinstance(item, dict):
+            continue
+        try:
+            number = int(item["paper"])
+        except (KeyError, TypeError, ValueError):
+            continue
+        url = item.get("zenodo")
+        if isinstance(url, str) and url:
+            mapping[number] = url
+    return mapping
+
+
+def link_paper_references(rendered_html: str) -> str:
+    """Turn plain-text single-paper references into Zenodo links."""
+
+    mapping = paper_url_map()
+    if not mapping:
+        return rendered_html
+
+    def replace(match: re.Match[str]) -> str:
+        number = int(match.group(1))
+        url = mapping.get(number)
+        if not url:
+            return match.group(0)
+        return (
+            f'<a class="calc-inline-link" href="{escape_html(url)}" '
+            f'target="_blank" rel="noreferrer">{match.group(0)}</a>'
+        )
+
+    return _PAPER_SINGLE_RE.sub(replace, rendered_html)
 
 
 def escape_html(value: object) -> str:
@@ -264,14 +311,16 @@ def theorem_node_detail(
         if depends_on
         else ""
     )
-    notes_markup = "".join(f"<p>{render_inline(note)}</p>" for note in notes)  # type: ignore[arg-type]
+    notes_markup = "".join(
+        f"<p>{link_paper_references(render_inline(note))}</p>" for note in notes
+    )  # type: ignore[arg-type]
     premises = section_list("Premises", node.get("premises"))  # type: ignore[arg-type]
     proof_outline = section_list("Proof outline", node.get("proof_outline"))  # type: ignore[arg-type]
     scope_boundary = section_list("Scope boundary", node.get("scope_boundary"))  # type: ignore[arg-type]
     references = (
         '<div class="calc-subsection">'
         '<p class="calc-section-label">Supporting references</p>'
-        f'<p class="calc-node-caption">{render_inline(node.get("reference_note", ""))}</p>'
+        f'<p class="calc-node-caption">{link_paper_references(render_inline(node.get("reference_note", "")))}</p>'
         f"{authority_chips(authority_paths)}"
         "</div>"
         if authority_paths
@@ -289,7 +338,7 @@ def theorem_node_detail(
         '<summary class="calc-node-summary">'
         '<div class="calc-node-main">'
         f"{header}"
-        f'<span>{escape_html(node["label"])}</span>'
+        f'<span>{link_paper_references(escape_html(node["label"]))}</span>'
         "</div>"
         '<div class="calc-badge-row">'
         f"{status_badge(str(node['claim_status']))}"
@@ -298,9 +347,9 @@ def theorem_node_detail(
         "</summary>"
         '<div class="calc-node-body">'
         '<p class="calc-section-label">Statement</p>'
-        f"<p>{render_inline(node['statement'])}</p>"
+        f"<p>{link_paper_references(render_inline(node['statement']))}</p>"
         f"<p><strong>Node id.</strong> <code>{node_id}</code></p>"
-        f"<p><strong>Scope summary.</strong> {render_inline(node['scope'])}</p>"
+        f"<p><strong>Scope summary.</strong> {link_paper_references(render_inline(node['scope']))}</p>"
         f"{depends_markup}"
         f"{premises}"
         f"{proof_outline}"
@@ -793,7 +842,7 @@ def redshift_widget_markup() -> str:
         f'<th scope="row"><a class="calc-inline-link" href="#output-background_snapshot_z_0_57">{escape_html(label)}</a></th>'
         f"<td>{format_scalar(value)}</td>"
         f"<td>{escape_html(unit)}</td>"
-        f'<td><a class="calc-inline-link" href="calculator-theorems.html#paper30.background_surface">Paper 30 background surface</a></td>'
+        f'<td><a class="calc-inline-link" href="{escape_html(paper_url_map().get(30, "calculator-theorems.html#paper30.background_surface"))}" target="_blank" rel="noreferrer">Paper 30</a> background surface</td>'
         "</tr>"
         for label, value, unit in widget_rows
     )

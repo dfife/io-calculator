@@ -102,7 +102,8 @@ def test_public_site_prerenders_when_site_clone_is_present() -> None:
     assert 'id="redshift-widget"' in html
     assert 'id="redshift-widget-input"' in html
     assert 'id="redshift-widget-results"' in html
-    assert "Paper 30 background surface" in html
+    assert 'href="https://zenodo.org/records/19376058/latest"' in html
+    assert ">Paper 30</a> background surface" in html
     assert "lithium.html" in html
     assert "scorecard.html" in html
     assert 'id="calculator-card-stack"' in html
@@ -181,7 +182,8 @@ def test_public_site_prerenders_when_site_clone_is_present() -> None:
     assert "<th>Observable</th>" in scorecard_html
     assert "DESI evolving-w" in scorecard_html
     assert "Full high-ℓ TT spectrum" in scorecard_html
-    assert "Paper 35 baryogenesis obstruction" in scorecard_html
+    assert 'href="https://zenodo.org/records/19561708/latest"' in scorecard_html
+    assert ">Paper 35</a> baryogenesis obstruction" in scorecard_html
     assert "calculator.html#output-tt_first_peak_support" in scorecard_html
     assert "fetch(bundlePath)" not in js
     assert "data-prerendered='true'" in js
