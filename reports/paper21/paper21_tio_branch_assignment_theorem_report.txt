@@ -1,0 +1,75 @@
+Paper 21 - T_IO Branch Assignment Theorem
+
+Status boundary
+---------------
+- derived / scoped theorem: GTTP is confined to the RT/BY optical readout class.
+- derived / scoped theorem: once BBN is typed as local bulk thermodynamics, it evaluates at T_IO, not T_obs.
+- derived / scope boundary: this is not a universal theorem about every pre-recombination quantity.
+
+Executive answer
+----------------
+Yes, the branch assignment closes in scoped theorem form.
+The key point is that GTTP was never a theorem about replacing the bulk thermal scale everywhere.
+It was derived in Paper 17 as a modular/frequency readout theorem for boundary photon observables,
+and Paper 19 / Paper 21 already localize that readout to the RT/BY optical class.
+
+Theorem 21.L (T_IO branch assignment theorem on the reduced bulk-thermodynamic class)
+-------------------------------------------------------------------------------------
+Status: derived / scoped theorem
+
+Premises
+1. L1. Paper 17 Corollary 17.7: GTTP is the modular readout theorem T_obs = T_IO x^K_gauge, derived from uniform frequency rescaling of the boundary-photon readout variable omega.
+2. L2. Paper 19 RI4/RI5/FS8: the observable architecture distinguishes local bulk observables from boundary-calibrated optical observables; not every realizable observable is optical, but the scorecard optical class is.
+3. L3. Paper 21.J: on the reduced RT/BY optical class, SU(2) averaging is a genuine measurement filter and the optical observable is evaluated after projection to the reduced fixed-point sector.
+4. L4. Paper 19 JC2: the BBN baryon-loading slot is the alpha = 1 inventory branch.
+5. L5. Minimal class-membership premise TIO1: BBN abundance/rate observables are local bulk thermodynamic observables of the plasma, with no primitive RT/BY optical readout leg.
+
+Minimal reduced object
+    M_BBN^red = M_BBN^red := A_rxn bar-tensor M_th
+    A_rxn is the gauge-neutral local reaction/rate algebra for the plasma species, and M_th is the Paper 17 thermal photon algebra at the base IO KMS scale. This is the minimal reduced bulk-thermodynamic object needed to state BBN without an observer readout leg.
+
+Statement
+    Under L1-L5, local bulk thermodynamic observables are evaluated at the base IO thermal scale T_IO, whereas the GTTP factor x^K_gauge belongs only to the RT/BY optical readout class. Therefore the BBN branch uses T_IO, not T_obs. Equivalently: inserting T_obs into the BBN eta conversion misclassifies a bulk thermodynamic observable as an observer-side optical readout.
+
+Proof skeleton
+1. By L1, GTTP is not an arbitrary temperature renormalization. It is the modular/frequency readout theorem for the boundary-photon readout variable omega.
+2. By L2, the stack already distinguishes local bulk observables from boundary-calibrated optical observables; the optical class is not universal.
+3. By L3, the RT/BY optical class is an observer readout class: its expectations are evaluated after the optical projection/filter E_opt and therefore belong to the boundary measurement apparatus.
+4. By L5, BBN abundance/rate observables belong instead to the local bulk thermodynamic class M_BBN^red and have no primitive RT/BY optical slot.
+5. Therefore the GTTP readout map has no primitive leg on which to act in BBN. Applying x^K_gauge there would move the observable into a different class than the one stipulated by L5 and L2.
+6. The thermal scale entering the BBN plasma state is therefore the base KMS scale T_IO. By L4, the baryon-loading slot on that branch is alpha = 1.
+
+Assessment of the only new premise
+    L5 is much weaker than the old branch-assignment claim. It does not assert T_IO vs T_obs. It only classifies BBN as what it operationally is: a local bulk thermodynamic process rather than an observer-side optical readout.
+
+Corollary 21.L1 (Paper 21 BBN scorecard branch assignment)
+----------------------------------------------------------
+Status: derived / conditional
+Statement: Once the Paper 21 geometric Delta N_eff candidate is supplied separately, the exact BBN scorecard must be evaluated on the T_IO branch. The T_obs branch is a class-mismatched cross-check, not a competing physical BBN branch.
+
+Exact branch contrast for the Paper 21 geometric N_eff candidate
+    requested N_eff = 3.406221370696711
+    T_IO branch : D/H sigma = -0.080925, Y_p sigma = +1.721638, chi2(D/H+Y_p) = 2.970586111362
+    T_obs branch: D/H sigma = +9.828587, Y_p sigma = +1.555801, chi2(D/H+Y_p) = 99.021636710601
+
+Interpretation
+    The remaining conditionality of the 3.406221... scorecard is the radiation-value problem (for example P_bulkfull if one wants to identify the puncture energy fraction with Delta N_eff), not the T_IO-vs-T_obs branch assignment.
+
+Boundary 21.L2
+--------------
+Status: derived / scope boundary
+Statement: The theorem is class-specific, not universal. It does not say every thermodynamic-looking quantity in the framework uses T_IO. It says only: if the primitive observable is local bulk thermodynamics with no RT/BY optical leg, then GTTP does not apply to it.
+Not proved:
+- The theorem does not derive Delta N_eff itself.
+- The theorem does not prove anything about a future unreduced BBN operator algebra that explicitly contains an observer readout leg.
+- The theorem does not move late optical thermometry such as FIRAS off the T_obs branch.
+
+Bottom line
+-----------
+The old mixed statement
+    "BBN uses T_IO because that fit worked computationally"
+can now be replaced by the stronger theorem-grade statement
+    "GTTP is an observer-side optical readout theorem; BBN is a local bulk thermodynamic class; therefore BBN uses T_IO."
+
+So the surviving conditionality in the 3.4062 scorecard is the radiation-value theorem,
+not the temperature-branch assignment.

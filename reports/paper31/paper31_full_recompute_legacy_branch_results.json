@@ -1,0 +1,206 @@
+{
+  "active_parameters": {
+    "H0": 67.57585653582628,
+    "Omega_m": 0.34868395067621694,
+    "Omega_k": -0.04579112576013168,
+    "Omega_lambda": 0.69701575761593,
+    "Omega_r": 9.141746798467538e-05,
+    "omega_b_geom": 0.020995719061702847,
+    "omega_b_eff": 0.02898917105671435,
+    "omega_b_clustering": 0.01703545264427447,
+    "r_d": 144.01351425392883,
+    "x": 1.5189873277742727,
+    "gamma": 0.2375,
+    "K_gauge": 0.05487281774291466,
+    "eta": 0.036124605346983495,
+    "Sigma_IO": 0.8113774333810703
+  },
+  "geometric_pre_drag_ruler": {
+    "r_d_mpc": 144.01351425392883,
+    "same_as_paper29_hybrid": true,
+    "old_schur_mpc": 143.06250283686956,
+    "delta_mpc": 0.9510114170592772,
+    "delta_percent": 0.6647523971698543,
+    "qualitative_change": "value_shifted_upward",
+    "status": "verified/carried from Paper 29 hybrid legacy-branch derivation"
+  },
+  "bao_galaxy_block": {
+    "kernel": {
+      "eta": 0.036124605346983495,
+      "f_perp": 1.036785027400527,
+      "f_par": 1.0182264126413767,
+      "f_DV": 1.0305615396296655
+    },
+    "galaxy_target_mpc": 147.08990960071066,
+    "effective_ruler_proxy_mpc": 148.37812457114484,
+    "per_direction_effective_rulers_mpc": {
+      "DM_over_rs": 149.31105532180578,
+      "DH_over_rs": 146.63836399065573,
+      "DV_over_rs": 148.41478897700767
+    },
+    "information_weights_by_quantity": {
+      "DV_over_rs": 0.10257091414282647,
+      "DM_over_rs": 0.582765030731252,
+      "DH_over_rs": 0.3146640551259216
+    },
+    "residual_fraction_vs_target": 0.008758010484411605,
+    "residual_percent_vs_target": 0.8758010484411605,
+    "full_bao_chi2_with_kernel": 27.735229301342457,
+    "galaxy_block_chi2_with_kernel": 25.995084730416906,
+    "old_schur_target_mpc": 143.95894879622443,
+    "old_schur_residual_frac": 0.00046,
+    "qualitative_change": "old scalar near-hit replaced by anisotropic kernel with larger weighted residual"
+  },
+  "sigma8_s8_eg": {
+    "sigma8_clustering": 0.9532815843192395,
+    "S8_raw": 1.027724133515123,
+    "Sigma_IO": 0.8113774333810703,
+    "S8_weyl": 0.8338721696752849,
+    "weak_lensing_target_reference": 0.79,
+    "weak_lensing_target_sigma_reference": 0.02,
+    "weak_lensing_delta_raw": 0.237724133515123,
+    "weak_lensing_delta_weyl": 0.043872169675284844,
+    "weak_lensing_pull_raw_sigma": 11.88620667575615,
+    "weak_lensing_pull_weyl_sigma": 2.1936084837642422,
+    "old_schur_sigma8": 0.949,
+    "old_schur_s8_lens": 0.793,
+    "E_G_rows": {
+      "0.32": {
+        "f": 0.73299717947065,
+        "E_G_no_slip": 0.4756961697015351,
+        "E_G_alpha2": 0.3859691372416376
+      },
+      "0.57": {
+        "f": 0.8235021680436654,
+        "E_G_no_slip": 0.4234159474097806,
+        "E_G_alpha2": 0.34355014466196204
+      }
+    },
+    "E_G_group_fits": {
+      "all": {
+        "alpha_best": 2.005,
+        "alpha_1sigma_lo": 1.785,
+        "alpha_1sigma_hi": 2.247,
+        "mu_best": 0.8096832477513005,
+        "chi2_best": 5.817022925773303
+      },
+      "galaxy_lensing_only": {
+        "alpha_best": 1.736,
+        "alpha_1sigma_lo": 1.5030000000000001,
+        "alpha_1sigma_hi": 1.993,
+        "mu_best": 0.9060522025055133,
+        "chi2_best": 2.089267649612807
+      },
+      "cmb_lensing_only": {
+        "alpha_best": 2.828,
+        "alpha_1sigma_lo": 2.29,
+        "alpha_1sigma_hi": 3.0,
+        "mu_best": 0.5739791116947239,
+        "chi2_best": 2.701533560178244e-07
+      }
+    },
+    "qualitative_change": "old S8 on-target claim no longer survives; alpha_Phi\u22482 E_G fit does survive"
+  },
+  "reionization_transport": {
+    "definition": "R_reio(z) = |d tau_OS / dz| / |d t_proj / dz|",
+    "tau_OS_z0_gyr_used_for_step_522_continuity": 33.359593875,
+    "rows": [
+      {
+        "z": 5.0,
+        "R_reio": 1.6216891611357933,
+        "required_net_drive_fraction": 0.6166409839599738,
+        "old_schur": 1.64
+      },
+      {
+        "z": 10.0,
+        "R_reio": 1.5798429572306505,
+        "required_net_drive_fraction": 0.6329743063531625,
+        "old_schur": 1.59
+      },
+      {
+        "z": 14.0,
+        "R_reio": 1.5684009812424424,
+        "required_net_drive_fraction": 0.6375920520068973,
+        "old_schur": 1.58
+      },
+      {
+        "z": 20.0,
+        "R_reio": 1.559884367302907,
+        "required_net_drive_fraction": 0.6410731596272318,
+        "old_schur": 1.57
+      }
+    ],
+    "qualitative_change": "none",
+    "note": "This follows the existing Step 522 homogeneous OS-clock convention, not the active Paper 30 z=0 mixed-fluid age slot."
+  },
+  "tau_reconciliation": {
+    "tau_cov": 0.02743640887145733,
+    "old_schur_tau_cov": 0.02743640887145733,
+    "qualitative_change": "none"
+  },
+  "structured_bulk_candidate": {
+    "formula": "omega_b_struct = omega_b_geom + K_gauge * (omega_b_eff - omega_b_geom)",
+    "omega_b_struct": 0.02143434229616185,
+    "old_schur_value": 0.025941102017499,
+    "delta": -0.004506759721337149,
+    "qualitative_change": "yes; old structured-bulk value depended on a different weight"
+  },
+  "cmb_weyl_halforder_kernel": {
+    "Sigma_IO": 0.8113774333810703,
+    "lcmb_rescale": 0.8113774333810703,
+    "lcmb_tilt": -0.5,
+    "A_L_surrogate": 0.6583333394000531,
+    "eta_IO_if_mu_eq_1": 0.6227548667621405,
+    "old_schur_lcmb_rescale": 0.811374048924378,
+    "old_schur_A_L_surrogate": 0.6583278271692742,
+    "qualitative_change": "none; branch dependence drops out except through exact x"
+  },
+  "observable_class_map_numerics": {
+    "map_file": "/opt/cosmology-lab/results/paper31/paper31_complete_observable_class_map.md",
+    "stale_markers_found": {
+      "Active Schur branch": true,
+      "68.91": true,
+      "0.335776379575470": true,
+      "0.02108": true,
+      "0.02910": true,
+      "2.1141000090331526e-9": true,
+      "S8 = 0.79": false
+    },
+    "active_replacements": {
+      "H0": 67.57585653582628,
+      "Omega_m": 0.34868395067621694,
+      "Omega_k": -0.04579112576013168,
+      "Omega_lambda": 0.69701575761593,
+      "Omega_r": 9.141746798467538e-05,
+      "N_eff": 3.044,
+      "omega_b_geom": 0.020995719061702847,
+      "omega_b_eff": 0.02898917105671435,
+      "omega_b_clustering": 0.01703545264427447,
+      "A_s": 2.0072459972737347e-09,
+      "n_s": 0.9639,
+      "r_d": 144.01351425392883,
+      "eta": 0.036124605346983495,
+      "Sigma_IO": 0.8113774333810703,
+      "tau_cov": 0.02743640887145733,
+      "sigma8_clustering": 0.9532815843192395,
+      "S8_raw": 1.027724133515123,
+      "S8_weyl": 0.8338721696752849,
+      "omega_b_struct": 0.02143434229616185
+    },
+    "qualitative_change": "yes; fixed-slot numerics and several carried examples remain Schur-stale in the current map file"
+  },
+  "lya_bao_conditional_consistency": {
+    "lya_target_mpc": 142.83750228549988,
+    "raw_ruler_mpc": 144.01351425392883,
+    "raw_residual_fraction": 0.008233215714444242,
+    "raw_chi2": 1.7401445709255507,
+    "imported_shift_alpha": 0.9905,
+    "shifted_ruler_mpc": 142.6453858685165,
+    "shifted_residual_fraction": -0.0013449998348429304,
+    "shifted_chi2": 0.30139501794264395,
+    "old_schur_target_mpc": 140.790554518058,
+    "old_schur_raw_chi2": 6.176391241793,
+    "old_schur_shifted_ruler_mpc": 141.703409059919,
+    "qualitative_change": "no; imported negative-shift Lyalpha class still improves the block materially"
+  }
+}

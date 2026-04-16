@@ -1,0 +1,274 @@
+Paper 23 Round 1 - Scalar Perturbations on the OS Interior
+===========================================================
+
+Status boundary
+---------------
+- derived: the scalar perturbation sector lives on the Paper 22 scalar harmonic Hilbert sector
+  H_scal^(phys) = direct-sum_{n >= 2} H_n^(0), with lambda_n = n(n+2) and multiplicity (n+1)^2.
+- derived: conformal Newtonian / Poisson gauge works on S^3 exactly as in flat space, but only
+  mode-by-mode on the physical n >= 2 sector.
+- derived: the exact OS dust identities
+      H_conf = cot(eta/2),
+      a''/a = cos eta / (1 - cos eta) = x(1+z)/2 - 1
+  are correct.
+- derived: on the Paper 5 mixed-fluid FRW branch,
+      a''/a = (a_0 H_0)^2 [ Omega_m/(2u) + Omega_k + 2 Omega_L u^2 ],
+  so radiation itself drops out of the conformal potential.
+- conditional: the Mukhanov-Sasaki equation depends on the matter model.
+  For an adiabatic fluid / scalar-field sector one gets the closed-universe shift lambda_n -> lambda_n - 3.
+  For strict OS dust, the canonical barotropic z-variable degenerates because c_s^2 = 0.
+
+I. Hilbert-space scalar sector
+------------------------------
+Paper 22 gives the scalar harmonic branch
+
+    H_scal = direct-sum_{n >= 0} H_n^(0),
+    H_n^(0) ~= V_(n/2) tensor V_(n/2)^*,
+    dim H_n^(0) = (n+1)^2,
+    -bar{nabla}^2 Q_(n l m) = lambda_n Q_(n l m),
+    lambda_n = n(n+2).
+
+The physical inhomogeneous scalar sector is the quotient
+
+    H_scal^(phys) = direct-sum_{n >= 2} H_n^(0),
+
+because n = 0 is homogeneous and n = 1 is pure gauge on S^3.
+
+Mode expansion:
+
+    X(eta,x) = sum_{n >= 2,l,m} X_(n l m)(eta) Q_(n l m)(x).
+
+II. Metric and gauge
+--------------------
+The most general scalar metric perturbation on the closed FRW background is
+
+    ds^2 = a^2 { -(1+2A) d eta^2 + 2 bar{nabla}_i B dx^i d eta
+              + [(1+2 H_L) gamma_ij
+                 + 2 (bar{nabla}_i bar{nabla}_j - (1/3) gamma_ij bar{nabla}^2) E] dx^i dx^j }.
+
+Under a scalar gauge shift xi^0 = T, xi^i = bar{nabla}^i L,
+
+    A   -> A - T' - H_conf T,
+    B   -> B + T - L',
+    H_L -> H_L - H_conf T - (1/3) bar{nabla}^2 L,
+    E   -> E - L.
+
+So the Bardeen potentials are
+
+    Phi = A + (B - E')' + H_conf (B - E'),
+    Psi = -H_L - (1/3) bar{nabla}^2 E - H_conf (B - E').
+
+In conformal Newtonian gauge one sets
+
+    B = 0 = E,
+
+hence
+
+    ds^2 = a^2 [ -(1+2 Phi) d eta^2 + (1-2 Psi) gamma_ij dx^i dx^j ].
+
+Difference from k = 0:
+
+1. the scalar basis is discrete, not Fourier-continuous,
+2. all derivatives are covariant derivatives on unit S^3,
+3. the gauge fixing is unique only for n >= 2, because n = 0,1 are exceptional.
+
+III. Linearized scalar Einstein system
+-------------------------------------
+Using the closed FRW background with unit-S^3 metric gamma_ij, the Newtonian-gauge scalar system is
+
+    (bar{nabla}^2 + 3) Psi - 3 H_conf (Psi' + H_conf Phi) = 4 pi G a^2 delta rho,
+    bar{nabla}_i (Psi' + H_conf Phi) = 4 pi G a^2 (rho + p) bar{nabla}_i v,
+    (bar{nabla}_i bar{nabla}_j - (1/3) gamma_ij bar{nabla}^2) (Phi - Psi)
+        = 8 pi G a^2 Pi_ij^(S),
+    For Phi = Psi (no scalar anisotropic stress),
+        Phi_n'' + 3 H_conf Phi_n' + (2 H_conf' + H_conf^2 - 1) Phi_n
+        = 4 pi G a^2 delta p_n.
+
+After harmonic decomposition on Q_(n l m), the spatial operator appearing in the scalar
+constraint is
+
+    lambda_n - 3 = (n-1)(n+3).
+
+That is the first closed-universe correction relative to k = 0.
+
+If anisotropic stress vanishes, Phi_n = Psi_n. For adiabatic perturbations with
+
+    delta p_n = c_s^2 delta rho_n + delta p_nad,
+
+one obtains
+
+    Phi_n'' + 3(1+c_s^2) H_conf Phi_n'
+      + [ c_s^2 lambda_n + 2 H_conf' + (1+3c_s^2)(H_conf^2 - 1) ] Phi_n
+      = 4 pi G a^2 delta p_nad.
+
+This is the closed-S^3 Bardeen equation in the present convention.
+
+IV. Mukhanov-Sasaki variable
+----------------------------
+For the comoving curvature perturbation
+
+    R_n = Psi_n - H_conf delta q_n / (rho + p),
+
+the closed-universe adiabatic effective-fluid equation of motion is
+
+    R_n'' + 2 (z'/z) R_n' + c_s^2 (lambda_n - 3) R_n = 0,
+    z = a sqrt(rho + p) / (c_s H_conf),
+
+At the equation-of-motion level this is the standard closed-FRW friction form.
+However, the exact canonical normalization is matter-model dependent on K = +1.
+
+For a canonical scalar-field sector the exact closed-universe canonical variable is
+
+    tilde v_n = a Q_n [ 1 + 3 / (lambda_n - 3) * (phi'/H_conf)^2 ]^(-1/2),
+
+which reduces to the flat-space Mukhanov-Sasaki variable only for K = 0 or in the
+large-n / weak-curvature limit.
+
+So compared with the flat k = 0 Mukhanov-Sasaki equation:
+
+1. the spectrum is discrete: lambda_n = n(n+2),
+2. the physical scalar gradient operator is shifted: lambda_n -> lambda_n - 3,
+3. the exact canonical normalization may acquire curvature-dependent, even mode-dependent, factors.
+
+Important scope boundary:
+
+- The Paper 22 equation
+      chi_n'' + [lambda_n - a''/a] chi_n = 0
+  is the free minimally-coupled scalar / TT-type mode equation.
+- It is NOT the hydrodynamic scalar-perturbation equation of the metric-plus-fluid system.
+- For genuine scalar cosmological perturbations the background potential is z''/z, not generically a''/a.
+
+Exact closed-universe scalar-field correction:
+
+Using the exact k = +1 scalar-field canonical reduction of Kiefer-Vardanyan (2022),
+with their harmonic label q = n+1, one gets in the present Paper 22 notation
+
+    tilde v_n = a Q_n [ 1 + 3 / (lambda_n - 3) * (phi'/H_conf)^2 ]^(-1/2).
+
+So the exact canonical scalar-field variable differs from the flat Mukhanov-Sasaki variable
+by an additional curvature normalization factor. In the large-n / weak-curvature limit it
+reduces to the usual flat-space variable.
+
+Strict dust boundary:
+
+For exact OS dust, c_s^2 = 0, so the barotropic z-variable is singular. The correct variables
+on the dust branch are therefore Phi_n and R_n rather than a canonical v_n.
+
+V. Exact OS dust identities
+---------------------------
+On the expanding OS branch
+
+    a(eta) = (r_s / 2) (1 - cos eta),
+    a'(eta) = (r_s / 2) sin eta,
+    a''(eta) = (r_s / 2) cos eta,
+    H_conf = a'/a = cot(eta/2),
+    a''/a = cos(eta) / (1 - cos eta).
+
+Using
+
+    1 + z = a(eta_s) / a(eta),  a(eta_s) = R_U = r_s / x,
+
+one gets
+
+    H_conf^2 = x (1 + z) - 1,
+    H_conf' = - x (1 + z) / 2,
+    a''/a = x (1 + z) / 2 - 1.
+
+Numerical check at the current spatial epoch eta_s = 1.893:
+
+    H_conf(now)   = 0.720415020634
+    H_conf'(now)  = -0.759498900978
+    a''/a(now)    = -0.240501099022
+
+Thus Paper 22's dust-side formula
+
+    a''/a = x(1+z)/2 - 1
+
+is exactly correct on the OS cycloid.
+
+VI. Radiation-to-dust transition
+--------------------------------
+Paper 5 replaces the old Vaidya story with a continuous mixed-fluid closed FRW background
+
+    H^2 = H_0^2 (Omega_r / u^4 + Omega_m / u^3 + Omega_k / u^2 + Omega_L),  u = a / a_0.
+
+Therefore
+
+    H_conf^2 = a^2 H^2 = (a_0 H_0)^2 (Omega_r / u^2 + Omega_m / u + Omega_k + Omega_L u^2),
+    H_conf' = (a_0 H_0)^2 (- Omega_r / u^2 - Omega_m / (2u) + Omega_L u^2),
+    a''/a = (a_0 H_0)^2 (Omega_m / (2u) + Omega_k + 2 Omega_L u^2).
+
+Key structural consequence:
+
+    Radiation drops out of a''/a because conformal acceleration depends on rho - 3p, while rho_r - 3 p_r = 0.
+
+So:
+
+- pure closed radiation: Pure radiation with k = +1 gives a''/a = -1
+- the dust trace term + Omega_m/(2u) turns on continuously and raises the effective barrier
+  seen by long-wavelength non-conformal modes
+- simultaneously the sound speed drops from c_s^2 ~ 1/3 toward c_s^2 ~ 0, so scalar modes
+  transition from acoustic propagation to dust-like freezing / growth
+
+Numerical checkpoints on the Paper 5 background:
+
+    u_eq        = 5.685279187817e-04
+    z_eq        = 1757.928571
+    a''/a(eq)   = 1331.726652991156
+    a''/a(z*=1100) on mixed-fluid u = 1/1101  = 833.219242610374
+
+Interpretation:
+
+- If one models the transition as a literal piecewise radiation-to-dust jump, one must match
+  the gauge-invariant variables and their first derivatives across the interface.
+- On the actual Paper 5 continuous branch there is no delta-function jump in the background;
+  the mode evolution is smooth, but the effective potential changes character as the equation
+  of state changes.
+
+VII. Exceptional modes n = 0,1
+-------------------------------
+- n = 0 is the constant harmonic. It only shifts the homogeneous background and is not an
+  inhomogeneous physical scalar perturbation.
+- n = 1 is the four-dimensional dipole / conformal-Killing scalar sector of S^3, not a
+  translation sector. One has
+
+      bar{nabla}_i bar{nabla}_j Q_(1) = - gamma_ij Q_(1),
+
+  so the scalar-generated trace-free tensor descendant vanishes.
+- Equivalently
+
+      lambda_1 - 3 = 0,
+
+  so the closed-universe scalar constraint operator has no physical support there.
+- On the vector side, the n = 1 coexact modes are the six Killing vectors of the round S^3.
+  They mix with residual gauge freedom and are not all independent physical vector perturbations.
+- Therefore the physical scalar spectrum starts at n >= 2.
+
+VIII. Boundary-algebra remark
+-----------------------------
+Paper 22 identifies
+
+    H_n^(0) ~= V_(n/2) tensor V_(n/2)^*,
+    diagonal SU(2) range J = 0..n.
+
+Reconstruction-level implication:
+
+- the scalar perturbation Hilbert sector is the natural J = 0 readout class,
+- but Paper 22 stress-scalarization already proves that J > 0 vector/tensor sectors
+  also feed scalar backreaction at quadratic order.
+
+So Paper 23 should treat linear scalar perturbations as the physical scalar readout sector
+without claiming that only J = 0 puncture data can source them.
+
+Bottom line
+-----------
+The closed-OS scalar perturbation problem is now structurally clean.
+
+1. The correct scalar Hilbert sector is the Paper 22 scalar harmonic branch, quotiented to n >= 2.
+2. Newtonian gauge works as usual, but only on that physical subspace.
+3. The closed-universe scalar operator is shifted from lambda_n to lambda_n - 3.
+4. The Paper 22 test-scalar equation with a''/a is not the full scalar cosmological-perturbation
+   equation; the true scalar master equation is the Bardeen / Mukhanov-Sasaki system with z''/z.
+5. On the exact OS dust branch, a''/a = x(1+z)/2 - 1 is verified exactly.
+6. On the Paper 5 mixed-fluid branch, radiation drops out of a''/a and the transition acts mainly
+   through the dust trace term and the falling sound speed.

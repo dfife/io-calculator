@@ -1,0 +1,120 @@
+Paper 30 Fun Runs #15, #16, #17: Tensor Ratio, Late ISW, and Primordial Deuterium
+==========================================================================================
+
+Status
+------
+
+Run 15 tensor-to-scalar ratio r: conditional
+Run 16 integrated Sachs-Wolfe effect: conditional
+Run 17 primordial deuterium compilation: verified
+
+Branch
+------
+
+Schur definitive branch: H0 = 68.91, Omega_m = 0.335776, Omega_k = -0.005614, Omega_Lambda = 0.669837
+Flat comparator:        H0 = 67.40, Omega_m = 0.315, Omega_k = 0.000, Omega_Lambda = 0.685
+
+Run 15: Tensor-to-Scalar Ratio r
+--------------------------------
+
+Current observational benchmark:
+- PDG 2025 CMB review quotes the tightest published limit as r_0.05 < 0.036 (95%).
+
+Naive fixed-point extension:
+- K_gauge = 0.054872817743
+- n_t = -K_gauge/x = -0.036124303978
+- r = -8 n_t = 0.288994431826
+- This sits a factor 8.028 above the current upper bound.
+
+Conditional spin-2-suppressed angular Hawking branch:
+- Preferred rank-2 branch: r_raw = 6.354294457009e-04, r_can = 4.493164700207e-04
+- Less-natural lambda=6 branch: r_raw = 2.238590367551e-06, r_can = 1.292450751311e-06
+- Lowest-shell conditional tensor tilt on that branch: n_t ~= -25.132741228718
+
+Bottom line for r:
+- derived boundary: the current IO stack still does not have a theorem-grade primordial tensor prediction.
+- reconstruction / no-go: the inflation-style transplant r = -8 n_t is numerically dead.
+- conditional: if one uses the old non-theorem angular Hawking carrier, spin-2 is indeed strongly suppressed and r lands in the 10^-4 to 10^-3 decade.
+
+Run 16: Late Integrated Sachs-Wolfe Effect
+-------------------------------------------
+
+Method:
+- Solved the K-compatible linear growth equation on the exact Schur and flat backgrounds.
+- Used the background-only late-ISW kernel K_ISW(z) = -2 d(D/a)/d ln a.
+- This is a proxy for the source strength, not a full closed-harmonic C_ell^{Tg} computation.
+
+- Acceleration transition redshift: Schur z_acc = 0.586048, flat z_acc = 0.632313
+- Integrated source over 0 <= z <= 2: Schur = 0.693376491476, flat = 0.757998201534, ratio = 0.914747
+- Fractional Schur shift: -8.525%
+- Kernel peak: Schur at z = 0.000000 with 0.906808091818; flat at z = 0.000000 with 0.945793595290
+
+Sample kernel values:
+- z = 0.0: K_Schur = 0.906808091818, K_flat = 0.945793595290, ratio = 0.958780
+- z = 0.2: K_Schur = 0.736316114148, K_flat = 0.781203708194, ratio = 0.942540
+- z = 0.4: K_Schur = 0.577125116970, K_flat = 0.622090468025, ratio = 0.927719
+- z = 0.6: K_Schur = 0.445887273460, K_flat = 0.487603654763, ratio = 0.914446
+- z = 0.8: K_Schur = 0.343925335826, K_flat = 0.381098450469, ratio = 0.902458
+- z = 1.0: K_Schur = 0.266729805381, K_flat = 0.299235723489, ratio = 0.891370
+- z = 1.5: K_Schur = 0.147390940933, K_flat = 0.170319803007, ratio = 0.865378
+- z = 2.0: K_Schur = 0.086973877479, K_flat = 0.103652200525, ratio = 0.839093
+
+Interpretation:
+- Schur has slightly later acceleration and a modestly smaller late-ISW source than the flat comparator.
+- The size of the shift should be compared against current late-ISW observational uncertainty of about 0.21 / 0.85 ~ 25%, so this run is a shape check, not a current exclusion.
+
+Run 17: Primordial Deuterium Compilation
+-----------------------------------------
+
+- Fixed IO prediction used here: D/H = 2.509000000000e-05
+- Current absorber table: 17 total measurements, 9 precision-sample measurements.
+
+Weighted means:
+- All measurements: D/H = 2.534393536838e-05 +/- 2.391064808941e-07, IO pull = -1.062 sigma
+- Precision sample: D/H = 2.500838097682e-05 +/- 2.810271583819e-07, IO pull = 0.290 sigma
+
+Chi-square against the fixed IO prediction:
+- All measurements: chi2 = 60.868859 for 17 points
+- Precision sample: chi2 = 11.906498 for 9 points
+
+Individual measurements:
+- HS 0105+1619 [precision]: D/H = 2.576321157003e-05 +/- 1.542371659629e-06, pull = 0.436 sigma (Cooke et al. 2014)
+- Q0913+072 [precision]: D/H = 2.529297996446e-05 +/- 1.048306295224e-06, pull = 0.194 sigma (Cooke et al. 2014)
+- SDSS J1358+6522 [precision]: D/H = 2.582260190635e-05 +/- 7.135048585425e-07, pull = 1.027 sigma (Cooke et al. 2014)
+- SDSS J1419+0829 [precision]: D/H = 2.506109253032e-05 +/- 5.193476826702e-07, pull = -0.056 sigma (Cooke et al. 2014)
+- SDSS J1558-0031 [precision]: D/H = 2.404362800007e-05 +/- 1.439424984776e-06, pull = -0.727 sigma (Cooke et al. 2014)
+- Q1243+307 [precision]: D/H = 2.387811282913e-05 +/- 8.247207997378e-07, pull = -1.469 sigma (Cooke, Pettini & Steidel 2018)
+- SDSS J1358+0349 [precision]: D/H = 2.618183008219e-05 +/- 7.234306998546e-07, pull = 1.509 sigma (Cooke et al. 2016)
+- J1444+2919 [precision]: D/H = 1.967886289707e-05 +/- 3.035921175709e-06, pull = -1.782 sigma (Balashev et al. 2016)
+- CTQ 247 [non-precision]: D/H = 2.754228703338e-05 +/- 6.341845955003e-06, pull = 0.387 sigma (Noterdaeme et al. 2012)
+- PKS 1937-1009 (1) [non-precision]: D/H = 2.454708915685e-05 +/- 2.826088078448e-06, pull = -0.192 sigma (Riemer-Sorensen et al. 2015)
+- J1337+3152 [non-precision]: D/H = 1.174897554940e-05 +/- 4.057952393698e-06, pull = -3.288 sigma (Srianand et al. 2010)
+- J1134+5742 [non-precision]: D/H = 2.041737944670e-05 +/- 6.111657961755e-06, pull = -0.765 sigma (Fumagalli, O'Meara & Prochaska 2011)
+- Q2206-199 [non-precision]: D/H = 1.636816521428e-05 +/- 3.768909322206e-06, pull = -2.314 sigma (Pettini & Bowen 2001)
+- Q0347-3819 [non-precision]: D/H = 3.749730022455e-05 +/- 2.417540286688e-06, pull = 5.132 sigma (Levshakov et al. 2002)
+- PKS 1937-1009 (2) [non-precision]: D/H = 2.624218543384e-05 +/- 4.833989199004e-07, pull = 2.384 sigma (Riemer-Sorensen et al. 2017)
+- Q1009+2956 [non-precision]: D/H = 2.477422057633e-05 +/- 3.764953565314e-06, pull = -0.084 sigma (Zavarygin et al. 2018)
+- J1332+0052 [precision]: D/H = 2.387811282913e-05 +/- 7.697394130886e-07, pull = -1.574 sigma (Kislitsyn et al. 2024)
+
+Worst pulls in the full table:
+- Q0347-3819: pull = 5.132 sigma, D/H = 3.749730022455e-05 +/- 2.417540286688e-06
+- J1337+3152: pull = -3.288 sigma, D/H = 1.174897554940e-05 +/- 4.057952393698e-06
+- PKS 1937-1009 (2): pull = 2.384 sigma, D/H = 2.624218543384e-05 +/- 4.833989199004e-07
+- Q2206-199: pull = -2.314 sigma, D/H = 1.636816521428e-05 +/- 3.768909322206e-06
+- J1444+2919: pull = -1.782 sigma, D/H = 1.967886289707e-05 +/- 3.035921175709e-06
+
+Bottom line
+-----------
+
+- derived boundary: Paper 24's D/H prediction survives the current precision absorber sample cleanly.
+- derived boundary: the tensor sector is still the major primordial frontier; current stack memory does not support a theorem-grade r claim.
+- conditional: Schur should slightly suppress the late-ISW source relative to flat LCDM, but not at a level that current ISW data can cleanly distinguish in this proxy run.
+
+Reproducibility
+---------------
+
+Script: /opt/cosmology-lab/results/paper30/paper30_funrun_r_isw_deuterium_schur.py
+JSON:   /opt/cosmology-lab/results/paper30/paper30_funrun_r_isw_deuterium_schur_results.json
+Report: /opt/cosmology-lab/results/paper30/paper30_funrun_r_isw_deuterium_schur_report.txt
+Plot:   /opt/cosmology-lab/results/paper30/paper30_funrun_isw_kernel_schur.png
+Plot:   /opt/cosmology-lab/results/paper30/paper30_funrun_deuterium_pulls_schur.png

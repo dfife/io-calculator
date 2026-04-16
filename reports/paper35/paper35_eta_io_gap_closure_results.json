@@ -1,0 +1,53 @@
+{
+  "mission": "Close the remaining structural gaps in the late-time eta_IO theorem chain",
+  "active_inputs": {
+    "gamma_BI": 0.2375,
+    "x": 1.518987327774,
+    "K_gauge": 0.05487281774291466,
+    "f_b": 0.3127083362150814,
+    "omega_m_geom": 0.06714153935206241,
+    "omega_b_geom": 0.020995719061702847,
+    "T_IO": 2.6635,
+    "T_obs": 2.7253048490552736,
+    "Y_p_for_mean_mass": 0.2469867094
+  },
+  "gap_1_gravitational_constant": {
+    "status": "derived / closed",
+    "statement": "G is not a genuine remaining gap in the surviving eta route. Once the theorem is written in terms of the derived physical-density slot omega_b,geom, the active projected H0 and Omega_m path is no longer used. The late-time eta theorem depends only on omega_b,geom, T_obs, and the standard particle/thermodynamic constants in the conversion prefactor.",
+    "safe_statement": "Do not list G as an additional active framework debt beyond the standard omega_b-to-number-density conversion prefactor."
+  },
+  "gap_2_baryon_counting_law": {
+    "status": "derived / scoped under Premise 2 standard low-temperature baryonic matter",
+    "statement": "On the late-time baryonic dust sector, baryon number density is the rest-mass density divided by the mean mass per baryon, up to thermal and binding/composition corrections. Thermal corrections at T_obs are negligible; composition corrections are small and quantifiable.",
+    "formula": "n_b = rho_b / m_bar * [1 + O(k_B T/(m_p c^2)) + O(E_bind/(m_p c^2))]",
+    "thermal_fraction_now": 3.7544855732560965e-13,
+    "composition_fraction_hydrogen_to_mean": 0.0017582771655141327,
+    "proton_vs_mean_eta_fraction": 0.0012146320911013975
+  },
+  "mass_conventions": {
+    "status": "verified / convention audit",
+    "proton_mass_kg": 1.67262192369e-27,
+    "hydrogen_atom_mass_kg": 1.673532838e-27,
+    "mean_baryon_mass_from_Yp_kg": 1.6705903034252064e-27,
+    "eta_using_proton_mass": 5.74179586430453e-10,
+    "eta_using_hydrogen_mass": 5.738670569180867e-10,
+    "eta_using_Yp_mean_mass": 5.748778515173695e-10,
+    "statement": "The remaining normalization ambiguity is a standard baryon-mass convention at the 10^-3 level, not a live structural theorem gap."
+  },
+  "closed_late_time_chain": {
+    "status": "derived / scoped plus standard particle constants",
+    "formula": "eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom",
+    "preferred_convention": "mean mass per baryon on the derived helium-composition branch",
+    "preferred_eta": 5.748778515173695e-10,
+    "headline_eta": 5.75e-10,
+    "statement": "Under the surviving omega_b,geom + T_obs route and the standard low-temperature baryon-counting law, the late-time eta theorem is closed. The only remaining non-IO inputs are universal/particle constants and the mean baryon-mass convention."
+  },
+  "what_remains_open": {
+    "status": "not part of the late-time eta closure",
+    "items": [
+      "a purely internal derivation of the baryon mass scale",
+      "a primordial/source-era freeze-out theorem",
+      "an independent chiral-boundary derivation of eta rather than the inventory route"
+    ]
+  }
+}

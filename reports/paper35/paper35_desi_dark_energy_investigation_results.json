@@ -1,0 +1,258 @@
+{
+  "inputs": {
+    "active_branch": {
+      "label": "active_paper10_legacy_projected_branch",
+      "h0": 67.57585653582628,
+      "omega_m": 0.34868395067621694,
+      "omega_k": -0.04579112576013168,
+      "omega_lambda": 0.69701575761593,
+      "omega_r": 9.141746798467538e-05,
+      "rd_mpc": 144.01351425392883
+    },
+    "old_geometric_branch": {
+      "label": "old_geometric_observer_branch",
+      "h0": 58.422219957755004,
+      "omega_m": 0.19671396077221812,
+      "omega_k": -0.12950335870178542,
+      "omega_lambda": 0.9326668915151448,
+      "omega_r": 0.00012250711240341174,
+      "rd_mpc": 175.05740358463828
+    },
+    "K_lambda_old": 49.85113882804944,
+    "K_lambda_new": 48.501995060804376,
+    "desi_sources": {
+      "dr2_cosmology": "https://arxiv.org/abs/2503.14738",
+      "dr2_dark_energy": "https://arxiv.org/abs/2503.14743",
+      "dr2_guide": "https://www.desi.lbl.gov/2025/03/19/desi-dr2-results-march-19-guide/",
+      "gccomb_mean": "https://raw.githubusercontent.com/CobayaSampler/bao_data/master/desi_bao_dr2/desi_gaussian_bao_ALL_GCcomb_mean.txt",
+      "gccomb_cov": "https://raw.githubusercontent.com/CobayaSampler/bao_data/master/desi_bao_dr2/desi_gaussian_bao_ALL_GCcomb_cov.txt"
+    }
+  },
+  "route_1_klambda_branch_rebuild": {
+    "status": "derived",
+    "old_K_lambda": 49.85113882804944,
+    "new_K_lambda": 48.501995060804376,
+    "ratio_new_over_old": 0.9729365507195604,
+    "statement": "Changing K_Lambda rescales the old vacuum amplitude but cannot change the exponent: any carried rho_DE proportional to a^-2 still implies w=-1/3. The active branch instead replaces the old vacuum carryover with an observer-side identity vacuum slot."
+  },
+  "route_2_support_acceleration_equation": {
+    "status": "derived / scoped no-go",
+    "support_equation": "Rddot = -c^2/(2 r_s)",
+    "statement": "The support-variable acceleration theorem is a hidden/local-support statement. It removes Lambda from the support recollapse equation, not from the observer H(z) background confronted by DESI."
+  },
+  "route_3_alpha_ladder_dressing": {
+    "status": "derived / scoped no-go",
+    "constant_projector_cancellation": {
+      "H_shape": "If H_obs(z) = J_H H_true(z) with J_H independent of z, then E_obs(z) = H_obs(z)/H_obs(0) = E_true(z).",
+      "distance_shape": "If D_obs(z) = J_D D_true(z) with J_D independent of z, then normalized distance-shape observables differ only by an overall calibration absorbed into H0, r_d, or M_B."
+    },
+    "statement": "The current alpha-ladder can renormalize H0-type estimators, but a z-independent class projector cannot generate an evolving w(z). No theorem-grade z-dependent dark-energy projector exists on the current stack."
+  },
+  "route_4_ratio_locking": {
+    "status": "derived",
+    "bare_ratio_lambda_over_abs_k": 7.2018741511009665,
+    "active_ratio_lambda_over_abs_k": 15.22163401850214,
+    "statement": "The old bare/support-side vacuum family carries a Lambda-to-curvature ratio near 7.18-7.20. The active projected branch breaks that lock and carries a constant observer-side vacuum slot with Omega_lambda_obs / |Omega_k_obs| = 15.22."
+  },
+  "route_5_flat_cpl_reinterpretation": {
+    "status": "verified",
+    "flat_cpl_best_fit_to_active_io_bao": {
+      "omega_m": 0.341977536144968,
+      "w0": -1.030263043675755,
+      "wa": -0.1115075206254369,
+      "h": 0.6263699225718755,
+      "H0": 62.63699225718755,
+      "rd_mpc": 155.58428581907293,
+      "chi2_to_io_synthetic": 0.8578882977742515,
+      "max_abs_residual": 0.3804709190822848,
+      "rows": [
+        {
+          "z": 0.295,
+          "quantity": "DV_over_rs",
+          "io_value": 8.185296666112983,
+          "flat_cpl_fit_value": 8.173867915353426,
+          "residual": -0.011428750759556294
+        },
+        {
+          "z": 0.51,
+          "quantity": "DM_over_rs",
+          "io_value": 13.689801909487425,
+          "flat_cpl_fit_value": 13.685625721842525,
+          "residual": -0.004176187644899798
+        },
+        {
+          "z": 0.51,
+          "quantity": "DH_over_rs",
+          "io_value": 23.0019673324271,
+          "flat_cpl_fit_value": 22.954115341590022,
+          "residual": -0.04785199083707781
+        },
+        {
+          "z": 0.706,
+          "quantity": "DM_over_rs",
+          "io_value": 17.905453751479374,
+          "flat_cpl_fit_value": 17.917454698232756,
+          "residual": 0.012000946753381925
+        },
+        {
+          "z": 0.706,
+          "quantity": "DH_over_rs",
+          "io_value": 20.330984520698525,
+          "flat_cpl_fit_value": 20.280683295415443,
+          "residual": -0.05030122528308212
+        },
+        {
+          "z": 0.934,
+          "quantity": "DM_over_rs",
+          "io_value": 22.18338793926892,
+          "flat_cpl_fit_value": 22.22584332497506,
+          "residual": 0.04245538570614116
+        },
+        {
+          "z": 0.934,
+          "quantity": "DH_over_rs",
+          "io_value": 17.640971934690633,
+          "flat_cpl_fit_value": 17.588086889616662,
+          "residual": -0.05288504507397107
+        },
+        {
+          "z": 1.321,
+          "quantity": "DM_over_rs",
+          "io_value": 28.183408313406765,
+          "flat_cpl_fit_value": 28.29987795705419,
+          "residual": 0.11646964364742374
+        },
+        {
+          "z": 1.321,
+          "quantity": "DH_over_rs",
+          "io_value": 14.04208504663085,
+          "flat_cpl_fit_value": 13.990478967214472,
+          "residual": -0.05160607941637885
+        },
+        {
+          "z": 1.484,
+          "quantity": "DM_over_rs",
+          "io_value": 30.325890904409572,
+          "flat_cpl_fit_value": 30.479814428569867,
+          "residual": 0.15392352416029453
+        },
+        {
+          "z": 1.484,
+          "quantity": "DH_over_rs",
+          "io_value": 12.833101369404947,
+          "flat_cpl_fit_value": 12.783880627224866,
+          "residual": -0.04922074218008099
+        },
+        {
+          "z": 2.33,
+          "quantity": "DH_over_rs",
+          "io_value": 8.518996482158201,
+          "flat_cpl_fit_value": 8.487238779824843,
+          "residual": -0.031757702333358395
+        },
+        {
+          "z": 2.33,
+          "quantity": "DM_over_rs",
+          "io_value": 38.90469504936756,
+          "flat_cpl_fit_value": 39.285165968449846,
+          "residual": 0.3804709190822848
+        }
+      ]
+    },
+    "flat_wcdm_best_fit_to_active_io_bao": {
+      "omega_m": 0.3381102802847393,
+      "w": -1.0014726871202122,
+      "h": 0.6247251212817185,
+      "H0": 62.47251212817185,
+      "rd_mpc": 155.15332566110484,
+      "chi2_to_io_synthetic": 1.253713687321682
+    },
+    "pull_vs_desi_w0wa": {
+      "DESI+CMB": {
+        "delta_w0": -0.610263043675755,
+        "delta_wa": 1.638492479374563,
+        "pull_w0_sigma": -2.9060144936940717,
+        "pull_wa_sigma": 2.8249870334044194,
+        "diagonal_pull_sigma": 4.0528350541889955
+      },
+      "DESI+CMB+Pantheon+": {
+        "delta_w0": -0.19226304367575497,
+        "delta_wa": 0.5084924793745631,
+        "pull_w0_sigma": -3.495691703195545,
+        "pull_wa_sigma": 2.480451118900308,
+        "diagonal_pull_sigma": 4.286315228380194
+      },
+      "DESI+CMB+Union3": {
+        "delta_w0": -0.3632630436757549,
+        "delta_wa": 0.9784924793745632,
+        "pull_w0_sigma": -4.1279891326790334,
+        "pull_wa_sigma": 3.3741119978433214,
+        "diagonal_pull_sigma": 5.331503170167532
+      },
+      "DESI+CMB+DESY5": {
+        "delta_w0": -0.27826304367575494,
+        "delta_wa": 0.7484924793745631,
+        "pull_w0_sigma": -4.881807783785174,
+        "pull_wa_sigma": 3.4813603691840145,
+        "diagonal_pull_sigma": 5.995991766000898
+      }
+    },
+    "pull_vs_desi_wcdm": {
+      "DESI": {
+        "delta_w": -0.08547268712021217,
+        "pull_sigma": -1.0958036810283611
+      },
+      "DESI+Pantheon+": {
+        "delta_w": -0.08747268712021217,
+        "pull_sigma": -2.1868171780053043
+      },
+      "DESI+Union3": {
+        "delta_w": -0.1354726871202122,
+        "pull_sigma": -2.6052439830810044
+      },
+      "DESI+DESY5": {
+        "delta_w": -0.1294726871202122,
+        "pull_sigma": -3.3198124902618513
+      },
+      "DESI+CMB": {
+        "delta_w": 0.053527312879787736,
+        "pull_sigma": 1.486869802216326
+      },
+      "DESI+CMB+Pantheon+": {
+        "delta_w": -0.006472687120212206,
+        "pull_sigma": -0.28142117913966114
+      },
+      "DESI+CMB+Union3": {
+        "delta_w": -0.004472687120212204,
+        "pull_sigma": -0.16565507852637792
+      },
+      "DESI+CMB+DESY5": {
+        "delta_w": -0.030472687120212227,
+        "pull_sigma": -1.451080339057725
+      }
+    },
+    "statement": "Forcing the active curved IO BAO background through a flat CPL interpreter yields a near-LambdaCDM point, not the DESI preferred w0 > -1, wa < 0 region."
+  },
+  "raw_desi_gccomb_crosscheck": {
+    "status": "verified",
+    "chi2_active_constant_vacuum": 69.4848089278862,
+    "chi2_old_a2_support_law": 3343.4705453780225,
+    "chi2_old_constant_vacuum_geometric_branch": 3167.2798942220506,
+    "statement": "On the raw public DR2 GCcomb BAO likelihood, the retired old observer-side dark-energy carryovers are catastrophically worse than the active branch. This is only a raw distance-level crosscheck, not the full Paper 30 readout-kernel confrontation."
+  },
+  "final_assessment": {
+    "status": "derived / verified",
+    "resolution": "The w = -1/3 confrontation is a mis-mapping of the retired bare/support-side rho_Lambda proportional to a^-2 law onto the active observer branch. On the active Paper 10 legacy branch, the observer-side vacuum slot is constant and the effective dark-energy EOS is w = -1. Flat-CPL reinterpretation of the actual curved active background lands near (w0, wa) = (-1.03, -0.11), not in DESI's preferred evolving-DE region.",
+    "what_survives": [
+      "The old bare/support-side rho_Lambda proportional to 1/R^2 law survives as a hidden-support statement.",
+      "The active observer-side branch carries a constant vacuum slot.",
+      "Curvature misinterpretation alone does not generate the DESI preferred w0 > -1, wa < 0 signal."
+    ],
+    "what_dies": [
+      "The active observer-side claim w = -1/3.",
+      "Any rescue based only on K_Lambda amplitude updates.",
+      "Any rescue based only on alpha-ladder class dressing with a z-independent projector.",
+      "Any rescue based only on flat-pipeline reinterpretation of the active curved background."
+    ]
+  }
+}

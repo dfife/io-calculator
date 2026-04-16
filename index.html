@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIO Calculator</title>
+  <meta name="description" content="Self-contained active-branch calculator for the Interior Observer framework.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/calculator.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">AIO Calculator</p>
+        <h1>Active-Branch IO Calculator</h1>
+        <p class="hero-copy">
+          Self-contained curved, closed-FRW calculator for the active Paper 10 legacy branch.
+          This page computes the late-time and BAO-side observables the current stack actually closes,
+          and keeps the open sectors labeled as open.
+        </p>
+        <div class="hero-badges" id="scope-badges"></div>
+      </div>
+    </header>
+
+    <main class="main-shell">
+      <section class="section">
+        <div class="section-head">
+          <p class="section-kicker">Live calculator</p>
+          <h2>Curved background and BAO observables</h2>
+        </div>
+        <div class="calculator-panel">
+          <div class="control-panel">
+            <label class="control-block">
+              <span>Redshift z</span>
+              <input id="redshift-input" type="number" min="0" max="10" step="0.001" value="0.57">
+            </label>
+          </div>
+          <div class="results-grid" id="results-grid"></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <p class="section-kicker">Active branch</p>
+          <h2>Fixed branch package</h2>
+        </div>
+        <div class="metric-grid" id="branch-grid"></div>
+      </section>
+
+      <section class="section two-up">
+        <div class="panel">
+          <div class="section-head compact">
+            <p class="section-kicker">Explained output</p>
+            <h2>Theorem-grade theta_*</h2>
+          </div>
+          <div class="metric-grid" id="theta-output-grid"></div>
+          <div id="theta-summary-panel"></div>
+        </div>
+        <div class="panel">
+          <div class="section-head compact">
+            <p class="section-kicker">Why</p>
+            <h2>Derivation chain and geometry</h2>
+          </div>
+          <div id="theta-why-panel"></div>
+        </div>
+      </section>
+
+      <section class="section two-up">
+        <div class="panel">
+          <div class="section-head compact">
+            <p class="section-kicker">Late-time closure</p>
+            <h2>eta_IO and vacuum mapping</h2>
+          </div>
+          <div id="eta-panel"></div>
+          <div id="dark-energy-panel"></div>
+        </div>
+        <div class="panel">
+          <div class="section-head compact">
+            <p class="section-kicker">Paper 31 carryover</p>
+            <h2>BAO and Weyl status</h2>
+          </div>
+          <div id="paper31-panel"></div>
+        </div>
+      </section>
+
+      <section class="section two-up">
+        <div class="panel">
+          <div class="section-head compact">
+            <p class="section-kicker">Closed here</p>
+            <h2>What this calculator computes</h2>
+          </div>
+          <ul class="clean-list" id="closed-list"></ul>
+        </div>
+        <div class="panel">
+          <div class="section-head compact">
+            <p class="section-kicker">Not closed here</p>
+            <h2>What remains open</h2>
+          </div>
+          <ul class="clean-list" id="open-list"></ul>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <p class="section-kicker">Authority stack</p>
+          <h2>Papers controlling this surface</h2>
+        </div>
+        <div class="paper-grid" id="paper-grid"></div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <p class="section-kicker">Provenance scaffold</p>
+          <h2>Explained output catalog</h2>
+          <p class="section-summary">
+            theta_* is the first full theorem dictionary entry. The other theorem-grade surfaces now share the same schema and are ready for chain expansion.
+          </p>
+        </div>
+        <div class="source-grid" id="provenance-output-grid"></div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <p class="section-kicker">Source code</p>
+          <h2>Published code surface</h2>
+          <p class="section-summary">
+            These files are kept relative so the calculator can be published as a static folder with direct source links.
+          </p>
+        </div>
+        <div class="source-grid" id="source-grid"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/calculator.js" defer></script>
+</body>
+</html>

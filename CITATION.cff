@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+title: "IO Calculator"
+message: "If you use this alpha software or its theorem reports, please cite the repository and the relevant theorem authorities."
+type: software
+authors:
+  - family-names: "Fife"
+    given-names: "David"
+repository-code: "https://github.com/dfife/io-calculator"
+url: "https://dfife.github.io/calculator.html"
+license: "Apache-2.0"
+version: "0.1.0a1"
+date-released: "2026-04-16"
+abstract: >-
+  Alpha public source release of the Interior Observer Framework calculator:
+  a theorem-bearing cosmological calculator with provenance-carrying outputs,
+  closed-FRW background quantities, BBN outputs, active-branch theta_*,
+  and a conditional/scoped/verified TT first-peak support carrier.

@@ -1,0 +1,1446 @@
+{
+  "metadata": {
+    "script": "/opt/cosmology-lab/results/paper30/paper30_full_recompute_legacy_branch.py",
+    "claim_discipline": {
+      "geometry_tests": "verified",
+      "baryon_slot_tests": "conditional where slot choice enters",
+      "bao_kernel_import": "derived/scoped from Paper 29"
+    }
+  },
+  "inputs": {
+    "io_background": {
+      "label": "Paper 10 legacy branch active background",
+      "H0": 67.57585653582628,
+      "Omega_m": 0.34868395067621694,
+      "Omega_k": -0.04579112576013168,
+      "Omega_lambda": 0.69701575761593,
+      "Omega_r": 9.141746798467538e-05,
+      "T_cmb": 2.7253,
+      "N_eff": 3.044,
+      "omega_b_reference": 0.020995719061702847,
+      "YHe": 0.2477,
+      "A_s": 2.0072459972737347e-09,
+      "n_s": 0.9639
+    },
+    "planck_background": {
+      "label": "Planck fixed-parameter reference",
+      "H0": 67.4,
+      "Omega_m": 0.315,
+      "Omega_k": 0.0,
+      "Omega_lambda": 0.6849081048663765,
+      "Omega_r": 9.189513362352906e-05,
+      "T_cmb": 2.7253,
+      "N_eff": 3.044,
+      "omega_b_reference": 0.02237,
+      "YHe": 0.2478,
+      "A_s": 2.1e-09,
+      "n_s": 0.9649
+    },
+    "r_d_Mpc": 144.01351425392883,
+    "f_b": 0.3127083362150252,
+    "omega_b_geom": 0.020995719061702847,
+    "x": 1.5189873277742727,
+    "gamma": 0.2375,
+    "K_gauge": 0.05487281774291466,
+    "eta_bao": 0.036124605346983495,
+    "J_phi": 0.8113774333810703,
+    "K_avg": 1.7270483421419307,
+    "F_slot": 1.3807181821932417
+  },
+  "baryon_slots": {
+    "omega_b_geom": {
+      "omega_b_h2": 0.020995719061702847,
+      "claim": "derived/scoped"
+    },
+    "omega_b_eff": {
+      "omega_b_h2": 0.02898917105671435,
+      "claim": "conditional/legacy"
+    },
+    "omega_b_clustering": {
+      "omega_b_h2": 0.01703545264427447,
+      "claim": "conditional/legacy"
+    },
+    "omega_b_naive_bdp": {
+      "omega_b_h2": 0.04979142265087259,
+      "claim": "speculative"
+    }
+  },
+  "tests": {
+    "pantheon": {
+      "io": {
+        "count": 1701,
+        "chi2": 1757.4798174084137,
+        "dof": 1700,
+        "chi2_per_dof": 1.033811657299067,
+        "pte": 0.16199876097430368,
+        "nuisance_M": -19.42747965135644
+      },
+      "planck": {
+        "count": 1701,
+        "chi2": 1759.6947847107324,
+        "dof": 1700,
+        "chi2_per_dof": 1.0351145792416072,
+        "pte": 0.1530560088479993,
+        "nuisance_M": -19.436480044127983
+      },
+      "old_schur": {
+        "io_chi2": 1755.5471456044813,
+        "planck_chi2": 1759.7366159199048,
+        "delta_chi2": -4.189470315423478
+      }
+    },
+    "strong_lensing": {
+      "io": {
+        "n_lenses": 8,
+        "rows": [
+          {
+            "name": "B1608+656",
+            "z_lens": 0.6304,
+            "z_source": 1.394,
+            "Ddt_pred_Mpc": 5290.445831946448,
+            "Ddt_post_median_Mpc": 5341.098816255168,
+            "sigma_eff_68_Mpc": 437.39958769369423,
+            "chi2_contrib": 0.013410758340917029
+          },
+          {
+            "name": "DES0408-5354",
+            "z_lens": 0.597,
+            "z_source": 2.375,
+            "Ddt_pred_Mpc": 3681.866874645391,
+            "Ddt_post_median_Mpc": 3365.486412759508,
+            "sigma_eff_68_Mpc": 124.93219864840489,
+            "chi2_contrib": 6.413137409783672
+          },
+          {
+            "name": "HE0435-1223",
+            "z_lens": 0.4546,
+            "z_source": 1.693,
+            "Ddt_pred_Mpc": 2842.080214143375,
+            "Ddt_post_median_Mpc": 2718.739961606161,
+            "sigma_eff_68_Mpc": 181.06847522218504,
+            "chi2_contrib": 0.4640064074764432
+          },
+          {
+            "name": "PG1115+080",
+            "z_lens": 0.311,
+            "z_source": 1.722,
+            "Ddt_pred_Mpc": 1722.3562665293919,
+            "Ddt_post_median_Mpc": 1458.257268848685,
+            "sigma_eff_68_Mpc": 124.22695546918078,
+            "chi2_contrib": 4.519618965896685
+          },
+          {
+            "name": "RXJ1131-1231",
+            "z_lens": 0.295,
+            "z_source": 0.654,
+            "Ddt_pred_Mpc": 2414.9276060571888,
+            "Ddt_post_median_Mpc": 2030.5887359345127,
+            "sigma_eff_68_Mpc": 86.12016804273458,
+            "chi2_contrib": 19.91676875519768
+          },
+          {
+            "name": "SDSS1206+4332",
+            "z_lens": 0.745,
+            "z_source": 1.789,
+            "Ddt_pred_Mpc": 5911.748031746777,
+            "Ddt_post_median_Mpc": 5886.504744627511,
+            "sigma_eff_68_Mpc": 656.247574801354,
+            "chi2_contrib": 0.001479641116753298
+          },
+          {
+            "name": "WFI2033-4723",
+            "z_lens": 0.6575,
+            "z_source": 1.662,
+            "Ddt_pred_Mpc": 5017.716236170707,
+            "Ddt_post_median_Mpc": 4838.369698259287,
+            "sigma_eff_68_Mpc": 358.55292098779546,
+            "chi2_contrib": 0.2501954833155947
+          },
+          {
+            "name": "WGD2038-4008",
+            "z_lens": 0.2283,
+            "z_source": 0.777,
+            "Ddt_pred_Mpc": 1450.856118569635,
+            "Ddt_post_median_Mpc": 1495.6025101448365,
+            "sigma_eff_68_Mpc": 324.42852231875315,
+            "chi2_contrib": 0.019022955006844453
+          }
+        ],
+        "chi2": 31.597640376134585,
+        "dof": 8,
+        "chi2_per_dof": 3.949705047016823
+      },
+      "planck": {
+        "n_lenses": 8,
+        "rows": [
+          {
+            "name": "B1608+656",
+            "z_lens": 0.6304,
+            "z_source": 1.394,
+            "Ddt_pred_Mpc": 5330.557756175516,
+            "Ddt_post_median_Mpc": 5341.060494800288,
+            "sigma_eff_68_Mpc": 432.5199930827989,
+            "chi2_contrib": 0.000589647878669484
+          },
+          {
+            "name": "DES0408-5354",
+            "z_lens": 0.597,
+            "z_source": 2.375,
+            "Ddt_pred_Mpc": 3717.504841110004,
+            "Ddt_post_median_Mpc": 3366.117388890166,
+            "sigma_eff_68_Mpc": 125.92947417618166,
+            "chi2_contrib": 7.786059501903512
+          },
+          {
+            "name": "HE0435-1223",
+            "z_lens": 0.4546,
+            "z_source": 1.693,
+            "Ddt_pred_Mpc": 2861.57152476973,
+            "Ddt_post_median_Mpc": 2718.4216266624026,
+            "sigma_eff_68_Mpc": 180.1747644728507,
+            "chi2_contrib": 0.6312394902221994
+          },
+          {
+            "name": "PG1115+080",
+            "z_lens": 0.311,
+            "z_source": 1.722,
+            "Ddt_pred_Mpc": 1731.9658776052252,
+            "Ddt_post_median_Mpc": 1458.1384930743511,
+            "sigma_eff_68_Mpc": 124.14876225045907,
+            "chi2_contrib": 4.8648445605625925
+          },
+          {
+            "name": "RXJ1131-1231",
+            "z_lens": 0.295,
+            "z_source": 0.654,
+            "Ddt_pred_Mpc": 2424.1209200143117,
+            "Ddt_post_median_Mpc": 2030.2236669024228,
+            "sigma_eff_68_Mpc": 86.4561425056338,
+            "chi2_contrib": 20.757459336363837
+          },
+          {
+            "name": "SDSS1206+4332",
+            "z_lens": 0.745,
+            "z_source": 1.789,
+            "Ddt_pred_Mpc": 5969.148177732827,
+            "Ddt_post_median_Mpc": 5886.119010343407,
+            "sigma_eff_68_Mpc": 655.1175461187809,
+            "chi2_contrib": 0.01606286106660728
+          },
+          {
+            "name": "WFI2033-4723",
+            "z_lens": 0.6575,
+            "z_source": 1.662,
+            "Ddt_pred_Mpc": 5060.749253355809,
+            "Ddt_post_median_Mpc": 4836.217297618849,
+            "sigma_eff_68_Mpc": 358.93365803644474,
+            "chi2_contrib": 0.3913163088574154
+          },
+          {
+            "name": "WGD2038-4008",
+            "z_lens": 0.2283,
+            "z_source": 0.777,
+            "Ddt_pred_Mpc": 1456.229891461342,
+            "Ddt_post_median_Mpc": 1495.4945037012274,
+            "sigma_eff_68_Mpc": 323.96634027654795,
+            "chi2_contrib": 0.014689359040850017
+          }
+        ],
+        "chi2": 34.46226106589568,
+        "dof": 8,
+        "chi2_per_dof": 4.30778263323696
+      },
+      "old_schur": {
+        "schur_chi2": 23.848126839027767,
+        "schur_dof": 8,
+        "schur_chi2_per_dof": 2.981015854878471,
+        "lcdm_chi2": 34.57795247152845,
+        "lcdm_dof": 8,
+        "lcdm_chi2_per_dof": 4.322244058941056
+      }
+    },
+    "standard_sirens": [
+      {
+        "label": "GW170817",
+        "measurement": 70.0,
+        "sigma_sym": 10.0,
+        "io_pull_sigma": -0.24241434641737242,
+        "planck_pull_sigma": -0.25999999999999945,
+        "old_schur_pull_sigma": -0.10900000000000035
+      },
+      {
+        "label": "GW170817 afterglow",
+        "measurement": 69.0,
+        "sigma_sym": 4.4,
+        "io_pull_sigma": -0.32366896913039184,
+        "planck_pull_sigma": -0.3636363636363623,
+        "old_schur_pull_sigma": -0.020454545454546228
+      },
+      {
+        "label": "GWTC-3",
+        "measurement": 68.0,
+        "sigma_sym": 10.0,
+        "io_pull_sigma": -0.04241434641737243,
+        "planck_pull_sigma": -0.05999999999999943,
+        "old_schur_pull_sigma": 0.09099999999999966
+      },
+      {
+        "label": "O4a dark+bright",
+        "measurement": 69.9,
+        "sigma_sym": 4.1,
+        "io_pull_sigma": -0.5668642595545683,
+        "planck_pull_sigma": -0.6097560975609757,
+        "old_schur_pull_sigma": -0.24146341463414858
+      }
+    ],
+    "alcock_paczynski": {
+      "io": {
+        "chi2": 7.88341490487783,
+        "dof": 6,
+        "chi2_per_dof": 1.313902484146305,
+        "pte": 0.24676969705560073,
+        "rows": [
+          {
+            "z": 0.51,
+            "F_AP_obs": 0.6218244751363502,
+            "F_AP_sigma": 0.017159067622570235,
+            "F_AP_model": 0.5951578711226371
+          },
+          {
+            "z": 0.706,
+            "F_AP_obs": 0.8920768224067843,
+            "F_AP_sigma": 0.02080808607379221,
+            "F_AP_model": 0.8806978202596372
+          },
+          {
+            "z": 0.934,
+            "F_AP_obs": 1.2232562900983188,
+            "F_AP_sigma": 0.019207363358700612,
+            "F_AP_model": 1.2574923887955245
+          },
+          {
+            "z": 1.321,
+            "F_AP_obs": 1.94778782117719,
+            "F_AP_sigma": 0.04516019356637831,
+            "F_AP_model": 2.0070671997298337
+          },
+          {
+            "z": 1.484,
+            "F_AP_obs": 2.3856048054706602,
+            "F_AP_sigma": 0.13683464915162505,
+            "F_AP_model": 2.363099147351117
+          },
+          {
+            "z": 2.33,
+            "F_AP_obs": 4.517943458541448,
+            "F_AP_sigma": 0.09674800932603408,
+            "F_AP_model": 4.566816658567283
+          }
+        ]
+      },
+      "planck": {
+        "chi2": 6.702669976136264,
+        "dof": 6,
+        "chi2_per_dof": 1.1171116626893773,
+        "pte": 0.3492212777775587,
+        "rows": [
+          {
+            "z": 0.51,
+            "F_AP_obs": 0.6218244751363502,
+            "F_AP_sigma": 0.017159067622570235,
+            "F_AP_model": 0.5936603303517112
+          },
+          {
+            "z": 0.706,
+            "F_AP_obs": 0.8920768224067843,
+            "F_AP_sigma": 0.02080808607379221,
+            "F_AP_model": 0.877555663896066
+          },
+          {
+            "z": 0.934,
+            "F_AP_obs": 1.2232562900983188,
+            "F_AP_sigma": 0.019207363358700612,
+            "F_AP_model": 1.251834333857548
+          },
+          {
+            "z": 1.321,
+            "F_AP_obs": 1.94778782117719,
+            "F_AP_sigma": 0.04516019356637831,
+            "F_AP_model": 1.9964766078914111
+          },
+          {
+            "z": 1.484,
+            "F_AP_obs": 2.3856048054706602,
+            "F_AP_sigma": 0.13683464915162505,
+            "F_AP_model": 2.350470123171005
+          },
+          {
+            "z": 2.33,
+            "F_AP_obs": 4.517943458541448,
+            "F_AP_sigma": 0.09674800932603408,
+            "F_AP_model": 4.547539398396198
+          }
+        ]
+      },
+      "old_schur": {
+        "io_chi2": 9.287887436596476,
+        "io_pte": 0.15802305627493307,
+        "planck_chi2": 6.710364255388468,
+        "planck_pte": 0.3484648972423223
+      }
+    },
+    "frb_dm": {
+      "current": {
+        "n_frb": 17,
+        "rows": [
+          {
+            "label": "omega_b_geom",
+            "omega_b_h2": 0.020995719061702847,
+            "Omega_b": 0.045977741542816655,
+            "chi2": 105.0257378768546,
+            "chi2_per_point": 6.177984580991447,
+            "claim": "derived/scoped",
+            "notes": "Paper 29 sound-speed selector alpha = 1.",
+            "per_frb": [
+              {
+                "name": "FRB 20190102C",
+                "z": 0.2913,
+                "pred": 240.02445064369184,
+                "pull": 2.0540080472087827
+              },
+              {
+                "name": "FRB 20190523A",
+                "z": 0.66,
+                "pred": 561.9284369807107,
+                "pull": 1.0882558846147714
+              },
+              {
+                "name": "FRB 20190608B",
+                "z": 0.1178,
+                "pred": 94.20136334383614,
+                "pull": 1.5748708379444598
+              },
+              {
+                "name": "FRB 20190714A",
+                "z": 0.2365,
+                "pred": 193.27295678733444,
+                "pull": -0.16034718238129567
+              },
+              {
+                "name": "FRB 20191001A",
+                "z": 0.234,
+                "pred": 191.15322092755983,
+                "pull": 0.19471711041120607
+              },
+              {
+                "name": "FRB 20200430A",
+                "z": 0.1608,
+                "pred": 129.68678250095078,
+                "pull": -0.09461667430320382
+              },
+              {
+                "name": "FRB 20200906A",
+                "z": 0.3688,
+                "pred": 306.91517487182256,
+                "pull": -2.7271206282044362
+              },
+              {
+                "name": "FRB 20210320C",
+                "z": 0.2797,
+                "pred": 230.0851793494789,
+                "pull": 1.0212780264603705
+              },
+              {
+                "name": "FRB 20210603A",
+                "z": 0.1772,
+                "pred": 143.34975718467092,
+                "pull": -5.877471628600819
+              },
+              {
+                "name": "FRB 20211127I",
+                "z": 0.0469,
+                "pred": 36.91709394492188,
+                "pull": -0.06165812110156239
+              },
+              {
+                "name": "FRB 20211212A",
+                "z": 0.0707,
+                "pred": 55.96099571113605,
+                "pull": 0.6456766810330515
+              },
+              {
+                "name": "FRB 20220105A",
+                "z": 0.2785,
+                "pred": 229.0582181292662,
+                "pull": -4.712899568350805
+              },
+              {
+                "name": "FRB 20220310F",
+                "z": 0.478,
+                "pred": 402.1819445074838,
+                "pull": 2.9579394702609525
+              },
+              {
+                "name": "FRB 20220418A",
+                "z": 0.6214,
+                "pred": 528.0459098043013,
+                "pull": 2.3116212200477926
+              },
+              {
+                "name": "FRB 20220914A",
+                "z": 0.1139,
+                "pred": 91.00882439024855,
+                "pull": -3.876434266787055
+              },
+              {
+                "name": "FRB 20220920A",
+                "z": 0.1582,
+                "pred": 127.52695634038173,
+                "pull": 1.3002567270512546
+              },
+              {
+                "name": "FRB 20221012A",
+                "z": 0.2847,
+                "pred": 234.36670972008451,
+                "pull": 0.7760746321957109
+              }
+            ]
+          },
+          {
+            "label": "omega_b_eff",
+            "omega_b_h2": 0.02898917105671435,
+            "Omega_b": 0.0634823037243485,
+            "chi2": 128.5206473310989,
+            "chi2_per_point": 7.560038078299935,
+            "claim": "conditional/legacy",
+            "notes": "Paper 10 legacy acoustic rung omega_b,eff = F * omega_b,geom.",
+            "per_frb": [
+              {
+                "name": "FRB 20190102C",
+                "z": 0.2913,
+                "pred": 331.40612317468975,
+                "pull": 3.68582362811946
+              },
+              {
+                "name": "FRB 20190523A",
+                "z": 0.66,
+                "pred": 775.8648100306965,
+                "pull": 3.328427330164361
+              },
+              {
+                "name": "FRB 20190608B",
+                "z": 0.1178,
+                "pred": 130.06553515622653,
+                "pull": 1.7708499188864837
+              },
+              {
+                "name": "FRB 20190714A",
+                "z": 0.2365,
+                "pred": 266.85548556252144,
+                "pull": 0.38269731042451244
+              },
+              {
+                "name": "FRB 20191001A",
+                "z": 0.234,
+                "pred": 263.9287277194836,
+                "pull": 0.89786210356989
+              },
+              {
+                "name": "FRB 20200430A",
+                "z": 0.1608,
+                "pred": 179.0608985892031,
+                "pull": 0.3583568677908542
+              },
+              {
+                "name": "FRB 20200906A",
+                "z": 0.3688,
+                "pred": 423.7633623365438,
+                "pull": 0.19408405841359552
+              },
+              {
+                "name": "FRB 20210320C",
+                "z": 0.2797,
+                "pred": 317.68279058101854,
+                "pull": 2.738878246686638
+              },
+              {
+                "name": "FRB 20210603A",
+                "z": 0.1772,
+                "pred": 197.92561615786147,
+                "pull": -4.340123488510945
+              },
+              {
+                "name": "FRB 20211127I",
+                "z": 0.0469,
+                "pred": 50.97210284348968,
+                "pull": 0.2194420568697936
+              },
+              {
+                "name": "FRB 20211212A",
+                "z": 0.0707,
+                "pred": 77.26636427200357,
+                "pull": 1.0760881671111833
+              },
+              {
+                "name": "FRB 20220105A",
+                "z": 0.2785,
+                "pred": 316.26484655186357,
+                "pull": -2.636551272574677
+              },
+              {
+                "name": "FRB 20220310F",
+                "z": 0.478,
+                "pred": 555.2999233313163,
+                "pull": 5.243282437780841
+              },
+              {
+                "name": "FRB 20220418A",
+                "z": 0.6214,
+                "pred": 729.0825886995716,
+                "pull": 4.545362096661907
+              },
+              {
+                "name": "FRB 20220914A",
+                "z": 0.1139,
+                "pred": 125.65753857564798,
+                "pull": -3.4486723632636047
+              },
+              {
+                "name": "FRB 20220920A",
+                "z": 0.1582,
+                "pred": 176.07878733892878,
+                "pull": 1.7626551175136074
+              },
+              {
+                "name": "FRB 20221012A",
+                "z": 0.2847,
+                "pred": 323.5943774113263,
+                "pull": 1.3978702258629012
+              }
+            ]
+          },
+          {
+            "label": "omega_b_clustering",
+            "omega_b_h2": 0.01703545264427447,
+            "Omega_b": 0.03730530192566879,
+            "chi2": 121.63770311519765,
+            "chi2_per_point": 7.155159006776333,
+            "claim": "conditional/legacy",
+            "notes": "Paper 10 legacy clustering rung omega_b,clustering = x^(-1/2) omega_b,geom.",
+            "per_frb": [
+              {
+                "name": "FRB 20190102C",
+                "z": 0.2913,
+                "pred": 194.7504227119801,
+                "pull": 1.2455432627139302
+              },
+              {
+                "name": "FRB 20190523A",
+                "z": 0.66,
+                "pred": 455.93605294124546,
+                "pull": -0.021612011086434933
+              },
+              {
+                "name": "FRB 20190608B",
+                "z": 0.1178,
+                "pred": 76.4328604109194,
+                "pull": 1.4777751935022916
+              },
+              {
+                "name": "FRB 20190714A",
+                "z": 0.2365,
+                "pred": 156.81731562007792,
+                "pull": -0.4293925046488714
+              },
+              {
+                "name": "FRB 20191001A",
+                "z": 0.234,
+                "pred": 155.0974097787282,
+                "pull": -0.1536482146982782
+              },
+              {
+                "name": "FRB 20200430A",
+                "z": 0.1608,
+                "pred": 105.22492872907054,
+                "pull": -0.3190373511094446
+              },
+              {
+                "name": "FRB 20200906A",
+                "z": 0.3688,
+                "pred": 249.02404685320178,
+                "pull": -4.174398828669956
+              },
+              {
+                "name": "FRB 20210320C",
+                "z": 0.2797,
+                "pred": 186.6859222796034,
+                "pull": 0.17031220156085106
+              },
+              {
+                "name": "FRB 20210603A",
+                "z": 0.1772,
+                "pred": 116.31075806029794,
+                "pull": -6.639133575766255
+              },
+              {
+                "name": "FRB 20211127I",
+                "z": 0.0469,
+                "pred": 29.953696932918568,
+                "pull": -0.20092606134162863
+              },
+              {
+                "name": "FRB 20211212A",
+                "z": 0.0707,
+                "pred": 45.405489069550654,
+                "pull": 0.43243412261718495
+              },
+              {
+                "name": "FRB 20220105A",
+                "z": 0.2785,
+                "pred": 185.85266912056537,
+                "pull": -5.741603116177015
+              },
+              {
+                "name": "FRB 20220310F",
+                "z": 0.478,
+                "pred": 326.3213538866903,
+                "pull": 1.825691849055079
+              },
+              {
+                "name": "FRB 20220418A",
+                "z": 0.6214,
+                "pred": 428.4445350043862,
+                "pull": 1.204939277826513
+              },
+              {
+                "name": "FRB 20220914A",
+                "z": 0.1139,
+                "pred": 73.84250634878842,
+                "pull": -4.08836411915076
+              },
+              {
+                "name": "FRB 20220920A",
+                "z": 0.1582,
+                "pred": 103.47249452235874,
+                "pull": 1.0711666144986547
+              },
+              {
+                "name": "FRB 20221012A",
+                "z": 0.2847,
+                "pred": 190.15985940264852,
+                "pull": 0.4680129575097458
+              }
+            ]
+          },
+          {
+            "label": "omega_b_naive_bdp",
+            "omega_b_h2": 0.04979142265087259,
+            "Omega_b": 0.1090363780808417,
+            "chi2": 547.1539397710975,
+            "chi2_per_point": 32.185525868888085,
+            "claim": "speculative",
+            "notes": "Naive raw BDP omega_b = f_b * Omega_m * h^2.",
+            "per_frb": [
+              {
+                "name": "FRB 20190102C",
+                "z": 0.2913,
+                "pred": 569.2188409180532,
+                "pull": 7.932479302108092
+              },
+              {
+                "name": "FRB 20190523A",
+                "z": 0.66,
+                "pred": 1332.6152928139602,
+                "pull": 9.158275317423668
+              },
+              {
+                "name": "FRB 20190608B",
+                "z": 0.1178,
+                "pred": 223.3988692055278,
+                "pull": 2.280868137735125
+              },
+              {
+                "name": "FRB 20190714A",
+                "z": 0.2365,
+                "pred": 458.347506465516,
+                "pull": 1.7959225569410775
+              },
+              {
+                "name": "FRB 20191001A",
+                "z": 0.234,
+                "pred": 453.32054531252714,
+                "pull": 2.727734737319103
+              },
+              {
+                "name": "FRB 20200430A",
+                "z": 0.1608,
+                "pred": 307.55266732040724,
+                "pull": 1.5371804341321764
+              },
+              {
+                "name": "FRB 20200906A",
+                "z": 0.3688,
+                "pred": 727.8504320380239,
+                "pull": 7.796260800950597
+              },
+              {
+                "name": "FRB 20210320C",
+                "z": 0.2797,
+                "pred": 545.647823588404,
+                "pull": 7.208780854674588
+              },
+              {
+                "name": "FRB 20210603A",
+                "z": 0.1772,
+                "pred": 339.9544605214879,
+                "pull": -0.3393109712256937
+              },
+              {
+                "name": "FRB 20211127I",
+                "z": 0.0469,
+                "pred": 87.54901998124241,
+                "pull": 0.9509803996248481
+              },
+              {
+                "name": "FRB 20211212A",
+                "z": 0.0707,
+                "pred": 132.71170095333022,
+                "pull": 2.196195978855156
+              },
+              {
+                "name": "FRB 20220105A",
+                "z": 0.2785,
+                "pred": 543.212381391288,
+                "pull": 2.7669614616973326
+              },
+              {
+                "name": "FRB 20220310F",
+                "z": 0.478,
+                "pred": 953.7759160651381,
+                "pull": 11.190685314405046
+              },
+              {
+                "name": "FRB 20220418A",
+                "z": 0.6214,
+                "pred": 1252.2627587491688,
+                "pull": 10.358475097212986
+              },
+              {
+                "name": "FRB 20220914A",
+                "z": 0.1139,
+                "pred": 215.8277516886524,
+                "pull": -2.3354598556956496
+              },
+              {
+                "name": "FRB 20220920A",
+                "z": 0.1582,
+                "pred": 302.43063187607396,
+                "pull": 2.966006017867371
+              },
+              {
+                "name": "FRB 20221012A",
+                "z": 0.2847,
+                "pred": 555.8014881353939,
+                "pull": 3.0160382448459506
+              }
+            ]
+          }
+        ]
+      },
+      "old_schur": {
+        "omega_b_geom": 105.68056557973816,
+        "omega_b_eff": 124.35509021880792,
+        "omega_b_naive_f_b_times_Omega_m": 513.514624928009,
+        "omega_b_best_fit_from_frbs": 103.46827477158185
+      }
+    },
+    "ksz": {
+      "current": {
+        "z_eval": 0.33,
+        "planck_reference": {
+          "sigma8": 0.8116585019703378,
+          "f_z": 0.6981877588059291,
+          "f_sigma8sq": 0.4599587811612228,
+          "baryon_fraction": 0.1563275916312396
+        },
+        "rows": [
+          {
+            "label": "omega_b_geom",
+            "sigma8": 0.9097507961276095,
+            "f_z": 0.7373198693781248,
+            "S8": 0.9807939899863131,
+            "f_sigma8sq": 0.6102402174222,
+            "pairwise_amplitude_ratio_vs_planck_flat": 1.1220019549838558,
+            "f_sigma8sq_pull_vs_measured": 3.0294765450289476
+          },
+          {
+            "label": "omega_b_eff",
+            "sigma8": 0.826126289758365,
+            "f_z": 0.7373198693781248,
+            "S8": 0.8906391765894557,
+            "f_sigma8sq": 0.5032094905057497,
+            "pairwise_amplitude_ratio_vs_planck_flat": 1.277458071734308,
+            "f_sigma8sq_pull_vs_measured": 1.6211775066546013
+          },
+          {
+            "label": "omega_b_clustering",
+            "sigma8": 0.9532815843192395,
+            "f_z": 0.7373198693781248,
+            "S8": 1.027724133515123,
+            "f_sigma8sq": 0.6700363190718238,
+            "pairwise_amplitude_ratio_vs_planck_flat": 0.9995719403867068,
+            "f_sigma8sq_pull_vs_measured": 3.816267356208208
+          },
+          {
+            "label": "omega_b_naive_bdp",
+            "sigma8": 0.6330849524737022,
+            "f_z": 0.7373198693781248,
+            "S8": 0.6825230812437579,
+            "f_sigma8sq": 0.29551526509029785,
+            "pairwise_amplitude_ratio_vs_planck_flat": 1.2885358005075314,
+            "f_sigma8sq_pull_vs_measured": -1.1116412488118705
+          }
+        ]
+      },
+      "old_schur": {
+        "flat_reference": 1.0,
+        "schur_acoustic_slot": 1.236433349527264,
+        "schur_alpha1_geometric_slot": 1.0877036946891927,
+        "schur_clustering_slot": 0.9681133908736269,
+        "schur_naive_bdp_fraction": 2.830524213571769
+      }
+    },
+    "cluster_gas": {
+      "current": {
+        "Upsilon": 0.8,
+        "rows": [
+          {
+            "label": "omega_b_geom",
+            "Omega_b_over_Omega_m": 0.13186079099324804,
+            "f_gas_Upsilon_0p80": 0.10548863279459844
+          },
+          {
+            "label": "omega_b_eff",
+            "Omega_b_over_Omega_m": 0.18206259164276042,
+            "f_gas_Upsilon_0p80": 0.14565007331420834
+          },
+          {
+            "label": "omega_b_clustering",
+            "Omega_b_over_Omega_m": 0.10698887015969936,
+            "f_gas_Upsilon_0p80": 0.0855910961277595
+          },
+          {
+            "label": "omega_b_naive_bdp",
+            "Omega_b_over_Omega_m": 0.31270833621502514,
+            "f_gas_Upsilon_0p80": 0.2501666689720201
+          }
+        ]
+      },
+      "old_schur": {
+        "omega_b_geom": 0.1057659687401845,
+        "omega_b_eff": 0.1460052035265355,
+        "omega_b_clustering": 0.08554600412809038,
+        "omega_b_raw_bdp_times_Omega_m": 0.25016
+      }
+    },
+    "lya": {
+      "current": {
+        "rows": [
+          {
+            "z": 2.0,
+            "benchmark": {
+              "Gamma_HI_1e12_s": 1.3,
+              "err_plus": 0.8,
+              "err_minus": 0.5
+            },
+            "slot_rows": [
+              {
+                "label": "omega_b_geom",
+                "Gamma_HI_required_1e12_s": 1.108928779525052,
+                "pull_vs_benchmark_sigma": -0.2939557238076124
+              },
+              {
+                "label": "omega_b_eff",
+                "Gamma_HI_required_1e12_s": 2.1140426393094316,
+                "pull_vs_benchmark_sigma": 1.2523732912452792
+              },
+              {
+                "label": "omega_b_clustering",
+                "Gamma_HI_required_1e12_s": 0.7300447865815527,
+                "pull_vs_benchmark_sigma": -0.876854174489919
+              },
+              {
+                "label": "omega_b_naive_bdp",
+                "Gamma_HI_required_1e12_s": 6.236647802690054,
+                "pull_vs_benchmark_sigma": 7.594842773369313
+              }
+            ]
+          },
+          {
+            "z": 3.0,
+            "benchmark": {
+              "Gamma_HI_1e12_s": 0.9,
+              "err_plus": 0.3,
+              "err_minus": 0.3
+            },
+            "slot_rows": [
+              {
+                "label": "omega_b_geom",
+                "Gamma_HI_required_1e12_s": 0.7628985829804612,
+                "pull_vs_benchmark_sigma": -0.45700472339846276
+              },
+              {
+                "label": "omega_b_eff",
+                "Gamma_HI_required_1e12_s": 1.4543766594101684,
+                "pull_vs_benchmark_sigma": 1.8479221980338945
+              },
+              {
+                "label": "omega_b_clustering",
+                "Gamma_HI_required_1e12_s": 0.5022415717570957,
+                "pull_vs_benchmark_sigma": -1.3258614274763478
+              },
+              {
+                "label": "omega_b_naive_bdp",
+                "Gamma_HI_required_1e12_s": 4.290563883875612,
+                "pull_vs_benchmark_sigma": 11.30187961291871
+              }
+            ]
+          },
+          {
+            "z": 4.0,
+            "benchmark": {
+              "Gamma_HI_1e12_s": 1.0,
+              "err_plus": 0.5,
+              "err_minus": 0.3
+            },
+            "slot_rows": [
+              {
+                "label": "omega_b_geom",
+                "Gamma_HI_required_1e12_s": 0.8445322110676193,
+                "pull_vs_benchmark_sigma": -0.38866947233095167
+              },
+              {
+                "label": "omega_b_eff",
+                "Gamma_HI_required_1e12_s": 1.6100015956226583,
+                "pull_vs_benchmark_sigma": 1.5250039890566458
+              },
+              {
+                "label": "omega_b_clustering",
+                "Gamma_HI_required_1e12_s": 0.5559837107430564,
+                "pull_vs_benchmark_sigma": -1.1100407231423588
+              },
+              {
+                "label": "omega_b_naive_bdp",
+                "Gamma_HI_required_1e12_s": 4.749673789430995,
+                "pull_vs_benchmark_sigma": 9.374184473577486
+              }
+            ]
+          }
+        ]
+      },
+      "old_schur": {
+        "2.0": {
+          "omega_b_geom": 1.075745761256748,
+          "omega_b_eff": 2.0500025836558,
+          "omega_b_clustering": 0.7037480380193905,
+          "omega_b_raw_bdp_times_Omega_m": 6.018017923008054
+        },
+        "3.0": {
+          "omega_b_geom": 0.7430357722650093,
+          "omega_b_eff": 1.415971419782712,
+          "omega_b_clustering": 0.48609065984032274,
+          "omega_b_raw_bdp_times_Omega_m": 4.156746655178984
+        },
+        "4.0": {
+          "omega_b_geom": 0.824741158600237,
+          "omega_b_eff": 1.5716738720890386,
+          "omega_b_clustering": 0.539541956047949,
+          "omega_b_raw_bdp_times_Omega_m": 4.613829078443436
+        }
+      }
+    },
+    "angular_diameter_minimum": {
+      "io": {
+        "z_max": 1.5323982326071726,
+        "D_A_max_Mpc": 1758.6523404042139
+      },
+      "planck": {
+        "z_max": 1.587637170070969,
+        "D_A_max_Mpc": 1794.0473789289406
+      },
+      "old_schur_zmax": 1.5631078155390776
+    },
+    "sandage_loeb": {
+      "rows": [
+        {
+          "z": 2.0,
+          "io_cm_per_s_per_decade": -0.7981489088332756,
+          "planck_cm_per_s_per_decade": -0.2253412691382082,
+          "delta_io_minus_planck_cm_per_s_per_decade": -0.5728076396950674,
+          "delta_io_minus_planck_cm_per_s_over_20yr": -1.1456152793901349
+        },
+        {
+          "z": 3.0,
+          "io_cm_per_s_per_decade": -3.7431801264387694,
+          "planck_cm_per_s_per_decade": -2.9354436989125863,
+          "delta_io_minus_planck_cm_per_s_per_decade": -0.8077364275261831,
+          "delta_io_minus_planck_cm_per_s_over_20yr": -1.6154728550523663
+        },
+        {
+          "z": 4.0,
+          "io_cm_per_s_per_decade": -6.515168197071315,
+          "planck_cm_per_s_per_decade": -5.512682222791467,
+          "delta_io_minus_planck_cm_per_s_per_decade": -1.002485974279848,
+          "delta_io_minus_planck_cm_per_s_over_20yr": -2.004971948559696
+        },
+        {
+          "z": 5.0,
+          "io_cm_per_s_per_decade": -9.082932859171352,
+          "planck_cm_per_s_per_decade": -7.912013242527877,
+          "delta_io_minus_planck_cm_per_s_per_decade": -1.1709196166434754,
+          "delta_io_minus_planck_cm_per_s_over_20yr": -2.341839233286951
+        }
+      ],
+      "old_schur": {
+        "2.0": -0.7896033730720805,
+        "3.0": -3.685976831791935,
+        "4.0": -6.420011570069076,
+        "5.0": -8.957304236108783
+      }
+    },
+    "s8_weyl": {
+      "current": {
+        "Sigma_IO": 0.8113774333810703,
+        "sigma8_clustering": 0.9532815843192395,
+        "S8_clustering": 1.027724133515123,
+        "S8_weyl_response": 0.8338721696752849
+      },
+      "old_schur": {
+        "omega_b_eff": {
+          "sigma8": 0.7995829161303566,
+          "S8": 0.8459173842262292
+        },
+        "omega_b_geom": {
+          "sigma8": 0.8811242311649924,
+          "S8": 0.9321838795814409
+        },
+        "omega_b_clustering": {
+          "sigma8": 0.9242541077652295,
+          "S8": 0.9778130590694686
+        },
+        "flat_lcdm": {
+          "sigma8": 0.8114846037683793,
+          "S8": 0.8315242782148816
+        }
+      }
+    },
+    "paper29_scorecard": {
+      "io_cc_chi2": 14.701523963980787,
+      "io_bao_chi2": 27.735229301342457,
+      "io_combined_chi2": 42.43675326532325,
+      "planck_cc_chi2": 15.153309096595398,
+      "planck_bao_chi2": 31.25101137291248,
+      "planck_combined_chi2": 46.40432046950788,
+      "observer_frw_age_gyr": 13.543919214135181
+    }
+  },
+  "scorecard_table": [
+    {
+      "test": "1. Pantheon+ Type Ia SNe",
+      "io_result": {
+        "chi2": 1757.4798174084137,
+        "chi2_per_dof": 1.033811657299067
+      },
+      "planck_result": {
+        "chi2": 1759.6947847107324,
+        "chi2_per_dof": 1.0351145792416072
+      },
+      "old_schur": {
+        "io_chi2": 1755.5471456044813,
+        "planck_chi2": 1759.7366159199048,
+        "delta_chi2": -4.189470315423478
+      },
+      "category_now": "IO wins",
+      "category_old": "IO wins"
+    },
+    {
+      "test": "2. TDCOSMO strong lensing",
+      "io_result": {
+        "chi2": 31.597640376134585,
+        "chi2_per_dof": 3.949705047016823
+      },
+      "planck_result": {
+        "chi2": 34.46226106589568,
+        "chi2_per_dof": 4.30778263323696
+      },
+      "old_schur": {
+        "schur_chi2": 23.848126839027767,
+        "schur_dof": 8,
+        "schur_chi2_per_dof": 2.981015854878471,
+        "lcdm_chi2": 34.57795247152845,
+        "lcdm_dof": 8,
+        "lcdm_chi2_per_dof": 4.322244058941056
+      },
+      "category_now": "IO wins",
+      "category_old": "IO wins"
+    },
+    {
+      "test": "3. GW standard sirens",
+      "io_result": [
+        {
+          "label": "GW170817",
+          "measurement": 70.0,
+          "sigma_sym": 10.0,
+          "io_pull_sigma": -0.24241434641737242,
+          "planck_pull_sigma": -0.25999999999999945,
+          "old_schur_pull_sigma": -0.10900000000000035
+        },
+        {
+          "label": "GW170817 afterglow",
+          "measurement": 69.0,
+          "sigma_sym": 4.4,
+          "io_pull_sigma": -0.32366896913039184,
+          "planck_pull_sigma": -0.3636363636363623,
+          "old_schur_pull_sigma": -0.020454545454546228
+        },
+        {
+          "label": "GWTC-3",
+          "measurement": 68.0,
+          "sigma_sym": 10.0,
+          "io_pull_sigma": -0.04241434641737243,
+          "planck_pull_sigma": -0.05999999999999943,
+          "old_schur_pull_sigma": 0.09099999999999966
+        },
+        {
+          "label": "O4a dark+bright",
+          "measurement": 69.9,
+          "sigma_sym": 4.1,
+          "io_pull_sigma": -0.5668642595545683,
+          "planck_pull_sigma": -0.6097560975609757,
+          "old_schur_pull_sigma": -0.24146341463414858
+        }
+      ],
+      "planck_result": null,
+      "old_schur": "old Schur H0 = 68.91 remained inside all quoted bars",
+      "category_now": "all inside quoted bars",
+      "category_old": "all inside quoted bars"
+    },
+    {
+      "test": "4. Alcock-Paczynski",
+      "io_result": {
+        "chi2": 7.88341490487783,
+        "pte": 0.24676969705560073
+      },
+      "planck_result": {
+        "chi2": 6.702669976136264,
+        "pte": 0.3492212777775587
+      },
+      "old_schur": {
+        "io_chi2": 9.287887436596476,
+        "io_pte": 0.15802305627493307,
+        "planck_chi2": 6.710364255388468,
+        "planck_pte": 0.3484648972423223
+      },
+      "category_now": "Planck wins",
+      "category_old": "Planck wins"
+    },
+    {
+      "test": "5. Three-baryon structure",
+      "io_result": {
+        "omega_b_geom": 0.020995719061702847,
+        "omega_b_eff": 0.02898917105671435,
+        "omega_b_clustering": 0.01703545264427447,
+        "omega_b_naive_bdp": 0.04979142265087259
+      },
+      "planck_result": null,
+      "old_schur": {
+        "omega_b_geom": 0.02108,
+        "omega_b_eff": 0.0291,
+        "omega_b_clustering": 0.01705
+      },
+      "category_now": "recomputed",
+      "category_old": "legacy"
+    },
+    {
+      "test": "6. FRB dispersion measures",
+      "io_result": {
+        "omega_b_geom": 105.0257378768546,
+        "omega_b_eff": 128.5206473310989,
+        "omega_b_clustering": 121.63770311519765,
+        "omega_b_naive_bdp": 547.1539397710975
+      },
+      "planck_result": null,
+      "old_schur": {
+        "omega_b_geom": 105.68056557973816,
+        "omega_b_eff": 124.35509021880792,
+        "omega_b_naive_f_b_times_Omega_m": 513.514624928009,
+        "omega_b_best_fit_from_frbs": 103.46827477158185
+      },
+      "category_now": "omega_b_geom",
+      "category_old": "omega_b_best_fit_from_frbs (fitted), closest carried slot omega_b_geom"
+    },
+    {
+      "test": "7. kSZ pairwise momentum",
+      "io_result": {
+        "omega_b_geom": 1.1220019549838558,
+        "omega_b_eff": 1.277458071734308,
+        "omega_b_clustering": 0.9995719403867068,
+        "omega_b_naive_bdp": 1.2885358005075314
+      },
+      "planck_result": {
+        "reference_ratio": 1.0
+      },
+      "old_schur": {
+        "flat_reference": 1.0,
+        "schur_acoustic_slot": 1.236433349527264,
+        "schur_alpha1_geometric_slot": 1.0877036946891927,
+        "schur_clustering_slot": 0.9681133908736269,
+        "schur_naive_bdp_fraction": 2.830524213571769
+      },
+      "category_now": "omega_b_clustering",
+      "category_old": "omega_b_clustering nearest; raw BDP excluded"
+    },
+    {
+      "test": "8. Cluster X-ray gas fractions",
+      "io_result": {
+        "omega_b_geom": 0.10548863279459844,
+        "omega_b_eff": 0.14565007331420834,
+        "omega_b_clustering": 0.0855910961277595,
+        "omega_b_naive_bdp": 0.2501666689720201
+      },
+      "planck_result": null,
+      "old_schur": {
+        "omega_b_geom": 0.1057659687401845,
+        "omega_b_eff": 0.1460052035265355,
+        "omega_b_clustering": 0.08554600412809038,
+        "omega_b_raw_bdp_times_Omega_m": 0.25016
+      },
+      "category_now": "omega_b_eff",
+      "category_old": "omega_b_eff"
+    },
+    {
+      "test": "9. Lyman-alpha forest UVB",
+      "io_result": {
+        "2.0": {
+          "omega_b_geom": 1.108928779525052,
+          "omega_b_eff": 2.1140426393094316,
+          "omega_b_clustering": 0.7300447865815527,
+          "omega_b_naive_bdp": 6.236647802690054
+        },
+        "3.0": {
+          "omega_b_geom": 0.7628985829804612,
+          "omega_b_eff": 1.4543766594101684,
+          "omega_b_clustering": 0.5022415717570957,
+          "omega_b_naive_bdp": 4.290563883875612
+        },
+        "4.0": {
+          "omega_b_geom": 0.8445322110676193,
+          "omega_b_eff": 1.6100015956226583,
+          "omega_b_clustering": 0.5559837107430564,
+          "omega_b_naive_bdp": 4.749673789430995
+        }
+      },
+      "planck_result": null,
+      "old_schur": {
+        "2.0": {
+          "omega_b_geom": 1.075745761256748,
+          "omega_b_eff": 2.0500025836558,
+          "omega_b_clustering": 0.7037480380193905,
+          "omega_b_raw_bdp_times_Omega_m": 6.018017923008054
+        },
+        "3.0": {
+          "omega_b_geom": 0.7430357722650093,
+          "omega_b_eff": 1.415971419782712,
+          "omega_b_clustering": 0.48609065984032274,
+          "omega_b_raw_bdp_times_Omega_m": 4.156746655178984
+        },
+        "4.0": {
+          "omega_b_geom": 0.824741158600237,
+          "omega_b_eff": 1.5716738720890386,
+          "omega_b_clustering": 0.539541956047949,
+          "omega_b_raw_bdp_times_Omega_m": 4.613829078443436
+        }
+      },
+      "category_now": "recomputed",
+      "category_old": "legacy"
+    },
+    {
+      "test": "10. Angular diameter distance minimum",
+      "io_result": {
+        "z_max": 1.5323982326071726,
+        "D_A_max_Mpc": 1758.6523404042139
+      },
+      "planck_result": {
+        "z_max": 1.587637170070969,
+        "D_A_max_Mpc": 1794.0473789289406
+      },
+      "old_schur": {
+        "z_max": 1.5631078155390776
+      },
+      "category_now": "recomputed",
+      "category_old": "legacy"
+    },
+    {
+      "test": "11. Sandage-Loeb drift",
+      "io_result": [
+        {
+          "z": 2.0,
+          "io_cm_per_s_per_decade": -0.7981489088332756,
+          "planck_cm_per_s_per_decade": -0.2253412691382082,
+          "delta_io_minus_planck_cm_per_s_per_decade": -0.5728076396950674,
+          "delta_io_minus_planck_cm_per_s_over_20yr": -1.1456152793901349
+        },
+        {
+          "z": 3.0,
+          "io_cm_per_s_per_decade": -3.7431801264387694,
+          "planck_cm_per_s_per_decade": -2.9354436989125863,
+          "delta_io_minus_planck_cm_per_s_per_decade": -0.8077364275261831,
+          "delta_io_minus_planck_cm_per_s_over_20yr": -1.6154728550523663
+        },
+        {
+          "z": 4.0,
+          "io_cm_per_s_per_decade": -6.515168197071315,
+          "planck_cm_per_s_per_decade": -5.512682222791467,
+          "delta_io_minus_planck_cm_per_s_per_decade": -1.002485974279848,
+          "delta_io_minus_planck_cm_per_s_over_20yr": -2.004971948559696
+        },
+        {
+          "z": 5.0,
+          "io_cm_per_s_per_decade": -9.082932859171352,
+          "planck_cm_per_s_per_decade": -7.912013242527877,
+          "delta_io_minus_planck_cm_per_s_per_decade": -1.1709196166434754,
+          "delta_io_minus_planck_cm_per_s_over_20yr": -2.341839233286951
+        }
+      ],
+      "planck_result": null,
+      "old_schur": {
+        "2.0": -0.7896033730720805,
+        "3.0": -3.685976831791935,
+        "4.0": -6.420011570069076,
+        "5.0": -8.957304236108783
+      },
+      "category_now": "recomputed",
+      "category_old": "legacy"
+    },
+    {
+      "test": "12. S8 and Weyl response",
+      "io_result": {
+        "Sigma_IO": 0.8113774333810703,
+        "sigma8_clustering": 0.9532815843192395,
+        "S8_clustering": 1.027724133515123,
+        "S8_weyl_response": 0.8338721696752849
+      },
+      "planck_result": {
+        "S8_planck_flat_reference": 0.8317024708462575
+      },
+      "old_schur": {
+        "Sigma_IO": 0.8113774333810703,
+        "schur_clustering_sigma8": 0.9242541077652295,
+        "schur_clustering_S8": 0.9778130590694686,
+        "schur_weyl_S8": 0.7933754501942782
+      },
+      "category_now": "recomputed",
+      "category_old": "legacy"
+    }
+  ]
+}

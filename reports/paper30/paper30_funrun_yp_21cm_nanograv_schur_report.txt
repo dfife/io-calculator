@@ -1,0 +1,56 @@
+Paper 30 Fun Runs #18, #19, #20
+
+Status
+Run 18 helium-4 point-by-point comparison: verified.
+Run 19 21-cm cosmic-dawn estimate: derived_no_go_plus_verified_reduced_model.
+Run 20 NANOGrav geometry/time proxy: reconstruction.
+
+Run 18: Primordial Helium-4 Individual Measurements
+Source compilation: Aver et al. 2026, The LBT Y_p Project IV: A New Value of the Primordial Helium Abundance (https://arxiv.org/abs/2601.22238).
+IO prediction fixed throughout: Y_p = 0.2477.
+Full 47-point chi2 = 166.399 for 47 points.
+Unflagged 41-point chi2 = 117.383 for 41 points; weighted mean = 0.247110 +/- 0.000580; IO pull = +1.02 sigma.
+Source low-metallicity 15-point subset: chi2 = 21.804; weighted mean = 0.245673 +/- 0.001153; IO pull = +1.76 sigma.
+Strongest positive pulls:
+  HS 1028+3843: Y = 0.2620 +/- 0.0026, pull = +5.50 sigma.
+  KUG 1138+327: Y = 0.2634 +/- 0.0040, pull = +3.93 sigma.
+  HS 1222+3741: Y = 0.2718 +/- 0.0084, pull = +2.87 sigma.
+  J0807+3414: Y = 0.2597 +/- 0.0053, pull = +2.26 sigma.
+  WJ2310-0211: Y = 0.2575 +/- 0.0044, pull = +2.23 sigma.
+Strongest negative pulls:
+  HS 0134+3415: Y = 0.2381 +/- 0.0025, pull = -3.84 sigma.
+  J1331+4151: Y = 0.2381 +/- 0.0032, pull = -3.00 sigma.
+  J0118+3512: Y = 0.2325 +/- 0.0053, pull = -2.87 sigma.
+  SBS 1159+545: Y = 0.2397 +/- 0.0031, pull = -2.58 sigma.
+  UM 461: Y = 0.2395 +/- 0.0032, pull = -2.56 sigma.
+
+Run 19: 21-cm Absorption at z ~ 17
+EDGES reference: Bowman et al. 2018, Nature 555, 67-70 (https://doi.org/10.1038/nature25792).
+Derived no-go:
+  adiabatic gas cooling on the local OS clock obeys d ln T_g / d tau = -2 d ln a / d tau,
+  so T_g is proportional to a^(-2). Extra OS proper time does not by itself make T_g lower at fixed z.
+Age ratio at z = 17: tau_OS / t_LCDM = 1.476292 (0.333101 / 0.225634 Gyr).
+Reduced-model LCDM floor estimate: z_dec = 142.050, T_g = 6.173 K, T21 = -251.368 mK.
+Schur + omega_b,geom: z_dec = 145.176, T_g = 6.041 K, T21 = -230.009 mK.
+Schur + omega_b,eff:  T21 = -317.517 mK.
+Schur + omega_b,clustering: T21 = -186.036 mK.
+If one anchors the flat baseline to a canonical -200 mK instead of the adiabatic-floor reduced model, Schur + omega_b,geom maps to -183.0 mK and Schur + omega_b,eff maps to -252.6 mK.
+Interpretation: the OS proper-time surplus is real, but it is not the control variable for adiabatic cooling at fixed redshift. Geometry alone does not reproduce an EDGES-depth trough.
+
+Run 20: NANOGrav SMBHB Background Geometry/Time Proxy
+NANOGrav 15-year reference: https://arxiv.org/abs/2306.16213.
+Fiducial SMBHB strain amplitude from the 15-year evidence paper: A = 2.40e-15 (+7.00e-16 / -6.00e-16) at f = 1/yr.
+  z = 0.5: volume ratio = 0.913, age ratio = 1.875, kernel ratio = 1.712.
+  z = 1.0: volume ratio = 0.898, age ratio = 1.706, kernel ratio = 1.532.
+  z = 2.0: volume ratio = 0.882, age ratio = 1.590, kernel ratio = 1.403.
+  z = 3.0: volume ratio = 0.875, age ratio = 1.548, kernel ratio = 1.355.
+Integrated proxy ratios:
+  0_to_1: volume = 0.907, count proxy = 1.656, PTA-weighted amplitude proxy = 1.296, anchored A = 3.110e-15.
+  0_to_2: volume = 0.893, count proxy = 1.533, PTA-weighted amplitude proxy = 1.255, anchored A = 3.011e-15.
+  0_to_3: volume = 0.887, count proxy = 1.486, PTA-weighted amplitude proxy = 1.241, anchored A = 2.978e-15.
+  0_to_5: volume = 0.880, count proxy = 1.448, PTA-weighted amplitude proxy = 1.232, anchored A = 2.956e-15.
+
+Interpretation
+Run 18 is numerically favorable but not perfect: the fixed IO Y_p sits within about +1.0 sigma of the 41-point unflagged weighted mean and about +1.8 sigma of the source 15-point low-metallicity weighted mean.
+Run 19 sharpens a genuine no-go: do not claim that the OS clock alone explains EDGES through extra adiabatic cooling time. That route fails mathematically unless new cooling or radio-background physics is added.
+Run 20 is only a reduced geometry/time reconstruction, but on that proxy the longer IO local age beats the modest closed-geometry volume suppression, so the merger-driven PTA amplitude moves upward by roughly 20 to 30 percent relative to the fixed flat comparator.

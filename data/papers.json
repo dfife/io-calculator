@@ -1,0 +1,282 @@
+[
+  {
+    "paper": 1,
+    "era": "Foundation",
+    "short_title": "A Black Hole Cosmology",
+    "summary": "Introduces the Interior Observer framework: the observable universe lives inside a Schwarzschild black hole and the CMB is interior Hawking radiation. The paper derives zero-free-parameter predictions for the CMB temperature, dark-energy density, MOND acceleration scale, and Hubble rate, and compares the resulting expansion history with DESI DR1 BAO data.",
+    "zenodo": "https://zenodo.org/records/18854813/latest",
+    "bridges": ["CMB Temperature"]
+  },
+  {
+    "paper": 2,
+    "era": "Foundation",
+    "short_title": "Derivation of γ",
+    "summary": "Shows that semiclassical QFT on stationary Schwarzschild spacetime cannot generate the boost factor γ, then derives γ from the Carlip-Virasoro horizon algebra in the dimensionally reduced interior-observer setting. It also builds a holographic thermalization bridge from 1+1D horizon states to the observed 3+1D photon bath and characterizes the framework's space-time decoupling hierarchy.",
+    "zenodo": "https://zenodo.org/records/18868612/latest",
+    "bridges": ["CMB Temperature", "Spatial Decoupling Δ"]
+  },
+  {
+    "paper": 3,
+    "era": "Foundation",
+    "short_title": "The Two-Phase Interior",
+    "summary": "Derives the two-phase Vaidya-to-Oppenheimer-Snyder interior structure from Israel junction conditions with zero free parameters, including the observer coordinate and the total interior lifecycle. The paper also identifies the cosmological invariant T_CMB × R_U and proves the IO transfer function is analytic across the interior history.",
+    "zenodo": "https://zenodo.org/records/18876346/latest",
+    "bridges": ["Spatial Decoupling Δ"]
+  },
+  {
+    "paper": 4,
+    "era": "Foundation",
+    "short_title": "Four Horizon Connections",
+    "summary": "Collects the framework's first broad evidence packet by tying four horizon-interior observables to zero-fit predictions: the CMB temperature, dark-energy density, MOND acceleration scale, and boost factor γ. It also confronts the model with galaxy-formation timing and early JWST tensions, emphasizing the extra formation time available on the IO expansion history.",
+    "zenodo": "https://zenodo.org/records/18883069/latest",
+    "bridges": ["CMB Temperature", "Dark Energy Density"]
+  },
+  {
+    "paper": 5,
+    "era": "Foundation",
+    "short_title": "Kerr Limit and Radiation Phase",
+    "summary": "Explores three early structural questions: how black-hole spin affects the temperature prediction, whether the Vaidya radiation phase is compatible with an isotropic CMB bath, and what early-time interior physics is required. The analysis favors the Schwarzschild limit, rules out the naive Vaidya null-dust phase for CMB acoustics, and sharpens the framework's early-radiation picture.",
+    "zenodo": "https://zenodo.org/records/18889865/latest",
+    "bridges": ["Acoustic Scale (θ_s)"]
+  },
+  {
+    "paper": 6,
+    "era": "Foundation",
+    "short_title": "Full CMB Power Spectrum",
+    "summary": "Computes the full CMB TT spectrum with the CLASS Boltzmann code using the IO background geometry together with borrowed ΛCDM primordial inputs. The result is a clean geometric rescaling of the ΛCDM spectrum, with the acoustic peak structure preserved but shifted uniformly to larger angular scales, making the perturbation-sector gap explicit.",
+    "zenodo": "https://zenodo.org/records/18891475/latest",
+    "bridges": ["Acoustic Scale (θ_s)"]
+  },
+  {
+    "paper": 7,
+    "era": "Foundation",
+    "short_title": "BBN and the c^3 Hypothesis",
+    "summary": "Applies the early IO cosmology to Big Bang nucleosynthesis and finds a mixed result: helium is viable, lithium is improved relative to ΛCDM, but deuterium is overproduced because of the low baryon-to-photon ratio. The paper also frames the resulting combined tension and introduces the c³ hypothesis as part of the early-stage response.",
+    "zenodo": "https://zenodo.org/records/18894611/latest",
+    "bridges": ["Deuterium Abundance (D/H)", "Helium-4 Abundance (Y_p)", "Lithium-7 Abundance"]
+  },
+  {
+    "paper": 8,
+    "era": "The Rosetta Stone",
+    "short_title": "Rosetta Stone Identity",
+    "summary": "Introduces the Rosetta Stone identity Δ = x⁴(1+γ²), which unifies the temporal decoupling, dark-energy normalization gap, and age tension into a single geometric relationship. The identity is numerically verified at high precision and becomes a central organizing formula for later papers.",
+    "zenodo": "https://zenodo.org/records/18895980/latest",
+    "bridges": ["Dark Energy Density", "Spatial Decoupling Δ"]
+  },
+  {
+    "paper": 9,
+    "era": "The Rosetta Stone",
+    "short_title": "Gauge Projection",
+    "summary": "Closes the missing factor in the dark-energy derivation by identifying √(1+γ²) with the spectral-norm ratio of the Ashtekar-Barbero connection to the spin connection on the Schwarzschild horizon. The paper shows that the relevant connection pieces occupy orthogonal subspaces and that their spectral norms match exactly on the horizon slice used by the framework.",
+    "zenodo": "https://zenodo.org/records/18896316/latest",
+    "bridges": ["Dark Energy Density", "Spatial Decoupling Δ"]
+  },
+  {
+    "paper": 10,
+    "era": "The Rosetta Stone",
+    "short_title": "Complete Holographic Friedmann Equation",
+    "summary": "Derives the complete IO Friedmann equation, combining the matter and bare-Λ sector with the energy projection √Δ and the curvature projection Δ^(-1/x²). The paper presents the framework's first full holographic background equation with zero free parameters and makes the modular-energy role of the projection factors explicit.",
+    "zenodo": "https://zenodo.org/records/18905811/latest",
+    "bridges": ["Hubble Constant (H₀)", "Dark Energy Density"]
+  },
+  {
+    "paper": 11,
+    "era": "The Rosetta Stone",
+    "short_title": "Stress-Testing the Framework",
+    "summary": "Subjects the framework to an extended adversarial stress test against CMB perturbations, BAO absolute distances, and BBN. It derives the Schur-complement curvature formula, identifies a species-dependent baryon correction, and introduces a modular-projection idea that substantially improves the framework's observational viability relative to its earlier form.",
+    "zenodo": "https://zenodo.org/records/18917172/latest",
+    "bridges": ["Baryon Fraction", "Hubble Constant (H₀)"]
+  },
+  {
+    "paper": 12,
+    "era": "The Rosetta Stone",
+    "short_title": "Baryon Dictionary Principle",
+    "summary": "Responds to an internal kill-shot audit by replacing the ad hoc baryon fraction with the Baryon Dictionary Principle, which identifies baryons as the gauge-coupled subset of Oppenheimer-Snyder dust and fixes f_b = 2γ/x. The paper also introduces the discrete α-ladder and argues that α = 1 is the unique projection scaling consistent with the observed deuterium abundance.",
+    "zenodo": "https://zenodo.org/records/18936508/latest",
+    "bridges": ["Baryon Fraction", "Generating Potential V(α)"]
+  },
+  {
+    "paper": 13,
+    "era": "The Rosetta Stone",
+    "short_title": "Gauge Thermal Transfer Principle",
+    "summary": "Resolves the framework's large CMB temperature discrepancy by introducing the Gauge Thermal Transfer Principle. This principle assigns a boundary-to-bulk transfer law to conformal thermal observables in radial logarithmic coordinate and is used to lift the IO temperature prediction into agreement with the observed CMB without adding new fit parameters.",
+    "zenodo": "https://zenodo.org/records/18945480/latest",
+    "bridges": ["CMB Temperature", "GTTP Optical Transfer"]
+  },
+  {
+    "paper": 14,
+    "era": "The Rosetta Stone",
+    "short_title": "Kill Shot Audit",
+    "summary": "Audits three major structural vulnerabilities: frame dependence of the spectral norm, the N_eff closure, and the H₀ projection chain. The paper sharpens the horizon-intrinsic interpretation of K_gauge, refines the transfer identification, and maps which parts of the framework survive rigorous adversarial checking.",
+    "zenodo": "https://zenodo.org/records/18963285/latest",
+    "bridges": ["GTTP Optical Transfer", "Hubble Constant (H₀)"]
+  },
+  {
+    "paper": 15,
+    "era": "The Rosetta Stone",
+    "short_title": "Rosetta Boundary Observable Theorem",
+    "summary": "Derives the Rosetta identity structurally within the framework through three theorems: the Quaternionic Norm Theorem, the Half-Density Carrier Theorem, and a conformal-transgression step that supplies the x² factor. It also proves a boundary no-go theorem showing that the compactness ratio x cannot be reconstructed from local horizon data alone.",
+    "zenodo": "https://zenodo.org/records/19026431/latest",
+    "bridges": ["Rosetta Identity", "Spatial Decoupling Δ"]
+  },
+  {
+    "paper": 16,
+    "era": "Operator Closure",
+    "short_title": "Gauge Projection Degree",
+    "summary": "Resolves the final degree question in the dark-energy derivation: why the gauge projection appears as √(1+γ²) rather than 1+γ². The paper develops a set of transfer-homogeneity and locality theorems, adds a composite-uniqueness argument, and narrows the allowed projection degree on the physical channel.",
+    "zenodo": "https://zenodo.org/records/19040607/latest",
+    "bridges": ["Dark Energy Density", "Rosetta Identity"]
+  },
+  {
+    "paper": 17,
+    "era": "Operator Closure",
+    "short_title": "Modular Projection Theorem",
+    "summary": "Upgrades the Gauge Thermal Transfer Principle to theorem status inside a shared thermal-plus-gauge Hilbert space. The paper constructs the A-vacuum GNS state, proves its modular properties, and derives the Modular Projection Theorem as an operator-level closure of the earlier transfer principle.",
+    "zenodo": "https://zenodo.org/records/19045892/latest",
+    "bridges": ["GTTP Optical Transfer", "CMB Temperature"]
+  },
+  {
+    "paper": 18,
+    "era": "Operator Closure",
+    "short_title": "Modular Completion",
+    "summary": "Completes the operator-level closure program by upgrading both the Conformal Modular Principle and the Baryon Dictionary Principle to theorem-level status within the reduced observer algebra. It realizes the geometric modular term as a relative modular operator and derives the baryon fraction and associated projection structure on the same operator-theoretic footing.",
+    "zenodo": "https://zenodo.org/records/19054258/latest",
+    "bridges": ["Generating Potential V(α)", "Baryon Fraction", "Hubble Constant (H₀)"]
+  },
+  {
+    "paper": 19,
+    "era": "Operator Closure",
+    "short_title": "Baryon Scalarization",
+    "summary": "Diagnoses the framework's P(k) catastrophe, derives the Baryon Scalarization Theorem, and builds the conditional homogeneous-background IO Friedmann equation in boundary-Hamiltonian form. It also proves a no-go against a universal projector and clarifies how observable-class Jacobians reshape baryon quantities across different sectors.",
+    "zenodo": "https://zenodo.org/records/19101803/latest",
+    "bridges": ["Baryon Fraction", "Hubble Constant (H₀)"]
+  },
+  {
+    "paper": 20,
+    "era": "Operator Closure",
+    "short_title": "Acoustic Projection Theorem",
+    "summary": "Addresses three foundation issues at once: the acoustic projection law, the radiation scope boundary, and the assembly gap in the background equation. It proves the Acoustic History Reduction and Acoustic Phase-Calibration theorems, predicts the CMB acoustic scale with no fitted parameters, and undertakes a deep audit of the BBN radiation sector.",
+    "zenodo": "https://zenodo.org/records/19145122/latest",
+    "bridges": ["Acoustic Scale (θ_s)", "Deuterium Abundance (D/H)"]
+  },
+  {
+    "paper": 21,
+    "era": "Operator Closure",
+    "short_title": "AC1 Derivation",
+    "summary": "Derives AC1 from the existing Paper 15–20 stack and upgrades the key acoustic theorem from Paper 20 to derived status within the reduced scalar acoustic sector. It also isolates the SU(2) Geometric Weight as a candidate explanation for the remaining radiation-response deficit in deuterium.",
+    "zenodo": "https://zenodo.org/records/19173253/latest",
+    "bridges": ["Acoustic Scale (θ_s)", "Deuterium Abundance (D/H)"]
+  },
+  {
+    "paper": 22,
+    "era": "Operator Closure",
+    "short_title": "Spatial Hodge Complex and Rate-Dressing Bridge",
+    "summary": "Constructs the full scalar/vector/tensor spatial channel infrastructure on the S³ interior sections and develops a wide no-go landscape that eliminates fluid-injection and uniform-dressing fixes for the radiation-response problem. The paper leaves a surviving rate-dressing bridge in which the boundary puncture algebra modifies bulk interaction cross-sections through the spatial Hodge complex.",
+    "zenodo": "https://zenodo.org/records/19198706/latest",
+    "bridges": ["Deuterium Abundance (D/H)", "Helium-4 Abundance (Y_p)", "Lithium-7 Abundance"]
+  },
+  {
+    "paper": 23,
+    "era": "The BBN Breakthrough",
+    "short_title": "Primordial Perturbation Theory",
+    "summary": "Builds the primordial perturbation theory program on the Oppenheimer-Snyder interior, deriving the closed-FRW perturbation equations and constructing explicit boundary-to-bulk bridge operators. It also proves the No-Doubling Theorem and derives the white baseline n_s = 1 from isotropic puncture positions on the horizon.",
+    "zenodo": "https://zenodo.org/records/19210262/latest",
+    "bridges": ["Spectral Index (n_s)"]
+  },
+  {
+    "paper": 24,
+    "era": "The BBN Breakthrough",
+    "short_title": "Lithium Problem Solved",
+    "summary": "Conditionally resolves the cosmological lithium problem through channel-resolved BBN rate dressing. The paper shows that the spin-2 TT metric perturbation couples only to nuclear quadrupole moments, shielding spherical nuclei while selectively suppressing beryllium-7 production through a quadrupole-sensitive mass-7 dressing channel.",
+    "zenodo": "https://zenodo.org/records/19219282/latest",
+    "bridges": ["Deuterium Abundance (D/H)", "Lithium-7 Abundance"]
+  },
+  {
+    "paper": 25,
+    "era": "The BBN Breakthrough",
+    "short_title": "Weak-Sector Identity Pin",
+    "summary": "Resolves the V-vs-V' class-membership problem for the weak-sector BBN dressing coefficient. Conditional on three physical identification premises, it proves V = K_gauge exactly via the Quadratic Thermal Covariance Theorem, corrects the weak amplitude to ε_w = K_gauge × L_1, and reports PRyMordial-verified BBN agreement with χ² = 1.",
+    "zenodo": "https://zenodo.org/records/19242682/latest",
+    "bridges": ["Helium-4 Abundance (Y_p)", "Deuterium Abundance (D/H)"]
+  },
+  {
+    "paper": 26,
+    "era": "CMB Confrontation",
+    "short_title": "Primordial Scalar Amplitude",
+    "summary": "Proposes IO-native replacements for ΛCDM-borrowed inputs in the framework's confrontation with Planck 2018 CMB data. The headline result is a conditional Hawking-boundary prediction for the primordial scalar amplitude, A_s = 2.007 × 10⁻⁹, and the paper also shows that clustering-sector baryon quantities do not belong in CMB perturbation slots.",
+    "zenodo": "https://zenodo.org/records/19296329/latest",
+    "bridges": ["Scalar Amplitude (A_s)", "Optical Depth (τ_eff)"]
+  },
+  {
+    "paper": 27,
+    "era": "CMB Confrontation",
+    "short_title": "Source-Side Perturbation Closure",
+    "summary": "Presents the first fully IO-native CLASS Boltzmann-code confrontation with Planck 2018 TT data and diagnoses the residual mismatch as an architectural conflict between the IO boundary-projective multi-baryon framework and CLASS's single-baryon bulk simulator. The paper promotes multiple theorem candidates, corrects source-side perturbation ingredients, and audits the full scalar-amplitude normalization chain.",
+    "zenodo": "https://zenodo.org/records/19333220/latest",
+    "bridges": ["Optical Depth (τ_eff)", "Scalar Amplitude (A_s)"]
+  },
+  {
+    "paper": 28,
+    "era": "CMB Confrontation",
+    "short_title": "Primordial Spectral Index",
+    "summary": "Builds the main theorem scaffold for the primordial scalar power spectrum and derives the conditional zero-fit prediction n_s = 0.9639. Key ingredients include the Hawking Accumulation Theorem, the DtN Boundary Hessian identification on the Painlevé-Gullstrand collar, and the Boundary Fixed-Point Principle, along with a proper-time formation-clock theorem that eases the JWST \"impossible galaxy\" tension.",
+    "zenodo": "https://zenodo.org/records/19359276/latest",
+    "bridges": ["Spectral Index (n_s)"]
+  },
+  {
+    "paper": 29,
+    "era": "Observational Validation",
+    "short_title": "Branch Consistency Audit",
+    "summary": "Rebuilds the confrontation layer on the active Paper 10 legacy branch, retires the mixed-branch package, and closes the branch self-consistency audit. On the active legacy package, cosmic chronometers give χ² = 14.70 and the derived/scoped DESI DR2 GCcomb galaxy/quasar BAO route gives χ² = 27.74, for combined χ² = 42.44 versus 46.40 for the fixed-parameter Planck ΛCDM reference.",
+    "zenodo": "https://zenodo.org/records/19367583/latest",
+    "bridges": ["Hubble Constant (H₀)", "Cosmic Chronometers", "Galaxy BAO Closure"]
+  },
+  {
+    "paper": 30,
+    "era": "Observational Validation",
+    "short_title": "One Mass, Zero Fits",
+    "summary": "Recomputes the twenty-test confrontation on the active Paper 10 legacy branch. Pantheon+ and TDCOSMO still favor IO over the fixed-parameter Planck reference, the Alcock-Paczyński test still favors Planck, and several mixed-branch headline numbers change materially on the rebuilt branch, especially in the late-structure sector.",
+    "zenodo": "https://zenodo.org/records/19376058/latest",
+    "bridges": ["Baryon Fraction", "Hubble Constant (H₀)", "Cosmic Chronometers"]
+  },
+  {
+    "paper": 31,
+    "era": "Framework Closure",
+    "short_title": "Gravitational Slip",
+    "summary": "Recomputes the Weyl-response and late-time observable map on the active Paper 10 legacy branch. The current branch gives Σ_IO = 0.8114, S₈,weyl = 0.8339, α_Φ ≈ 2.005 in the E_G pipeline, and a derived/scoped galaxy/quasar BAO closure on the current DESI DR2 GCcomb definition.",
+    "zenodo": "https://zenodo.org/records/19415916/latest",
+    "bridges": ["Gravitational Slip (Σ_IO)", "Optical Depth (τ_eff)", "Galaxy BAO Closure"]
+  },
+  {
+    "paper": 32,
+    "era": "Framework Closure",
+    "short_title": "Closure: The Complete Interior Observer Framework",
+    "summary": "Paper 32 closes the six remaining open problems on their active scoped sectors, retires all four semiclassical principles on their stated scopes, and carries the late-time chain through x_crit, hidden-support recollapse, and the Paper 32 closure/lifecycle program. This card reflects the current Zenodo title/description while the site’s branch-sensitive numerics follow the active Paper 10 legacy reconstruction.",
+    "zenodo": "https://zenodo.org/records/19433686/latest",
+    "bridges": ["Observer Boundary (x_crit)", "Scalar Amplitude (A_s)", "Bounce / Recollapse"]
+  },
+  {
+    "paper": 33,
+    "era": "The Bridge",
+    "short_title": "The Interior Observer Cosmological Framework: Paper 33 - Three Languages of the Horizon: How an Event Horizon Unifies General Relativity and Quantum Mechanics",
+    "summary": "An event horizon speaks three quantum languages to the classical interior it contains — and those three languages are sufficient to derive every major cosmological observable with zero fitted parameters. The Interior Observer (IO) framework models the observable universe as the interior of a Schwarzschild black hole. Across 32 papers, it derives the CMB temperature, dark energy density, baryon fraction, three BBN abundances (χ² = 1.13), the spectral index, the scalar amplitude, and the gravitational slip — all from one mass and one external constant. This paper reveals the organizing principle: the boundary-to-bulk crossings fall into three channels. Channel 1 (Geometric) is always on — the boundary's gauge algebra permanently imprints on bulk geometry. Channel 2 (Thermal) is state-gated — processes in thermal equilibrium with the Hawking/KMS boundary state receive geometric dressing. Channel 3 (Fermionic) is density-gated — at Planck density, boundary spinor data sources the bulk spin fluid that drives the torsion bounce, with R_eq/R_bounce = 1.00016 from representation theory alone. The framework closes a logical loop: Paper 1 assumed the bounce; Paper 32 derives it from the boundary's own quantum data. The premises generate the mathematics that validates the premises. No other cosmological framework derives its complete lifecycle — birth, expansion, recollapse, and rebirth — with zero continuously fitted parameters. Includes: a geometric dark-matter alternative (predicting continued null results from direct detection), a conditional no-go for quantum gravity signatures in the muon g−2, and the Holographic Selection Rule governing which observables see the boundary and which do not. Interactive bridge map: https://dfife.github.io/bridge-map.html",
+    "zenodo": "https://zenodo.org/records/19440227/latest",
+    "bridges": ["Three-Language Architecture", "Holographic Selection Rule", "Bridge Carrier Mechanism", "Dark Matter Geometric Alternative", "Muon g−2 No-Go"]
+  },
+  {
+    "paper": 34,
+    "era": "The Bridge",
+    "short_title": "The Hubble Tension Resolved: Who Is Right About H₀? Everyone.",
+    "summary": "The Hubble tension — the 5σ discrepancy between the Planck CMB measurement (67.4 ± 0.5 km/s/Mpc) and the SH0ES Cepheid distance ladder (73.0 ± 1.0 km/s/Mpc) — is resolved with zero fitted parameters. The resolution follows from one recognition: different H₀ measurement methods belong to different observable classes on the IO α-ladder, and each class sees a different effective expansion rate dressed by the boundary transit factor f_Γ = 1/(1+γ²). The inverse-projector law H_eff(α) = H₀ × f_Γ^(1−α) is derived for the late-time homogeneous estimator family, and two new bridge extensions complete the classification for SH0ES, TRGB, and TDCOSMO. Six methods fall within 0.57σ of prediction, with SH0ES at +0.04σ.",
+    "zenodo": "https://zenodo.org/records/19558163/latest",
+    "bridges": ["Hubble Constant (H₀)", "Three-Language Architecture", "Bridge Carrier Mechanism"]
+  },
+  {
+    "paper": 35,
+    "era": "The Bridge",
+    "short_title": "Four Problems, One Horizon: Baryogenesis, Impossible Galaxies, Dark Energy, and the Dark Matter Null from Inside a Schwarzschild Horizon",
+    "summary": "Paper 35 packages four confrontation layers on top of the active Paper 10 legacy branch. It closes the late-time baryon-to-photon ratio route, sharpens the BBN bulk-frame η route, reduces baryogenesis to an exact topological obstruction on the current stack, shows that the IO master clock gives 46-48% more formation time than Planck ΛCDM at z > 10, corrects the observer-side dark-energy mapping away from the retired w = -1/3 carryover, and frames continuing direct-detection null results as the expected outcome of the geometric dark-sector reading.",
+    "zenodo": "https://zenodo.org/records/19561708/latest",
+    "bridges": ["Baryon-to-Photon Ratio (late-time)", "Baryon-to-Photon Ratio (BBN bulk-frame)", "Baryogenesis Topological Obstruction", "JWST Formation Clock", "Dark Matter Null Prediction"]
+  }
+]

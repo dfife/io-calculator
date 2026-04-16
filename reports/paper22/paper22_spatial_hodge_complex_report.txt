@@ -1,0 +1,303 @@
+Paper 22 - The Spatial Hodge Complex
+=====================================
+
+Status boundary
+---------------
+- derived / theorem: the full spatial package on the OS slice is
+      H_spatial = H_Hdg direct-sum H_TT,
+      H_Hdg = direct-sum_{p=0}^3 L^2 Omega^p(S^3),
+      H_TT = L^2(S^2_TT(S^3)),
+  internalized on top of H_IO as H_IO^(spatial) = H_IO tensor H_spatial.
+- derived / theorem: the scalar, coexact-vector, and TT tensor branches are exactly the
+  SU(2)_L x SU(2)_R / diagonal-SU(2) channels expected from S^3 = SU(2), with floors
+  J_min = 0, 1, 2 respectively.
+- derived / theorem: the exact floor law is J_min = bundle spin s, not raw form degree p;
+  in particular p = 3 is Hodge-dual to scalars and still has J_min = 0.
+- derived / theorem: in the standard homogeneous left-invariant gauge, the background
+  Ashtekar-Barbero connection lies in the lowest coexact 1-form channel.
+- reconstruction: the joint spatial/puncture response operator remains a structural
+  P_resp candidate only; the physical kernels and hot-to-optical reduction are still open.
+
+I. Inherited H_IO placement
+---------------------------
+Paper 17 fixed the reduced photon/gauge stack
+
+    H_IO = Gamma_s(L^2(R,dnu) tensor H_g),
+    M_red = M_th tensor-bar Z_g,
+
+while Paper 19 proved that the natural comoving-dust extension must internalize the round-S^3
+slice geometry rather than treating it as external notation. With the TT completion adjoined,
+the Paper 22 spatial Hilbert package is
+
+    H_Hdg = direct-sum_{p=0}^3 L^2 Omega^p(S^3),
+    H_TT  = L^2(S^2_TT(S^3)),
+    H_spatial = H_Hdg direct-sum H_TT,
+    H_IO^(spatial) = H_IO tensor H_spatial.
+
+The full spatial operator algebra is
+
+    A_Hdg = W*(Pi_(p,n)^(ex/coex), *, bounded Borel functions of Delta_p),
+    A_TT  = W*(Pi_(TT,n), Pi_(TT,n,J), bounded Borel functions of Delta_rough or Delta_L),
+    A_spatial = W*(A_Hdg direct-sum A_TT),
+
+so the proper local Paper 22 extension of the Paper 21 hot interaction algebra is
+
+    M_BBN^(loc,spatial)
+      = A_weak tensor-bar M_th^(gamma) tensor-bar A_spatial tensor-bar B(H_A)^(SU(2)).
+
+II. The S^3 Hodge complex
+-------------------------
+On the round 3-sphere of radius a(eta),
+
+    Omega^0 --d--> Omega^1 --d--> Omega^2 --d--> Omega^3
+
+has cohomology
+
+    H^0 = R,   H^1 = 0,   H^2 = 0,   H^3 = R.
+
+The Hodge star satisfies *^2 = 1 in all degrees, with
+
+    * : Omega^0 <-> Omega^3,
+    * : exact Omega^1_n <-> coexact Omega^2_n,
+    * : coexact Omega^1_n <-> exact Omega^2_n.
+
+For unit radius the Hodge spectra are:
+
+    0-forms:         lambda_n = n(n+2),          mult = (n+1)^2,      n >= 0
+    exact 1-forms:   lambda_n = n(n+2),          mult = (n+1)^2,      n >= 1
+    coexact 1-forms: lambda_n = (n+1)^2,         mult = 2 n (n+2),    n >= 1
+    exact 2-forms:   lambda_n = (n+1)^2,         mult = 2 n (n+2),    n >= 1
+    coexact 2-forms: lambda_n = n(n+2),          mult = (n+1)^2,      n >= 1
+    3-forms:         lambda_n = n(n+2),          mult = (n+1)^2,      n >= 0
+
+Every eigenvalue rescales by a(eta)^(-2) on the physical OS slice.
+
+Important fix: the exact and coexact 1-form branches are disjoint spectral series, not one
+combined eigenvalue family. At fixed n their dimensions satisfy
+
+    (n+1)^2 + 2 n (n+2) = 3 n^2 + 6 n + 1,
+
+but this is only a dimension cross-check, not a single-eigenvalue multiplicity.
+
+III. Peter-Weyl bridge and the channel floor law
+-----------------------------------------------
+The scalar branch is the standard Peter-Weyl decomposition
+
+    L^2(S^3) = direct-sum_{n >= 0} V_(n/2) tensor V_(n/2)^*,
+
+with eigenvalue n(n+2)/a(eta)^2 and multiplicity (n+1)^2.
+
+The coexact 1-form branch is the next homogeneous vector bundle branch:
+
+    Omega^1_coex(S^3)
+      = direct-sum_{n >= 1}
+        [V_((n+1)/2) tensor V_((n-1)/2)^*
+         direct-sum
+         V_((n-1)/2) tensor V_((n+1)/2)^*],
+
+with eigenvalue (n+1)^2/a(eta)^2 and multiplicity 2 n (n+2).
+
+The TT tensor branch closes the spin-2 side:
+
+    S^2_TT(S^3)
+      = direct-sum_{n >= 2}
+        [V_((n+2)/2) tensor V_((n-2)/2)^*
+         direct-sum
+         V_((n-2)/2) tensor V_((n+2)/2)^*],
+
+with multiplicity 2 (n-1)(n+3), rough-Laplacian eigenvalue
+
+    (n(n+2) - 2) / a(eta)^2,
+
+and Lichnerowicz eigenvalue
+
+    (n(n+2) + 4) / a(eta)^2.
+
+Restricting to the diagonal SU(2) gives the complete spatial channel ladder:
+
+    scalar / exact branch:  J = 0..n
+    coexact vector branch:  J = 1..n
+    TT tensor branch:       J = 2..n
+
+Equivalently, for the homogeneous bundle of local isotropy spin s,
+
+    J_min = s.
+
+This is the exact pattern behind the apparent floors
+
+    s = 0 scalar   -> J_min = 0
+    s = 1 vector   -> J_min = 1
+    s = 2 tensor   -> J_min = 2.
+
+The p = 3 branch is not a counterexample: 3-forms are Hodge-dual to scalars, so their bundle
+spin is still s = 0 and their diagonal floor remains J_min = 0.
+
+IV. The Ashtekar-Barbero background channel
+-------------------------------------------
+Choose orthonormal left-invariant 1-forms e^i on round S^3_a with
+
+    de^i = -(1/a) epsilon_ijk e^j wedge e^k.
+
+Then
+
+    delta e^i = 0,
+    Delta_1 e^i = (4/a^2) e^i.
+
+Hence the invariant coframe spans the lowest coexact 1-form eigenspace.
+
+In the standard homogeneous left-invariant gauge, the closed-FRW spin connection Gamma and
+extrinsic-curvature 1-form K are both su(2)-valued combinations of this invariant coframe.
+Therefore
+
+    A = Gamma + gamma K
+
+has no exact or harmonic part on S^3; in that gauge it is a coexact 1-form valued in su(2).
+
+Gauge caveat: this is not a gauge-invariant statement about arbitrary SU(2) transforms of the
+connection 1-form. Outside the standard homogeneous gauge, g^(-1) d g terms can carry exact
+pieces.
+
+This cleanly separates the two IO modular quantities:
+
+    K_gauge = ln(1 + gamma^2)
+
+comes from the internal su(2)/quaternionic norm on that coexact carrier, while
+
+    K_geom = 4 ln x
+
+comes from the history/volume factor a(eta)^4 and the radius scaling of the spatial spectrum,
+not from a different Hodge degree.
+
+V. TT projectors and the complete spatial operator algebra
+---------------------------------------------------------
+The Hodge package gives theorem-grade spatial projectors
+
+    P_exact^1   = d G_0 delta,
+    P_coexact^1 = delta G_2 d,
+    P_exact^2   = d G_1 delta,
+    P_coexact^2 = delta G_3 d,
+
+plus branch spectral projectors Pi_(p,n)^(ex/coex). The TT completion adds
+
+    Pi_(TT,n)   = TT rough- or Lichnerowicz-spectral projector at level n,
+    Pi_(TT,n,J) = projector onto the diagonal-spin-J subspace of the TT level-n branch.
+
+The diagonal-spin block multiplicities are
+
+    scalar: mult_(0,n,J) = 2J + 1,      J = 0..n
+    vector: mult_(1,n,J) = 2(2J + 1),   J = 1..n
+    tensor: mult_(2,n,J) = 2(2J + 1),   J = 2..n,
+
+whose sums recover
+
+    (n+1)^2,
+    2 n (n+2),
+    2 (n-1)(n+3)
+
+for the scalar, vector, and TT branches respectively.
+
+This closes the complete scalar/vector/tensor spatial channel package:
+
+    Channel 0 (scalar): J = 0..n from (n/2, n/2)
+    Channel 1 (vector): J = 1..n from ((n+1)/2, (n-1)/2)
+    Channel 2 (tensor): J = 2..n from ((n+2)/2, (n-2)/2).
+
+Pure de Rham 2-forms are not this tensor channel. In three dimensions
+
+    * : Omega^1 <-> Omega^2,
+
+so 2-forms are pseudovectors, not independent cosmological spin-2 modes.
+
+VI. Candidate channel-dependent response architecture
+----------------------------------------------------
+The natural non-separable candidate now lives on the full local spatial extension
+
+    M_BBN^(loc,spatial)
+      = A_weak tensor-bar M_th^(gamma) tensor-bar A_spatial tensor-bar B(H_A)^(SU(2)).
+
+A genuinely non-separable response operator can then be joint-spectral in spatial channel,
+spatial level, and puncture spin:
+
+    R_spatial(E,T)
+      = sum_(n>=0,J>=0) kappa_(s,n,J)(E/T) Pi_(0,n,J) tensor P_J
+        + sum_(n>=1,J>=1) kappa_(v,n,J)(E/T) Pi_(1,n,J)^coex tensor P_J
+        + sum_(n>=2,J>=2) kappa_(t,n,J)(E/T) Pi_(TT,n,J) tensor P_J.
+
+This is not a Paper 21.AG-type scalar dressing because it does not collapse to
+
+    Gamma_0 tensor G.
+
+It is channel-dependent in two independent senses:
+
+    - spatial channel: scalar vs coexact-vector vs TT-tensor
+    - puncture channel: J-block dependence inside B(H_A)^(SU(2))
+
+The channel-floor law imposes the hard selection rule
+
+    puncture J can only feed spatial channels with s <= J.
+
+So J = 1 cannot source the tensor channel, while J = 2 may source both vector and tensor
+channels unless further dynamical premises are imposed.
+
+Under the minimal nonscalar assignment
+
+    j = 1 -> vector,
+    j = 2 -> tensor,
+
+the Paper 21 {j = 1, 2} Gibbs energy comparator splits as
+
+    0.36222137069671057
+      = 0.22416889162576648 + 0.13805247907094412
+      = vector + tensor.
+
+This is useful structurally but must not be conflated with the separate Paper 21 absorbed-load
+constant
+
+    F_abs = 0.368785140078424,
+
+whose exact vector/tensor decomposition is still conditional. If one merely rescales F_abs by
+the same relative weights, one gets the reconstruction-only split
+
+    F_abs ~= 0.2282310288330652 + 0.14055411124535885
+          = vector + tensor.
+
+So the S^3 = SU(2) coincidence produces exactly the kind of puncture/spatial channel geometry
+that the missing P_resp specification demanded.
+
+VII. Precise boundary
+--------------------
+What is now theorem-grade:
+
+1. the full S^3 Hodge complex and its spectra, star dualities, cohomology, and projectors,
+2. the scalar, vector, and TT tensor Peter-Weyl branches with the exact multiplicities
+   (n+1)^2, 2 n (n+2), 2 (n-1)(n+3),
+3. the rough-Laplacian and Lichnerowicz eigenvalue formulas for the TT branch,
+4. the channel-floor law J_min = bundle spin s for the spatial SVT channels,
+5. the standard-gauge placement of the homogeneous Ashtekar-Barbero background in the lowest
+   coexact 1-form channel,
+6. the full spatial Hilbert/operator package H_spatial and A_spatial as the missing Paper 19
+   infrastructure.
+
+What remains open:
+
+1. the physical hot-phase-to-optical reduction that would collapse the extended channel package
+   back to M_th tensor-bar Z_g before recombination,
+2. the actual energy-selective kernels kappa_(s,n,J), kappa_(v,n,J), kappa_(t,n,J) that would
+   make R_spatial(E,T) the physical P_resp object rather than a structural candidate,
+3. any exact theorem identifying the Paper 21 absorbed-load constant F_abs with a specific
+   vector/tensor combination of the new spatial channels.
+
+Bottom line
+-----------
+Paper 22 now closes Item #8 as a single theorem package: the missing spatial infrastructure is
+the round-S^3 Hodge package plus the TT symmetric-tensor extension, internalized on top of H_IO
+as one block-diagonal spatial module. The resulting SU(2) harmonic analysis gives a canonical
+bridge from puncture J-blocks to scalar/vector/tensor spatial projectors with exact floors
+J_min = 0, 1, 2. What remains open is no longer the spatial channel geometry; it is the physical
+dynamics that would turn this geometry into the actual BBN response operator.
+
+Reproducibility
+---------------
+- analysis script: /opt/cosmology-lab/results/paper22/paper22_spatial_hodge_complex_analysis.py
+- machine-readable output: /opt/cosmology-lab/results/paper22/paper22_spatial_hodge_complex_results.json
+- report: /opt/cosmology-lab/results/paper22/paper22_spatial_hodge_complex_report.txt

@@ -1,0 +1,240 @@
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include "history.h"
+
+#define HYREC_PATH "@HYREC_PATH@"
+#define ZMAX @ZMAX@
+#define ZMIN 0.0
+
+static const double X_IO = @X_IO@;
+static const double GAMMA_IO = @GAMMA_IO@;
+static const double T_CMB_OBS = @T_CMB_OBS@;
+static const double OMEGA_B_GEOM = @OMEGA_B_GEOM@;
+static const double OMEGA_M = @OMEGA_M@;
+static const double OMEGA_K = @OMEGA_K@;
+static const double OMEGA_LAMBDA = @OMEGA_LAMBDA@;
+static const double H = @H@;
+static const double YHE = @YHE@;
+static const double NEFF = @NEFF@;
+static const double RS_OS_M = @RS_OS_M@;
+static const double C_M_PER_S = 2.99792458e8;
+static const double H100_IN_S = 3.2407792896393e-18;
+
+static double k_gauge(void) {
+  return log(1.0 + GAMMA_IO * GAMMA_IO);
+}
+
+static double t_io_over_t_obs(void) {
+  return pow(X_IO, -k_gauge());
+}
+
+static void zero_injection(INJ_PARAMS *inj) {
+  memset(inj, 0, sizeof(INJ_PARAMS));
+  inj->ann_z = 1.0;
+  inj->ann_zmax = 1.0;
+  inj->ann_zmin = 1.0;
+  inj->ann_var = 1.0;
+  inj->ann_z_halo = 1.0;
+  inj->on_the_spot = 1;
+  inj->Mpbh = 1.0;
+}
+
+static void fill_common_cosmo(HYREC_DATA *data) {
+  REC_COSMOPARAMS *cosmo = data->cosmo;
+  INJ_PARAMS *inj = cosmo->inj_params;
+  const double h2 = H * H;
+  const double T0 = T_CMB_OBS * t_io_over_t_obs();
+
+  memset(cosmo, 0, sizeof(REC_COSMOPARAMS));
+  cosmo->inj_params = inj;
+  zero_injection(cosmo->inj_params);
+
+  cosmo->h = H;
+  cosmo->T0 = T0;
+  cosmo->obh2 = OMEGA_B_GEOM * h2;
+  cosmo->ocbh2 = OMEGA_M * h2;
+  cosmo->okh2 = OMEGA_K * h2;
+  cosmo->odeh2 = OMEGA_LAMBDA * h2;
+  cosmo->w0 = -1.0;
+  cosmo->wa = 0.0;
+  cosmo->YHe = YHE;
+  cosmo->Neff = NEFF;
+  cosmo->Nur = NEFF;
+  cosmo->Nmnu = 0.0;
+  cosmo->fsR = 1.0;
+  cosmo->meR = 1.0;
+  cosmo->dlna = DLNA_HYREC;
+  cosmo->fHe = YHE / (1.0 - YHE) / 3.97153;
+  cosmo->nH0 = 11.223846333047e-6 * cosmo->obh2 * (1.0 - YHE);
+  cosmo->orh2 = 4.48162687719e-7 * pow(T0, 4.0) * (1.0 + 0.227107317660239 * NEFF);
+  cosmo->onuh2 = 0.0;
+  cosmo->inj_params->odmh2 = cosmo->ocbh2 - cosmo->obh2;
+  cosmo->io_inverse_upward_rates_factor = 1.0;
+  cosmo->io_line_escape_factor = 1.0;
+  cosmo->io_lya_diffusion_factor = 1.0;
+}
+
+static double H_loc_sec(double z) {
+  const double u = 1.0 / (X_IO * (1.0 + z));
+  return (C_M_PER_S / RS_OS_M) * sqrt((1.0 - u) / (u * u * u));
+}
+
+static void fill_hubble_array(double *hubble_array, unsigned long Nz, double zmax) {
+  const double dz = (zmax / (Nz - 1.0)) * (1.0 + 1e-12);
+  unsigned long i;
+  for (i = 0; i < Nz; ++i) {
+    const double z = dz * i;
+    hubble_array[i] = H_loc_sec(z);
+  }
+}
+
+static double *read_query_redshifts(const char *path, size_t *count) {
+  FILE *fin;
+  double *values;
+  double z;
+  size_t capacity = 16;
+
+  fin = fopen(path, "r");
+  if (fin == NULL) return NULL;
+
+  values = (double *) malloc(capacity * sizeof(double));
+  if (values == NULL) {
+    fclose(fin);
+    return NULL;
+  }
+
+  *count = 0;
+  while (fscanf(fin, "%lf", &z) == 1) {
+    if (*count == capacity) {
+      double *grown;
+      capacity *= 2;
+      grown = (double *) realloc(values, capacity * sizeof(double));
+      if (grown == NULL) {
+        free(values);
+        fclose(fin);
+        return NULL;
+      }
+      values = grown;
+    }
+    values[*count] = z;
+    *count += 1;
+  }
+
+  fclose(fin);
+  return values;
+}
+
+static double sample_history_value(double z, HYREC_DATA *data, double *history) {
+  double lna_start, lna, lna_max;
+  if (z > data->rad->z0) return 0.0;
+  if (z <= 0.0) return history[data->Nz - 1];
+
+  lna_start = -log(1.0 + data->rad->z0);
+  lna = -log(1.0 + z);
+  lna_max = lna_start + data->cosmo->dlna * (data->Nz - 1);
+  if (lna < lna_start) return 0.0;
+  if (lna >= lna_max) return history[data->Nz - 1];
+  return interp_Dfnu(lna_start, data->cosmo->dlna, history, data->Nz, lna);
+}
+
+static int write_output(FILE *fout, HYREC_DATA *data, const double *query_z, size_t count) {
+  size_t i;
+  unsigned int b;
+
+  fprintf(fout, "# mode inherited_full_io_exact\n");
+  fprintf(fout, "# T0 %.17e\n", data->cosmo->T0);
+  fprintf(fout, "# dlna %.17e\n", data->cosmo->dlna);
+  fprintf(fout, "# history_activation_z %.17e\n", data->rad->z0);
+  fprintf(fout, "# nvirt %d\n", NVIRT);
+  fprintf(fout, "# line_labels Ly_alpha Ly_beta Ly_gamma\n");
+  fprintf(fout, "# characteristic_energy_eV");
+  for (b = 0; b < NVIRT; ++b) fprintf(fout, " %.17e", data->atomic->Eb_tab[b]);
+  fprintf(fout, "\n");
+  fprintf(fout, "# columns z xe Tm[K] H[s^-1] Trad[K] Dminus[0..%d] Lminus[0..2]\n", NVIRT - 1);
+
+  for (i = 0; i < count; ++i) {
+    const double z = query_z[i];
+    const double xe = (z <= 0.0) ? data->xe_output[data->Nz - 1] : hyrec_xe(z, data);
+    const double Tm = (z <= 0.0) ? data->Tm_output[data->Nz - 1] : hyrec_Tm(z, data);
+    const double Hs = H_loc_sec(z);
+    const double Trad = data->cosmo->T0 * (1.0 + z);
+
+    fprintf(fout, "%.17e %.17e %.17e %.17e %.17e", z, xe, Tm, Hs, Trad);
+    for (b = 0; b < NVIRT; ++b) {
+      fprintf(fout, " %.17e", sample_history_value(z, data, data->rad->Dfminus_hist[b]));
+    }
+    for (b = 0; b < 3; ++b) {
+      fprintf(fout, " %.17e", sample_history_value(z, data, data->rad->Dfminus_Ly_hist[b]));
+    }
+    fprintf(fout, "\n");
+  }
+
+  return 0;
+}
+
+int main(int argc, char **argv) {
+  HYREC_DATA data;
+  double *hubble_array = NULL;
+  double *query_z = NULL;
+  size_t query_count = 0;
+  FILE *fout = NULL;
+  char *err;
+
+  if (argc != 3) {
+    fprintf(stderr, "usage: %s QUERY_Z_FILE OUTFILE\n", argv[0]);
+    return 2;
+  }
+
+  query_z = read_query_redshifts(argv[1], &query_count);
+  if (query_z == NULL || query_count == 0) {
+    fprintf(stderr, "could not read requested redshifts from %s\n", argv[1]);
+    return 1;
+  }
+
+  memset(&data, 0, sizeof(HYREC_DATA));
+  data.path_to_hyrec = HYREC_PATH;
+  hyrec_allocate(&data, ZMAX, ZMIN, FULL);
+  if (data.error != 0) {
+    fprintf(stderr, "%s\n", data.error_message);
+    free(query_z);
+    return 1;
+  }
+
+  fill_common_cosmo(&data);
+  hubble_array = create_1D_array((unsigned) data.Nz, &data.error, data.error_message);
+  if (data.error != 0 || hubble_array == NULL) {
+    fprintf(stderr, "%s\n", data.error_message);
+    free(query_z);
+    hyrec_free(&data);
+    return 1;
+  }
+
+  fill_hubble_array(hubble_array, (unsigned long) data.Nz, data.zmax);
+  err = rec_build_history(&data, FULL, hubble_array);
+  if (data.error != 0) {
+    fprintf(stderr, "%s\n", err);
+    free(hubble_array);
+    free(query_z);
+    hyrec_free(&data);
+    return 1;
+  }
+
+  fout = fopen(argv[2], "w");
+  if (fout == NULL) {
+    fprintf(stderr, "could not open output file %s\n", argv[2]);
+    free(hubble_array);
+    free(query_z);
+    hyrec_free(&data);
+    return 1;
+  }
+
+  write_output(fout, &data, query_z, query_count);
+  fclose(fout);
+  free(hubble_array);
+  free(query_z);
+  hyrec_free(&data);
+  return 0;
+}

@@ -1,0 +1,84 @@
+IO Framework — Corrected Master Clock Formula
+
+Executive result
+
+1. derived:
+   the correct all-epoch local clock for the IO interior is the bare FRW proper-time integral,
+   not the pure dust OS cycloid.
+
+   t_bare(z) = integral_z^infinity dz' / [(1+z') H_bare(z')]
+
+   with
+
+   E(z)^2 = Omega_r (1+z)^4 + Omega_m (1+z)^3 + Omega_k (1+z)^2 + Omega_Lambda.
+
+   Equivalently, in scale factor:
+
+   t_bare(a) = H0_bare^-1 integral_0^a da' / sqrt(Omega_r + Omega_m a' + Omega_k a'^2 + Omega_Lambda a'^4).
+
+2. verified:
+   from T_CMB = 2.7253 K and N_eff = 3.044, the exact bare radiation density is
+   Omega_r,bare = 1.225914648157e-04, not the prompt-carried 9.15e-5.
+
+   The prompt approximation is low because Omega_r depends on h^-2; with H0_bare = 58.4 the exact value is larger.
+
+3. verified:
+   the present bare-branch age is t_bare(z=0) = 19.181055510 Gyr.
+   That independently reproduces the earlier ~19.2 Gyr claim.
+
+4. verified / correction:
+   once Omega_r is kept, the dust cycloid is only a matter-era approximation over a finite redshift window.
+   It is not the true z -> infinity asymptote anymore.
+
+Epoch table
+
+z        t_bare[Gyr]     tau_cycloid[Gyr]   t_LCDM[Gyr]     t_bare/t_LCDM   (tau-t_bare)/t_bare
+ 0     19.181055510       33.360433116   13.795174514     1.390417750         +0.739238651
+ 5      1.754699475        1.771597598    1.167772131     1.502604343         +0.009630209
+ 8      0.944287404        0.953011981    0.635636654     1.485577331         +0.009239323
+10      0.695154958        0.702337933    0.470151747     1.478575722         +0.010332912
+12      0.538792079        0.545088325    0.365694967     1.473337419         +0.011685854
+14      0.433175371        0.438865956    0.294839434     1.469190755         +0.013136908
+17      0.328056598        0.333101338    0.224044220     1.464249322         +0.015377652
+20      0.259337071        0.263910760    0.177594549     1.460276072         +0.017636080
+
+z = 0 checks
+- exact derived Omega_r,bare: 1.225914648157e-04
+- prompt-carried Omega_r = 9.15e-5 gives t_bare(0) = 19.185749511 Gyr
+- no-radiation bare FRW gives t_bare(0) = 19.199871410 Gyr
+- closure-adjusting Omega_Lambda to 0.932877408535 gives t_bare(0) = 19.181666054 Gyr
+
+High-z convergence of t_bare versus tau_cycloid
+- minimum fractional difference with Omega_r retained: 0.887352% at z = 6.500
+- |t_bare - tau|/t_bare falls below 1% only on the finite interval z in [4.742545, 9.458896]
+- |t_bare - tau|/t_bare never falls below 0.1% once Omega_r is retained.
+
+Important correction to the old Paper 28 four-clock wording
+The earlier 0.04%-level agreement at z ~ 20 came from the radiation-neglected bare FRW age.
+With Omega_r retained, the z = 20 difference is about 1.76% instead.
+
+Asymptotics
+
+Matter-era intermediate asymptote (1 << z << z_eq):
+  t_bare / t_LCDM -> H0_LCDM sqrt(Omega_m,LCDM) / [H0_bare sqrt(Omega_m,bare)]
+  = 1.459211029651
+
+Dust-cycloid matter-era asymptote:
+  tau_cycloid / t_LCDM -> H0_LCDM r_s sqrt(Omega_m,LCDM) / (c x^(3/2))
+  = 1.459688233857
+
+Their ratio is
+  tau_cycloid / t_bare -> 1.000327028920
+so the two matter-era asymptotes differ by only 0.0327%.
+
+Ultimate radiation-era asymptote (z >> z_eq):
+  t_bare / t_LCDM -> H0_LCDM sqrt(Omega_r,LCDM) / [H0_bare sqrt(Omega_r,bare)]
+  = 1.000281067483
+
+So the user-expected 1.460 limit is not the true z -> infinity limit of the radiation-included master clock.
+It is the matter-era asymptote reached across the Paper 28 table range.
+
+Closed-form status
+After the change of variable to scale factor, the exact clock is an integral of 1/sqrt(quartic).
+That has no elementary primitive. It can be written in elliptic-integral form after quartic root factorization,
+but numerical quadrature is cleaner and less branch-sensitive for actual IO work.

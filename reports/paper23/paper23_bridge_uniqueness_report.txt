@@ -1,0 +1,200 @@
+Paper 23 Round 20 - Bridge Uniqueness
+======================================
+
+Status boundary
+---------------
+- derived: in Hilbert-space / representation-theory form, the zero-order one-slot scalar bridge
+  built from the homogeneous background connection is unique up to normalization at the
+  pointwise bundle-map level.
+- derived: globally, the shell-resolved intertwiner spaces are multiplicity one on each allowed
+  SU(2)_L x SU(2)_R branch.
+- derived: the cubic candidate
+      epsilon^(abc) f_ijk Abar_a^i Abar_b^j delta A_c^k
+  is not independent on the isotropic FRW background; it is proportional to
+      g^(ab) kappa_ij Abar_a^i delta A_b^j.
+- derived: the vector-to-TT zero-order bridge is likewise unique up to normalization as the
+  unique spin-2 / STF projection of the active slot after background identification.
+- derived: a TT-to-TT zero-order equivariant map is unique only shellwise / irrep-wise, not
+  globally across all TT shells unless extra spectral or parity conditions are imposed.
+
+I. Local Uniqueness of the Scalar Bridge
+----------------------------------------
+In the homogeneous left-invariant gauge of Paper 22, the background connection sits in the
+lowest coexact vector channel and identifies the spatial and internal spin-1 fibers.
+
+At a point, with the isotropic background used as the reference map, the active perturbation
+slot is therefore an element of
+
+    V tensor V,
+
+where V is the spin-1 representation of diagonal SU(2). The standard decomposition is
+
+    V tensor V = 0 direct-sum 1 direct-sum 2.
+
+Hence
+
+    dim Hom_SU(2)(V tensor V, 0) = 1,
+
+so there is exactly one isotropy-equivariant scalar projection up to normalization.
+
+A representative is the trace contraction
+
+    S_Abar(delta A) = g^(ab) kappa_ij Abar_a^i delta A_b^j,
+
+and the shell bridge is then
+
+    B_N(delta A) = Pi_N^(0) S_Abar(delta A).
+
+So under the strict constraints
+
+    SU(2)-equivariant, zero-order in delta A, linear in delta A,
+    uses Abar as the fixed reference, scalar output,
+
+the raw scalar bridge is unique up to normalization.
+
+II. Global SU(2)_L x SU(2)_R Classification
+-------------------------------------------
+Paper 22 and the earlier Paper 23 bridge pass give
+
+    E^(+) = (1,0),
+    E^(-) = (0,1),
+    W_n^(+) = ((n+1)/2, (n-1)/2),
+    W_n^(-) = ((n-1)/2, (n+1)/2),
+    H_N^(0) ~= (N/2, N/2).
+
+The only nonzero scalar-output branch intertwiners are
+
+    (1,0) tensor W_n^(+) -> H_(n-1)^(0),
+    (1,0) tensor W_n^(-) -> H_(n+1)^(0),
+    (0,1) tensor W_n^(+) -> H_(n+1)^(0),
+    (0,1) tensor W_n^(-) -> H_(n-1)^(0),
+
+and each appears with multiplicity one.
+
+So the global shell rule remains
+
+    N = n - 1 or N = n + 1,
+
+and on each allowed branch the equivariant intertwiner space is one-dimensional.
+
+Important distinction:
+
+1. pointwise algebraic raw scalarizer: unique up to normalization
+2. shellwise global decomposition: finite direct sum of multiplicity-one branches
+
+For the actual isotropic homogeneous background and the fixed metric/internal contraction,
+these branches are not free independent couplings; they are the branch decomposition of the
+single raw scalarizer S_Abar.
+
+III. The Cubic Candidate
+------------------------
+Consider
+
+    B^(3)(delta A) = epsilon^(abc) f_ijk Abar_a^i Abar_b^j delta A_c^k.
+
+In the isotropic left-invariant frame write
+
+    Abar_a^i = alpha delta_a^i,
+    X^i_j = E_j^a delta A_a^i.
+
+Then
+
+    B^(1)(delta A) = g^(ab) kappa_ij Abar_a^i delta A_b^j = alpha Tr(X),
+
+while the epsilon-f candidate becomes
+
+    B^(3)(delta A) = epsilon^(abc) epsilon_ijk Abar_a^i Abar_b^j delta A_c^k
+                   = 2 alpha^2 Tr(X)
+                   = 2 alpha B^(1)(delta A).
+
+So on the actual homogeneous isotropic FRW background the cubic candidate is not independent.
+
+Equivalent matrix statement:
+
+    epsilon^(abc) epsilon_ijk Abar_a^i Abar_b^j = 2 adj(Abar)^c_k.
+
+For
+
+    Abar = alpha I,
+
+one has
+
+    adj(Abar) = alpha^2 I,
+
+hence proportionality to the trace bridge.
+
+IV. Tensor Bridge Analog
+------------------------
+The same local decomposition
+
+    V tensor V = 0 direct-sum 1 direct-sum 2
+
+gives
+
+    dim Hom_SU(2)(V tensor V, 2) = 1.
+
+So the unique local zero-order vector-to-TT bridge is the STF projection
+
+    T_Abar(delta A)_(ab)
+      = STF_ab[ kappa_ij Abar_(a)^i delta A_(b)^j ]
+      = kappa_ij [ Abar_(a)^i delta A_(b)^j
+                 - (1/3) gamma_ab gamma^(cd) Abar_c^i delta A_d^j ].
+
+The shell bridge is
+
+    B_N^(TT)(delta A) = Pi_N^(TT) T_Abar(delta A).
+
+Its global branch rules are multiplicity one:
+
+    (1,0) tensor W_n^(+) -> H_(n+1)^(TT,+),
+    (1,0) tensor W_n^(-) -> H_(n-1)^(TT,-),
+    (0,1) tensor W_n^(+) -> H_(n-1)^(TT,+),
+    (0,1) tensor W_n^(-) -> H_(n+1)^(TT,-).
+
+So the vector-to-TT zero-order bridge is again unique up to normalization on each allowed
+branch.
+
+V. TT-to-TT Maps
+----------------
+If the input is already TT, no background slot is needed. On each irreducible shell/chirality
+block Schur's lemma gives
+
+    Hom_G(H_N^(TT,+), H_N^(TT,+)) = C,
+    Hom_G(H_N^(TT,-), H_N^(TT,-)) = C,
+
+with cross-shell maps zero.
+
+Therefore:
+
+1. on a fixed shell/chirality: the zero-order equivariant TT->TT map is unique up to scale
+2. on the full TT Hilbert space: there is a family of spectral multipliers
+
+       B^(TT->TT) = sum_(N >= 2) [ c_(N,+) Pi_(N,+)^(TT) + c_(N,-) Pi_(N,-)^(TT) ]
+
+   and in the parity-even case
+
+       B^(TT->TT) = sum_(N >= 2) c_N Pi_N^(TT).
+
+So TT->TT is not globally unique unless extra conditions are imposed.
+
+Verdict
+-------
+For the scalar bridge actually used in Paper 23, the answer is:
+
+    yes, unique up to normalization
+
+under the stated constraints.
+
+The cubic epsilon-f candidate is not an additional bridge on the homogeneous isotropic
+background; it collapses to the same trace bridge.
+
+For the tensor analog:
+
+    vector -> TT : unique up to normalization
+    TT -> TT     : unique only shellwise, not globally
+
+Sources
+-------
+- local: /opt/cosmology-lab/results/paper22/paper22_spatial_hodge_complex_report.txt  [background channel placement, vector and TT irreps, multiplicities, channel floors]
+- local: /opt/cosmology-lab/results/paper23/paper23_literature_bridge_operator_report.txt  [existing one-slot scalar bridge candidate and multiplicity-one branch rules]
+
