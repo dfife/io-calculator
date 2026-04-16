@@ -17,6 +17,7 @@ from .model import CurvedBackgroundModel
 
 
 _INLINE_CODE_RE = re.compile(r"`([^`]+)`")
+FRAMEWORK_MOTTO = "If the theory is correct, the math will just work."
 PREDICTION_SUMMARY_ITEMS = (
     "T_CMB (0.3σ from FIRAS)",
     "H0 (0.35σ from Planck)",
@@ -838,7 +839,10 @@ def about_note_markup(text: str, *, label: str = "About this calculator") -> str
     return (
         '<section class="calc-intro-panel">'
         f'<p class="calc-section-label">{escape_html(label)}</p>'
-        f'<div class="calc-note"><p>{escape_html(text)}</p></div>'
+        '<div class="calc-note">'
+        f"<p>{escape_html(text)}</p>"
+        f'<p class="quiet-motto">{escape_html(FRAMEWORK_MOTTO)}</p>'
+        "</div>"
         "</section>"
     )
 

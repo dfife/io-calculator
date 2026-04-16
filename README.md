@@ -2,6 +2,8 @@
 
 The IO Calculator is an alpha public, theorem-bearing cosmological calculator for the Interior Observer Framework. It publishes curved closed-space background quantities, nucleosynthesis outputs, recombination primitives, acoustic-scale observables, a theorem dictionary with explicit claim boundaries, and a conditional/scoped/verified TT first-peak support carrier, all with zero fitted cosmological parameters on the live branch.
 
+*If the theory is correct, the math will just work.*
+
 This draft is for release planning and review. It is not yet the committed public `README.md`.
 
 Alpha release status:
