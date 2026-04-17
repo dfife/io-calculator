@@ -90,6 +90,7 @@ OUTPUT_SCHEMA_COMPARISONS: dict[str, dict[str, object]] = {
     },
 }
 SOURCE_REPO_URL = "https://github.com/dfife/io-calculator"
+DATASET_LICENSE_URL = "https://dfife.github.io/data-license.html"
 
 
 def paper_url_map() -> dict[int, str]:
@@ -958,6 +959,23 @@ def calculator_application_schema() -> dict[str, object]:
     }
 
 
+def calculator_data_catalog_schema() -> dict[str, object]:
+    """Return the DataCatalog record referenced by calculator datasets."""
+
+    return {
+        "@type": "DataCatalog",
+        "@id": "https://dfife.github.io/calculator.html#catalog",
+        "name": "Interior Observer Framework calculator datasets",
+        "url": "https://dfife.github.io/calculator.html",
+        "creator": {"@id": "https://dfife.github.io/#organization"},
+        "description": (
+            "Machine-readable theorem-bearing calculator outputs published on "
+            "the Interior Observer Framework calculator surface."
+        ),
+        "license": DATASET_LICENSE_URL,
+    }
+
+
 def theorem_dictionary_schema() -> dict[str, object]:
     """Return a page-level scholarly record for the theorem dictionary."""
 
@@ -999,7 +1017,8 @@ def output_dataset_schema(
         "name": str(output["label"]),
         "url": "https://dfife.github.io/calculator.html",
         "creator": {"@id": "https://dfife.github.io/#organization"},
-        "includedInDataCatalog": {"@id": "https://dfife.github.io/calculator.html#application"},
+        "includedInDataCatalog": {"@id": "https://dfife.github.io/calculator.html#catalog"},
+        "license": DATASET_LICENSE_URL,
         "description": (
             f"{output['claim_status']}. {root_node['label']}. "
             f"{root_node['scope']}"
@@ -1105,6 +1124,7 @@ def calculator_json_ld(bundle: dict[str, object]) -> str:
     objects: list[dict[str, object]] = [
         organization_schema(),
         calculator_application_schema(),
+        calculator_data_catalog_schema(),
     ]
     objects.extend(output_dataset_schema(output, graph) for output in outputs.values())  # type: ignore[union-attr]
     return render_json_ld(objects)

@@ -155,7 +155,8 @@ def test_public_site_prerenders_when_site_clone_is_present() -> None:
     assert "application/ld+json" in index_html
     assert 'name="robots"' in index_html
     assert 'name="googlebot"' in index_html
-    assert "The Interior Observer Framework is a black hole cosmology with a cosmological calculator" in index_html
+    assert "The Interior Observer Framework is a black hole cosmology with a " in index_html
+    assert 'href="calculator.html">cosmological calculator</a>' in index_html
     assert "theorem-grade predictions" in index_html
     assert "zero fitted parameters" in index_html
     assert "CMB first peak ell = 224" in index_html
