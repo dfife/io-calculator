@@ -15,6 +15,8 @@ from .constants import (
     ACTIVE_IO_CONSTANTS,
     AUTHORITY_PATHS,
     MASTER_CLOCK_BARE_BRANCH,
+    R4_FIRAS_NORMALIZATION,
+    T_CMB_REF_K,
     T_IO_REF_K,
 )
 from .model import CurvedBackgroundModel, late_eta_io
@@ -281,31 +283,31 @@ def theorem_graph() -> dict[str, TheoremNode]:
         "paper17.gttp_thermal_readout": TheoremNode(
             node_id="paper17.gttp_thermal_readout",
             kind="theorem",
-            label="Paper 17 GTTP Thermal Readout Theorem",
-            claim_status="derived / scoped",
+            label="Paper 17 FIRAS-fixed Thermal Readout Normalization",
+            claim_status="FIRAS-fixed unique readout normalization; not an independent CMB prediction",
             statement=(
-                "The observer thermal readout obeys "
-                "`T_obs = T_IO x^K_gauge` with "
+                "The observer thermal readout family is "
+                "`T_obs(R4) = T_IO x^(R4 K_gauge)` with "
                 f"`K_gauge = ln(1 + gamma_BI^2) = {ACTIVE_IO_CONSTANTS.K_gauge:.15f}`. "
-                "On the carried active thermal slot "
-                f"`T_IO = {T_IO_REF_K:.4f} K`, this gives "
-                f"`T_CMB = {ACTIVE_BRANCH.T_cmb:.4f} K`."
+                "FIRAS supplies the empirical observer-side thermal datum and fixes "
+                f"`R4_FIRAS = {R4_FIRAS_NORMALIZATION:.15f}` within that family."
             ),
-            scope="Observer-side thermal transfer law on the IO active branch.",
+            scope="Observer-side thermal readout normalization on the IO active branch.",
             authority_paths=(str(AUTHORITY_PATHS["paper17_gttp"]),),
             depends_on=("premise.1", "premise.2"),
             premises=(
-                "`premise.1` identifies the observed CMB with the interior horizon readout problem.",
-                "`premise.2` licenses the local thermal transfer class used to promote GTTP to theorem grade.",
+                "`premise.1` identifies the interior horizon readout problem.",
+                "`premise.2` licenses use of the FIRAS blackbody measurement as the empirical observer-side thermal datum.",
             ),
             proof_outline=(
-                "Use KMS rigidity to fix exact Planck-form preservation under uniform frequency rescaling.",
-                "Combine multiplicative horizon gauge data with additive transfer generators to force a logarithmic homomorphism.",
-                "Fix the coefficient on the Schwarzschild `S^2` horizon and evaluate the resulting thermal map on the carried IO temperature slot.",
+                "Use the Paper 17 thermal readout family `T_obs(R4) = T_IO x^(R4 K_gauge)`.",
+                "Take logarithms to obtain an affine equation in `R4` with nonzero slope `K_gauge ln x`.",
+                "Solve uniquely for `R4_FIRAS = ln(T_FIRAS/T_IO)/(K_gauge ln x)` and freeze that normalization for downstream use.",
             ),
             scope_boundary=(
-                "Thermal readout law only.",
-                "Does not by itself determine every late-time background or perturbation observable on the active branch.",
+                "FIRAS-fixed observer-side thermal readout normalization only.",
+                "Does not count the observed CMB temperature as an independent IO prediction.",
+                "Does not permit retuning `R4` against downstream observables.",
             ),
         ),
         "paper21.branch_assignment": TheoremNode(
@@ -519,7 +521,6 @@ def theorem_graph() -> dict[str, TheoremNode]:
                 f"`Omega_m = {ACTIVE_BRANCH.Omega_m:.12f}`, "
                 f"`Omega_k = {ACTIVE_BRANCH.Omega_k:.12f}`, "
                 f"`Omega_Lambda = {ACTIVE_BRANCH.Omega_lambda:.12f}`, "
-                f"`T_CMB = {ACTIVE_BRANCH.T_cmb:.4f} K`, and "
                 f"`Y_p = {ACTIVE_BRANCH.YHe:.4f}`."
             ),
             scope="Fixed active runtime parameter package carried by the public calculator.",
@@ -562,7 +563,7 @@ def theorem_graph() -> dict[str, TheoremNode]:
             depends_on=("premise.1", "premise.2", "paper17.gttp_thermal_readout"),
             premises=(
                 "`premise.1` and `premise.2` fix the IO local-clock setting and allow the standard local radiation-density input.",
-                "`paper17.gttp_thermal_readout` fixes the carried observer CMB temperature entering the exact radiation density.",
+                "`paper17.gttp_thermal_readout` fixes the FIRAS-normalized observer thermal readout entering the exact radiation density.",
                 "The Paper 30 master-clock correction replaces the old dust cycloid as the all-epoch local clock.",
             ),
             proof_outline=(
@@ -1599,7 +1600,8 @@ def theorem_graph() -> dict[str, TheoremNode]:
                 "The preferred late-time baryon-to-photon ratio "
                 f"`eta_IO = n_b / n_gamma = {eta_late:.12e}` is closed on the "
                 "active branch, equivalently "
-                "`eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`."
+                "`eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`, with "
+                "`T_obs` inheriting the FIRAS-fixed readout normalization."
             ),
             scope="Late-time baryon-to-photon ratio convention used by the calculator.",
             authority_paths=(),
@@ -1611,7 +1613,7 @@ def theorem_graph() -> dict[str, TheoremNode]:
             ),
             proof_outline=(
                 "Start from the active-branch physical-density slot `omega_b,geom` together with the late-time baryon-counting law.",
-                "Convert the active-branch baryon density and observed CMB temperature into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
+                "Convert the active-branch baryon density and FIRAS-fixed observer-side photon bath into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
                 "Fix the preferred exported `eta_IO,late` convention to that closed branch value.",
                 "Expose the convention directly through the calculator and bundle.",
             ),
@@ -1913,15 +1915,15 @@ def explained_output_specs() -> dict[str, dict[str, Any]]:
             ),
         },
         "active_t_cmb": {
-            "label": "Active-branch T_CMB",
-            "claim_status": "derived / scoped",
+            "label": "FIRAS-fixed thermal datum",
+            "claim_status": "verified empirical datum plus derived uniqueness; not an independent prediction",
             "provenance_status": "full",
-            "zero_fitted_parameters": True,
+            "zero_fitted_parameters": False,
             "conditional_on_premises": ["premise.1", "premise.2"],
             "parameters": {},
             "note": (
-                "Observer-side CMB temperature carried by the GTTP thermal "
-                "readout law on the active branch."
+                "FIRAS supplies the observer-side thermal datum; Paper 17 vNext "
+                "fixes the unique readout normalization inside the IO family."
             ),
         },
         "bare_master_clock_age": {
@@ -2420,26 +2422,28 @@ def explain_branch_omega_lambda() -> ExplainedValue:
 
 
 def explain_active_t_cmb() -> ExplainedValue:
-    """Return the full explained value for the active observer-side `T_CMB`."""
+    """Return the full explained value for the FIRAS-fixed thermal datum."""
 
     return ExplainedValue(
         output_id="active_t_cmb",
-        label="Active-branch T_CMB",
-        primary_key="T_CMB",
-        primary_value=ACTIVE_BRANCH.T_cmb,
+        label="FIRAS-fixed thermal datum",
+        primary_key="T_FIRAS",
+        primary_value=T_CMB_REF_K,
         units="K",
-        claim_status="derived / scoped observer-side thermal readout",
+        claim_status="verified empirical datum plus derived uniqueness; not an independent prediction",
         provenance_status="full",
         payload={
             "branch_label": ACTIVE_BRANCH.label,
-            "T_CMB_K": ACTIVE_BRANCH.T_cmb,
+            "T_FIRAS_K": T_CMB_REF_K,
             "T_IO_K": T_IO_REF_K,
             "x": ACTIVE_IO_CONSTANTS.x,
             "K_gauge": ACTIVE_IO_CONSTANTS.K_gauge,
+            "R4_FIRAS": R4_FIRAS_NORMALIZATION,
         },
         scope_boundary=(
-            "Observer-side thermal readout on the fixed active branch.",
+            "FIRAS-fixed observer-side thermal datum on the fixed active branch.",
             "The local bulk thermal slot `T_IO` remains a distinct internal quantity.",
+            "This card is not an independent prediction of the observed CMB temperature.",
         ),
         conditional_on=("premise.1", "premise.2"),
         provenance_root_id="paper30.active_branch_parameter_package",
@@ -2451,10 +2455,11 @@ def explain_active_t_cmb() -> ExplainedValue:
             "paper30.active_branch_parameter_package",
         ),
         premise_ids=("premise.1", "premise.2"),
-        zero_fitted_parameters=True,
+        zero_fitted_parameters=False,
         notes=(
-            "This is the observer-side CMB temperature on the active branch.",
-            "The theorem chain keeps the thermal readout law explicit instead of treating `T_CMB` as a bare constant.",
+            "FIRAS supplies this empirical observer-side thermal datum.",
+            "Paper 17 vNext proves uniqueness of the corresponding `R4` normalization inside the IO readout family.",
+            "`R4` is fixed once and must not be retuned against downstream observables.",
         ),
     )
 
@@ -2480,7 +2485,7 @@ def explain_bare_master_clock_age() -> ExplainedValue:
             "Omega_k_bare": MASTER_CLOCK_BARE_BRANCH.Omega_k,
             "Omega_Lambda_bare": MASTER_CLOCK_BARE_BRANCH.Omega_lambda,
             "Omega_r_bare": MASTER_CLOCK_BARE_BRANCH.Omega_r,
-            "T_CMB_K": MASTER_CLOCK_BARE_BRANCH.T_cmb,
+            "T_observer_slot_K": MASTER_CLOCK_BARE_BRANCH.T_cmb,
         },
         scope_boundary=(
             "Bare local-clock branch only.",

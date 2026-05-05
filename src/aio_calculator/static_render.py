@@ -20,7 +20,6 @@ _INLINE_CODE_RE = re.compile(r"`([^`]+)`")
 _PAPER_SINGLE_RE = re.compile(r"\bPaper (\d+)\b")
 FRAMEWORK_MOTTO = "If the theory is correct, the math will just work."
 PREDICTION_SUMMARY_ITEMS = (
-    "T_CMB (0.3σ from FIRAS)",
     "H0 (0.35σ from Planck)",
     "Omega_k within 1σ of Planck CMB-only",
     "BBN triple (chi^2 = 1.13)",
@@ -30,10 +29,9 @@ PREDICTION_SUMMARY_ITEMS = (
 )
 OUTPUT_SCHEMA_COMPARISONS: dict[str, dict[str, object]] = {
     "active_t_cmb": {
-        "measured_label": "FIRAS CMB temperature reference",
+        "measured_label": "FIRAS empirical thermal datum",
         "measured_value": 2.7255,
         "units": "K",
-        "tension_sigma": 0.3,
         "reference_name": "FIRAS",
     },
     "branch_h0": {
@@ -381,7 +379,7 @@ def output_card_name(output: dict[str, object]) -> str:
     if output_id == "branch_omega_lambda":
         return "Omega_Lambda"
     if output_id == "active_t_cmb":
-        return "T_CMB"
+        return "FIRAS datum"
     if output_id == "bare_master_clock_age":
         return "Age_bare"
     if output_id == "scalar_tilt_ns":
@@ -422,7 +420,10 @@ def payload_key_label(key: str) -> str:
         "Omega_k": "Omega_k",
         "Omega_Lambda": "Omega_Lambda",
         "T_CMB_K": "T_CMB",
+        "T_FIRAS_K": "T_FIRAS",
+        "T_observer_slot_K": "Observer thermal slot",
         "T_IO_K": "T_IO",
+        "R4_FIRAS": "R4_FIRAS",
         "age_bare_gyr": "Age_bare",
         "H0_bare_km_s_mpc": "H0_bare",
         "Omega_m_bare": "Omega_m,bare",
@@ -494,6 +495,8 @@ def payload_key_unit(key: str, output_units: str | None) -> str:
         "r_d_mpc": "Mpc",
         "H0_km_s_mpc": "km/s/Mpc",
         "T_CMB_K": "K",
+        "T_FIRAS_K": "K",
+        "T_observer_slot_K": "K",
         "T_IO_K": "K",
         "age_bare_gyr": "Gyr",
         "H0_bare_km_s_mpc": "km/s/Mpc",
@@ -548,7 +551,7 @@ def payload_row_keys(output: dict[str, object]) -> list[str]:
         "branch_omega_m": ["branch_label", "Omega_m"],
         "branch_omega_k": ["branch_label", "Omega_k"],
         "branch_omega_lambda": ["branch_label", "Omega_Lambda"],
-        "active_t_cmb": ["branch_label", "T_CMB_K", "T_IO_K", "x", "K_gauge"],
+        "active_t_cmb": ["branch_label", "T_FIRAS_K", "T_IO_K", "x", "K_gauge", "R4_FIRAS"],
         "bare_master_clock_age": [
             "branch_label",
             "age_bare_gyr",
@@ -557,7 +560,7 @@ def payload_row_keys(output: dict[str, object]) -> list[str]:
             "Omega_k_bare",
             "Omega_Lambda_bare",
             "Omega_r_bare",
-            "T_CMB_K",
+            "T_observer_slot_K",
         ],
         "scalar_tilt_ns": ["n_s", "K_gauge", "x"],
         "native_scalar_amplitude_as": ["A_s", "gamma_BI", "x", "K_gauge"],
@@ -1152,7 +1155,7 @@ def calculator_cards_markup(bundle: dict[str, object]) -> str:
                 "bare_master_clock_age",
             ),
         ),
-        ("Temperature", ("active_t_cmb",)),
+        ("Thermal Datum", ("active_t_cmb",)),
         (
             "Acoustic Scale",
             (
@@ -1258,6 +1261,21 @@ def _page_shell(
     content="{escape_html(description)}"
   >
   <link rel="canonical" href="{escape_html(canonical)}">
+  <meta property="og:site_name" content="The Interior Observer Framework">
+  <meta property="og:title" content="{escape_html(title)}">
+  <meta property="og:description" content="{escape_html(description)}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{escape_html(canonical)}">
+  <meta property="og:image" content="https://dfife.github.io/assets/social/calculator-share.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Social preview card for {escape_html(title)}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{escape_html(title)}">
+  <meta name="twitter:description" content="{escape_html(description)}">
+  <meta name="twitter:image" content="https://dfife.github.io/assets/social/calculator-share.png">
+  <meta name="twitter:image:alt" content="Social preview card for {escape_html(title)}">
   <link rel="icon" href="data:,">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1328,11 +1346,11 @@ def render_public_calculator_page(bundle: dict[str, object]) -> str:
     """Render the output-card page from the generated bundle."""
 
     return _page_shell(
-        title="IO Calculator Theorem Surface",
+        title="IO Cosmological Calculator — Zero-Fitted-Parameter Predictions",
         description=(
-            "Interior Observer Framework black hole cosmology calculator with "
-            "zero fitted parameters, theorem-grade predictions, and "
-            "machine-readable output provenance."
+            "Zero-fitted-parameter IO cosmological calculator with reproducible "
+            "outputs, theorem provenance, claim labels, and FIRAS-fixed thermal "
+            "datum."
         ),
         canonical="https://dfife.github.io/calculator.html",
         overline="Theorem-grade surface",

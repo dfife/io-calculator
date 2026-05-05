@@ -183,9 +183,11 @@ def test_active_branch_parameter_cards_carry_full_chain() -> None:
         "paper21.branch_assignment",
         "paper30.active_branch_parameter_package",
     ]
-    assert math.isclose(tcmb["T_CMB_K"], 2.7253, rel_tol=0.0, abs_tol=1.0e-12)
+    assert math.isclose(tcmb["T_FIRAS_K"], 2.7255, rel_tol=0.0, abs_tol=1.0e-12)
+    assert "independent prediction" in tcmb["claim_status"]
     thermal = tcmb["provenance"]["nodes"]["paper17.gttp_thermal_readout"]
-    assert "`T_obs = T_IO x^K_gauge`" in thermal["statement"]
+    assert "`T_obs(R4) = T_IO x^(R4 K_gauge)`" in thermal["statement"]
+    assert "R4_FIRAS" in thermal["statement"]
     package = h0["provenance"]["nodes"]["paper30.active_branch_parameter_package"]
     assert "`H0 = 67.575856535826 km/s/Mpc`" in package["statement"]
 
@@ -338,8 +340,8 @@ def test_provenance_specs_and_graph_expose_theta_and_scaffolds() -> None:
     assert "`f_b = 2 gamma_BI / x = 0.312708336215025`" in graph[
         "paper12.baryon_dictionary_fraction"
     ].statement
-    assert graph["paper17.gttp_thermal_readout"].label == "Paper 17 GTTP Thermal Readout Theorem"
-    assert "`T_obs = T_IO x^K_gauge`" in graph["paper17.gttp_thermal_readout"].statement
+    assert graph["paper17.gttp_thermal_readout"].label == "Paper 17 FIRAS-fixed Thermal Readout Normalization"
+    assert "`T_obs(R4) = T_IO x^(R4 K_gauge)`" in graph["paper17.gttp_thermal_readout"].statement
     assert graph["paper28.boundary_fixed_point_scalar_tilt"].claim_status == "conditional / scoped"
     assert "`n_s = 1 - K_gauge / x = 0.9639`" in graph[
         "paper28.boundary_fixed_point_scalar_tilt"

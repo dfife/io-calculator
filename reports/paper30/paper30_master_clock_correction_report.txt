@@ -17,7 +17,9 @@ Executive result
    t_bare(a) = H0_bare^-1 integral_0^a da' / sqrt(Omega_r + Omega_m a' + Omega_k a'^2 + Omega_Lambda a'^4).
 
 2. verified:
-   from T_CMB = 2.7253 K and N_eff = 3.044, the exact bare radiation density is
+   from the carried observer-side thermal datum (now treated as a FIRAS-fixed
+   readout datum, not an independent temperature prediction) and N_eff = 3.044,
+   the exact bare radiation density is
    Omega_r,bare = 1.225914648157e-04, not the prompt-carried 9.15e-5.
 
    The prompt approximation is low because Omega_r depends on h^-2; with H0_bare = 58.4 the exact value is larger.

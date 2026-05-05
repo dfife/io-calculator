@@ -19,7 +19,7 @@ PUBLIC_HTML = PUBLIC_SITE_ROOT / "calculator.html"
 PUBLIC_THEOREMS_HTML = PUBLIC_SITE_ROOT / "calculator-theorems.html"
 PUBLIC_LITHIUM_HTML = PUBLIC_SITE_ROOT / "lithium.html"
 PUBLIC_SCORECARD_HTML = PUBLIC_SITE_ROOT / "scorecard.html"
-PUBLIC_SITEMAP = PUBLIC_SITE_ROOT / "sitemap_index.xml"
+PUBLIC_SITEMAP = PUBLIC_SITE_ROOT / "sitemap.xml"
 PUBLIC_JS = PUBLIC_SITE_ROOT / "assets" / "js" / "calculator.js"
 
 
@@ -95,7 +95,8 @@ def test_public_site_prerenders_when_site_clone_is_present() -> None:
     assert '"@type":"Dataset"' in html
     assert "Interior Observer Framework is a black hole cosmology and cosmological calculator" in html
     assert "What can this predict" in html
-    assert "T_CMB (0.3σ from FIRAS)" in html
+    assert "T_CMB (0.3σ from FIRAS)" not in html
+    assert "FIRAS-fixed thermal datum" in html
     assert "Hubble tension resolved (max 0.57σ across 6 methods)" in html
     assert "Redshift calculator" in html
     assert "Try it yourself" in html
@@ -113,7 +114,7 @@ def test_public_site_prerenders_when_site_clone_is_present() -> None:
     assert html.count('class="calc-output-group"') == 6
     assert html.count('class="calc-group-summary"') == 6
     assert "Geometry" in html
-    assert "Temperature" in html
+    assert "Thermal Datum" in html
     assert "Acoustic Scale" in html
     assert "Nucleosynthesis" in html
     assert "Structure" in html
@@ -155,15 +156,15 @@ def test_public_site_prerenders_when_site_clone_is_present() -> None:
     assert "application/ld+json" in index_html
     assert 'name="robots"' in index_html
     assert 'name="googlebot"' in index_html
-    assert "The Interior Observer Framework is a black hole cosmology with a " in index_html
-    assert 'href="calculator.html">cosmological calculator</a>' in index_html
-    assert "theorem-grade predictions" in index_html
+    assert "A black hole cosmology with zero fitted parameters. Try to break it." in index_html
+    assert 'href="calculator.html">Open the Calculator</a>' in index_html
+    assert "reproducibility bundles" in index_html
     assert "zero fitted parameters" in index_html
-    assert "CMB first peak ell = 224" in index_html
+    assert "ℓ = 224" in index_html
     assert "lithium.html" in index_html
     assert "scorecard.html" in index_html
-    assert "Read the Lithium Story" in index_html
-    assert "View the Scorecard" in index_html
+    assert "Cosmological Lithium in IO" in index_html
+    assert "Hubble Tension in IO" in index_html
     assert "Interior Observer Framework" in lithium_html
     assert "application/ld+json" in lithium_html
     assert 'name="robots"' in lithium_html
@@ -184,7 +185,7 @@ def test_public_site_prerenders_when_site_clone_is_present() -> None:
     assert "DESI evolving-w" in scorecard_html
     assert "Full high-ℓ TT spectrum" in scorecard_html
     assert 'href="https://zenodo.org/records/19561708/latest"' in scorecard_html
-    assert ">Paper 35</a> baryogenesis obstruction" in scorecard_html
+    assert "Paper 35 — Four Problems, One Horizon</a> baryogenesis obstruction" in scorecard_html
     assert "calculator.html#output-tt_first_peak_support" in scorecard_html
     assert "fetch(bundlePath)" not in js
     assert "data-prerendered='true'" in js

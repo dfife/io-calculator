@@ -1,7 +1,7 @@
 {
   "metadata": {
     "name": "AIO Calculator",
-    "generated_at_utc": "2026-04-17T08:59:55.708408+00:00",
+    "generated_at_utc": "2026-05-05T15:51:12.447030+00:00",
     "branch_status": "active_paper10_legacy_branch",
     "calculator_scope": [
       "derived or verified closed-FRW background geometry",
@@ -674,10 +674,10 @@
     "paper17.gttp_thermal_readout": {
       "node_id": "paper17.gttp_thermal_readout",
       "kind": "theorem",
-      "label": "Paper 17 GTTP Thermal Readout Theorem",
-      "claim_status": "derived / scoped",
-      "statement": "The observer thermal readout obeys `T_obs = T_IO x^K_gauge` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. On the carried active thermal slot `T_IO = 2.6635 K`, this gives `T_CMB = 2.7253 K`.",
-      "scope": "Observer-side thermal transfer law on the IO active branch.",
+      "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
+      "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
+      "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+      "scope": "Observer-side thermal readout normalization on the IO active branch.",
       "authority_paths": [
         "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper17_v1_4.docx"
       ],
@@ -686,17 +686,18 @@
         "premise.2"
       ],
       "premises": [
-        "`premise.1` identifies the observed CMB with the interior horizon readout problem.",
-        "`premise.2` licenses the local thermal transfer class used to promote GTTP to theorem grade."
+        "`premise.1` identifies the interior horizon readout problem.",
+        "`premise.2` licenses use of the FIRAS blackbody measurement as the empirical observer-side thermal datum."
       ],
       "proof_outline": [
-        "Use KMS rigidity to fix exact Planck-form preservation under uniform frequency rescaling.",
-        "Combine multiplicative horizon gauge data with additive transfer generators to force a logarithmic homomorphism.",
-        "Fix the coefficient on the Schwarzschild `S^2` horizon and evaluate the resulting thermal map on the carried IO temperature slot."
+        "Use the Paper 17 thermal readout family `T_obs(R4) = T_IO x^(R4 K_gauge)`.",
+        "Take logarithms to obtain an affine equation in `R4` with nonzero slope `K_gauge ln x`.",
+        "Solve uniquely for `R4_FIRAS = ln(T_FIRAS/T_IO)/(K_gauge ln x)` and freeze that normalization for downstream use."
       ],
       "scope_boundary": [
-        "Thermal readout law only.",
-        "Does not by itself determine every late-time background or perturbation observable on the active branch."
+        "FIRAS-fixed observer-side thermal readout normalization only.",
+        "Does not count the observed CMB temperature as an independent IO prediction.",
+        "Does not permit retuning `R4` against downstream observables."
       ],
       "notes": [],
       "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -914,7 +915,7 @@
       "kind": "theorem",
       "label": "Paper 30 Active-branch Parameter Package",
       "claim_status": "derived / scoped",
-      "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `T_CMB = 2.7253 K`, and `Y_p = 0.2477`.",
+      "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`.",
       "scope": "Fixed active runtime parameter package carried by the public calculator.",
       "authority_paths": [
         "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper30_v1_3.docx"
@@ -956,7 +957,7 @@
       ],
       "premises": [
         "`premise.1` and `premise.2` fix the IO local-clock setting and allow the standard local radiation-density input.",
-        "`paper17.gttp_thermal_readout` fixes the carried observer CMB temperature entering the exact radiation density.",
+        "`paper17.gttp_thermal_readout` fixes the FIRAS-normalized observer thermal readout entering the exact radiation density.",
         "The Paper 30 master-clock correction replaces the old dust cycloid as the all-epoch local clock."
       ],
       "proof_outline": [
@@ -1886,7 +1887,7 @@
       "kind": "theorem",
       "label": "Late-time eta_IO Closure Theorem",
       "claim_status": "derived / scoped",
-      "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch, equivalently `eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`.",
+      "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch, equivalently `eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`, with `T_obs` inheriting the FIRAS-fixed readout normalization.",
       "scope": "Late-time baryon-to-photon ratio convention used by the calculator.",
       "authority_paths": [],
       "depends_on": [
@@ -1900,7 +1901,7 @@
       ],
       "proof_outline": [
         "Start from the active-branch physical-density slot `omega_b,geom` together with the late-time baryon-counting law.",
-        "Convert the active-branch baryon density and observed CMB temperature into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
+        "Convert the active-branch baryon density and FIRAS-fixed observer-side photon bath into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
         "Fix the preferred exported `eta_IO,late` convention to that closed branch value.",
         "Expose the convention directly through the calculator and bundle."
       ],
@@ -2202,16 +2203,16 @@
       "note": "Active-branch dark-energy density surfaced as a standalone explained output."
     },
     "active_t_cmb": {
-      "label": "Active-branch T_CMB",
-      "claim_status": "derived / scoped",
+      "label": "FIRAS-fixed thermal datum",
+      "claim_status": "verified empirical datum plus derived uniqueness; not an independent prediction",
       "provenance_status": "full",
-      "zero_fitted_parameters": true,
+      "zero_fitted_parameters": false,
       "conditional_on_premises": [
         "premise.1",
         "premise.2"
       ],
       "parameters": {},
-      "note": "Observer-side CMB temperature carried by the GTTP thermal readout law on the active branch."
+      "note": "FIRAS supplies the observer-side thermal datum; Paper 17 vNext fixes the unique readout normalization inside the IO family."
     },
     "bare_master_clock_age": {
       "label": "Bare master-clock age",
@@ -2530,10 +2531,10 @@
           "paper17.gttp_thermal_readout": {
             "node_id": "paper17.gttp_thermal_readout",
             "kind": "theorem",
-            "label": "Paper 17 GTTP Thermal Readout Theorem",
-            "claim_status": "derived / scoped",
-            "statement": "The observer thermal readout obeys `T_obs = T_IO x^K_gauge` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. On the carried active thermal slot `T_IO = 2.6635 K`, this gives `T_CMB = 2.7253 K`.",
-            "scope": "Observer-side thermal transfer law on the IO active branch.",
+            "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
+            "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper17_v1_4.docx"
             ],
@@ -2542,17 +2543,18 @@
               "premise.2"
             ],
             "premises": [
-              "`premise.1` identifies the observed CMB with the interior horizon readout problem.",
-              "`premise.2` licenses the local thermal transfer class used to promote GTTP to theorem grade."
+              "`premise.1` identifies the interior horizon readout problem.",
+              "`premise.2` licenses use of the FIRAS blackbody measurement as the empirical observer-side thermal datum."
             ],
             "proof_outline": [
-              "Use KMS rigidity to fix exact Planck-form preservation under uniform frequency rescaling.",
-              "Combine multiplicative horizon gauge data with additive transfer generators to force a logarithmic homomorphism.",
-              "Fix the coefficient on the Schwarzschild `S^2` horizon and evaluate the resulting thermal map on the carried IO temperature slot."
+              "Use the Paper 17 thermal readout family `T_obs(R4) = T_IO x^(R4 K_gauge)`.",
+              "Take logarithms to obtain an affine equation in `R4` with nonzero slope `K_gauge ln x`.",
+              "Solve uniquely for `R4_FIRAS = ln(T_FIRAS/T_IO)/(K_gauge ln x)` and freeze that normalization for downstream use."
             ],
             "scope_boundary": [
-              "Thermal readout law only.",
-              "Does not by itself determine every late-time background or perturbation observable on the active branch."
+              "FIRAS-fixed observer-side thermal readout normalization only.",
+              "Does not count the observed CMB temperature as an independent IO prediction.",
+              "Does not permit retuning `R4` against downstream observables."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -2770,7 +2772,7 @@
             "kind": "theorem",
             "label": "Paper 30 Active-branch Parameter Package",
             "claim_status": "derived / scoped",
-            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `T_CMB = 2.7253 K`, and `Y_p = 0.2477`.",
+            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`.",
             "scope": "Fixed active runtime parameter package carried by the public calculator.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper30_v1_3.docx"
@@ -2812,7 +2814,7 @@
             ],
             "premises": [
               "`premise.1` and `premise.2` fix the IO local-clock setting and allow the standard local radiation-density input.",
-              "`paper17.gttp_thermal_readout` fixes the carried observer CMB temperature entering the exact radiation density.",
+              "`paper17.gttp_thermal_readout` fixes the FIRAS-normalized observer thermal readout entering the exact radiation density.",
               "The Paper 30 master-clock correction replaces the old dust cycloid as the all-epoch local clock."
             ],
             "proof_outline": [
@@ -3742,7 +3744,7 @@
             "kind": "theorem",
             "label": "Late-time eta_IO Closure Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch, equivalently `eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`.",
+            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch, equivalently `eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`, with `T_obs` inheriting the FIRAS-fixed readout normalization.",
             "scope": "Late-time baryon-to-photon ratio convention used by the calculator.",
             "authority_paths": [],
             "depends_on": [
@@ -3756,7 +3758,7 @@
             ],
             "proof_outline": [
               "Start from the active-branch physical-density slot `omega_b,geom` together with the late-time baryon-counting law.",
-              "Convert the active-branch baryon density and observed CMB temperature into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
+              "Convert the active-branch baryon density and FIRAS-fixed observer-side photon bath into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
               "Fix the preferred exported `eta_IO,late` convention to that closed branch value.",
               "Expose the convention directly through the calculator and bundle."
             ],
@@ -4152,10 +4154,10 @@
           "paper17.gttp_thermal_readout": {
             "node_id": "paper17.gttp_thermal_readout",
             "kind": "theorem",
-            "label": "Paper 17 GTTP Thermal Readout Theorem",
-            "claim_status": "derived / scoped",
-            "statement": "The observer thermal readout obeys `T_obs = T_IO x^K_gauge` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. On the carried active thermal slot `T_IO = 2.6635 K`, this gives `T_CMB = 2.7253 K`.",
-            "scope": "Observer-side thermal transfer law on the IO active branch.",
+            "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
+            "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper17_v1_4.docx"
             ],
@@ -4164,17 +4166,18 @@
               "premise.2"
             ],
             "premises": [
-              "`premise.1` identifies the observed CMB with the interior horizon readout problem.",
-              "`premise.2` licenses the local thermal transfer class used to promote GTTP to theorem grade."
+              "`premise.1` identifies the interior horizon readout problem.",
+              "`premise.2` licenses use of the FIRAS blackbody measurement as the empirical observer-side thermal datum."
             ],
             "proof_outline": [
-              "Use KMS rigidity to fix exact Planck-form preservation under uniform frequency rescaling.",
-              "Combine multiplicative horizon gauge data with additive transfer generators to force a logarithmic homomorphism.",
-              "Fix the coefficient on the Schwarzschild `S^2` horizon and evaluate the resulting thermal map on the carried IO temperature slot."
+              "Use the Paper 17 thermal readout family `T_obs(R4) = T_IO x^(R4 K_gauge)`.",
+              "Take logarithms to obtain an affine equation in `R4` with nonzero slope `K_gauge ln x`.",
+              "Solve uniquely for `R4_FIRAS = ln(T_FIRAS/T_IO)/(K_gauge ln x)` and freeze that normalization for downstream use."
             ],
             "scope_boundary": [
-              "Thermal readout law only.",
-              "Does not by itself determine every late-time background or perturbation observable on the active branch."
+              "FIRAS-fixed observer-side thermal readout normalization only.",
+              "Does not count the observed CMB temperature as an independent IO prediction.",
+              "Does not permit retuning `R4` against downstream observables."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -4392,7 +4395,7 @@
             "kind": "theorem",
             "label": "Paper 30 Active-branch Parameter Package",
             "claim_status": "derived / scoped",
-            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `T_CMB = 2.7253 K`, and `Y_p = 0.2477`.",
+            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`.",
             "scope": "Fixed active runtime parameter package carried by the public calculator.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper30_v1_3.docx"
@@ -4434,7 +4437,7 @@
             ],
             "premises": [
               "`premise.1` and `premise.2` fix the IO local-clock setting and allow the standard local radiation-density input.",
-              "`paper17.gttp_thermal_readout` fixes the carried observer CMB temperature entering the exact radiation density.",
+              "`paper17.gttp_thermal_readout` fixes the FIRAS-normalized observer thermal readout entering the exact radiation density.",
               "The Paper 30 master-clock correction replaces the old dust cycloid as the all-epoch local clock."
             ],
             "proof_outline": [
@@ -5364,7 +5367,7 @@
             "kind": "theorem",
             "label": "Late-time eta_IO Closure Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch, equivalently `eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`.",
+            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch, equivalently `eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`, with `T_obs` inheriting the FIRAS-fixed readout normalization.",
             "scope": "Late-time baryon-to-photon ratio convention used by the calculator.",
             "authority_paths": [],
             "depends_on": [
@@ -5378,7 +5381,7 @@
             ],
             "proof_outline": [
               "Start from the active-branch physical-density slot `omega_b,geom` together with the late-time baryon-counting law.",
-              "Convert the active-branch baryon density and observed CMB temperature into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
+              "Convert the active-branch baryon density and FIRAS-fixed observer-side photon bath into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
               "Fix the preferred exported `eta_IO,late` convention to that closed branch value.",
               "Expose the convention directly through the calculator and bundle."
             ],
@@ -5726,10 +5729,10 @@
           "paper17.gttp_thermal_readout": {
             "node_id": "paper17.gttp_thermal_readout",
             "kind": "theorem",
-            "label": "Paper 17 GTTP Thermal Readout Theorem",
-            "claim_status": "derived / scoped",
-            "statement": "The observer thermal readout obeys `T_obs = T_IO x^K_gauge` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. On the carried active thermal slot `T_IO = 2.6635 K`, this gives `T_CMB = 2.7253 K`.",
-            "scope": "Observer-side thermal transfer law on the IO active branch.",
+            "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
+            "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper17_v1_4.docx"
             ],
@@ -5738,17 +5741,18 @@
               "premise.2"
             ],
             "premises": [
-              "`premise.1` identifies the observed CMB with the interior horizon readout problem.",
-              "`premise.2` licenses the local thermal transfer class used to promote GTTP to theorem grade."
+              "`premise.1` identifies the interior horizon readout problem.",
+              "`premise.2` licenses use of the FIRAS blackbody measurement as the empirical observer-side thermal datum."
             ],
             "proof_outline": [
-              "Use KMS rigidity to fix exact Planck-form preservation under uniform frequency rescaling.",
-              "Combine multiplicative horizon gauge data with additive transfer generators to force a logarithmic homomorphism.",
-              "Fix the coefficient on the Schwarzschild `S^2` horizon and evaluate the resulting thermal map on the carried IO temperature slot."
+              "Use the Paper 17 thermal readout family `T_obs(R4) = T_IO x^(R4 K_gauge)`.",
+              "Take logarithms to obtain an affine equation in `R4` with nonzero slope `K_gauge ln x`.",
+              "Solve uniquely for `R4_FIRAS = ln(T_FIRAS/T_IO)/(K_gauge ln x)` and freeze that normalization for downstream use."
             ],
             "scope_boundary": [
-              "Thermal readout law only.",
-              "Does not by itself determine every late-time background or perturbation observable on the active branch."
+              "FIRAS-fixed observer-side thermal readout normalization only.",
+              "Does not count the observed CMB temperature as an independent IO prediction.",
+              "Does not permit retuning `R4` against downstream observables."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -5966,7 +5970,7 @@
             "kind": "theorem",
             "label": "Paper 30 Active-branch Parameter Package",
             "claim_status": "derived / scoped",
-            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `T_CMB = 2.7253 K`, and `Y_p = 0.2477`.",
+            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`.",
             "scope": "Fixed active runtime parameter package carried by the public calculator.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper30_v1_3.docx"
@@ -6008,7 +6012,7 @@
             ],
             "premises": [
               "`premise.1` and `premise.2` fix the IO local-clock setting and allow the standard local radiation-density input.",
-              "`paper17.gttp_thermal_readout` fixes the carried observer CMB temperature entering the exact radiation density.",
+              "`paper17.gttp_thermal_readout` fixes the FIRAS-normalized observer thermal readout entering the exact radiation density.",
               "The Paper 30 master-clock correction replaces the old dust cycloid as the all-epoch local clock."
             ],
             "proof_outline": [
@@ -6938,7 +6942,7 @@
             "kind": "theorem",
             "label": "Late-time eta_IO Closure Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch, equivalently `eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`.",
+            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch, equivalently `eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`, with `T_obs` inheriting the FIRAS-fixed readout normalization.",
             "scope": "Late-time baryon-to-photon ratio convention used by the calculator.",
             "authority_paths": [],
             "depends_on": [
@@ -6952,7 +6956,7 @@
             ],
             "proof_outline": [
               "Start from the active-branch physical-density slot `omega_b,geom` together with the late-time baryon-counting law.",
-              "Convert the active-branch baryon density and observed CMB temperature into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
+              "Convert the active-branch baryon density and FIRAS-fixed observer-side photon bath into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
               "Fix the preferred exported `eta_IO,late` convention to that closed branch value.",
               "Expose the convention directly through the calculator and bundle."
             ],
@@ -7298,10 +7302,10 @@
           "paper17.gttp_thermal_readout": {
             "node_id": "paper17.gttp_thermal_readout",
             "kind": "theorem",
-            "label": "Paper 17 GTTP Thermal Readout Theorem",
-            "claim_status": "derived / scoped",
-            "statement": "The observer thermal readout obeys `T_obs = T_IO x^K_gauge` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. On the carried active thermal slot `T_IO = 2.6635 K`, this gives `T_CMB = 2.7253 K`.",
-            "scope": "Observer-side thermal transfer law on the IO active branch.",
+            "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
+            "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper17_v1_4.docx"
             ],
@@ -7310,17 +7314,18 @@
               "premise.2"
             ],
             "premises": [
-              "`premise.1` identifies the observed CMB with the interior horizon readout problem.",
-              "`premise.2` licenses the local thermal transfer class used to promote GTTP to theorem grade."
+              "`premise.1` identifies the interior horizon readout problem.",
+              "`premise.2` licenses use of the FIRAS blackbody measurement as the empirical observer-side thermal datum."
             ],
             "proof_outline": [
-              "Use KMS rigidity to fix exact Planck-form preservation under uniform frequency rescaling.",
-              "Combine multiplicative horizon gauge data with additive transfer generators to force a logarithmic homomorphism.",
-              "Fix the coefficient on the Schwarzschild `S^2` horizon and evaluate the resulting thermal map on the carried IO temperature slot."
+              "Use the Paper 17 thermal readout family `T_obs(R4) = T_IO x^(R4 K_gauge)`.",
+              "Take logarithms to obtain an affine equation in `R4` with nonzero slope `K_gauge ln x`.",
+              "Solve uniquely for `R4_FIRAS = ln(T_FIRAS/T_IO)/(K_gauge ln x)` and freeze that normalization for downstream use."
             ],
             "scope_boundary": [
-              "Thermal readout law only.",
-              "Does not by itself determine every late-time background or perturbation observable on the active branch."
+              "FIRAS-fixed observer-side thermal readout normalization only.",
+              "Does not count the observed CMB temperature as an independent IO prediction.",
+              "Does not permit retuning `R4` against downstream observables."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -7538,7 +7543,7 @@
             "kind": "theorem",
             "label": "Paper 30 Active-branch Parameter Package",
             "claim_status": "derived / scoped",
-            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `T_CMB = 2.7253 K`, and `Y_p = 0.2477`.",
+            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`.",
             "scope": "Fixed active runtime parameter package carried by the public calculator.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper30_v1_3.docx"
@@ -7580,7 +7585,7 @@
             ],
             "premises": [
               "`premise.1` and `premise.2` fix the IO local-clock setting and allow the standard local radiation-density input.",
-              "`paper17.gttp_thermal_readout` fixes the carried observer CMB temperature entering the exact radiation density.",
+              "`paper17.gttp_thermal_readout` fixes the FIRAS-normalized observer thermal readout entering the exact radiation density.",
               "The Paper 30 master-clock correction replaces the old dust cycloid as the all-epoch local clock."
             ],
             "proof_outline": [
@@ -8510,7 +8515,7 @@
             "kind": "theorem",
             "label": "Late-time eta_IO Closure Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch, equivalently `eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`.",
+            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch, equivalently `eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`, with `T_obs` inheriting the FIRAS-fixed readout normalization.",
             "scope": "Late-time baryon-to-photon ratio convention used by the calculator.",
             "authority_paths": [],
             "depends_on": [
@@ -8524,7 +8529,7 @@
             ],
             "proof_outline": [
               "Start from the active-branch physical-density slot `omega_b,geom` together with the late-time baryon-counting law.",
-              "Convert the active-branch baryon density and observed CMB temperature into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
+              "Convert the active-branch baryon density and FIRAS-fixed observer-side photon bath into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
               "Fix the preferred exported `eta_IO,late` convention to that closed branch value.",
               "Expose the convention directly through the calculator and bundle."
             ],
@@ -8870,10 +8875,10 @@
           "paper17.gttp_thermal_readout": {
             "node_id": "paper17.gttp_thermal_readout",
             "kind": "theorem",
-            "label": "Paper 17 GTTP Thermal Readout Theorem",
-            "claim_status": "derived / scoped",
-            "statement": "The observer thermal readout obeys `T_obs = T_IO x^K_gauge` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. On the carried active thermal slot `T_IO = 2.6635 K`, this gives `T_CMB = 2.7253 K`.",
-            "scope": "Observer-side thermal transfer law on the IO active branch.",
+            "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
+            "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper17_v1_4.docx"
             ],
@@ -8882,17 +8887,18 @@
               "premise.2"
             ],
             "premises": [
-              "`premise.1` identifies the observed CMB with the interior horizon readout problem.",
-              "`premise.2` licenses the local thermal transfer class used to promote GTTP to theorem grade."
+              "`premise.1` identifies the interior horizon readout problem.",
+              "`premise.2` licenses use of the FIRAS blackbody measurement as the empirical observer-side thermal datum."
             ],
             "proof_outline": [
-              "Use KMS rigidity to fix exact Planck-form preservation under uniform frequency rescaling.",
-              "Combine multiplicative horizon gauge data with additive transfer generators to force a logarithmic homomorphism.",
-              "Fix the coefficient on the Schwarzschild `S^2` horizon and evaluate the resulting thermal map on the carried IO temperature slot."
+              "Use the Paper 17 thermal readout family `T_obs(R4) = T_IO x^(R4 K_gauge)`.",
+              "Take logarithms to obtain an affine equation in `R4` with nonzero slope `K_gauge ln x`.",
+              "Solve uniquely for `R4_FIRAS = ln(T_FIRAS/T_IO)/(K_gauge ln x)` and freeze that normalization for downstream use."
             ],
             "scope_boundary": [
-              "Thermal readout law only.",
-              "Does not by itself determine every late-time background or perturbation observable on the active branch."
+              "FIRAS-fixed observer-side thermal readout normalization only.",
+              "Does not count the observed CMB temperature as an independent IO prediction.",
+              "Does not permit retuning `R4` against downstream observables."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -9110,7 +9116,7 @@
             "kind": "theorem",
             "label": "Paper 30 Active-branch Parameter Package",
             "claim_status": "derived / scoped",
-            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `T_CMB = 2.7253 K`, and `Y_p = 0.2477`.",
+            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`.",
             "scope": "Fixed active runtime parameter package carried by the public calculator.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper30_v1_3.docx"
@@ -9152,7 +9158,7 @@
             ],
             "premises": [
               "`premise.1` and `premise.2` fix the IO local-clock setting and allow the standard local radiation-density input.",
-              "`paper17.gttp_thermal_readout` fixes the carried observer CMB temperature entering the exact radiation density.",
+              "`paper17.gttp_thermal_readout` fixes the FIRAS-normalized observer thermal readout entering the exact radiation density.",
               "The Paper 30 master-clock correction replaces the old dust cycloid as the all-epoch local clock."
             ],
             "proof_outline": [
@@ -10082,7 +10088,7 @@
             "kind": "theorem",
             "label": "Late-time eta_IO Closure Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch, equivalently `eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`.",
+            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch, equivalently `eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`, with `T_obs` inheriting the FIRAS-fixed readout normalization.",
             "scope": "Late-time baryon-to-photon ratio convention used by the calculator.",
             "authority_paths": [],
             "depends_on": [
@@ -10096,7 +10102,7 @@
             ],
             "proof_outline": [
               "Start from the active-branch physical-density slot `omega_b,geom` together with the late-time baryon-counting law.",
-              "Convert the active-branch baryon density and observed CMB temperature into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
+              "Convert the active-branch baryon density and FIRAS-fixed observer-side photon bath into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
               "Fix the preferred exported `eta_IO,late` convention to that closed branch value.",
               "Expose the convention directly through the calculator and bundle."
             ],
@@ -10442,10 +10448,10 @@
           "paper17.gttp_thermal_readout": {
             "node_id": "paper17.gttp_thermal_readout",
             "kind": "theorem",
-            "label": "Paper 17 GTTP Thermal Readout Theorem",
-            "claim_status": "derived / scoped",
-            "statement": "The observer thermal readout obeys `T_obs = T_IO x^K_gauge` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. On the carried active thermal slot `T_IO = 2.6635 K`, this gives `T_CMB = 2.7253 K`.",
-            "scope": "Observer-side thermal transfer law on the IO active branch.",
+            "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
+            "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper17_v1_4.docx"
             ],
@@ -10454,17 +10460,18 @@
               "premise.2"
             ],
             "premises": [
-              "`premise.1` identifies the observed CMB with the interior horizon readout problem.",
-              "`premise.2` licenses the local thermal transfer class used to promote GTTP to theorem grade."
+              "`premise.1` identifies the interior horizon readout problem.",
+              "`premise.2` licenses use of the FIRAS blackbody measurement as the empirical observer-side thermal datum."
             ],
             "proof_outline": [
-              "Use KMS rigidity to fix exact Planck-form preservation under uniform frequency rescaling.",
-              "Combine multiplicative horizon gauge data with additive transfer generators to force a logarithmic homomorphism.",
-              "Fix the coefficient on the Schwarzschild `S^2` horizon and evaluate the resulting thermal map on the carried IO temperature slot."
+              "Use the Paper 17 thermal readout family `T_obs(R4) = T_IO x^(R4 K_gauge)`.",
+              "Take logarithms to obtain an affine equation in `R4` with nonzero slope `K_gauge ln x`.",
+              "Solve uniquely for `R4_FIRAS = ln(T_FIRAS/T_IO)/(K_gauge ln x)` and freeze that normalization for downstream use."
             ],
             "scope_boundary": [
-              "Thermal readout law only.",
-              "Does not by itself determine every late-time background or perturbation observable on the active branch."
+              "FIRAS-fixed observer-side thermal readout normalization only.",
+              "Does not count the observed CMB temperature as an independent IO prediction.",
+              "Does not permit retuning `R4` against downstream observables."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -10682,7 +10689,7 @@
             "kind": "theorem",
             "label": "Paper 30 Active-branch Parameter Package",
             "claim_status": "derived / scoped",
-            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `T_CMB = 2.7253 K`, and `Y_p = 0.2477`.",
+            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`.",
             "scope": "Fixed active runtime parameter package carried by the public calculator.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper30_v1_3.docx"
@@ -10724,7 +10731,7 @@
             ],
             "premises": [
               "`premise.1` and `premise.2` fix the IO local-clock setting and allow the standard local radiation-density input.",
-              "`paper17.gttp_thermal_readout` fixes the carried observer CMB temperature entering the exact radiation density.",
+              "`paper17.gttp_thermal_readout` fixes the FIRAS-normalized observer thermal readout entering the exact radiation density.",
               "The Paper 30 master-clock correction replaces the old dust cycloid as the all-epoch local clock."
             ],
             "proof_outline": [
@@ -11654,7 +11661,7 @@
             "kind": "theorem",
             "label": "Late-time eta_IO Closure Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch, equivalently `eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`.",
+            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch, equivalently `eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`, with `T_obs` inheriting the FIRAS-fixed readout normalization.",
             "scope": "Late-time baryon-to-photon ratio convention used by the calculator.",
             "authority_paths": [],
             "depends_on": [
@@ -11668,7 +11675,7 @@
             ],
             "proof_outline": [
               "Start from the active-branch physical-density slot `omega_b,geom` together with the late-time baryon-counting law.",
-              "Convert the active-branch baryon density and observed CMB temperature into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
+              "Convert the active-branch baryon density and FIRAS-fixed observer-side photon bath into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
               "Fix the preferred exported `eta_IO,late` convention to that closed branch value.",
               "Expose the convention directly through the calculator and bundle."
             ],
@@ -12014,10 +12021,10 @@
           "paper17.gttp_thermal_readout": {
             "node_id": "paper17.gttp_thermal_readout",
             "kind": "theorem",
-            "label": "Paper 17 GTTP Thermal Readout Theorem",
-            "claim_status": "derived / scoped",
-            "statement": "The observer thermal readout obeys `T_obs = T_IO x^K_gauge` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. On the carried active thermal slot `T_IO = 2.6635 K`, this gives `T_CMB = 2.7253 K`.",
-            "scope": "Observer-side thermal transfer law on the IO active branch.",
+            "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
+            "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper17_v1_4.docx"
             ],
@@ -12026,17 +12033,18 @@
               "premise.2"
             ],
             "premises": [
-              "`premise.1` identifies the observed CMB with the interior horizon readout problem.",
-              "`premise.2` licenses the local thermal transfer class used to promote GTTP to theorem grade."
+              "`premise.1` identifies the interior horizon readout problem.",
+              "`premise.2` licenses use of the FIRAS blackbody measurement as the empirical observer-side thermal datum."
             ],
             "proof_outline": [
-              "Use KMS rigidity to fix exact Planck-form preservation under uniform frequency rescaling.",
-              "Combine multiplicative horizon gauge data with additive transfer generators to force a logarithmic homomorphism.",
-              "Fix the coefficient on the Schwarzschild `S^2` horizon and evaluate the resulting thermal map on the carried IO temperature slot."
+              "Use the Paper 17 thermal readout family `T_obs(R4) = T_IO x^(R4 K_gauge)`.",
+              "Take logarithms to obtain an affine equation in `R4` with nonzero slope `K_gauge ln x`.",
+              "Solve uniquely for `R4_FIRAS = ln(T_FIRAS/T_IO)/(K_gauge ln x)` and freeze that normalization for downstream use."
             ],
             "scope_boundary": [
-              "Thermal readout law only.",
-              "Does not by itself determine every late-time background or perturbation observable on the active branch."
+              "FIRAS-fixed observer-side thermal readout normalization only.",
+              "Does not count the observed CMB temperature as an independent IO prediction.",
+              "Does not permit retuning `R4` against downstream observables."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -12254,7 +12262,7 @@
             "kind": "theorem",
             "label": "Paper 30 Active-branch Parameter Package",
             "claim_status": "derived / scoped",
-            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `T_CMB = 2.7253 K`, and `Y_p = 0.2477`.",
+            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`.",
             "scope": "Fixed active runtime parameter package carried by the public calculator.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper30_v1_3.docx"
@@ -12296,7 +12304,7 @@
             ],
             "premises": [
               "`premise.1` and `premise.2` fix the IO local-clock setting and allow the standard local radiation-density input.",
-              "`paper17.gttp_thermal_readout` fixes the carried observer CMB temperature entering the exact radiation density.",
+              "`paper17.gttp_thermal_readout` fixes the FIRAS-normalized observer thermal readout entering the exact radiation density.",
               "The Paper 30 master-clock correction replaces the old dust cycloid as the all-epoch local clock."
             ],
             "proof_outline": [
@@ -13226,7 +13234,7 @@
             "kind": "theorem",
             "label": "Late-time eta_IO Closure Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch, equivalently `eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`.",
+            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch, equivalently `eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`, with `T_obs` inheriting the FIRAS-fixed readout normalization.",
             "scope": "Late-time baryon-to-photon ratio convention used by the calculator.",
             "authority_paths": [],
             "depends_on": [
@@ -13240,7 +13248,7 @@
             ],
             "proof_outline": [
               "Start from the active-branch physical-density slot `omega_b,geom` together with the late-time baryon-counting law.",
-              "Convert the active-branch baryon density and observed CMB temperature into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
+              "Convert the active-branch baryon density and FIRAS-fixed observer-side photon bath into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
               "Fix the preferred exported `eta_IO,late` convention to that closed branch value.",
               "Expose the convention directly through the calculator and bundle."
             ],
@@ -13472,30 +13480,33 @@
     },
     "active_t_cmb": {
       "branch_label": "active_paper10_legacy_projected_branch",
-      "T_CMB_K": 2.7253,
+      "T_FIRAS_K": 2.7255,
       "T_IO_K": 2.6634952609122613,
       "x": 1.5189873277742727,
       "K_gauge": 0.05487281774291466,
+      "R4_FIRAS": 1.0031990469301053,
       "output_id": "active_t_cmb",
-      "label": "Active-branch T_CMB",
-      "primary_key": "T_CMB",
-      "primary_value": 2.7253,
+      "label": "FIRAS-fixed thermal datum",
+      "primary_key": "T_FIRAS",
+      "primary_value": 2.7255,
       "units": "K",
-      "claim_status": "derived / scoped observer-side thermal readout",
+      "claim_status": "verified empirical datum plus derived uniqueness; not an independent prediction",
       "provenance_status": "full",
-      "zero_fitted_parameters": true,
+      "zero_fitted_parameters": false,
       "conditional_on_premises": [
         "premise.1",
         "premise.2"
       ],
       "scope_boundary": [
-        "Observer-side thermal readout on the fixed active branch.",
-        "The local bulk thermal slot `T_IO` remains a distinct internal quantity."
+        "FIRAS-fixed observer-side thermal datum on the fixed active branch.",
+        "The local bulk thermal slot `T_IO` remains a distinct internal quantity.",
+        "This card is not an independent prediction of the observed CMB temperature."
       ],
       "non_claims": [],
       "notes": [
-        "This is the observer-side CMB temperature on the active branch.",
-        "The theorem chain keeps the thermal readout law explicit instead of treating `T_CMB` as a bare constant."
+        "FIRAS supplies this empirical observer-side thermal datum.",
+        "Paper 17 vNext proves uniqueness of the corresponding `R4` normalization inside the IO readout family.",
+        "`R4` is fixed once and must not be retuned against downstream observables."
       ],
       "provenance": {
         "root_node": "paper30.active_branch_parameter_package",
@@ -13591,10 +13602,10 @@
           "paper17.gttp_thermal_readout": {
             "node_id": "paper17.gttp_thermal_readout",
             "kind": "theorem",
-            "label": "Paper 17 GTTP Thermal Readout Theorem",
-            "claim_status": "derived / scoped",
-            "statement": "The observer thermal readout obeys `T_obs = T_IO x^K_gauge` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. On the carried active thermal slot `T_IO = 2.6635 K`, this gives `T_CMB = 2.7253 K`.",
-            "scope": "Observer-side thermal transfer law on the IO active branch.",
+            "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
+            "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper17_v1_4.docx"
             ],
@@ -13603,17 +13614,18 @@
               "premise.2"
             ],
             "premises": [
-              "`premise.1` identifies the observed CMB with the interior horizon readout problem.",
-              "`premise.2` licenses the local thermal transfer class used to promote GTTP to theorem grade."
+              "`premise.1` identifies the interior horizon readout problem.",
+              "`premise.2` licenses use of the FIRAS blackbody measurement as the empirical observer-side thermal datum."
             ],
             "proof_outline": [
-              "Use KMS rigidity to fix exact Planck-form preservation under uniform frequency rescaling.",
-              "Combine multiplicative horizon gauge data with additive transfer generators to force a logarithmic homomorphism.",
-              "Fix the coefficient on the Schwarzschild `S^2` horizon and evaluate the resulting thermal map on the carried IO temperature slot."
+              "Use the Paper 17 thermal readout family `T_obs(R4) = T_IO x^(R4 K_gauge)`.",
+              "Take logarithms to obtain an affine equation in `R4` with nonzero slope `K_gauge ln x`.",
+              "Solve uniquely for `R4_FIRAS = ln(T_FIRAS/T_IO)/(K_gauge ln x)` and freeze that normalization for downstream use."
             ],
             "scope_boundary": [
-              "Thermal readout law only.",
-              "Does not by itself determine every late-time background or perturbation observable on the active branch."
+              "FIRAS-fixed observer-side thermal readout normalization only.",
+              "Does not count the observed CMB temperature as an independent IO prediction.",
+              "Does not permit retuning `R4` against downstream observables."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -13831,7 +13843,7 @@
             "kind": "theorem",
             "label": "Paper 30 Active-branch Parameter Package",
             "claim_status": "derived / scoped",
-            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `T_CMB = 2.7253 K`, and `Y_p = 0.2477`.",
+            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`.",
             "scope": "Fixed active runtime parameter package carried by the public calculator.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper30_v1_3.docx"
@@ -13873,7 +13885,7 @@
             ],
             "premises": [
               "`premise.1` and `premise.2` fix the IO local-clock setting and allow the standard local radiation-density input.",
-              "`paper17.gttp_thermal_readout` fixes the carried observer CMB temperature entering the exact radiation density.",
+              "`paper17.gttp_thermal_readout` fixes the FIRAS-normalized observer thermal readout entering the exact radiation density.",
               "The Paper 30 master-clock correction replaces the old dust cycloid as the all-epoch local clock."
             ],
             "proof_outline": [
@@ -14803,7 +14815,7 @@
             "kind": "theorem",
             "label": "Late-time eta_IO Closure Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch, equivalently `eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`.",
+            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch, equivalently `eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`, with `T_obs` inheriting the FIRAS-fixed readout normalization.",
             "scope": "Late-time baryon-to-photon ratio convention used by the calculator.",
             "authority_paths": [],
             "depends_on": [
@@ -14817,7 +14829,7 @@
             ],
             "proof_outline": [
               "Start from the active-branch physical-density slot `omega_b,geom` together with the late-time baryon-counting law.",
-              "Convert the active-branch baryon density and observed CMB temperature into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
+              "Convert the active-branch baryon density and FIRAS-fixed observer-side photon bath into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
               "Fix the preferred exported `eta_IO,late` convention to that closed branch value.",
               "Expose the convention directly through the calculator and bundle."
             ],
@@ -15055,7 +15067,7 @@
       "Omega_k_bare": -0.13,
       "Omega_Lambda_bare": 0.933,
       "Omega_r_bare": 0.00012259146481569604,
-      "T_CMB_K": 2.7253,
+      "T_observer_slot_K": 2.7253,
       "output_id": "bare_master_clock_age",
       "label": "Bare master-clock age",
       "primary_key": "Age_bare",
@@ -15171,10 +15183,10 @@
           "paper17.gttp_thermal_readout": {
             "node_id": "paper17.gttp_thermal_readout",
             "kind": "theorem",
-            "label": "Paper 17 GTTP Thermal Readout Theorem",
-            "claim_status": "derived / scoped",
-            "statement": "The observer thermal readout obeys `T_obs = T_IO x^K_gauge` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. On the carried active thermal slot `T_IO = 2.6635 K`, this gives `T_CMB = 2.7253 K`.",
-            "scope": "Observer-side thermal transfer law on the IO active branch.",
+            "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
+            "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper17_v1_4.docx"
             ],
@@ -15183,17 +15195,18 @@
               "premise.2"
             ],
             "premises": [
-              "`premise.1` identifies the observed CMB with the interior horizon readout problem.",
-              "`premise.2` licenses the local thermal transfer class used to promote GTTP to theorem grade."
+              "`premise.1` identifies the interior horizon readout problem.",
+              "`premise.2` licenses use of the FIRAS blackbody measurement as the empirical observer-side thermal datum."
             ],
             "proof_outline": [
-              "Use KMS rigidity to fix exact Planck-form preservation under uniform frequency rescaling.",
-              "Combine multiplicative horizon gauge data with additive transfer generators to force a logarithmic homomorphism.",
-              "Fix the coefficient on the Schwarzschild `S^2` horizon and evaluate the resulting thermal map on the carried IO temperature slot."
+              "Use the Paper 17 thermal readout family `T_obs(R4) = T_IO x^(R4 K_gauge)`.",
+              "Take logarithms to obtain an affine equation in `R4` with nonzero slope `K_gauge ln x`.",
+              "Solve uniquely for `R4_FIRAS = ln(T_FIRAS/T_IO)/(K_gauge ln x)` and freeze that normalization for downstream use."
             ],
             "scope_boundary": [
-              "Thermal readout law only.",
-              "Does not by itself determine every late-time background or perturbation observable on the active branch."
+              "FIRAS-fixed observer-side thermal readout normalization only.",
+              "Does not count the observed CMB temperature as an independent IO prediction.",
+              "Does not permit retuning `R4` against downstream observables."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -15411,7 +15424,7 @@
             "kind": "theorem",
             "label": "Paper 30 Active-branch Parameter Package",
             "claim_status": "derived / scoped",
-            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `T_CMB = 2.7253 K`, and `Y_p = 0.2477`.",
+            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`.",
             "scope": "Fixed active runtime parameter package carried by the public calculator.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper30_v1_3.docx"
@@ -15453,7 +15466,7 @@
             ],
             "premises": [
               "`premise.1` and `premise.2` fix the IO local-clock setting and allow the standard local radiation-density input.",
-              "`paper17.gttp_thermal_readout` fixes the carried observer CMB temperature entering the exact radiation density.",
+              "`paper17.gttp_thermal_readout` fixes the FIRAS-normalized observer thermal readout entering the exact radiation density.",
               "The Paper 30 master-clock correction replaces the old dust cycloid as the all-epoch local clock."
             ],
             "proof_outline": [
@@ -16383,7 +16396,7 @@
             "kind": "theorem",
             "label": "Late-time eta_IO Closure Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch, equivalently `eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`.",
+            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch, equivalently `eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`, with `T_obs` inheriting the FIRAS-fixed readout normalization.",
             "scope": "Late-time baryon-to-photon ratio convention used by the calculator.",
             "authority_paths": [],
             "depends_on": [
@@ -16397,7 +16410,7 @@
             ],
             "proof_outline": [
               "Start from the active-branch physical-density slot `omega_b,geom` together with the late-time baryon-counting law.",
-              "Convert the active-branch baryon density and observed CMB temperature into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
+              "Convert the active-branch baryon density and FIRAS-fixed observer-side photon bath into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
               "Fix the preferred exported `eta_IO,late` convention to that closed branch value.",
               "Expose the convention directly through the calculator and bundle."
             ],
@@ -16745,10 +16758,10 @@
           "paper17.gttp_thermal_readout": {
             "node_id": "paper17.gttp_thermal_readout",
             "kind": "theorem",
-            "label": "Paper 17 GTTP Thermal Readout Theorem",
-            "claim_status": "derived / scoped",
-            "statement": "The observer thermal readout obeys `T_obs = T_IO x^K_gauge` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. On the carried active thermal slot `T_IO = 2.6635 K`, this gives `T_CMB = 2.7253 K`.",
-            "scope": "Observer-side thermal transfer law on the IO active branch.",
+            "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
+            "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper17_v1_4.docx"
             ],
@@ -16757,17 +16770,18 @@
               "premise.2"
             ],
             "premises": [
-              "`premise.1` identifies the observed CMB with the interior horizon readout problem.",
-              "`premise.2` licenses the local thermal transfer class used to promote GTTP to theorem grade."
+              "`premise.1` identifies the interior horizon readout problem.",
+              "`premise.2` licenses use of the FIRAS blackbody measurement as the empirical observer-side thermal datum."
             ],
             "proof_outline": [
-              "Use KMS rigidity to fix exact Planck-form preservation under uniform frequency rescaling.",
-              "Combine multiplicative horizon gauge data with additive transfer generators to force a logarithmic homomorphism.",
-              "Fix the coefficient on the Schwarzschild `S^2` horizon and evaluate the resulting thermal map on the carried IO temperature slot."
+              "Use the Paper 17 thermal readout family `T_obs(R4) = T_IO x^(R4 K_gauge)`.",
+              "Take logarithms to obtain an affine equation in `R4` with nonzero slope `K_gauge ln x`.",
+              "Solve uniquely for `R4_FIRAS = ln(T_FIRAS/T_IO)/(K_gauge ln x)` and freeze that normalization for downstream use."
             ],
             "scope_boundary": [
-              "Thermal readout law only.",
-              "Does not by itself determine every late-time background or perturbation observable on the active branch."
+              "FIRAS-fixed observer-side thermal readout normalization only.",
+              "Does not count the observed CMB temperature as an independent IO prediction.",
+              "Does not permit retuning `R4` against downstream observables."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -16985,7 +16999,7 @@
             "kind": "theorem",
             "label": "Paper 30 Active-branch Parameter Package",
             "claim_status": "derived / scoped",
-            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `T_CMB = 2.7253 K`, and `Y_p = 0.2477`.",
+            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`.",
             "scope": "Fixed active runtime parameter package carried by the public calculator.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper30_v1_3.docx"
@@ -17027,7 +17041,7 @@
             ],
             "premises": [
               "`premise.1` and `premise.2` fix the IO local-clock setting and allow the standard local radiation-density input.",
-              "`paper17.gttp_thermal_readout` fixes the carried observer CMB temperature entering the exact radiation density.",
+              "`paper17.gttp_thermal_readout` fixes the FIRAS-normalized observer thermal readout entering the exact radiation density.",
               "The Paper 30 master-clock correction replaces the old dust cycloid as the all-epoch local clock."
             ],
             "proof_outline": [
@@ -17957,7 +17971,7 @@
             "kind": "theorem",
             "label": "Late-time eta_IO Closure Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch, equivalently `eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`.",
+            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch, equivalently `eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`, with `T_obs` inheriting the FIRAS-fixed readout normalization.",
             "scope": "Late-time baryon-to-photon ratio convention used by the calculator.",
             "authority_paths": [],
             "depends_on": [
@@ -17971,7 +17985,7 @@
             ],
             "proof_outline": [
               "Start from the active-branch physical-density slot `omega_b,geom` together with the late-time baryon-counting law.",
-              "Convert the active-branch baryon density and observed CMB temperature into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
+              "Convert the active-branch baryon density and FIRAS-fixed observer-side photon bath into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
               "Fix the preferred exported `eta_IO,late` convention to that closed branch value.",
               "Expose the convention directly through the calculator and bundle."
             ],
@@ -18318,10 +18332,10 @@
           "paper17.gttp_thermal_readout": {
             "node_id": "paper17.gttp_thermal_readout",
             "kind": "theorem",
-            "label": "Paper 17 GTTP Thermal Readout Theorem",
-            "claim_status": "derived / scoped",
-            "statement": "The observer thermal readout obeys `T_obs = T_IO x^K_gauge` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. On the carried active thermal slot `T_IO = 2.6635 K`, this gives `T_CMB = 2.7253 K`.",
-            "scope": "Observer-side thermal transfer law on the IO active branch.",
+            "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
+            "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper17_v1_4.docx"
             ],
@@ -18330,17 +18344,18 @@
               "premise.2"
             ],
             "premises": [
-              "`premise.1` identifies the observed CMB with the interior horizon readout problem.",
-              "`premise.2` licenses the local thermal transfer class used to promote GTTP to theorem grade."
+              "`premise.1` identifies the interior horizon readout problem.",
+              "`premise.2` licenses use of the FIRAS blackbody measurement as the empirical observer-side thermal datum."
             ],
             "proof_outline": [
-              "Use KMS rigidity to fix exact Planck-form preservation under uniform frequency rescaling.",
-              "Combine multiplicative horizon gauge data with additive transfer generators to force a logarithmic homomorphism.",
-              "Fix the coefficient on the Schwarzschild `S^2` horizon and evaluate the resulting thermal map on the carried IO temperature slot."
+              "Use the Paper 17 thermal readout family `T_obs(R4) = T_IO x^(R4 K_gauge)`.",
+              "Take logarithms to obtain an affine equation in `R4` with nonzero slope `K_gauge ln x`.",
+              "Solve uniquely for `R4_FIRAS = ln(T_FIRAS/T_IO)/(K_gauge ln x)` and freeze that normalization for downstream use."
             ],
             "scope_boundary": [
-              "Thermal readout law only.",
-              "Does not by itself determine every late-time background or perturbation observable on the active branch."
+              "FIRAS-fixed observer-side thermal readout normalization only.",
+              "Does not count the observed CMB temperature as an independent IO prediction.",
+              "Does not permit retuning `R4` against downstream observables."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -18558,7 +18573,7 @@
             "kind": "theorem",
             "label": "Paper 30 Active-branch Parameter Package",
             "claim_status": "derived / scoped",
-            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `T_CMB = 2.7253 K`, and `Y_p = 0.2477`.",
+            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`.",
             "scope": "Fixed active runtime parameter package carried by the public calculator.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper30_v1_3.docx"
@@ -18600,7 +18615,7 @@
             ],
             "premises": [
               "`premise.1` and `premise.2` fix the IO local-clock setting and allow the standard local radiation-density input.",
-              "`paper17.gttp_thermal_readout` fixes the carried observer CMB temperature entering the exact radiation density.",
+              "`paper17.gttp_thermal_readout` fixes the FIRAS-normalized observer thermal readout entering the exact radiation density.",
               "The Paper 30 master-clock correction replaces the old dust cycloid as the all-epoch local clock."
             ],
             "proof_outline": [
@@ -19530,7 +19545,7 @@
             "kind": "theorem",
             "label": "Late-time eta_IO Closure Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch, equivalently `eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`.",
+            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch, equivalently `eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`, with `T_obs` inheriting the FIRAS-fixed readout normalization.",
             "scope": "Late-time baryon-to-photon ratio convention used by the calculator.",
             "authority_paths": [],
             "depends_on": [
@@ -19544,7 +19559,7 @@
             ],
             "proof_outline": [
               "Start from the active-branch physical-density slot `omega_b,geom` together with the late-time baryon-counting law.",
-              "Convert the active-branch baryon density and observed CMB temperature into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
+              "Convert the active-branch baryon density and FIRAS-fixed observer-side photon bath into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
               "Fix the preferred exported `eta_IO,late` convention to that closed branch value.",
               "Expose the convention directly through the calculator and bundle."
             ],
@@ -19889,10 +19904,10 @@
           "paper17.gttp_thermal_readout": {
             "node_id": "paper17.gttp_thermal_readout",
             "kind": "theorem",
-            "label": "Paper 17 GTTP Thermal Readout Theorem",
-            "claim_status": "derived / scoped",
-            "statement": "The observer thermal readout obeys `T_obs = T_IO x^K_gauge` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. On the carried active thermal slot `T_IO = 2.6635 K`, this gives `T_CMB = 2.7253 K`.",
-            "scope": "Observer-side thermal transfer law on the IO active branch.",
+            "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
+            "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper17_v1_4.docx"
             ],
@@ -19901,17 +19916,18 @@
               "premise.2"
             ],
             "premises": [
-              "`premise.1` identifies the observed CMB with the interior horizon readout problem.",
-              "`premise.2` licenses the local thermal transfer class used to promote GTTP to theorem grade."
+              "`premise.1` identifies the interior horizon readout problem.",
+              "`premise.2` licenses use of the FIRAS blackbody measurement as the empirical observer-side thermal datum."
             ],
             "proof_outline": [
-              "Use KMS rigidity to fix exact Planck-form preservation under uniform frequency rescaling.",
-              "Combine multiplicative horizon gauge data with additive transfer generators to force a logarithmic homomorphism.",
-              "Fix the coefficient on the Schwarzschild `S^2` horizon and evaluate the resulting thermal map on the carried IO temperature slot."
+              "Use the Paper 17 thermal readout family `T_obs(R4) = T_IO x^(R4 K_gauge)`.",
+              "Take logarithms to obtain an affine equation in `R4` with nonzero slope `K_gauge ln x`.",
+              "Solve uniquely for `R4_FIRAS = ln(T_FIRAS/T_IO)/(K_gauge ln x)` and freeze that normalization for downstream use."
             ],
             "scope_boundary": [
-              "Thermal readout law only.",
-              "Does not by itself determine every late-time background or perturbation observable on the active branch."
+              "FIRAS-fixed observer-side thermal readout normalization only.",
+              "Does not count the observed CMB temperature as an independent IO prediction.",
+              "Does not permit retuning `R4` against downstream observables."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -20129,7 +20145,7 @@
             "kind": "theorem",
             "label": "Paper 30 Active-branch Parameter Package",
             "claim_status": "derived / scoped",
-            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `T_CMB = 2.7253 K`, and `Y_p = 0.2477`.",
+            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`.",
             "scope": "Fixed active runtime parameter package carried by the public calculator.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper30_v1_3.docx"
@@ -20171,7 +20187,7 @@
             ],
             "premises": [
               "`premise.1` and `premise.2` fix the IO local-clock setting and allow the standard local radiation-density input.",
-              "`paper17.gttp_thermal_readout` fixes the carried observer CMB temperature entering the exact radiation density.",
+              "`paper17.gttp_thermal_readout` fixes the FIRAS-normalized observer thermal readout entering the exact radiation density.",
               "The Paper 30 master-clock correction replaces the old dust cycloid as the all-epoch local clock."
             ],
             "proof_outline": [
@@ -21101,7 +21117,7 @@
             "kind": "theorem",
             "label": "Late-time eta_IO Closure Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch, equivalently `eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`.",
+            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch, equivalently `eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`, with `T_obs` inheriting the FIRAS-fixed readout normalization.",
             "scope": "Late-time baryon-to-photon ratio convention used by the calculator.",
             "authority_paths": [],
             "depends_on": [
@@ -21115,7 +21131,7 @@
             ],
             "proof_outline": [
               "Start from the active-branch physical-density slot `omega_b,geom` together with the late-time baryon-counting law.",
-              "Convert the active-branch baryon density and observed CMB temperature into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
+              "Convert the active-branch baryon density and FIRAS-fixed observer-side photon bath into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
               "Fix the preferred exported `eta_IO,late` convention to that closed branch value.",
               "Expose the convention directly through the calculator and bundle."
             ],
@@ -21462,10 +21478,10 @@
           "paper17.gttp_thermal_readout": {
             "node_id": "paper17.gttp_thermal_readout",
             "kind": "theorem",
-            "label": "Paper 17 GTTP Thermal Readout Theorem",
-            "claim_status": "derived / scoped",
-            "statement": "The observer thermal readout obeys `T_obs = T_IO x^K_gauge` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. On the carried active thermal slot `T_IO = 2.6635 K`, this gives `T_CMB = 2.7253 K`.",
-            "scope": "Observer-side thermal transfer law on the IO active branch.",
+            "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
+            "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper17_v1_4.docx"
             ],
@@ -21474,17 +21490,18 @@
               "premise.2"
             ],
             "premises": [
-              "`premise.1` identifies the observed CMB with the interior horizon readout problem.",
-              "`premise.2` licenses the local thermal transfer class used to promote GTTP to theorem grade."
+              "`premise.1` identifies the interior horizon readout problem.",
+              "`premise.2` licenses use of the FIRAS blackbody measurement as the empirical observer-side thermal datum."
             ],
             "proof_outline": [
-              "Use KMS rigidity to fix exact Planck-form preservation under uniform frequency rescaling.",
-              "Combine multiplicative horizon gauge data with additive transfer generators to force a logarithmic homomorphism.",
-              "Fix the coefficient on the Schwarzschild `S^2` horizon and evaluate the resulting thermal map on the carried IO temperature slot."
+              "Use the Paper 17 thermal readout family `T_obs(R4) = T_IO x^(R4 K_gauge)`.",
+              "Take logarithms to obtain an affine equation in `R4` with nonzero slope `K_gauge ln x`.",
+              "Solve uniquely for `R4_FIRAS = ln(T_FIRAS/T_IO)/(K_gauge ln x)` and freeze that normalization for downstream use."
             ],
             "scope_boundary": [
-              "Thermal readout law only.",
-              "Does not by itself determine every late-time background or perturbation observable on the active branch."
+              "FIRAS-fixed observer-side thermal readout normalization only.",
+              "Does not count the observed CMB temperature as an independent IO prediction.",
+              "Does not permit retuning `R4` against downstream observables."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -21702,7 +21719,7 @@
             "kind": "theorem",
             "label": "Paper 30 Active-branch Parameter Package",
             "claim_status": "derived / scoped",
-            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `T_CMB = 2.7253 K`, and `Y_p = 0.2477`.",
+            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`.",
             "scope": "Fixed active runtime parameter package carried by the public calculator.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper30_v1_3.docx"
@@ -21744,7 +21761,7 @@
             ],
             "premises": [
               "`premise.1` and `premise.2` fix the IO local-clock setting and allow the standard local radiation-density input.",
-              "`paper17.gttp_thermal_readout` fixes the carried observer CMB temperature entering the exact radiation density.",
+              "`paper17.gttp_thermal_readout` fixes the FIRAS-normalized observer thermal readout entering the exact radiation density.",
               "The Paper 30 master-clock correction replaces the old dust cycloid as the all-epoch local clock."
             ],
             "proof_outline": [
@@ -22674,7 +22691,7 @@
             "kind": "theorem",
             "label": "Late-time eta_IO Closure Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch, equivalently `eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`.",
+            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch, equivalently `eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`, with `T_obs` inheriting the FIRAS-fixed readout normalization.",
             "scope": "Late-time baryon-to-photon ratio convention used by the calculator.",
             "authority_paths": [],
             "depends_on": [
@@ -22688,7 +22705,7 @@
             ],
             "proof_outline": [
               "Start from the active-branch physical-density slot `omega_b,geom` together with the late-time baryon-counting law.",
-              "Convert the active-branch baryon density and observed CMB temperature into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
+              "Convert the active-branch baryon density and FIRAS-fixed observer-side photon bath into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
               "Fix the preferred exported `eta_IO,late` convention to that closed branch value.",
               "Expose the convention directly through the calculator and bundle."
             ],
@@ -23035,10 +23052,10 @@
           "paper17.gttp_thermal_readout": {
             "node_id": "paper17.gttp_thermal_readout",
             "kind": "theorem",
-            "label": "Paper 17 GTTP Thermal Readout Theorem",
-            "claim_status": "derived / scoped",
-            "statement": "The observer thermal readout obeys `T_obs = T_IO x^K_gauge` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. On the carried active thermal slot `T_IO = 2.6635 K`, this gives `T_CMB = 2.7253 K`.",
-            "scope": "Observer-side thermal transfer law on the IO active branch.",
+            "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
+            "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper17_v1_4.docx"
             ],
@@ -23047,17 +23064,18 @@
               "premise.2"
             ],
             "premises": [
-              "`premise.1` identifies the observed CMB with the interior horizon readout problem.",
-              "`premise.2` licenses the local thermal transfer class used to promote GTTP to theorem grade."
+              "`premise.1` identifies the interior horizon readout problem.",
+              "`premise.2` licenses use of the FIRAS blackbody measurement as the empirical observer-side thermal datum."
             ],
             "proof_outline": [
-              "Use KMS rigidity to fix exact Planck-form preservation under uniform frequency rescaling.",
-              "Combine multiplicative horizon gauge data with additive transfer generators to force a logarithmic homomorphism.",
-              "Fix the coefficient on the Schwarzschild `S^2` horizon and evaluate the resulting thermal map on the carried IO temperature slot."
+              "Use the Paper 17 thermal readout family `T_obs(R4) = T_IO x^(R4 K_gauge)`.",
+              "Take logarithms to obtain an affine equation in `R4` with nonzero slope `K_gauge ln x`.",
+              "Solve uniquely for `R4_FIRAS = ln(T_FIRAS/T_IO)/(K_gauge ln x)` and freeze that normalization for downstream use."
             ],
             "scope_boundary": [
-              "Thermal readout law only.",
-              "Does not by itself determine every late-time background or perturbation observable on the active branch."
+              "FIRAS-fixed observer-side thermal readout normalization only.",
+              "Does not count the observed CMB temperature as an independent IO prediction.",
+              "Does not permit retuning `R4` against downstream observables."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -23275,7 +23293,7 @@
             "kind": "theorem",
             "label": "Paper 30 Active-branch Parameter Package",
             "claim_status": "derived / scoped",
-            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `T_CMB = 2.7253 K`, and `Y_p = 0.2477`.",
+            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`.",
             "scope": "Fixed active runtime parameter package carried by the public calculator.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper30_v1_3.docx"
@@ -23317,7 +23335,7 @@
             ],
             "premises": [
               "`premise.1` and `premise.2` fix the IO local-clock setting and allow the standard local radiation-density input.",
-              "`paper17.gttp_thermal_readout` fixes the carried observer CMB temperature entering the exact radiation density.",
+              "`paper17.gttp_thermal_readout` fixes the FIRAS-normalized observer thermal readout entering the exact radiation density.",
               "The Paper 30 master-clock correction replaces the old dust cycloid as the all-epoch local clock."
             ],
             "proof_outline": [
@@ -24247,7 +24265,7 @@
             "kind": "theorem",
             "label": "Late-time eta_IO Closure Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch, equivalently `eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`.",
+            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch, equivalently `eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`, with `T_obs` inheriting the FIRAS-fixed readout normalization.",
             "scope": "Late-time baryon-to-photon ratio convention used by the calculator.",
             "authority_paths": [],
             "depends_on": [
@@ -24261,7 +24279,7 @@
             ],
             "proof_outline": [
               "Start from the active-branch physical-density slot `omega_b,geom` together with the late-time baryon-counting law.",
-              "Convert the active-branch baryon density and observed CMB temperature into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
+              "Convert the active-branch baryon density and FIRAS-fixed observer-side photon bath into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
               "Fix the preferred exported `eta_IO,late` convention to that closed branch value.",
               "Expose the convention directly through the calculator and bundle."
             ],
@@ -24607,10 +24625,10 @@
           "paper17.gttp_thermal_readout": {
             "node_id": "paper17.gttp_thermal_readout",
             "kind": "theorem",
-            "label": "Paper 17 GTTP Thermal Readout Theorem",
-            "claim_status": "derived / scoped",
-            "statement": "The observer thermal readout obeys `T_obs = T_IO x^K_gauge` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. On the carried active thermal slot `T_IO = 2.6635 K`, this gives `T_CMB = 2.7253 K`.",
-            "scope": "Observer-side thermal transfer law on the IO active branch.",
+            "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
+            "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper17_v1_4.docx"
             ],
@@ -24619,17 +24637,18 @@
               "premise.2"
             ],
             "premises": [
-              "`premise.1` identifies the observed CMB with the interior horizon readout problem.",
-              "`premise.2` licenses the local thermal transfer class used to promote GTTP to theorem grade."
+              "`premise.1` identifies the interior horizon readout problem.",
+              "`premise.2` licenses use of the FIRAS blackbody measurement as the empirical observer-side thermal datum."
             ],
             "proof_outline": [
-              "Use KMS rigidity to fix exact Planck-form preservation under uniform frequency rescaling.",
-              "Combine multiplicative horizon gauge data with additive transfer generators to force a logarithmic homomorphism.",
-              "Fix the coefficient on the Schwarzschild `S^2` horizon and evaluate the resulting thermal map on the carried IO temperature slot."
+              "Use the Paper 17 thermal readout family `T_obs(R4) = T_IO x^(R4 K_gauge)`.",
+              "Take logarithms to obtain an affine equation in `R4` with nonzero slope `K_gauge ln x`.",
+              "Solve uniquely for `R4_FIRAS = ln(T_FIRAS/T_IO)/(K_gauge ln x)` and freeze that normalization for downstream use."
             ],
             "scope_boundary": [
-              "Thermal readout law only.",
-              "Does not by itself determine every late-time background or perturbation observable on the active branch."
+              "FIRAS-fixed observer-side thermal readout normalization only.",
+              "Does not count the observed CMB temperature as an independent IO prediction.",
+              "Does not permit retuning `R4` against downstream observables."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -24847,7 +24866,7 @@
             "kind": "theorem",
             "label": "Paper 30 Active-branch Parameter Package",
             "claim_status": "derived / scoped",
-            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `T_CMB = 2.7253 K`, and `Y_p = 0.2477`.",
+            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`.",
             "scope": "Fixed active runtime parameter package carried by the public calculator.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper30_v1_3.docx"
@@ -24889,7 +24908,7 @@
             ],
             "premises": [
               "`premise.1` and `premise.2` fix the IO local-clock setting and allow the standard local radiation-density input.",
-              "`paper17.gttp_thermal_readout` fixes the carried observer CMB temperature entering the exact radiation density.",
+              "`paper17.gttp_thermal_readout` fixes the FIRAS-normalized observer thermal readout entering the exact radiation density.",
               "The Paper 30 master-clock correction replaces the old dust cycloid as the all-epoch local clock."
             ],
             "proof_outline": [
@@ -25819,7 +25838,7 @@
             "kind": "theorem",
             "label": "Late-time eta_IO Closure Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch, equivalently `eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`.",
+            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch, equivalently `eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`, with `T_obs` inheriting the FIRAS-fixed readout normalization.",
             "scope": "Late-time baryon-to-photon ratio convention used by the calculator.",
             "authority_paths": [],
             "depends_on": [
@@ -25833,7 +25852,7 @@
             ],
             "proof_outline": [
               "Start from the active-branch physical-density slot `omega_b,geom` together with the late-time baryon-counting law.",
-              "Convert the active-branch baryon density and observed CMB temperature into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
+              "Convert the active-branch baryon density and FIRAS-fixed observer-side photon bath into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
               "Fix the preferred exported `eta_IO,late` convention to that closed branch value.",
               "Expose the convention directly through the calculator and bundle."
             ],
@@ -26181,10 +26200,10 @@
           "paper17.gttp_thermal_readout": {
             "node_id": "paper17.gttp_thermal_readout",
             "kind": "theorem",
-            "label": "Paper 17 GTTP Thermal Readout Theorem",
-            "claim_status": "derived / scoped",
-            "statement": "The observer thermal readout obeys `T_obs = T_IO x^K_gauge` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. On the carried active thermal slot `T_IO = 2.6635 K`, this gives `T_CMB = 2.7253 K`.",
-            "scope": "Observer-side thermal transfer law on the IO active branch.",
+            "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
+            "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper17_v1_4.docx"
             ],
@@ -26193,17 +26212,18 @@
               "premise.2"
             ],
             "premises": [
-              "`premise.1` identifies the observed CMB with the interior horizon readout problem.",
-              "`premise.2` licenses the local thermal transfer class used to promote GTTP to theorem grade."
+              "`premise.1` identifies the interior horizon readout problem.",
+              "`premise.2` licenses use of the FIRAS blackbody measurement as the empirical observer-side thermal datum."
             ],
             "proof_outline": [
-              "Use KMS rigidity to fix exact Planck-form preservation under uniform frequency rescaling.",
-              "Combine multiplicative horizon gauge data with additive transfer generators to force a logarithmic homomorphism.",
-              "Fix the coefficient on the Schwarzschild `S^2` horizon and evaluate the resulting thermal map on the carried IO temperature slot."
+              "Use the Paper 17 thermal readout family `T_obs(R4) = T_IO x^(R4 K_gauge)`.",
+              "Take logarithms to obtain an affine equation in `R4` with nonzero slope `K_gauge ln x`.",
+              "Solve uniquely for `R4_FIRAS = ln(T_FIRAS/T_IO)/(K_gauge ln x)` and freeze that normalization for downstream use."
             ],
             "scope_boundary": [
-              "Thermal readout law only.",
-              "Does not by itself determine every late-time background or perturbation observable on the active branch."
+              "FIRAS-fixed observer-side thermal readout normalization only.",
+              "Does not count the observed CMB temperature as an independent IO prediction.",
+              "Does not permit retuning `R4` against downstream observables."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -26421,7 +26441,7 @@
             "kind": "theorem",
             "label": "Paper 30 Active-branch Parameter Package",
             "claim_status": "derived / scoped",
-            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `T_CMB = 2.7253 K`, and `Y_p = 0.2477`.",
+            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`.",
             "scope": "Fixed active runtime parameter package carried by the public calculator.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper30_v1_3.docx"
@@ -26463,7 +26483,7 @@
             ],
             "premises": [
               "`premise.1` and `premise.2` fix the IO local-clock setting and allow the standard local radiation-density input.",
-              "`paper17.gttp_thermal_readout` fixes the carried observer CMB temperature entering the exact radiation density.",
+              "`paper17.gttp_thermal_readout` fixes the FIRAS-normalized observer thermal readout entering the exact radiation density.",
               "The Paper 30 master-clock correction replaces the old dust cycloid as the all-epoch local clock."
             ],
             "proof_outline": [
@@ -27393,7 +27413,7 @@
             "kind": "theorem",
             "label": "Late-time eta_IO Closure Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch, equivalently `eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`.",
+            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch, equivalently `eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`, with `T_obs` inheriting the FIRAS-fixed readout normalization.",
             "scope": "Late-time baryon-to-photon ratio convention used by the calculator.",
             "authority_paths": [],
             "depends_on": [
@@ -27407,7 +27427,7 @@
             ],
             "proof_outline": [
               "Start from the active-branch physical-density slot `omega_b,geom` together with the late-time baryon-counting law.",
-              "Convert the active-branch baryon density and observed CMB temperature into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
+              "Convert the active-branch baryon density and FIRAS-fixed observer-side photon bath into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
               "Fix the preferred exported `eta_IO,late` convention to that closed branch value.",
               "Expose the convention directly through the calculator and bundle."
             ],
@@ -27767,10 +27787,10 @@
           "paper17.gttp_thermal_readout": {
             "node_id": "paper17.gttp_thermal_readout",
             "kind": "theorem",
-            "label": "Paper 17 GTTP Thermal Readout Theorem",
-            "claim_status": "derived / scoped",
-            "statement": "The observer thermal readout obeys `T_obs = T_IO x^K_gauge` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. On the carried active thermal slot `T_IO = 2.6635 K`, this gives `T_CMB = 2.7253 K`.",
-            "scope": "Observer-side thermal transfer law on the IO active branch.",
+            "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
+            "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper17_v1_4.docx"
             ],
@@ -27779,17 +27799,18 @@
               "premise.2"
             ],
             "premises": [
-              "`premise.1` identifies the observed CMB with the interior horizon readout problem.",
-              "`premise.2` licenses the local thermal transfer class used to promote GTTP to theorem grade."
+              "`premise.1` identifies the interior horizon readout problem.",
+              "`premise.2` licenses use of the FIRAS blackbody measurement as the empirical observer-side thermal datum."
             ],
             "proof_outline": [
-              "Use KMS rigidity to fix exact Planck-form preservation under uniform frequency rescaling.",
-              "Combine multiplicative horizon gauge data with additive transfer generators to force a logarithmic homomorphism.",
-              "Fix the coefficient on the Schwarzschild `S^2` horizon and evaluate the resulting thermal map on the carried IO temperature slot."
+              "Use the Paper 17 thermal readout family `T_obs(R4) = T_IO x^(R4 K_gauge)`.",
+              "Take logarithms to obtain an affine equation in `R4` with nonzero slope `K_gauge ln x`.",
+              "Solve uniquely for `R4_FIRAS = ln(T_FIRAS/T_IO)/(K_gauge ln x)` and freeze that normalization for downstream use."
             ],
             "scope_boundary": [
-              "Thermal readout law only.",
-              "Does not by itself determine every late-time background or perturbation observable on the active branch."
+              "FIRAS-fixed observer-side thermal readout normalization only.",
+              "Does not count the observed CMB temperature as an independent IO prediction.",
+              "Does not permit retuning `R4` against downstream observables."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -28007,7 +28028,7 @@
             "kind": "theorem",
             "label": "Paper 30 Active-branch Parameter Package",
             "claim_status": "derived / scoped",
-            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `T_CMB = 2.7253 K`, and `Y_p = 0.2477`.",
+            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`.",
             "scope": "Fixed active runtime parameter package carried by the public calculator.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper30_v1_3.docx"
@@ -28049,7 +28070,7 @@
             ],
             "premises": [
               "`premise.1` and `premise.2` fix the IO local-clock setting and allow the standard local radiation-density input.",
-              "`paper17.gttp_thermal_readout` fixes the carried observer CMB temperature entering the exact radiation density.",
+              "`paper17.gttp_thermal_readout` fixes the FIRAS-normalized observer thermal readout entering the exact radiation density.",
               "The Paper 30 master-clock correction replaces the old dust cycloid as the all-epoch local clock."
             ],
             "proof_outline": [
@@ -28979,7 +29000,7 @@
             "kind": "theorem",
             "label": "Late-time eta_IO Closure Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch, equivalently `eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`.",
+            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch, equivalently `eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`, with `T_obs` inheriting the FIRAS-fixed readout normalization.",
             "scope": "Late-time baryon-to-photon ratio convention used by the calculator.",
             "authority_paths": [],
             "depends_on": [
@@ -28993,7 +29014,7 @@
             ],
             "proof_outline": [
               "Start from the active-branch physical-density slot `omega_b,geom` together with the late-time baryon-counting law.",
-              "Convert the active-branch baryon density and observed CMB temperature into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
+              "Convert the active-branch baryon density and FIRAS-fixed observer-side photon bath into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
               "Fix the preferred exported `eta_IO,late` convention to that closed branch value.",
               "Expose the convention directly through the calculator and bundle."
             ],
@@ -29356,10 +29377,10 @@
           "paper17.gttp_thermal_readout": {
             "node_id": "paper17.gttp_thermal_readout",
             "kind": "theorem",
-            "label": "Paper 17 GTTP Thermal Readout Theorem",
-            "claim_status": "derived / scoped",
-            "statement": "The observer thermal readout obeys `T_obs = T_IO x^K_gauge` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. On the carried active thermal slot `T_IO = 2.6635 K`, this gives `T_CMB = 2.7253 K`.",
-            "scope": "Observer-side thermal transfer law on the IO active branch.",
+            "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
+            "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper17_v1_4.docx"
             ],
@@ -29368,17 +29389,18 @@
               "premise.2"
             ],
             "premises": [
-              "`premise.1` identifies the observed CMB with the interior horizon readout problem.",
-              "`premise.2` licenses the local thermal transfer class used to promote GTTP to theorem grade."
+              "`premise.1` identifies the interior horizon readout problem.",
+              "`premise.2` licenses use of the FIRAS blackbody measurement as the empirical observer-side thermal datum."
             ],
             "proof_outline": [
-              "Use KMS rigidity to fix exact Planck-form preservation under uniform frequency rescaling.",
-              "Combine multiplicative horizon gauge data with additive transfer generators to force a logarithmic homomorphism.",
-              "Fix the coefficient on the Schwarzschild `S^2` horizon and evaluate the resulting thermal map on the carried IO temperature slot."
+              "Use the Paper 17 thermal readout family `T_obs(R4) = T_IO x^(R4 K_gauge)`.",
+              "Take logarithms to obtain an affine equation in `R4` with nonzero slope `K_gauge ln x`.",
+              "Solve uniquely for `R4_FIRAS = ln(T_FIRAS/T_IO)/(K_gauge ln x)` and freeze that normalization for downstream use."
             ],
             "scope_boundary": [
-              "Thermal readout law only.",
-              "Does not by itself determine every late-time background or perturbation observable on the active branch."
+              "FIRAS-fixed observer-side thermal readout normalization only.",
+              "Does not count the observed CMB temperature as an independent IO prediction.",
+              "Does not permit retuning `R4` against downstream observables."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -29596,7 +29618,7 @@
             "kind": "theorem",
             "label": "Paper 30 Active-branch Parameter Package",
             "claim_status": "derived / scoped",
-            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `T_CMB = 2.7253 K`, and `Y_p = 0.2477`.",
+            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`.",
             "scope": "Fixed active runtime parameter package carried by the public calculator.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper30_v1_3.docx"
@@ -29638,7 +29660,7 @@
             ],
             "premises": [
               "`premise.1` and `premise.2` fix the IO local-clock setting and allow the standard local radiation-density input.",
-              "`paper17.gttp_thermal_readout` fixes the carried observer CMB temperature entering the exact radiation density.",
+              "`paper17.gttp_thermal_readout` fixes the FIRAS-normalized observer thermal readout entering the exact radiation density.",
               "The Paper 30 master-clock correction replaces the old dust cycloid as the all-epoch local clock."
             ],
             "proof_outline": [
@@ -30568,7 +30590,7 @@
             "kind": "theorem",
             "label": "Late-time eta_IO Closure Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch, equivalently `eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`.",
+            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch, equivalently `eta_IO,late = C_eta(T_obs, m_bar) * omega_b,geom`, with `T_obs` inheriting the FIRAS-fixed readout normalization.",
             "scope": "Late-time baryon-to-photon ratio convention used by the calculator.",
             "authority_paths": [],
             "depends_on": [
@@ -30582,7 +30604,7 @@
             ],
             "proof_outline": [
               "Start from the active-branch physical-density slot `omega_b,geom` together with the late-time baryon-counting law.",
-              "Convert the active-branch baryon density and observed CMB temperature into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
+              "Convert the active-branch baryon density and FIRAS-fixed observer-side photon bath into the baryon-to-photon prefactor `C_eta(T_obs, m_bar)`.",
               "Fix the preferred exported `eta_IO,late` convention to that closed branch value.",
               "Expose the convention directly through the calculator and bundle."
             ],

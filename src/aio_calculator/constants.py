@@ -253,7 +253,10 @@ ZETA3 = 1.202056903159594
 HYDROGEN_IONIZATION_ENERGY_J = 2.1798723611035e-18
 
 # Standard thermal reference values used in radiation-density and eta
-# conversions. `T_OBS_ETA_K` keeps the preferred Paper 35 late-time convention.
+# conversions. `T_CMB_REF_K` is the FIRAS empirical observer-side thermal datum;
+# it is not an independent IO prediction. `T_OBS_ETA_K` keeps the preferred
+# Paper 35 late-time convention until that paper is rerun against the exact
+# FIRAS-fixed readout normalization.
 T_CMB_REF_K = 2.7255
 OMEGA_GAMMA_H2_REF = 2.469e-5
 NEUTRINO_RELATIVISTIC_FACTOR = (7.0 / 8.0) * (4.0 / 11.0) ** (4.0 / 3.0)
@@ -418,11 +421,15 @@ ACTIVE_BRANCH_THETA_STAR_SELECTOR_Z = 1092.2670386731625
 
 # IO background constants needed by the theorem-grade local recombination map.
 # The radius is the Schwarzschild / horizon scale carried by the active IO
-# branch; `T_IO_REF_K` is reconstructed from the derived thermal readout law
-# `T_obs = T_IO * x^K_gauge`.
+# branch. `T_IO_REF_K` is the local bulk thermal scale carried by the current
+# calculator branch; do not read the observer-side slot as an independent CMB
+# temperature prediction.
 IO_SCHWARZSCHILD_RADIUS_M = 6.6835e26
 T_IO_REF_K = ACTIVE_BRANCH.T_cmb / (
     ACTIVE_IO_CONSTANTS.x ** ACTIVE_IO_CONSTANTS.K_gauge
+)
+R4_FIRAS_NORMALIZATION = math.log(T_CMB_REF_K / T_IO_REF_K) / (
+    ACTIVE_IO_CONSTANTS.K_gauge * math.log(ACTIVE_IO_CONSTANTS.x)
 )
 
 STRICT_BARE_T_IO_REF_K = STRICT_BARE_OS_BRANCH.T_cmb / (
