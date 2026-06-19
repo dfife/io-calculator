@@ -1,19 +1,22 @@
 {
   "metadata": {
     "name": "AIO Calculator",
-    "generated_at_utc": "2026-05-05T15:51:12.447030+00:00",
-    "branch_status": "active_paper10_legacy_branch",
+    "generated_at_utc": "2026-06-19T10:04:07.668475+00:00",
+    "branch_status": "q46_q39_ru_x_propagated_observer_package_open_rederivation",
     "calculator_scope": [
-      "derived or verified closed-FRW background geometry",
-      "active-branch BAO distance observables",
+      "Q39 banked R_U/x terminal surface",
+      "Q45/Q46 hygiene overlay and quarantine provenance",
       "late-time eta_IO closure",
       "theorem-grade local recombination primitives on omega_b,geom",
       "conditional exact inherited-FULL Stage-2 dynamic-network history builder",
       "typed visibility-packet operators on supplied exact Stage-2 histories",
-      "active-branch vacuum mapping summary",
-      "theorem-grade active-branch theta_* with full provenance"
+      "historical observer-side H0 and density package preserved only as quarantined provenance"
     ],
     "calculator_boundaries": [
+      "no live Kerr observer-projection H0 package after Q45/Q46",
+      "no active-consumable Omega density package after Q45/Q46",
+      "no active-consumable acoustic scorecard until Q39 x propagation rerun",
+      "no active-consumable BBN scorecard until Q39 x propagation rerun",
       "no universal IO-native Stage-2 renormalization theorem in the live package beyond the conditional inherited-FULL builder",
       "no theorem-grade full TT/TE/EE spectrum solver in the live package",
       "no theorem-grade Planck acoustic extractor in the live package",
@@ -22,20 +25,30 @@
       "no theorem-grade exact TDCOSMO lens-normalization selector"
     ]
   },
-  "branch": {
-    "label": "active_paper10_legacy_projected_branch",
-    "H0": 67.57585653582628,
-    "Omega_m": 0.34868395067621694,
-    "Omega_k": -0.04579112576013168,
-    "Omega_lambda": 0.69701575761593,
-    "Omega_r": 9.141746798467538e-05,
-    "T_cmb": 2.7253,
-    "N_eff": 3.044,
-    "rd_mpc": 144.01351425392883,
-    "A_s": 2.0072459972737347e-09,
-    "n_s": 0.9639,
-    "YHe": 0.2477,
-    "h": 0.6757585653582627
+  "q39_terminals": {
+    "R_U_m": 4.302281527351925e+26,
+    "x": 1.5534883525673302,
+    "result_id": "R_U.BARYON_PHOTON_INVENTORY.Q39",
+    "label": "DERIVED/CONDITIONAL_VERIFIED"
+  },
+  "quarantined_historical_branch": {
+    "status": "INVALID / quarantined by Q45/Q46 for active Kerr consumption",
+    "not_active_consumable": true,
+    "values": {
+      "label": "legacy_paper10_projected_branch_quarantined_q45",
+      "H0": 67.57585653582628,
+      "Omega_m": 0.34868395067621694,
+      "Omega_k": -0.04579112576013168,
+      "Omega_lambda": 0.69701575761593,
+      "Omega_r": 9.141746798467538e-05,
+      "T_cmb": 2.7253,
+      "N_eff": 3.044,
+      "rd_mpc": 144.01351425392883,
+      "A_s": 2.0072459972737347e-09,
+      "n_s": 0.9639,
+      "YHe": 0.2477,
+      "h": 0.6757585653582627
+    }
   },
   "baryons": {
     "omega_b_geom_h2": 0.020995719061702847,
@@ -44,228 +57,39 @@
     "omega_b_struct_h2": 0.02143434229616185
   },
   "io_constants": {
-    "x": 1.5189873277742727,
+    "x": 1.5534883525673302,
     "gamma_bi": 0.2375,
     "K_gauge": 0.05487281774291466,
     "eta_bao": 0.036124605346983495,
     "sigma_io": 0.8113774333810703,
-    "f_b": 0.3127083362150252,
+    "f_b": 0.3057634768970132,
     "f_gamma": 0.9466055317260761
   },
   "derived_examples": {
-    "age_today_gyr": 13.54391921411983,
+    "status": "observer-side H0/density/acoustic/BBN examples paused pending Q46 rerun",
     "eta_io_late": 5.748778515173696e-10,
-    "z_0_57": {
-      "z": 0.57,
-      "H_km_s_mpc": 93.97832021055457,
-      "DM_mpc": 2165.6006007820824,
-      "DA_mpc": 1379.3634399885877,
-      "DL_mpc": 3399.992943227869,
-      "DH_mpc": 3190.0172010770916,
-      "DV_mpc": 2043.0305885605649,
-      "lookback_gyr": 5.669330109636123,
-      "age_gyr": 7.874589104327033,
-      "DM_over_rd": 15.037481808572716,
-      "DH_over_rd": 22.1508183978648,
-      "DV_over_rd": 14.18638104308901
-    },
-    "z_0_51": {
-      "z": 0.51,
-      "H_km_s_mpc": 90.50081126694337,
-      "DM_mpc": 1971.5164824254293,
-      "DA_mpc": 1305.6400545863771,
-      "DL_mpc": 2976.989888462398,
-      "DH_mpc": 3312.5941502968954,
-      "DV_mpc": 1872.6059992609585,
-      "lookback_gyr": 5.25611371710259,
-      "age_gyr": 8.287805496856661,
-      "DM_over_rd": 13.689801909487425,
-      "DH_over_rd": 23.0019673324271,
-      "DV_over_rd": 13.002988010966282
-    },
-    "z_2_33": {
-      "z": 2.33,
-      "H_km_s_mpc": 244.3593806712085,
-      "DM_mpc": 5602.801855036848,
-      "DA_mpc": 1682.523079590645,
-      "DL_mpc": 18657.330177272703,
-      "DH_mpc": 1226.8506213124597,
-      "DV_mpc": 4476.989184841267,
-      "lookback_gyr": 10.851369357681461,
-      "age_gyr": 2.692549856479595,
-      "DM_over_rd": 38.90469504936755,
-      "DH_over_rd": 8.518996482158201,
-      "DV_over_rd": 31.087285162330733
-    },
     "recombination_local_z_1100": {
       "z": 1100.0,
-      "u": 0.0005979412710263879,
-      "a_loc_m": 3.996340484904864e+23,
-      "H_loc_s_inv": 3.066896182991767e-14,
-      "T_r_loc_K": 2932.5082822644,
+      "u": 0.0005846617465404909,
+      "a_loc_m": 3.907586783003371e+23,
+      "H_loc_s_inv": 3.171996769493645e-14,
+      "T_r_loc_K": 2928.8965070133345,
       "n_H_geom_m3": 236605106.84411275,
-      "x_e_saha": 0.0025881144670350555,
-      "n_e_m3": 612361.0999976232,
-      "kappa_prime_loc": 16.279919995444942,
-      "d_tau_obs_dz": 0.0003616796656907364,
-      "Gamma_T_over_H_loc": 0.3982093119255007,
-      "R_local_geom": 0.6351270933342528,
-      "c_s_local_m_s": 135358121.3870273
+      "x_e_saha": 0.0025014036965996184,
+      "n_e_m3": 591844.8888942113,
+      "kappa_prime_loc": 15.38504328861625,
+      "d_tau_obs_dz": 0.00033797979499126967,
+      "Gamma_T_over_H_loc": 0.3721157542853878,
+      "R_local_geom": 0.6382657265497085,
+      "c_s_local_m_s": 135228397.8740036
     }
   },
   "curves": {
-    "z": [
-      0.0,
-      0.1,
-      0.25,
-      0.5,
-      0.57,
-      0.706,
-      1.0,
-      1.321,
-      1.484,
-      2.0,
-      2.33,
-      3.0,
-      5.0
-    ],
-    "H_km_s_mpc": [
-      67.57585653582628,
-      71.06206766408461,
-      77.24702693257579,
-      89.93574398881844,
-      93.97832021055457,
-      102.39035410218588,
-      122.84661665804053,
-      148.24698023174614,
-      162.21306482338704,
-      210.5372103169878,
-      244.3593806712085,
-      319.13790899052793,
-      583.2025280384604
-    ],
-    "DM_mpc": [
-      0.0,
-      432.81233385604196,
-      1039.9492380376512,
-      1938.434639708835,
-      2165.6006007820824,
-      2578.627319061736,
-      3356.9843402440897,
-      4058.791674867096,
-      4367.338122025285,
-      5181.714124878859,
-      5602.801855036848,
-      6291.352472184367,
-      7594.941259489156
-    ],
-    "DH_mpc": [
-      4436.384137299997,
-      4218.7409943817,
-      3880.9578815463083,
-      3333.4072161261342,
-      3190.0172010770916,
-      2927.9365290680234,
-      2440.3802575573663,
-      2022.250015017853,
-      1848.140026984913,
-      1423.9404879955816,
-      1226.8506213124597,
-      939.3821591056983,
-      514.0451962859626
-    ],
-    "DV_mpc": [
-      0.0,
-      429.1351019382821,
-      1016.1732075514597,
-      1843.261278225727,
-      2043.0305885605649,
-      2395.4172497308946,
-      3018.4596721251023,
-      3530.561076457551,
-      3739.9644068810176,
-      4244.464553327467,
-      4476.989184841267,
-      4813.753701628656,
-      5292.652527299211
-    ],
-    "lookback_gyr": [
-      0.0,
-      1.3460766575587648,
-      3.0362884849963243,
-      5.184098917464233,
-      5.669330109636123,
-      6.498162459714485,
-      7.888802038743926,
-      8.970200282797217,
-      9.398387344097525,
-      10.400966231661027,
-      10.851369357681461,
-      11.49545900255303,
-      12.429269469005593
-    ],
-    "age_gyr": [
-      13.54391921411983,
-      12.197842556505593,
-      10.507630729000436,
-      8.359820296494732,
-      7.874589104327033,
-      7.0457567542679564,
-      5.65511717529822,
-      4.573718931300315,
-      4.145531870019957,
-      3.1429529824914098,
-      2.692549856479595,
-      2.048460211612099,
-      1.114649745150536
-    ],
-    "DM_over_rd": [
-      0.0,
-      3.005359157425286,
-      7.221192007049994,
-      13.460088448997436,
-      15.037481808572716,
-      17.90545375147936,
-      23.310203612731488,
-      28.183408313406726,
-      30.325890904409615,
-      35.98074911040855,
-      38.90469504936755,
-      43.68584785099592,
-      52.73769825585628
-    ],
-    "DH_over_rd": [
-      30.805332126522757,
-      29.294063242864087,
-      26.948567303921838,
-      23.146488948589738,
-      22.1508183978648,
-      20.330984520698525,
-      16.945494804427984,
-      14.04208504663085,
-      12.833101369404947,
-      9.887547674760913,
-      8.518996482158201,
-      6.52287505080497,
-      3.569423320783514
-    ],
-    "DV_over_rd": [
-      0.0,
-      2.9798252209970975,
-      7.0560961783052765,
-      12.799224349012377,
-      14.18638104308901,
-      16.633280995471196,
-      20.959558467567607,
-      24.51548449982522,
-      25.969537833002278,
-      29.472682305658502,
-      31.087285162330733,
-      33.42570818139265,
-      36.75108238777544
-    ]
+    "status": "paused / not active-consumable until observer-side package rerun on Q39 R_U/x",
+    "samples": []
   },
   "paper30_summary": {
+    "status": "quarantined historical branch summary",
     "active_inputs": {
       "label": "Paper 10 legacy branch active background",
       "H0": 67.57585653582628,
@@ -646,7 +470,7 @@
       "kind": "theorem",
       "label": "Paper 12 Baryon Dictionary Fraction Theorem",
       "claim_status": "derived / scoped",
-      "statement": "The Baryon Dictionary Principle fixes the framework baryon inventory fraction to `f_b = 2 gamma_BI / x = 0.312708336215025` on the standard minimal-coupling matter class.",
+      "statement": "The Baryon Dictionary Principle fixes the framework baryon inventory fraction to `f_b = 2 gamma_BI / x = 0.305763476897013` on the standard minimal-coupling matter class.",
       "scope": "Framework baryon inventory fraction before observable-class slot transport.",
       "authority_paths": [
         "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper12_v3_9.docx"
@@ -676,7 +500,7 @@
       "kind": "theorem",
       "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
       "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
-      "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+      "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003035943317878` within that family.",
       "scope": "Observer-side thermal readout normalization on the IO active branch.",
       "authority_paths": [
         "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper17_v1_4.docx"
@@ -913,10 +737,10 @@
     "paper30.active_branch_parameter_package": {
       "node_id": "paper30.active_branch_parameter_package",
       "kind": "theorem",
-      "label": "Paper 30 Active-branch Parameter Package",
-      "claim_status": "derived / scoped",
-      "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`.",
-      "scope": "Fixed active runtime parameter package carried by the public calculator.",
+      "label": "Quarantined Paper 30 legacy projection package",
+      "claim_status": "INVALID / quarantined by Q45",
+      "statement": "The historical carried public runtime branch fixed `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`. Q44/Q45 quarantine this package for Kerr active consumption because the H0 projection requires killed normalizers, retired branch mixing, or an unbanked free normalization.",
+      "scope": "Quarantined historical runtime package. Not active-consumable for Kerr H0.",
       "authority_paths": [
         "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper30_v1_3.docx"
       ],
@@ -924,17 +748,18 @@
         "paper21.branch_assignment"
       ],
       "premises": [
-        "`paper21.branch_assignment` fixes the carried active branch rather than refitting a branch per observable.",
-        "The public calculator exposes one reviewed runtime package as its active numerical surface."
+        "Q43 supplies the only live Kerr-consumable scoped H0 value: 62.96277381531285 km/s/Mpc.",
+        "Q44 rejects the enumerated homogeneous observer projections from Q43 to historical H0=67.58."
       ],
       "proof_outline": [
-        "Read the active branch constants from the reviewed Paper 30 runtime package.",
-        "Carry those values unchanged into the calculator constants layer.",
-        "Expose them as public theorem-grade or scoped-active package values rather than hiding them behind an opaque backend."
+        "Preserve the historical package as provenance.",
+        "Remove theorem-grade and zero-fit active-consumable language from the public calculator surface.",
+        "Route live H0 use to Q43 until a new primitive-observable projector is derived."
       ],
       "scope_boundary": [
-        "Fixed active runtime package only.",
-        "Does not claim that the active package is the unique surviving branch outside the reviewed public calculator surface."
+        "Not a load-bearing H0 terminal.",
+        "Does not invalidate Q43 scoped bare-torsion/global-readout H0.",
+        "Does not close the primitive-observable projector frontier."
       ],
       "notes": [],
       "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -2102,7 +1927,7 @@
       "kind": "theorem",
       "label": "Active-branch Theta-star Theorem",
       "claim_status": "derived / scoped",
-      "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
+      "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.594142598938 deg`, and `100theta_* = 1.036974457782` on the fixed active branch package.",
       "scope": "Fixed active Paper 10 legacy projected branch only.",
       "authority_paths": [
         "/opt/cosmology-lab/tmp/io-calculator/reports/calculator/calculator_active_branch_theta_star_theorem_report.md"
@@ -2131,16 +1956,16 @@
   },
   "explained_output_specs": {
     "theta_star_theorem": {
-      "label": "Theorem-grade active-branch theta_*",
-      "claim_status": "derived / scoped",
-      "provenance_status": "full",
-      "zero_fitted_parameters": true,
+      "label": "Quarantined active-branch theta_*",
+      "claim_status": "REQUIRES_RERUN / quarantined after Q39 x propagation",
+      "provenance_status": "quarantined",
+      "zero_fitted_parameters": false,
       "conditional_on_premises": [
         "premise.1",
         "premise.2"
       ],
       "parameters": {},
-      "note": "First fully explained calculator output; includes the complete accepted theorem chain and the direct-observable peak comparison."
+      "note": "The previous theta_* card was tied to the retired x ~= 1.519 active package. After Q39 x propagation it requires a fresh paper/calculator rerun before active consumption."
     },
     "branch_rd_mpc": {
       "label": "Active-branch r_d",
@@ -2155,22 +1980,22 @@
       "note": "Full theorem chain installed for the active-branch pre-drag ruler, including the sound-speed baryon-slot selector."
     },
     "branch_h0": {
-      "label": "Active-branch H0",
-      "claim_status": "derived / scoped",
-      "provenance_status": "full",
-      "zero_fitted_parameters": true,
+      "label": "Quarantined historical H0",
+      "claim_status": "INVALID / quarantined by Q45",
+      "provenance_status": "quarantined",
+      "zero_fitted_parameters": false,
       "conditional_on_premises": [
         "premise.1",
         "premise.2"
       ],
       "parameters": {},
-      "note": "Carried active-branch Hubble constant exposed as its own explained output card."
+      "note": "Historical H0=67.58 is retained as provenance only. The live Kerr-consumable scoped H0 is Q43: 62.96277381531285 km/s/Mpc."
     },
     "branch_omega_m": {
-      "label": "Active-branch Omega_m",
-      "claim_status": "derived / scoped",
-      "provenance_status": "full",
-      "zero_fitted_parameters": true,
+      "label": "Quarantined historical Omega_m",
+      "claim_status": "INVALID / quarantined by Q45 with the legacy H0 package",
+      "provenance_status": "quarantined",
+      "zero_fitted_parameters": false,
       "conditional_on_premises": [
         "premise.1",
         "premise.2"
@@ -2179,10 +2004,10 @@
       "note": "Active-branch matter density surfaced directly from the reviewed runtime package."
     },
     "branch_omega_k": {
-      "label": "Active-branch Omega_k",
-      "claim_status": "derived / scoped",
-      "provenance_status": "full",
-      "zero_fitted_parameters": true,
+      "label": "Quarantined historical Omega_k",
+      "claim_status": "INVALID / quarantined by Q45 with the legacy H0 package",
+      "provenance_status": "quarantined",
+      "zero_fitted_parameters": false,
       "conditional_on_premises": [
         "premise.1",
         "premise.2"
@@ -2191,10 +2016,10 @@
       "note": "Closed-space curvature density from the carried active branch."
     },
     "branch_omega_lambda": {
-      "label": "Active-branch Omega_Lambda",
-      "claim_status": "derived / scoped",
-      "provenance_status": "full",
-      "zero_fitted_parameters": true,
+      "label": "Quarantined historical Omega_Lambda",
+      "claim_status": "INVALID / quarantined by Q45 with the legacy H0 package",
+      "provenance_status": "quarantined",
+      "zero_fitted_parameters": false,
       "conditional_on_premises": [
         "premise.1",
         "premise.2"
@@ -2251,40 +2076,40 @@
       "note": "Native scalar amplitude carried by the modular-DtN source block is surfaced as its own explained output."
     },
     "bbn_deuterium_ratio": {
-      "label": "Active BBN deuterium scorecard",
-      "claim_status": "derived / scoped",
-      "provenance_status": "full",
+      "label": "BBN deuterium scorecard under active re-derivation",
+      "claim_status": "OPEN_REDERIVATION_REQUIRED / Q46 x propagation rerun",
+      "provenance_status": "quarantined",
       "zero_fitted_parameters": true,
       "conditional_on_premises": [
         "premise.1",
         "premise.2"
       ],
       "parameters": {},
-      "note": "Fixed active deuterium prediction surfaced as a standalone BBN output card."
+      "note": "The pre-Q39 deuterium card is retained as provenance only until the BBN scorecard is rerun on the Q39 R_U/x terminal."
     },
     "bbn_helium_fraction": {
-      "label": "Active BBN helium scorecard",
-      "claim_status": "derived / scoped",
-      "provenance_status": "full",
+      "label": "BBN helium scorecard under active re-derivation",
+      "claim_status": "OPEN_REDERIVATION_REQUIRED / Q46 x propagation rerun",
+      "provenance_status": "quarantined",
       "zero_fitted_parameters": true,
       "conditional_on_premises": [
         "premise.1",
         "premise.2"
       ],
       "parameters": {},
-      "note": "Primordial helium mass fraction carried by the active branch package is surfaced as its own BBN card."
+      "note": "The pre-Q39 helium card is retained as provenance only until the BBN scorecard is rerun on the Q39 R_U/x terminal."
     },
     "bbn_lithium_ratio": {
-      "label": "Conditional BBN lithium scorecard",
-      "claim_status": "conditional / scoped",
-      "provenance_status": "full",
+      "label": "BBN lithium calculator card under active re-derivation",
+      "claim_status": "OPEN_REDERIVATION_REQUIRED / Q46 x propagation rerun",
+      "provenance_status": "quarantined",
       "zero_fitted_parameters": true,
       "conditional_on_premises": [
         "premise.1",
         "premise.2"
       ],
       "parameters": {},
-      "note": "Lithium remains explicitly conditional on the Paper 22 premise package plus cluster-deformation input."
+      "note": "The calculator BBN card is retained as provenance only until the BBN scorecard is rerun on Q39 R_U/x. The lithium story page remains a separate scoped paper-facing surface."
     },
     "baryon_fraction_fb": {
       "label": "Baryon dictionary fraction",
@@ -2311,10 +2136,10 @@
       "note": "Full theorem chain installed for the preferred late-time `eta_IO` convention on the active branch."
     },
     "background_snapshot": {
-      "label": "Closed-FRW background snapshot",
-      "claim_status": "derived / scoped",
-      "provenance_status": "full",
-      "zero_fitted_parameters": true,
+      "label": "Background snapshot under active re-derivation",
+      "claim_status": "OPEN_REDERIVATION_REQUIRED / Q46 observer package rerun",
+      "provenance_status": "quarantined",
+      "zero_fitted_parameters": false,
       "conditional_on_premises": [
         "premise.1",
         "premise.2"
@@ -2326,7 +2151,7 @@
           "meaning": "observer-side redshift"
         }
       },
-      "note": "Full theorem chain installed for parameterized background snapshots, including the carried active-branch `r_d` slot."
+      "note": "Pre-Q39 background snapshots are retained as provenance only until the observer-side package is rerun on Q39 R_U/x."
     },
     "recombination_point": {
       "label": "Local recombination primitives at one z",
@@ -2352,44 +2177,44 @@
       "note": "Full theorem chain installed for the default theorem-grade local-state primitives, with the override path kept explicitly conditional."
     },
     "tt_first_peak_support": {
-      "label": "Canonical TT first-peak support",
-      "claim_status": "Conditional/scoped/verified TT first-peak support on the repaired active-branch canonical carrier (n_max = 501), with inherited-FULL Stage-2 history and equal-rate typed Thomson specialization.",
-      "provenance_status": "full",
-      "zero_fitted_parameters": true,
+      "label": "TT first-peak support under active re-derivation",
+      "claim_status": "OPEN_REDERIVATION_REQUIRED / Q46 acoustic rerun",
+      "provenance_status": "quarantined",
+      "zero_fitted_parameters": false,
       "conditional_on_premises": [
         "premise.1",
         "premise.2"
       ],
       "parameters": {},
-      "note": "First published IO-native CMB TT spectrum card on the repaired active-branch canonical carrier, with the surviving `n_max >= 601` drift surfaced explicitly."
+      "note": "Pre-Q39 TT first-peak support is retained as provenance only until the acoustic package is rerun on Q39 R_U/x."
     }
   },
   "explained_outputs": {
     "theta_star_theorem": {
-      "branch_label": "active_paper10_legacy_projected_branch",
-      "claim_status": "derived / scoped, zero fitted parameters, conditional on Premises 1 and 2",
+      "branch_label": "legacy_paper10_projected_branch_quarantined_q45",
+      "claim_status": "REQUIRES_RERUN / quarantined after Q39 x propagation",
       "selector_leaf_z": 1092.2670386731625,
       "theta_bare_deg": 0.7204920802586844,
-      "theta_obs_deg": 0.6008516179285112,
-      "theta_star_100": 1.048683904878751,
+      "theta_obs_deg": 0.5941425989376924,
+      "theta_star_100": 1.0369744577818896,
       "selector_roundtrip_error": 0.0,
       "ell_peak": 220.47514473507064,
       "observed_first_peak_ell_reference": 220.0,
       "first_peak_delta": 0.4751447350706428,
       "output_id": "theta_star_theorem",
-      "label": "Theorem-grade active-branch theta_*",
+      "label": "Quarantined active-branch theta_*",
       "primary_key": "theta_star_100",
-      "primary_value": 1.048683904878751,
+      "primary_value": 1.0369744577818896,
       "units": "100theta_*",
-      "provenance_status": "full",
-      "zero_fitted_parameters": true,
+      "provenance_status": "quarantined",
+      "zero_fitted_parameters": false,
       "conditional_on_premises": [
         "premise.1",
         "premise.2"
       ],
       "scope_boundary": [
-        "Fixed active Paper 10 legacy projected branch only.",
-        "Theorem-grade numeric closure on the carried selector leaf only."
+        "Historical active Paper 10 legacy projected branch only.",
+        "Not active-consumable after Q39/Q45 until rerun and reviewed."
       ],
       "non_claims": [
         "Not a universal off-branch transfer theorem.",
@@ -2397,8 +2222,8 @@
         "Not a theorem-grade full TT/TE/EE solver closure."
       ],
       "notes": [
-        "This number is published as a theorem-grade calculator output.",
-        "The direct observable is the first TT peak location; `100theta_*` is a geometry-dependent extraction."
+        "Q45 changed the carried compactness from the retired x ~= 1.519 to Q39 x = 1.5534883525673302.",
+        "The resulting theta_* value is a rerun target, not a theorem-grade active output."
       ],
       "geometry_explanation": "This number differs from Planck's reported value because Planck assumes flat space in its standard `K=0` extraction convention, while the IO framework derives a closed `K=+1` geometry and evaluates the active-branch selector leaf there. The direct observable is the peak position. On that direct observable, the active-branch carrier agrees with the measured first TT peak near `ell \u2248 220`.",
       "comparison_context": {
@@ -2410,7 +2235,7 @@
       "direct_observable_comparisons": [
         {
           "label": "First TT peak position",
-          "claim_status": "verified / scoped direct-observable comparison",
+          "claim_status": "REQUIRES_RERUN / quarantined after Q39 x propagation",
           "predicted_value": 220.47514473507064,
           "observed_reference": 220.0,
           "delta": 0.4751447350706428,
@@ -2422,7 +2247,7 @@
       ],
       "direct_observable_comparison": {
         "label": "First TT peak position",
-        "claim_status": "verified / scoped direct-observable comparison",
+        "claim_status": "REQUIRES_RERUN / quarantined after Q39 x propagation",
         "predicted_value": 220.47514473507064,
         "observed_reference": 220.0,
         "delta": 0.4751447350706428,
@@ -2503,7 +2328,7 @@
             "kind": "theorem",
             "label": "Paper 12 Baryon Dictionary Fraction Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The Baryon Dictionary Principle fixes the framework baryon inventory fraction to `f_b = 2 gamma_BI / x = 0.312708336215025` on the standard minimal-coupling matter class.",
+            "statement": "The Baryon Dictionary Principle fixes the framework baryon inventory fraction to `f_b = 2 gamma_BI / x = 0.305763476897013` on the standard minimal-coupling matter class.",
             "scope": "Framework baryon inventory fraction before observable-class slot transport.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper12_v3_9.docx"
@@ -2533,7 +2358,7 @@
             "kind": "theorem",
             "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
             "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
-            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003035943317878` within that family.",
             "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper17_v1_4.docx"
@@ -2770,10 +2595,10 @@
           "paper30.active_branch_parameter_package": {
             "node_id": "paper30.active_branch_parameter_package",
             "kind": "theorem",
-            "label": "Paper 30 Active-branch Parameter Package",
-            "claim_status": "derived / scoped",
-            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`.",
-            "scope": "Fixed active runtime parameter package carried by the public calculator.",
+            "label": "Quarantined Paper 30 legacy projection package",
+            "claim_status": "INVALID / quarantined by Q45",
+            "statement": "The historical carried public runtime branch fixed `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`. Q44/Q45 quarantine this package for Kerr active consumption because the H0 projection requires killed normalizers, retired branch mixing, or an unbanked free normalization.",
+            "scope": "Quarantined historical runtime package. Not active-consumable for Kerr H0.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper30_v1_3.docx"
             ],
@@ -2781,17 +2606,18 @@
               "paper21.branch_assignment"
             ],
             "premises": [
-              "`paper21.branch_assignment` fixes the carried active branch rather than refitting a branch per observable.",
-              "The public calculator exposes one reviewed runtime package as its active numerical surface."
+              "Q43 supplies the only live Kerr-consumable scoped H0 value: 62.96277381531285 km/s/Mpc.",
+              "Q44 rejects the enumerated homogeneous observer projections from Q43 to historical H0=67.58."
             ],
             "proof_outline": [
-              "Read the active branch constants from the reviewed Paper 30 runtime package.",
-              "Carry those values unchanged into the calculator constants layer.",
-              "Expose them as public theorem-grade or scoped-active package values rather than hiding them behind an opaque backend."
+              "Preserve the historical package as provenance.",
+              "Remove theorem-grade and zero-fit active-consumable language from the public calculator surface.",
+              "Route live H0 use to Q43 until a new primitive-observable projector is derived."
             ],
             "scope_boundary": [
-              "Fixed active runtime package only.",
-              "Does not claim that the active package is the unique surviving branch outside the reviewed public calculator surface."
+              "Not a load-bearing H0 terminal.",
+              "Does not invalidate Q43 scoped bare-torsion/global-readout H0.",
+              "Does not close the primitive-observable projector frontier."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -3959,7 +3785,7 @@
             "kind": "theorem",
             "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
-            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
+            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.594142598938 deg`, and `100theta_* = 1.036974457782` on the fixed active branch package.",
             "scope": "Fixed active Paper 10 legacy projected branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/reports/calculator/calculator_active_branch_theta_star_theorem_report.md"
@@ -4005,20 +3831,20 @@
       "neighbor_ell_peak": 222.0,
       "neighbor_c_220_over_peak": 0.976859196443279,
       "output_id": "tt_first_peak_support",
-      "label": "Canonical TT first-peak support",
+      "label": "TT first-peak support under active re-derivation",
       "primary_key": "ell_peak",
       "primary_value": 224.0,
       "units": "ell",
-      "claim_status": "Conditional/scoped/verified TT first-peak support on the repaired active-branch canonical carrier (n_max = 501), with inherited-FULL Stage-2 history and equal-rate typed Thomson specialization.",
-      "provenance_status": "full",
-      "zero_fitted_parameters": true,
+      "claim_status": "OPEN_REDERIVATION_REQUIRED / Q46 acoustic rerun",
+      "provenance_status": "quarantined",
+      "zero_fitted_parameters": false,
       "conditional_on_premises": [
         "premise.1",
         "premise.2"
       ],
       "scope_boundary": [
-        "Canonical repaired first-peak carrier only.",
-        "Not a theorem-grade full high-`ell` TT closure.",
+        "Pre-Q39 acoustic provenance only.",
+        "Not active-consumable until the acoustic package is rerun on Q39 R_U/x.",
         "The surviving `n_max >= 601` shell-ceiling drift remains open: on tested history carriers the peak drifts upward to `ell_peak = 260` to `277`."
       ],
       "non_claims": [
@@ -4027,13 +3853,13 @@
         "Not a theorem-grade Planck extractor."
       ],
       "notes": [
-        "This card publishes the verified canonical repaired-carrier TT result without hiding the surviving high-shell ceiling drift.",
-        "The CLI `tt-spectrum` command computes the same repaired carrier directly; this card is the public explained snapshot."
+        "Q46 marks the acoustic scorecard as OPEN_REDERIVATION_REQUIRED after Q39 x propagation.",
+        "This card preserves the pre-Q39 TT carrier as provenance only."
       ],
       "direct_observable_comparisons": [
         {
           "label": "First TT peak position",
-          "claim_status": "Conditional/scoped/verified TT first-peak support on the repaired active-branch canonical carrier (n_max = 501), with inherited-FULL Stage-2 history and equal-rate typed Thomson specialization.",
+          "claim_status": "OPEN_REDERIVATION_REQUIRED / Q46 acoustic rerun",
           "predicted_value": 224.0,
           "observed_reference": 220.0,
           "delta": 4.0,
@@ -4045,7 +3871,7 @@
       ],
       "direct_observable_comparison": {
         "label": "First TT peak position",
-        "claim_status": "Conditional/scoped/verified TT first-peak support on the repaired active-branch canonical carrier (n_max = 501), with inherited-FULL Stage-2 history and equal-rate typed Thomson specialization.",
+        "claim_status": "OPEN_REDERIVATION_REQUIRED / Q46 acoustic rerun",
         "predicted_value": 224.0,
         "observed_reference": 220.0,
         "delta": 4.0,
@@ -4126,7 +3952,7 @@
             "kind": "theorem",
             "label": "Paper 12 Baryon Dictionary Fraction Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The Baryon Dictionary Principle fixes the framework baryon inventory fraction to `f_b = 2 gamma_BI / x = 0.312708336215025` on the standard minimal-coupling matter class.",
+            "statement": "The Baryon Dictionary Principle fixes the framework baryon inventory fraction to `f_b = 2 gamma_BI / x = 0.305763476897013` on the standard minimal-coupling matter class.",
             "scope": "Framework baryon inventory fraction before observable-class slot transport.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper12_v3_9.docx"
@@ -4156,7 +3982,7 @@
             "kind": "theorem",
             "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
             "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
-            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003035943317878` within that family.",
             "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper17_v1_4.docx"
@@ -4393,10 +4219,10 @@
           "paper30.active_branch_parameter_package": {
             "node_id": "paper30.active_branch_parameter_package",
             "kind": "theorem",
-            "label": "Paper 30 Active-branch Parameter Package",
-            "claim_status": "derived / scoped",
-            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`.",
-            "scope": "Fixed active runtime parameter package carried by the public calculator.",
+            "label": "Quarantined Paper 30 legacy projection package",
+            "claim_status": "INVALID / quarantined by Q45",
+            "statement": "The historical carried public runtime branch fixed `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`. Q44/Q45 quarantine this package for Kerr active consumption because the H0 projection requires killed normalizers, retired branch mixing, or an unbanked free normalization.",
+            "scope": "Quarantined historical runtime package. Not active-consumable for Kerr H0.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper30_v1_3.docx"
             ],
@@ -4404,17 +4230,18 @@
               "paper21.branch_assignment"
             ],
             "premises": [
-              "`paper21.branch_assignment` fixes the carried active branch rather than refitting a branch per observable.",
-              "The public calculator exposes one reviewed runtime package as its active numerical surface."
+              "Q43 supplies the only live Kerr-consumable scoped H0 value: 62.96277381531285 km/s/Mpc.",
+              "Q44 rejects the enumerated homogeneous observer projections from Q43 to historical H0=67.58."
             ],
             "proof_outline": [
-              "Read the active branch constants from the reviewed Paper 30 runtime package.",
-              "Carry those values unchanged into the calculator constants layer.",
-              "Expose them as public theorem-grade or scoped-active package values rather than hiding them behind an opaque backend."
+              "Preserve the historical package as provenance.",
+              "Remove theorem-grade and zero-fit active-consumable language from the public calculator surface.",
+              "Route live H0 use to Q43 until a new primitive-observable projector is derived."
             ],
             "scope_boundary": [
-              "Fixed active runtime package only.",
-              "Does not claim that the active package is the unique surviving branch outside the reviewed public calculator surface."
+              "Not a load-bearing H0 terminal.",
+              "Does not invalidate Q43 scoped bare-torsion/global-readout H0.",
+              "Does not close the primitive-observable projector frontier."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -5582,7 +5409,7 @@
             "kind": "theorem",
             "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
-            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
+            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.594142598938 deg`, and `100theta_* = 1.036974457782` on the fixed active branch package.",
             "scope": "Fixed active Paper 10 legacy projected branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/reports/calculator/calculator_active_branch_theta_star_theorem_report.md"
@@ -5612,7 +5439,7 @@
       }
     },
     "branch_rd_mpc": {
-      "branch_label": "active_paper10_legacy_projected_branch",
+      "branch_label": "legacy_paper10_projected_branch_quarantined_q45",
       "r_d_mpc": 144.01351425392883,
       "output_id": "branch_rd_mpc",
       "label": "Active-branch pre-drag ruler",
@@ -5701,7 +5528,7 @@
             "kind": "theorem",
             "label": "Paper 12 Baryon Dictionary Fraction Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The Baryon Dictionary Principle fixes the framework baryon inventory fraction to `f_b = 2 gamma_BI / x = 0.312708336215025` on the standard minimal-coupling matter class.",
+            "statement": "The Baryon Dictionary Principle fixes the framework baryon inventory fraction to `f_b = 2 gamma_BI / x = 0.305763476897013` on the standard minimal-coupling matter class.",
             "scope": "Framework baryon inventory fraction before observable-class slot transport.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper12_v3_9.docx"
@@ -5731,7 +5558,7 @@
             "kind": "theorem",
             "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
             "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
-            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003035943317878` within that family.",
             "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper17_v1_4.docx"
@@ -5968,10 +5795,10 @@
           "paper30.active_branch_parameter_package": {
             "node_id": "paper30.active_branch_parameter_package",
             "kind": "theorem",
-            "label": "Paper 30 Active-branch Parameter Package",
-            "claim_status": "derived / scoped",
-            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`.",
-            "scope": "Fixed active runtime parameter package carried by the public calculator.",
+            "label": "Quarantined Paper 30 legacy projection package",
+            "claim_status": "INVALID / quarantined by Q45",
+            "statement": "The historical carried public runtime branch fixed `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`. Q44/Q45 quarantine this package for Kerr active consumption because the H0 projection requires killed normalizers, retired branch mixing, or an unbanked free normalization.",
+            "scope": "Quarantined historical runtime package. Not active-consumable for Kerr H0.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper30_v1_3.docx"
             ],
@@ -5979,17 +5806,18 @@
               "paper21.branch_assignment"
             ],
             "premises": [
-              "`paper21.branch_assignment` fixes the carried active branch rather than refitting a branch per observable.",
-              "The public calculator exposes one reviewed runtime package as its active numerical surface."
+              "Q43 supplies the only live Kerr-consumable scoped H0 value: 62.96277381531285 km/s/Mpc.",
+              "Q44 rejects the enumerated homogeneous observer projections from Q43 to historical H0=67.58."
             ],
             "proof_outline": [
-              "Read the active branch constants from the reviewed Paper 30 runtime package.",
-              "Carry those values unchanged into the calculator constants layer.",
-              "Expose them as public theorem-grade or scoped-active package values rather than hiding them behind an opaque backend."
+              "Preserve the historical package as provenance.",
+              "Remove theorem-grade and zero-fit active-consumable language from the public calculator surface.",
+              "Route live H0 use to Q43 until a new primitive-observable projector is derived."
             ],
             "scope_boundary": [
-              "Fixed active runtime package only.",
-              "Does not claim that the active package is the unique surviving branch outside the reviewed public calculator surface."
+              "Not a load-bearing H0 terminal.",
+              "Does not invalidate Q43 scoped bare-torsion/global-readout H0.",
+              "Does not close the primitive-observable projector frontier."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -7157,7 +6985,7 @@
             "kind": "theorem",
             "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
-            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
+            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.594142598938 deg`, and `100theta_* = 1.036974457782` on the fixed active branch package.",
             "scope": "Fixed active Paper 10 legacy projected branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/reports/calculator/calculator_active_branch_theta_star_theorem_report.md"
@@ -7187,27 +7015,28 @@
       }
     },
     "branch_h0": {
-      "branch_label": "active_paper10_legacy_projected_branch",
+      "branch_label": "legacy_paper10_projected_branch_quarantined_q45",
       "H0_km_s_mpc": 67.57585653582628,
       "output_id": "branch_h0",
-      "label": "Active-branch H0",
+      "label": "Quarantined historical H0",
       "primary_key": "H0",
       "primary_value": 67.57585653582628,
       "units": "km/s/Mpc",
-      "claim_status": "derived / scoped active-branch carried Hubble constant",
-      "provenance_status": "full",
-      "zero_fitted_parameters": true,
+      "claim_status": "INVALID / quarantined historical H0 projection",
+      "provenance_status": "quarantined",
+      "zero_fitted_parameters": false,
       "conditional_on_premises": [
         "premise.1",
         "premise.2"
       ],
       "scope_boundary": [
-        "Fixed active runtime package only.",
-        "Public calculator carry value rather than a per-query fitted parameter."
+        "Historical Paper 10/Paper 29/Paper 30 package only.",
+        "Not active-consumable on Kerr after Q44/Q45."
       ],
       "non_claims": [],
       "notes": [
-        "This card surfaces the active-branch Hubble constant directly from the reviewed runtime package."
+        "Q43 supplies the live scoped Kerr H0: 62.96277381531285 km/s/Mpc.",
+        "Q44 shows that lifting Q43 to historical 67.58 requires killed normalizers, retired branch mixing, or a free normalization."
       ],
       "provenance": {
         "root_node": "paper30.active_branch_parameter_package",
@@ -7274,7 +7103,7 @@
             "kind": "theorem",
             "label": "Paper 12 Baryon Dictionary Fraction Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The Baryon Dictionary Principle fixes the framework baryon inventory fraction to `f_b = 2 gamma_BI / x = 0.312708336215025` on the standard minimal-coupling matter class.",
+            "statement": "The Baryon Dictionary Principle fixes the framework baryon inventory fraction to `f_b = 2 gamma_BI / x = 0.305763476897013` on the standard minimal-coupling matter class.",
             "scope": "Framework baryon inventory fraction before observable-class slot transport.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper12_v3_9.docx"
@@ -7304,7 +7133,7 @@
             "kind": "theorem",
             "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
             "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
-            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003035943317878` within that family.",
             "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper17_v1_4.docx"
@@ -7541,10 +7370,10 @@
           "paper30.active_branch_parameter_package": {
             "node_id": "paper30.active_branch_parameter_package",
             "kind": "theorem",
-            "label": "Paper 30 Active-branch Parameter Package",
-            "claim_status": "derived / scoped",
-            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`.",
-            "scope": "Fixed active runtime parameter package carried by the public calculator.",
+            "label": "Quarantined Paper 30 legacy projection package",
+            "claim_status": "INVALID / quarantined by Q45",
+            "statement": "The historical carried public runtime branch fixed `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`. Q44/Q45 quarantine this package for Kerr active consumption because the H0 projection requires killed normalizers, retired branch mixing, or an unbanked free normalization.",
+            "scope": "Quarantined historical runtime package. Not active-consumable for Kerr H0.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper30_v1_3.docx"
             ],
@@ -7552,17 +7381,18 @@
               "paper21.branch_assignment"
             ],
             "premises": [
-              "`paper21.branch_assignment` fixes the carried active branch rather than refitting a branch per observable.",
-              "The public calculator exposes one reviewed runtime package as its active numerical surface."
+              "Q43 supplies the only live Kerr-consumable scoped H0 value: 62.96277381531285 km/s/Mpc.",
+              "Q44 rejects the enumerated homogeneous observer projections from Q43 to historical H0=67.58."
             ],
             "proof_outline": [
-              "Read the active branch constants from the reviewed Paper 30 runtime package.",
-              "Carry those values unchanged into the calculator constants layer.",
-              "Expose them as public theorem-grade or scoped-active package values rather than hiding them behind an opaque backend."
+              "Preserve the historical package as provenance.",
+              "Remove theorem-grade and zero-fit active-consumable language from the public calculator surface.",
+              "Route live H0 use to Q43 until a new primitive-observable projector is derived."
             ],
             "scope_boundary": [
-              "Fixed active runtime package only.",
-              "Does not claim that the active package is the unique surviving branch outside the reviewed public calculator surface."
+              "Not a load-bearing H0 terminal.",
+              "Does not invalidate Q43 scoped bare-torsion/global-readout H0.",
+              "Does not close the primitive-observable projector frontier."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -8730,7 +8560,7 @@
             "kind": "theorem",
             "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
-            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
+            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.594142598938 deg`, and `100theta_* = 1.036974457782` on the fixed active branch package.",
             "scope": "Fixed active Paper 10 legacy projected branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/reports/calculator/calculator_active_branch_theta_star_theorem_report.md"
@@ -8760,27 +8590,28 @@
       }
     },
     "branch_omega_m": {
-      "branch_label": "active_paper10_legacy_projected_branch",
+      "branch_label": "legacy_paper10_projected_branch_quarantined_q45",
       "Omega_m": 0.34868395067621694,
       "output_id": "branch_omega_m",
-      "label": "Active-branch Omega_m",
+      "label": "Quarantined historical Omega_m",
       "primary_key": "Omega_m",
       "primary_value": 0.34868395067621694,
       "units": null,
-      "claim_status": "derived / scoped active-branch carried matter density",
-      "provenance_status": "full",
-      "zero_fitted_parameters": true,
+      "claim_status": "INVALID / quarantined historical density package",
+      "provenance_status": "quarantined",
+      "zero_fitted_parameters": false,
       "conditional_on_premises": [
         "premise.1",
         "premise.2"
       ],
       "scope_boundary": [
-        "Fixed active runtime package only.",
-        "Public calculator carry value rather than a per-query fitted parameter."
+        "Historical Paper 10/Paper 29/Paper 30 package only.",
+        "Not active-consumable on Kerr after the Q45 H0 package quarantine."
       ],
       "non_claims": [],
       "notes": [
-        "This card surfaces the active-branch matter density directly from the reviewed runtime package."
+        "This density belonged to the same historical projection package as the quarantined H0=67.58 value.",
+        "A full Kerr observer-projection density package remains open."
       ],
       "provenance": {
         "root_node": "paper30.active_branch_parameter_package",
@@ -8847,7 +8678,7 @@
             "kind": "theorem",
             "label": "Paper 12 Baryon Dictionary Fraction Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The Baryon Dictionary Principle fixes the framework baryon inventory fraction to `f_b = 2 gamma_BI / x = 0.312708336215025` on the standard minimal-coupling matter class.",
+            "statement": "The Baryon Dictionary Principle fixes the framework baryon inventory fraction to `f_b = 2 gamma_BI / x = 0.305763476897013` on the standard minimal-coupling matter class.",
             "scope": "Framework baryon inventory fraction before observable-class slot transport.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper12_v3_9.docx"
@@ -8877,7 +8708,7 @@
             "kind": "theorem",
             "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
             "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
-            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003035943317878` within that family.",
             "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper17_v1_4.docx"
@@ -9114,10 +8945,10 @@
           "paper30.active_branch_parameter_package": {
             "node_id": "paper30.active_branch_parameter_package",
             "kind": "theorem",
-            "label": "Paper 30 Active-branch Parameter Package",
-            "claim_status": "derived / scoped",
-            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`.",
-            "scope": "Fixed active runtime parameter package carried by the public calculator.",
+            "label": "Quarantined Paper 30 legacy projection package",
+            "claim_status": "INVALID / quarantined by Q45",
+            "statement": "The historical carried public runtime branch fixed `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`. Q44/Q45 quarantine this package for Kerr active consumption because the H0 projection requires killed normalizers, retired branch mixing, or an unbanked free normalization.",
+            "scope": "Quarantined historical runtime package. Not active-consumable for Kerr H0.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper30_v1_3.docx"
             ],
@@ -9125,17 +8956,18 @@
               "paper21.branch_assignment"
             ],
             "premises": [
-              "`paper21.branch_assignment` fixes the carried active branch rather than refitting a branch per observable.",
-              "The public calculator exposes one reviewed runtime package as its active numerical surface."
+              "Q43 supplies the only live Kerr-consumable scoped H0 value: 62.96277381531285 km/s/Mpc.",
+              "Q44 rejects the enumerated homogeneous observer projections from Q43 to historical H0=67.58."
             ],
             "proof_outline": [
-              "Read the active branch constants from the reviewed Paper 30 runtime package.",
-              "Carry those values unchanged into the calculator constants layer.",
-              "Expose them as public theorem-grade or scoped-active package values rather than hiding them behind an opaque backend."
+              "Preserve the historical package as provenance.",
+              "Remove theorem-grade and zero-fit active-consumable language from the public calculator surface.",
+              "Route live H0 use to Q43 until a new primitive-observable projector is derived."
             ],
             "scope_boundary": [
-              "Fixed active runtime package only.",
-              "Does not claim that the active package is the unique surviving branch outside the reviewed public calculator surface."
+              "Not a load-bearing H0 terminal.",
+              "Does not invalidate Q43 scoped bare-torsion/global-readout H0.",
+              "Does not close the primitive-observable projector frontier."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -10303,7 +10135,7 @@
             "kind": "theorem",
             "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
-            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
+            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.594142598938 deg`, and `100theta_* = 1.036974457782` on the fixed active branch package.",
             "scope": "Fixed active Paper 10 legacy projected branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/reports/calculator/calculator_active_branch_theta_star_theorem_report.md"
@@ -10333,27 +10165,28 @@
       }
     },
     "branch_omega_k": {
-      "branch_label": "active_paper10_legacy_projected_branch",
+      "branch_label": "legacy_paper10_projected_branch_quarantined_q45",
       "Omega_k": -0.04579112576013168,
       "output_id": "branch_omega_k",
-      "label": "Active-branch Omega_k",
+      "label": "Quarantined historical Omega_k",
       "primary_key": "Omega_k",
       "primary_value": -0.04579112576013168,
       "units": null,
-      "claim_status": "derived / scoped active-branch carried curvature density",
-      "provenance_status": "full",
-      "zero_fitted_parameters": true,
+      "claim_status": "INVALID / quarantined historical density package",
+      "provenance_status": "quarantined",
+      "zero_fitted_parameters": false,
       "conditional_on_premises": [
         "premise.1",
         "premise.2"
       ],
       "scope_boundary": [
-        "Fixed active runtime package only.",
-        "Closed-space curvature density on the public calculator branch."
+        "Historical Paper 10/Paper 29/Paper 30 package only.",
+        "Not active-consumable on Kerr after the Q45 H0 package quarantine."
       ],
       "non_claims": [],
       "notes": [
-        "This is the carried closed-space curvature density of the active branch."
+        "This density belonged to the same historical projection package as the quarantined H0=67.58 value.",
+        "A full Kerr observer-projection density package remains open."
       ],
       "provenance": {
         "root_node": "paper30.active_branch_parameter_package",
@@ -10420,7 +10253,7 @@
             "kind": "theorem",
             "label": "Paper 12 Baryon Dictionary Fraction Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The Baryon Dictionary Principle fixes the framework baryon inventory fraction to `f_b = 2 gamma_BI / x = 0.312708336215025` on the standard minimal-coupling matter class.",
+            "statement": "The Baryon Dictionary Principle fixes the framework baryon inventory fraction to `f_b = 2 gamma_BI / x = 0.305763476897013` on the standard minimal-coupling matter class.",
             "scope": "Framework baryon inventory fraction before observable-class slot transport.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper12_v3_9.docx"
@@ -10450,7 +10283,7 @@
             "kind": "theorem",
             "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
             "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
-            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003035943317878` within that family.",
             "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper17_v1_4.docx"
@@ -10687,10 +10520,10 @@
           "paper30.active_branch_parameter_package": {
             "node_id": "paper30.active_branch_parameter_package",
             "kind": "theorem",
-            "label": "Paper 30 Active-branch Parameter Package",
-            "claim_status": "derived / scoped",
-            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`.",
-            "scope": "Fixed active runtime parameter package carried by the public calculator.",
+            "label": "Quarantined Paper 30 legacy projection package",
+            "claim_status": "INVALID / quarantined by Q45",
+            "statement": "The historical carried public runtime branch fixed `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`. Q44/Q45 quarantine this package for Kerr active consumption because the H0 projection requires killed normalizers, retired branch mixing, or an unbanked free normalization.",
+            "scope": "Quarantined historical runtime package. Not active-consumable for Kerr H0.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper30_v1_3.docx"
             ],
@@ -10698,17 +10531,18 @@
               "paper21.branch_assignment"
             ],
             "premises": [
-              "`paper21.branch_assignment` fixes the carried active branch rather than refitting a branch per observable.",
-              "The public calculator exposes one reviewed runtime package as its active numerical surface."
+              "Q43 supplies the only live Kerr-consumable scoped H0 value: 62.96277381531285 km/s/Mpc.",
+              "Q44 rejects the enumerated homogeneous observer projections from Q43 to historical H0=67.58."
             ],
             "proof_outline": [
-              "Read the active branch constants from the reviewed Paper 30 runtime package.",
-              "Carry those values unchanged into the calculator constants layer.",
-              "Expose them as public theorem-grade or scoped-active package values rather than hiding them behind an opaque backend."
+              "Preserve the historical package as provenance.",
+              "Remove theorem-grade and zero-fit active-consumable language from the public calculator surface.",
+              "Route live H0 use to Q43 until a new primitive-observable projector is derived."
             ],
             "scope_boundary": [
-              "Fixed active runtime package only.",
-              "Does not claim that the active package is the unique surviving branch outside the reviewed public calculator surface."
+              "Not a load-bearing H0 terminal.",
+              "Does not invalidate Q43 scoped bare-torsion/global-readout H0.",
+              "Does not close the primitive-observable projector frontier."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -11876,7 +11710,7 @@
             "kind": "theorem",
             "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
-            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
+            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.594142598938 deg`, and `100theta_* = 1.036974457782` on the fixed active branch package.",
             "scope": "Fixed active Paper 10 legacy projected branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/reports/calculator/calculator_active_branch_theta_star_theorem_report.md"
@@ -11906,27 +11740,28 @@
       }
     },
     "branch_omega_lambda": {
-      "branch_label": "active_paper10_legacy_projected_branch",
+      "branch_label": "legacy_paper10_projected_branch_quarantined_q45",
       "Omega_Lambda": 0.69701575761593,
       "output_id": "branch_omega_lambda",
-      "label": "Active-branch Omega_Lambda",
+      "label": "Quarantined historical Omega_Lambda",
       "primary_key": "Omega_Lambda",
       "primary_value": 0.69701575761593,
       "units": null,
-      "claim_status": "derived / scoped active-branch carried dark-energy density",
-      "provenance_status": "full",
-      "zero_fitted_parameters": true,
+      "claim_status": "INVALID / quarantined historical density package",
+      "provenance_status": "quarantined",
+      "zero_fitted_parameters": false,
       "conditional_on_premises": [
         "premise.1",
         "premise.2"
       ],
       "scope_boundary": [
-        "Fixed active runtime package only.",
-        "Public calculator carry value rather than a per-query fitted parameter."
+        "Historical Paper 10/Paper 29/Paper 30 package only.",
+        "Not active-consumable on Kerr after the Q45 H0 package quarantine."
       ],
       "non_claims": [],
       "notes": [
-        "This card surfaces the carried dark-energy density of the active runtime package."
+        "This density belonged to the same historical projection package as the quarantined H0=67.58 value.",
+        "A full Kerr observer-projection density package remains open."
       ],
       "provenance": {
         "root_node": "paper30.active_branch_parameter_package",
@@ -11993,7 +11828,7 @@
             "kind": "theorem",
             "label": "Paper 12 Baryon Dictionary Fraction Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The Baryon Dictionary Principle fixes the framework baryon inventory fraction to `f_b = 2 gamma_BI / x = 0.312708336215025` on the standard minimal-coupling matter class.",
+            "statement": "The Baryon Dictionary Principle fixes the framework baryon inventory fraction to `f_b = 2 gamma_BI / x = 0.305763476897013` on the standard minimal-coupling matter class.",
             "scope": "Framework baryon inventory fraction before observable-class slot transport.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper12_v3_9.docx"
@@ -12023,7 +11858,7 @@
             "kind": "theorem",
             "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
             "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
-            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003035943317878` within that family.",
             "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper17_v1_4.docx"
@@ -12260,10 +12095,10 @@
           "paper30.active_branch_parameter_package": {
             "node_id": "paper30.active_branch_parameter_package",
             "kind": "theorem",
-            "label": "Paper 30 Active-branch Parameter Package",
-            "claim_status": "derived / scoped",
-            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`.",
-            "scope": "Fixed active runtime parameter package carried by the public calculator.",
+            "label": "Quarantined Paper 30 legacy projection package",
+            "claim_status": "INVALID / quarantined by Q45",
+            "statement": "The historical carried public runtime branch fixed `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`. Q44/Q45 quarantine this package for Kerr active consumption because the H0 projection requires killed normalizers, retired branch mixing, or an unbanked free normalization.",
+            "scope": "Quarantined historical runtime package. Not active-consumable for Kerr H0.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper30_v1_3.docx"
             ],
@@ -12271,17 +12106,18 @@
               "paper21.branch_assignment"
             ],
             "premises": [
-              "`paper21.branch_assignment` fixes the carried active branch rather than refitting a branch per observable.",
-              "The public calculator exposes one reviewed runtime package as its active numerical surface."
+              "Q43 supplies the only live Kerr-consumable scoped H0 value: 62.96277381531285 km/s/Mpc.",
+              "Q44 rejects the enumerated homogeneous observer projections from Q43 to historical H0=67.58."
             ],
             "proof_outline": [
-              "Read the active branch constants from the reviewed Paper 30 runtime package.",
-              "Carry those values unchanged into the calculator constants layer.",
-              "Expose them as public theorem-grade or scoped-active package values rather than hiding them behind an opaque backend."
+              "Preserve the historical package as provenance.",
+              "Remove theorem-grade and zero-fit active-consumable language from the public calculator surface.",
+              "Route live H0 use to Q43 until a new primitive-observable projector is derived."
             ],
             "scope_boundary": [
-              "Fixed active runtime package only.",
-              "Does not claim that the active package is the unique surviving branch outside the reviewed public calculator surface."
+              "Not a load-bearing H0 terminal.",
+              "Does not invalidate Q43 scoped bare-torsion/global-readout H0.",
+              "Does not close the primitive-observable projector frontier."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -13449,7 +13285,7 @@
             "kind": "theorem",
             "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
-            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
+            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.594142598938 deg`, and `100theta_* = 1.036974457782` on the fixed active branch package.",
             "scope": "Fixed active Paper 10 legacy projected branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/reports/calculator/calculator_active_branch_theta_star_theorem_report.md"
@@ -13479,12 +13315,12 @@
       }
     },
     "active_t_cmb": {
-      "branch_label": "active_paper10_legacy_projected_branch",
+      "branch_label": "legacy_paper10_projected_branch_quarantined_q45",
       "T_FIRAS_K": 2.7255,
-      "T_IO_K": 2.6634952609122613,
-      "x": 1.5189873277742727,
+      "T_IO_K": 2.660214811092947,
+      "x": 1.5534883525673302,
       "K_gauge": 0.05487281774291466,
-      "R4_FIRAS": 1.0031990469301053,
+      "R4_FIRAS": 1.0030359433178784,
       "output_id": "active_t_cmb",
       "label": "FIRAS-fixed thermal datum",
       "primary_key": "T_FIRAS",
@@ -13574,7 +13410,7 @@
             "kind": "theorem",
             "label": "Paper 12 Baryon Dictionary Fraction Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The Baryon Dictionary Principle fixes the framework baryon inventory fraction to `f_b = 2 gamma_BI / x = 0.312708336215025` on the standard minimal-coupling matter class.",
+            "statement": "The Baryon Dictionary Principle fixes the framework baryon inventory fraction to `f_b = 2 gamma_BI / x = 0.305763476897013` on the standard minimal-coupling matter class.",
             "scope": "Framework baryon inventory fraction before observable-class slot transport.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper12_v3_9.docx"
@@ -13604,7 +13440,7 @@
             "kind": "theorem",
             "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
             "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
-            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003035943317878` within that family.",
             "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper17_v1_4.docx"
@@ -13841,10 +13677,10 @@
           "paper30.active_branch_parameter_package": {
             "node_id": "paper30.active_branch_parameter_package",
             "kind": "theorem",
-            "label": "Paper 30 Active-branch Parameter Package",
-            "claim_status": "derived / scoped",
-            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`.",
-            "scope": "Fixed active runtime parameter package carried by the public calculator.",
+            "label": "Quarantined Paper 30 legacy projection package",
+            "claim_status": "INVALID / quarantined by Q45",
+            "statement": "The historical carried public runtime branch fixed `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`. Q44/Q45 quarantine this package for Kerr active consumption because the H0 projection requires killed normalizers, retired branch mixing, or an unbanked free normalization.",
+            "scope": "Quarantined historical runtime package. Not active-consumable for Kerr H0.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper30_v1_3.docx"
             ],
@@ -13852,17 +13688,18 @@
               "paper21.branch_assignment"
             ],
             "premises": [
-              "`paper21.branch_assignment` fixes the carried active branch rather than refitting a branch per observable.",
-              "The public calculator exposes one reviewed runtime package as its active numerical surface."
+              "Q43 supplies the only live Kerr-consumable scoped H0 value: 62.96277381531285 km/s/Mpc.",
+              "Q44 rejects the enumerated homogeneous observer projections from Q43 to historical H0=67.58."
             ],
             "proof_outline": [
-              "Read the active branch constants from the reviewed Paper 30 runtime package.",
-              "Carry those values unchanged into the calculator constants layer.",
-              "Expose them as public theorem-grade or scoped-active package values rather than hiding them behind an opaque backend."
+              "Preserve the historical package as provenance.",
+              "Remove theorem-grade and zero-fit active-consumable language from the public calculator surface.",
+              "Route live H0 use to Q43 until a new primitive-observable projector is derived."
             ],
             "scope_boundary": [
-              "Fixed active runtime package only.",
-              "Does not claim that the active package is the unique surviving branch outside the reviewed public calculator surface."
+              "Not a load-bearing H0 terminal.",
+              "Does not invalidate Q43 scoped bare-torsion/global-readout H0.",
+              "Does not close the primitive-observable projector frontier."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -15030,7 +14867,7 @@
             "kind": "theorem",
             "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
-            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
+            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.594142598938 deg`, and `100theta_* = 1.036974457782` on the fixed active branch package.",
             "scope": "Fixed active Paper 10 legacy projected branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/reports/calculator/calculator_active_branch_theta_star_theorem_report.md"
@@ -15155,7 +14992,7 @@
             "kind": "theorem",
             "label": "Paper 12 Baryon Dictionary Fraction Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The Baryon Dictionary Principle fixes the framework baryon inventory fraction to `f_b = 2 gamma_BI / x = 0.312708336215025` on the standard minimal-coupling matter class.",
+            "statement": "The Baryon Dictionary Principle fixes the framework baryon inventory fraction to `f_b = 2 gamma_BI / x = 0.305763476897013` on the standard minimal-coupling matter class.",
             "scope": "Framework baryon inventory fraction before observable-class slot transport.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper12_v3_9.docx"
@@ -15185,7 +15022,7 @@
             "kind": "theorem",
             "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
             "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
-            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003035943317878` within that family.",
             "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper17_v1_4.docx"
@@ -15422,10 +15259,10 @@
           "paper30.active_branch_parameter_package": {
             "node_id": "paper30.active_branch_parameter_package",
             "kind": "theorem",
-            "label": "Paper 30 Active-branch Parameter Package",
-            "claim_status": "derived / scoped",
-            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`.",
-            "scope": "Fixed active runtime parameter package carried by the public calculator.",
+            "label": "Quarantined Paper 30 legacy projection package",
+            "claim_status": "INVALID / quarantined by Q45",
+            "statement": "The historical carried public runtime branch fixed `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`. Q44/Q45 quarantine this package for Kerr active consumption because the H0 projection requires killed normalizers, retired branch mixing, or an unbanked free normalization.",
+            "scope": "Quarantined historical runtime package. Not active-consumable for Kerr H0.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper30_v1_3.docx"
             ],
@@ -15433,17 +15270,18 @@
               "paper21.branch_assignment"
             ],
             "premises": [
-              "`paper21.branch_assignment` fixes the carried active branch rather than refitting a branch per observable.",
-              "The public calculator exposes one reviewed runtime package as its active numerical surface."
+              "Q43 supplies the only live Kerr-consumable scoped H0 value: 62.96277381531285 km/s/Mpc.",
+              "Q44 rejects the enumerated homogeneous observer projections from Q43 to historical H0=67.58."
             ],
             "proof_outline": [
-              "Read the active branch constants from the reviewed Paper 30 runtime package.",
-              "Carry those values unchanged into the calculator constants layer.",
-              "Expose them as public theorem-grade or scoped-active package values rather than hiding them behind an opaque backend."
+              "Preserve the historical package as provenance.",
+              "Remove theorem-grade and zero-fit active-consumable language from the public calculator surface.",
+              "Route live H0 use to Q43 until a new primitive-observable projector is derived."
             ],
             "scope_boundary": [
-              "Fixed active runtime package only.",
-              "Does not claim that the active package is the unique surviving branch outside the reviewed public calculator surface."
+              "Not a load-bearing H0 terminal.",
+              "Does not invalidate Q43 scoped bare-torsion/global-readout H0.",
+              "Does not close the primitive-observable projector frontier."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -16611,7 +16449,7 @@
             "kind": "theorem",
             "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
-            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
+            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.594142598938 deg`, and `100theta_* = 1.036974457782` on the fixed active branch package.",
             "scope": "Fixed active Paper 10 legacy projected branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/reports/calculator/calculator_active_branch_theta_star_theorem_report.md"
@@ -16643,7 +16481,7 @@
     "scalar_tilt_ns": {
       "n_s": 0.9639,
       "K_gauge": 0.05487281774291466,
-      "x": 1.5189873277742727,
+      "x": 1.5534883525673302,
       "output_id": "scalar_tilt_ns",
       "label": "Active scalar tilt n_s",
       "primary_key": "n_s",
@@ -16730,7 +16568,7 @@
             "kind": "theorem",
             "label": "Paper 12 Baryon Dictionary Fraction Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The Baryon Dictionary Principle fixes the framework baryon inventory fraction to `f_b = 2 gamma_BI / x = 0.312708336215025` on the standard minimal-coupling matter class.",
+            "statement": "The Baryon Dictionary Principle fixes the framework baryon inventory fraction to `f_b = 2 gamma_BI / x = 0.305763476897013` on the standard minimal-coupling matter class.",
             "scope": "Framework baryon inventory fraction before observable-class slot transport.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper12_v3_9.docx"
@@ -16760,7 +16598,7 @@
             "kind": "theorem",
             "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
             "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
-            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003035943317878` within that family.",
             "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper17_v1_4.docx"
@@ -16997,10 +16835,10 @@
           "paper30.active_branch_parameter_package": {
             "node_id": "paper30.active_branch_parameter_package",
             "kind": "theorem",
-            "label": "Paper 30 Active-branch Parameter Package",
-            "claim_status": "derived / scoped",
-            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`.",
-            "scope": "Fixed active runtime parameter package carried by the public calculator.",
+            "label": "Quarantined Paper 30 legacy projection package",
+            "claim_status": "INVALID / quarantined by Q45",
+            "statement": "The historical carried public runtime branch fixed `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`. Q44/Q45 quarantine this package for Kerr active consumption because the H0 projection requires killed normalizers, retired branch mixing, or an unbanked free normalization.",
+            "scope": "Quarantined historical runtime package. Not active-consumable for Kerr H0.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper30_v1_3.docx"
             ],
@@ -17008,17 +16846,18 @@
               "paper21.branch_assignment"
             ],
             "premises": [
-              "`paper21.branch_assignment` fixes the carried active branch rather than refitting a branch per observable.",
-              "The public calculator exposes one reviewed runtime package as its active numerical surface."
+              "Q43 supplies the only live Kerr-consumable scoped H0 value: 62.96277381531285 km/s/Mpc.",
+              "Q44 rejects the enumerated homogeneous observer projections from Q43 to historical H0=67.58."
             ],
             "proof_outline": [
-              "Read the active branch constants from the reviewed Paper 30 runtime package.",
-              "Carry those values unchanged into the calculator constants layer.",
-              "Expose them as public theorem-grade or scoped-active package values rather than hiding them behind an opaque backend."
+              "Preserve the historical package as provenance.",
+              "Remove theorem-grade and zero-fit active-consumable language from the public calculator surface.",
+              "Route live H0 use to Q43 until a new primitive-observable projector is derived."
             ],
             "scope_boundary": [
-              "Fixed active runtime package only.",
-              "Does not claim that the active package is the unique surviving branch outside the reviewed public calculator surface."
+              "Not a load-bearing H0 terminal.",
+              "Does not invalidate Q43 scoped bare-torsion/global-readout H0.",
+              "Does not close the primitive-observable projector frontier."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -18186,7 +18025,7 @@
             "kind": "theorem",
             "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
-            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
+            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.594142598938 deg`, and `100theta_* = 1.036974457782` on the fixed active branch package.",
             "scope": "Fixed active Paper 10 legacy projected branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/reports/calculator/calculator_active_branch_theta_star_theorem_report.md"
@@ -18218,7 +18057,7 @@
     "native_scalar_amplitude_as": {
       "A_s": 2.0072459972737347e-09,
       "gamma_BI": 0.2375,
-      "x": 1.5189873277742727,
+      "x": 1.5534883525673302,
       "K_gauge": 0.05487281774291466,
       "output_id": "native_scalar_amplitude_as",
       "label": "Active scalar amplitude A_s",
@@ -18304,7 +18143,7 @@
             "kind": "theorem",
             "label": "Paper 12 Baryon Dictionary Fraction Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The Baryon Dictionary Principle fixes the framework baryon inventory fraction to `f_b = 2 gamma_BI / x = 0.312708336215025` on the standard minimal-coupling matter class.",
+            "statement": "The Baryon Dictionary Principle fixes the framework baryon inventory fraction to `f_b = 2 gamma_BI / x = 0.305763476897013` on the standard minimal-coupling matter class.",
             "scope": "Framework baryon inventory fraction before observable-class slot transport.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper12_v3_9.docx"
@@ -18334,7 +18173,7 @@
             "kind": "theorem",
             "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
             "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
-            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003035943317878` within that family.",
             "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper17_v1_4.docx"
@@ -18571,10 +18410,10 @@
           "paper30.active_branch_parameter_package": {
             "node_id": "paper30.active_branch_parameter_package",
             "kind": "theorem",
-            "label": "Paper 30 Active-branch Parameter Package",
-            "claim_status": "derived / scoped",
-            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`.",
-            "scope": "Fixed active runtime parameter package carried by the public calculator.",
+            "label": "Quarantined Paper 30 legacy projection package",
+            "claim_status": "INVALID / quarantined by Q45",
+            "statement": "The historical carried public runtime branch fixed `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`. Q44/Q45 quarantine this package for Kerr active consumption because the H0 projection requires killed normalizers, retired branch mixing, or an unbanked free normalization.",
+            "scope": "Quarantined historical runtime package. Not active-consumable for Kerr H0.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper30_v1_3.docx"
             ],
@@ -18582,17 +18421,18 @@
               "paper21.branch_assignment"
             ],
             "premises": [
-              "`paper21.branch_assignment` fixes the carried active branch rather than refitting a branch per observable.",
-              "The public calculator exposes one reviewed runtime package as its active numerical surface."
+              "Q43 supplies the only live Kerr-consumable scoped H0 value: 62.96277381531285 km/s/Mpc.",
+              "Q44 rejects the enumerated homogeneous observer projections from Q43 to historical H0=67.58."
             ],
             "proof_outline": [
-              "Read the active branch constants from the reviewed Paper 30 runtime package.",
-              "Carry those values unchanged into the calculator constants layer.",
-              "Expose them as public theorem-grade or scoped-active package values rather than hiding them behind an opaque backend."
+              "Preserve the historical package as provenance.",
+              "Remove theorem-grade and zero-fit active-consumable language from the public calculator surface.",
+              "Route live H0 use to Q43 until a new primitive-observable projector is derived."
             ],
             "scope_boundary": [
-              "Fixed active runtime package only.",
-              "Does not claim that the active package is the unique surviving branch outside the reviewed public calculator surface."
+              "Not a load-bearing H0 terminal.",
+              "Does not invalidate Q43 scoped bare-torsion/global-readout H0.",
+              "Does not close the primitive-observable projector frontier."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -19760,7 +19600,7 @@
             "kind": "theorem",
             "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
-            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
+            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.594142598938 deg`, and `100theta_* = 1.036974457782` on the fixed active branch package.",
             "scope": "Fixed active Paper 10 legacy projected branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/reports/calculator/calculator_active_branch_theta_star_theorem_report.md"
@@ -19791,25 +19631,26 @@
     },
     "bbn_deuterium_ratio": {
       "D_H_ratio": 2.509e-05,
+      "status": "pre-Q39 value retained as provenance only",
       "output_id": "bbn_deuterium_ratio",
-      "label": "Active BBN deuterium scorecard",
+      "label": "BBN deuterium scorecard under active re-derivation",
       "primary_key": "D/H",
       "primary_value": 2.509e-05,
       "units": null,
-      "claim_status": "derived / scoped active deuterium scorecard",
-      "provenance_status": "full",
+      "claim_status": "OPEN_REDERIVATION_REQUIRED / Q46 x propagation rerun",
+      "provenance_status": "quarantined",
       "zero_fitted_parameters": true,
       "conditional_on_premises": [
         "premise.1",
         "premise.2"
       ],
       "scope_boundary": [
-        "Active repaired deuterium scorecard only.",
-        "Does not claim a live calculator BBN network integration on demand."
+        "Pre-Q39 BBN scorecard provenance only.",
+        "Not active-consumable until the BBN network/scorecard is rerun on Q39 R_U/x."
       ],
       "non_claims": [],
       "notes": [
-        "This is the fixed active deuterium prediction carried by the repaired BBN scorecard."
+        "Q46 marks the BBN scorecard as OPEN_REDERIVATION_REQUIRED after Q39 x propagation."
       ],
       "provenance": {
         "root_node": "paper30.deuterium_scorecard",
@@ -19876,7 +19717,7 @@
             "kind": "theorem",
             "label": "Paper 12 Baryon Dictionary Fraction Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The Baryon Dictionary Principle fixes the framework baryon inventory fraction to `f_b = 2 gamma_BI / x = 0.312708336215025` on the standard minimal-coupling matter class.",
+            "statement": "The Baryon Dictionary Principle fixes the framework baryon inventory fraction to `f_b = 2 gamma_BI / x = 0.305763476897013` on the standard minimal-coupling matter class.",
             "scope": "Framework baryon inventory fraction before observable-class slot transport.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper12_v3_9.docx"
@@ -19906,7 +19747,7 @@
             "kind": "theorem",
             "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
             "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
-            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003035943317878` within that family.",
             "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper17_v1_4.docx"
@@ -20143,10 +19984,10 @@
           "paper30.active_branch_parameter_package": {
             "node_id": "paper30.active_branch_parameter_package",
             "kind": "theorem",
-            "label": "Paper 30 Active-branch Parameter Package",
-            "claim_status": "derived / scoped",
-            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`.",
-            "scope": "Fixed active runtime parameter package carried by the public calculator.",
+            "label": "Quarantined Paper 30 legacy projection package",
+            "claim_status": "INVALID / quarantined by Q45",
+            "statement": "The historical carried public runtime branch fixed `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`. Q44/Q45 quarantine this package for Kerr active consumption because the H0 projection requires killed normalizers, retired branch mixing, or an unbanked free normalization.",
+            "scope": "Quarantined historical runtime package. Not active-consumable for Kerr H0.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper30_v1_3.docx"
             ],
@@ -20154,17 +19995,18 @@
               "paper21.branch_assignment"
             ],
             "premises": [
-              "`paper21.branch_assignment` fixes the carried active branch rather than refitting a branch per observable.",
-              "The public calculator exposes one reviewed runtime package as its active numerical surface."
+              "Q43 supplies the only live Kerr-consumable scoped H0 value: 62.96277381531285 km/s/Mpc.",
+              "Q44 rejects the enumerated homogeneous observer projections from Q43 to historical H0=67.58."
             ],
             "proof_outline": [
-              "Read the active branch constants from the reviewed Paper 30 runtime package.",
-              "Carry those values unchanged into the calculator constants layer.",
-              "Expose them as public theorem-grade or scoped-active package values rather than hiding them behind an opaque backend."
+              "Preserve the historical package as provenance.",
+              "Remove theorem-grade and zero-fit active-consumable language from the public calculator surface.",
+              "Route live H0 use to Q43 until a new primitive-observable projector is derived."
             ],
             "scope_boundary": [
-              "Fixed active runtime package only.",
-              "Does not claim that the active package is the unique surviving branch outside the reviewed public calculator surface."
+              "Not a load-bearing H0 terminal.",
+              "Does not invalidate Q43 scoped bare-torsion/global-readout H0.",
+              "Does not close the primitive-observable projector frontier."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -21332,7 +21174,7 @@
             "kind": "theorem",
             "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
-            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
+            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.594142598938 deg`, and `100theta_* = 1.036974457782` on the fixed active branch package.",
             "scope": "Fixed active Paper 10 legacy projected branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/reports/calculator/calculator_active_branch_theta_star_theorem_report.md"
@@ -21362,27 +21204,28 @@
       }
     },
     "bbn_helium_fraction": {
-      "branch_label": "active_paper10_legacy_projected_branch",
+      "branch_label": "legacy_paper10_projected_branch_quarantined_q45",
       "Y_p": 0.2477,
+      "status": "pre-Q39 value retained as provenance only",
       "output_id": "bbn_helium_fraction",
-      "label": "Active BBN helium scorecard",
+      "label": "BBN helium scorecard under active re-derivation",
       "primary_key": "Y_p",
       "primary_value": 0.2477,
       "units": null,
-      "claim_status": "derived / scoped active primordial helium scorecard",
-      "provenance_status": "full",
+      "claim_status": "OPEN_REDERIVATION_REQUIRED / Q46 x propagation rerun",
+      "provenance_status": "quarantined",
       "zero_fitted_parameters": true,
       "conditional_on_premises": [
         "premise.1",
         "premise.2"
       ],
       "scope_boundary": [
-        "Active carried helium scorecard only.",
-        "Does not claim a live calculator BBN network solve for `Y_p`."
+        "Pre-Q39 BBN scorecard provenance only.",
+        "Not active-consumable until the BBN network/scorecard is rerun on Q39 R_U/x."
       ],
       "non_claims": [],
       "notes": [
-        "This is the active primordial helium mass fraction carried by the runtime package."
+        "Q46 marks the BBN scorecard as OPEN_REDERIVATION_REQUIRED after Q39 x propagation."
       ],
       "provenance": {
         "root_node": "paper30.primordial_helium_scorecard",
@@ -21450,7 +21293,7 @@
             "kind": "theorem",
             "label": "Paper 12 Baryon Dictionary Fraction Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The Baryon Dictionary Principle fixes the framework baryon inventory fraction to `f_b = 2 gamma_BI / x = 0.312708336215025` on the standard minimal-coupling matter class.",
+            "statement": "The Baryon Dictionary Principle fixes the framework baryon inventory fraction to `f_b = 2 gamma_BI / x = 0.305763476897013` on the standard minimal-coupling matter class.",
             "scope": "Framework baryon inventory fraction before observable-class slot transport.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper12_v3_9.docx"
@@ -21480,7 +21323,7 @@
             "kind": "theorem",
             "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
             "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
-            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003035943317878` within that family.",
             "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper17_v1_4.docx"
@@ -21717,10 +21560,10 @@
           "paper30.active_branch_parameter_package": {
             "node_id": "paper30.active_branch_parameter_package",
             "kind": "theorem",
-            "label": "Paper 30 Active-branch Parameter Package",
-            "claim_status": "derived / scoped",
-            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`.",
-            "scope": "Fixed active runtime parameter package carried by the public calculator.",
+            "label": "Quarantined Paper 30 legacy projection package",
+            "claim_status": "INVALID / quarantined by Q45",
+            "statement": "The historical carried public runtime branch fixed `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`. Q44/Q45 quarantine this package for Kerr active consumption because the H0 projection requires killed normalizers, retired branch mixing, or an unbanked free normalization.",
+            "scope": "Quarantined historical runtime package. Not active-consumable for Kerr H0.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper30_v1_3.docx"
             ],
@@ -21728,17 +21571,18 @@
               "paper21.branch_assignment"
             ],
             "premises": [
-              "`paper21.branch_assignment` fixes the carried active branch rather than refitting a branch per observable.",
-              "The public calculator exposes one reviewed runtime package as its active numerical surface."
+              "Q43 supplies the only live Kerr-consumable scoped H0 value: 62.96277381531285 km/s/Mpc.",
+              "Q44 rejects the enumerated homogeneous observer projections from Q43 to historical H0=67.58."
             ],
             "proof_outline": [
-              "Read the active branch constants from the reviewed Paper 30 runtime package.",
-              "Carry those values unchanged into the calculator constants layer.",
-              "Expose them as public theorem-grade or scoped-active package values rather than hiding them behind an opaque backend."
+              "Preserve the historical package as provenance.",
+              "Remove theorem-grade and zero-fit active-consumable language from the public calculator surface.",
+              "Route live H0 use to Q43 until a new primitive-observable projector is derived."
             ],
             "scope_boundary": [
-              "Fixed active runtime package only.",
-              "Does not claim that the active package is the unique surviving branch outside the reviewed public calculator surface."
+              "Not a load-bearing H0 terminal.",
+              "Does not invalidate Q43 scoped bare-torsion/global-readout H0.",
+              "Does not close the primitive-observable projector frontier."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -22906,7 +22750,7 @@
             "kind": "theorem",
             "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
-            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
+            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.594142598938 deg`, and `100theta_* = 1.036974457782` on the fixed active branch package.",
             "scope": "Fixed active Paper 10 legacy projected branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/reports/calculator/calculator_active_branch_theta_star_theorem_report.md"
@@ -22937,27 +22781,29 @@
     },
     "bbn_lithium_ratio": {
       "Li7_H_ratio": 1.7500878203658553e-10,
+      "status": "pre-Q39 calculator value retained as provenance only",
       "output_id": "bbn_lithium_ratio",
-      "label": "Conditional BBN lithium scorecard",
+      "label": "BBN lithium calculator card under active re-derivation",
       "primary_key": "Li-7/H",
       "primary_value": 1.7500878203658553e-10,
       "units": null,
-      "claim_status": "conditional / scoped channel-resolved lithium scorecard",
-      "provenance_status": "full",
+      "claim_status": "OPEN_REDERIVATION_REQUIRED / Q46 x propagation rerun",
+      "provenance_status": "quarantined",
       "zero_fitted_parameters": true,
       "conditional_on_premises": [
         "premise.1",
         "premise.2"
       ],
       "scope_boundary": [
-        "Conditional lithium-repair scorecard only.",
-        "The current stack does not license this value as an unconditional theorem independent of the Paper 22 premise package and cluster-deformation input."
+        "Pre-Q39 calculator BBN scorecard provenance only.",
+        "Not active-consumable until the BBN network/scorecard is rerun on Q39 R_U/x."
       ],
       "non_claims": [
-        "Not an unconditional lithium theorem."
+        "Not a live calculator BBN scorecard row after Q46."
       ],
       "notes": [
-        "This card keeps the lithium scorecard explicitly conditional on the surviving Paper 22 premise package and cluster-deformation input."
+        "Q46 marks the calculator BBN scorecard as OPEN_REDERIVATION_REQUIRED after Q39 x propagation.",
+        "The paper-facing lithium story remains separate from this withdrawn calculator scorecard row."
       ],
       "provenance": {
         "root_node": "paper24.conditional_lithium_scorecard",
@@ -23024,7 +22870,7 @@
             "kind": "theorem",
             "label": "Paper 12 Baryon Dictionary Fraction Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The Baryon Dictionary Principle fixes the framework baryon inventory fraction to `f_b = 2 gamma_BI / x = 0.312708336215025` on the standard minimal-coupling matter class.",
+            "statement": "The Baryon Dictionary Principle fixes the framework baryon inventory fraction to `f_b = 2 gamma_BI / x = 0.305763476897013` on the standard minimal-coupling matter class.",
             "scope": "Framework baryon inventory fraction before observable-class slot transport.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper12_v3_9.docx"
@@ -23054,7 +22900,7 @@
             "kind": "theorem",
             "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
             "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
-            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003035943317878` within that family.",
             "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper17_v1_4.docx"
@@ -23291,10 +23137,10 @@
           "paper30.active_branch_parameter_package": {
             "node_id": "paper30.active_branch_parameter_package",
             "kind": "theorem",
-            "label": "Paper 30 Active-branch Parameter Package",
-            "claim_status": "derived / scoped",
-            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`.",
-            "scope": "Fixed active runtime parameter package carried by the public calculator.",
+            "label": "Quarantined Paper 30 legacy projection package",
+            "claim_status": "INVALID / quarantined by Q45",
+            "statement": "The historical carried public runtime branch fixed `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`. Q44/Q45 quarantine this package for Kerr active consumption because the H0 projection requires killed normalizers, retired branch mixing, or an unbanked free normalization.",
+            "scope": "Quarantined historical runtime package. Not active-consumable for Kerr H0.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper30_v1_3.docx"
             ],
@@ -23302,17 +23148,18 @@
               "paper21.branch_assignment"
             ],
             "premises": [
-              "`paper21.branch_assignment` fixes the carried active branch rather than refitting a branch per observable.",
-              "The public calculator exposes one reviewed runtime package as its active numerical surface."
+              "Q43 supplies the only live Kerr-consumable scoped H0 value: 62.96277381531285 km/s/Mpc.",
+              "Q44 rejects the enumerated homogeneous observer projections from Q43 to historical H0=67.58."
             ],
             "proof_outline": [
-              "Read the active branch constants from the reviewed Paper 30 runtime package.",
-              "Carry those values unchanged into the calculator constants layer.",
-              "Expose them as public theorem-grade or scoped-active package values rather than hiding them behind an opaque backend."
+              "Preserve the historical package as provenance.",
+              "Remove theorem-grade and zero-fit active-consumable language from the public calculator surface.",
+              "Route live H0 use to Q43 until a new primitive-observable projector is derived."
             ],
             "scope_boundary": [
-              "Fixed active runtime package only.",
-              "Does not claim that the active package is the unique surviving branch outside the reviewed public calculator surface."
+              "Not a load-bearing H0 terminal.",
+              "Does not invalidate Q43 scoped bare-torsion/global-readout H0.",
+              "Does not close the primitive-observable projector frontier."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -24480,7 +24327,7 @@
             "kind": "theorem",
             "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
-            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
+            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.594142598938 deg`, and `100theta_* = 1.036974457782` on the fixed active branch package.",
             "scope": "Fixed active Paper 10 legacy projected branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/reports/calculator/calculator_active_branch_theta_star_theorem_report.md"
@@ -24510,13 +24357,13 @@
       }
     },
     "baryon_fraction_fb": {
-      "f_b": 0.3127083362150252,
+      "f_b": 0.3057634768970132,
       "gamma_BI": 0.2375,
-      "x": 1.5189873277742727,
+      "x": 1.5534883525673302,
       "output_id": "baryon_fraction_fb",
       "label": "Baryon dictionary fraction",
       "primary_key": "f_b",
-      "primary_value": 0.3127083362150252,
+      "primary_value": 0.3057634768970132,
       "units": null,
       "claim_status": "derived / scoped baryon inventory fraction",
       "provenance_status": "full",
@@ -24597,7 +24444,7 @@
             "kind": "theorem",
             "label": "Paper 12 Baryon Dictionary Fraction Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The Baryon Dictionary Principle fixes the framework baryon inventory fraction to `f_b = 2 gamma_BI / x = 0.312708336215025` on the standard minimal-coupling matter class.",
+            "statement": "The Baryon Dictionary Principle fixes the framework baryon inventory fraction to `f_b = 2 gamma_BI / x = 0.305763476897013` on the standard minimal-coupling matter class.",
             "scope": "Framework baryon inventory fraction before observable-class slot transport.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper12_v3_9.docx"
@@ -24627,7 +24474,7 @@
             "kind": "theorem",
             "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
             "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
-            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003035943317878` within that family.",
             "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper17_v1_4.docx"
@@ -24864,10 +24711,10 @@
           "paper30.active_branch_parameter_package": {
             "node_id": "paper30.active_branch_parameter_package",
             "kind": "theorem",
-            "label": "Paper 30 Active-branch Parameter Package",
-            "claim_status": "derived / scoped",
-            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`.",
-            "scope": "Fixed active runtime parameter package carried by the public calculator.",
+            "label": "Quarantined Paper 30 legacy projection package",
+            "claim_status": "INVALID / quarantined by Q45",
+            "statement": "The historical carried public runtime branch fixed `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`. Q44/Q45 quarantine this package for Kerr active consumption because the H0 projection requires killed normalizers, retired branch mixing, or an unbanked free normalization.",
+            "scope": "Quarantined historical runtime package. Not active-consumable for Kerr H0.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper30_v1_3.docx"
             ],
@@ -24875,17 +24722,18 @@
               "paper21.branch_assignment"
             ],
             "premises": [
-              "`paper21.branch_assignment` fixes the carried active branch rather than refitting a branch per observable.",
-              "The public calculator exposes one reviewed runtime package as its active numerical surface."
+              "Q43 supplies the only live Kerr-consumable scoped H0 value: 62.96277381531285 km/s/Mpc.",
+              "Q44 rejects the enumerated homogeneous observer projections from Q43 to historical H0=67.58."
             ],
             "proof_outline": [
-              "Read the active branch constants from the reviewed Paper 30 runtime package.",
-              "Carry those values unchanged into the calculator constants layer.",
-              "Expose them as public theorem-grade or scoped-active package values rather than hiding them behind an opaque backend."
+              "Preserve the historical package as provenance.",
+              "Remove theorem-grade and zero-fit active-consumable language from the public calculator surface.",
+              "Route live H0 use to Q43 until a new primitive-observable projector is derived."
             ],
             "scope_boundary": [
-              "Fixed active runtime package only.",
-              "Does not claim that the active package is the unique surviving branch outside the reviewed public calculator surface."
+              "Not a load-bearing H0 terminal.",
+              "Does not invalidate Q43 scoped bare-torsion/global-readout H0.",
+              "Does not close the primitive-observable projector frontier."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -26053,7 +25901,7 @@
             "kind": "theorem",
             "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
-            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
+            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.594142598938 deg`, and `100theta_* = 1.036974457782` on the fixed active branch package.",
             "scope": "Fixed active Paper 10 legacy projected branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/reports/calculator/calculator_active_branch_theta_star_theorem_report.md"
@@ -26083,7 +25931,7 @@
       }
     },
     "eta_io_late": {
-      "branch_label": "active_paper10_legacy_projected_branch",
+      "branch_label": "legacy_paper10_projected_branch_quarantined_q45",
       "eta_IO_late": 5.748778515173696e-10,
       "output_id": "eta_io_late",
       "label": "Late-time eta_IO",
@@ -26172,7 +26020,7 @@
             "kind": "theorem",
             "label": "Paper 12 Baryon Dictionary Fraction Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The Baryon Dictionary Principle fixes the framework baryon inventory fraction to `f_b = 2 gamma_BI / x = 0.312708336215025` on the standard minimal-coupling matter class.",
+            "statement": "The Baryon Dictionary Principle fixes the framework baryon inventory fraction to `f_b = 2 gamma_BI / x = 0.305763476897013` on the standard minimal-coupling matter class.",
             "scope": "Framework baryon inventory fraction before observable-class slot transport.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper12_v3_9.docx"
@@ -26202,7 +26050,7 @@
             "kind": "theorem",
             "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
             "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
-            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003035943317878` within that family.",
             "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper17_v1_4.docx"
@@ -26439,10 +26287,10 @@
           "paper30.active_branch_parameter_package": {
             "node_id": "paper30.active_branch_parameter_package",
             "kind": "theorem",
-            "label": "Paper 30 Active-branch Parameter Package",
-            "claim_status": "derived / scoped",
-            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`.",
-            "scope": "Fixed active runtime parameter package carried by the public calculator.",
+            "label": "Quarantined Paper 30 legacy projection package",
+            "claim_status": "INVALID / quarantined by Q45",
+            "statement": "The historical carried public runtime branch fixed `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`. Q44/Q45 quarantine this package for Kerr active consumption because the H0 projection requires killed normalizers, retired branch mixing, or an unbanked free normalization.",
+            "scope": "Quarantined historical runtime package. Not active-consumable for Kerr H0.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper30_v1_3.docx"
             ],
@@ -26450,17 +26298,18 @@
               "paper21.branch_assignment"
             ],
             "premises": [
-              "`paper21.branch_assignment` fixes the carried active branch rather than refitting a branch per observable.",
-              "The public calculator exposes one reviewed runtime package as its active numerical surface."
+              "Q43 supplies the only live Kerr-consumable scoped H0 value: 62.96277381531285 km/s/Mpc.",
+              "Q44 rejects the enumerated homogeneous observer projections from Q43 to historical H0=67.58."
             ],
             "proof_outline": [
-              "Read the active branch constants from the reviewed Paper 30 runtime package.",
-              "Carry those values unchanged into the calculator constants layer.",
-              "Expose them as public theorem-grade or scoped-active package values rather than hiding them behind an opaque backend."
+              "Preserve the historical package as provenance.",
+              "Remove theorem-grade and zero-fit active-consumable language from the public calculator surface.",
+              "Route live H0 use to Q43 until a new primitive-observable projector is derived."
             ],
             "scope_boundary": [
-              "Fixed active runtime package only.",
-              "Does not claim that the active package is the unique surviving branch outside the reviewed public calculator surface."
+              "Not a load-bearing H0 terminal.",
+              "Does not invalidate Q43 scoped bare-torsion/global-readout H0.",
+              "Does not close the primitive-observable projector frontier."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -27628,7 +27477,7 @@
             "kind": "theorem",
             "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
-            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
+            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.594142598938 deg`, and `100theta_* = 1.036974457782` on the fixed active branch package.",
             "scope": "Fixed active Paper 10 legacy projected branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/reports/calculator/calculator_active_branch_theta_star_theorem_report.md"
@@ -27659,6 +27508,7 @@
     },
     "background_snapshot_z_0_57": {
       "z": 0.57,
+      "status": "pre-Q39 snapshot retained as provenance only",
       "H_km_s_mpc": 93.97832021055457,
       "DM_mpc": 2165.6006007820824,
       "DA_mpc": 1379.3634399885877,
@@ -27672,25 +27522,25 @@
       "DV_over_rd": 14.18638104308901,
       "eta_IO_late": 5.748778515173696e-10,
       "output_id": "background_snapshot",
-      "label": "Closed-FRW background snapshot",
+      "label": "Background snapshot under active re-derivation",
       "primary_key": "DM_mpc",
       "primary_value": 2165.6006007820824,
       "units": "Mpc",
-      "claim_status": "derived / scoped active-branch background snapshot",
-      "provenance_status": "full",
-      "zero_fitted_parameters": true,
+      "claim_status": "OPEN_REDERIVATION_REQUIRED / Q46 observer package rerun",
+      "provenance_status": "quarantined",
+      "zero_fitted_parameters": false,
       "conditional_on_premises": [
         "premise.1",
         "premise.2"
       ],
       "scope_boundary": [
-        "Closed-FRW observer-side background geometry on the fixed active branch.",
-        "BAO ratios inherit the carried active-branch `r_d` slot."
+        "Pre-Q39 background snapshot provenance only.",
+        "Not active-consumable until the observer-side package is rerun on Q39 R_U/x."
       ],
       "non_claims": [],
       "notes": [
-        "This snapshot is evaluated on the theorem-grade active closed-FRW branch.",
-        "The BAO ratios in the payload inherit the carried pre-drag ruler `r_d`."
+        "Q46 marks observer-side background snapshots as OPEN_REDERIVATION_REQUIRED after Q39 x propagation.",
+        "The old values remain in the payload solely for provenance and audit traceability."
       ],
       "provenance": {
         "root_node": "paper30.background_surface",
@@ -27759,7 +27609,7 @@
             "kind": "theorem",
             "label": "Paper 12 Baryon Dictionary Fraction Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The Baryon Dictionary Principle fixes the framework baryon inventory fraction to `f_b = 2 gamma_BI / x = 0.312708336215025` on the standard minimal-coupling matter class.",
+            "statement": "The Baryon Dictionary Principle fixes the framework baryon inventory fraction to `f_b = 2 gamma_BI / x = 0.305763476897013` on the standard minimal-coupling matter class.",
             "scope": "Framework baryon inventory fraction before observable-class slot transport.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper12_v3_9.docx"
@@ -27789,7 +27639,7 @@
             "kind": "theorem",
             "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
             "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
-            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003035943317878` within that family.",
             "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper17_v1_4.docx"
@@ -28026,10 +27876,10 @@
           "paper30.active_branch_parameter_package": {
             "node_id": "paper30.active_branch_parameter_package",
             "kind": "theorem",
-            "label": "Paper 30 Active-branch Parameter Package",
-            "claim_status": "derived / scoped",
-            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`.",
-            "scope": "Fixed active runtime parameter package carried by the public calculator.",
+            "label": "Quarantined Paper 30 legacy projection package",
+            "claim_status": "INVALID / quarantined by Q45",
+            "statement": "The historical carried public runtime branch fixed `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`. Q44/Q45 quarantine this package for Kerr active consumption because the H0 projection requires killed normalizers, retired branch mixing, or an unbanked free normalization.",
+            "scope": "Quarantined historical runtime package. Not active-consumable for Kerr H0.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper30_v1_3.docx"
             ],
@@ -28037,17 +27887,18 @@
               "paper21.branch_assignment"
             ],
             "premises": [
-              "`paper21.branch_assignment` fixes the carried active branch rather than refitting a branch per observable.",
-              "The public calculator exposes one reviewed runtime package as its active numerical surface."
+              "Q43 supplies the only live Kerr-consumable scoped H0 value: 62.96277381531285 km/s/Mpc.",
+              "Q44 rejects the enumerated homogeneous observer projections from Q43 to historical H0=67.58."
             ],
             "proof_outline": [
-              "Read the active branch constants from the reviewed Paper 30 runtime package.",
-              "Carry those values unchanged into the calculator constants layer.",
-              "Expose them as public theorem-grade or scoped-active package values rather than hiding them behind an opaque backend."
+              "Preserve the historical package as provenance.",
+              "Remove theorem-grade and zero-fit active-consumable language from the public calculator surface.",
+              "Route live H0 use to Q43 until a new primitive-observable projector is derived."
             ],
             "scope_boundary": [
-              "Fixed active runtime package only.",
-              "Does not claim that the active package is the unique surviving branch outside the reviewed public calculator surface."
+              "Not a load-bearing H0 terminal.",
+              "Does not invalidate Q43 scoped bare-torsion/global-readout H0.",
+              "Does not close the primitive-observable projector frontier."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -29215,7 +29066,7 @@
             "kind": "theorem",
             "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
-            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
+            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.594142598938 deg`, and `100theta_* = 1.036974457782` on the fixed active branch package.",
             "scope": "Fixed active Paper 10 legacy projected branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/reports/calculator/calculator_active_branch_theta_star_theorem_report.md"
@@ -29246,22 +29097,22 @@
     },
     "recombination_point_z_1100": {
       "z": 1100.0,
-      "x_e": 0.0025881144670350555,
-      "u": 0.0005979412710263879,
-      "a_loc_m": 3.996340484904864e+23,
-      "H_loc_s_inv": 3.066896182991767e-14,
-      "T_r_loc_K": 2932.5082822644,
+      "x_e": 0.0025014036965996184,
+      "u": 0.0005846617465404909,
+      "a_loc_m": 3.907586783003371e+23,
+      "H_loc_s_inv": 3.171996769493645e-14,
+      "T_r_loc_K": 2928.8965070133345,
       "n_H_geom_m3": 236605106.84411275,
-      "n_e_m3": 612361.0999976232,
-      "kappa_prime_loc": 16.279919995444942,
-      "d_tau_obs_dz": 0.0003616796656907364,
-      "Gamma_T_over_H_loc": 0.3982093119255007,
-      "R_local_geom": 0.6351270933342528,
-      "c_s_local_m_s": 135358121.3870273,
+      "n_e_m3": 591844.8888942113,
+      "kappa_prime_loc": 15.38504328861625,
+      "d_tau_obs_dz": 0.00033797979499126967,
+      "Gamma_T_over_H_loc": 0.3721157542853878,
+      "R_local_geom": 0.6382657265497085,
+      "c_s_local_m_s": 135228397.8740036,
       "output_id": "recombination_point",
       "label": "Local recombination primitives at one redshift",
       "primary_key": "kappa_prime_loc",
-      "primary_value": 16.279919995444942,
+      "primary_value": 15.38504328861625,
       "units": null,
       "claim_status": "derived / scoped local recombination primitives on omega_b,geom",
       "provenance_status": "full",
@@ -29349,7 +29200,7 @@
             "kind": "theorem",
             "label": "Paper 12 Baryon Dictionary Fraction Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The Baryon Dictionary Principle fixes the framework baryon inventory fraction to `f_b = 2 gamma_BI / x = 0.312708336215025` on the standard minimal-coupling matter class.",
+            "statement": "The Baryon Dictionary Principle fixes the framework baryon inventory fraction to `f_b = 2 gamma_BI / x = 0.305763476897013` on the standard minimal-coupling matter class.",
             "scope": "Framework baryon inventory fraction before observable-class slot transport.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper12_v3_9.docx"
@@ -29379,7 +29230,7 @@
             "kind": "theorem",
             "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
             "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
-            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003035943317878` within that family.",
             "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper17_v1_4.docx"
@@ -29616,10 +29467,10 @@
           "paper30.active_branch_parameter_package": {
             "node_id": "paper30.active_branch_parameter_package",
             "kind": "theorem",
-            "label": "Paper 30 Active-branch Parameter Package",
-            "claim_status": "derived / scoped",
-            "statement": "The carried public runtime branch fixes `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`.",
-            "scope": "Fixed active runtime parameter package carried by the public calculator.",
+            "label": "Quarantined Paper 30 legacy projection package",
+            "claim_status": "INVALID / quarantined by Q45",
+            "statement": "The historical carried public runtime branch fixed `H0 = 67.575856535826 km/s/Mpc`, `Omega_m = 0.348683950676`, `Omega_k = -0.045791125760`, `Omega_Lambda = 0.697015757616`, `Y_p = 0.2477`. Q44/Q45 quarantine this package for Kerr active consumption because the H0 projection requires killed normalizers, retired branch mixing, or an unbanked free normalization.",
+            "scope": "Quarantined historical runtime package. Not active-consumable for Kerr H0.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/docs/zenodo/Interior_Observer_Paper30_v1_3.docx"
             ],
@@ -29627,17 +29478,18 @@
               "paper21.branch_assignment"
             ],
             "premises": [
-              "`paper21.branch_assignment` fixes the carried active branch rather than refitting a branch per observable.",
-              "The public calculator exposes one reviewed runtime package as its active numerical surface."
+              "Q43 supplies the only live Kerr-consumable scoped H0 value: 62.96277381531285 km/s/Mpc.",
+              "Q44 rejects the enumerated homogeneous observer projections from Q43 to historical H0=67.58."
             ],
             "proof_outline": [
-              "Read the active branch constants from the reviewed Paper 30 runtime package.",
-              "Carry those values unchanged into the calculator constants layer.",
-              "Expose them as public theorem-grade or scoped-active package values rather than hiding them behind an opaque backend."
+              "Preserve the historical package as provenance.",
+              "Remove theorem-grade and zero-fit active-consumable language from the public calculator surface.",
+              "Route live H0 use to Q43 until a new primitive-observable projector is derived."
             ],
             "scope_boundary": [
-              "Fixed active runtime package only.",
-              "Does not claim that the active package is the unique surviving branch outside the reviewed public calculator surface."
+              "Not a load-bearing H0 terminal.",
+              "Does not invalidate Q43 scoped bare-torsion/global-readout H0.",
+              "Does not close the primitive-observable projector frontier."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -30805,7 +30657,7 @@
             "kind": "theorem",
             "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
-            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
+            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.594142598938 deg`, and `100theta_* = 1.036974457782` on the fixed active branch package.",
             "scope": "Fixed active Paper 10 legacy projected branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/tmp/io-calculator/reports/calculator/calculator_active_branch_theta_star_theorem_report.md"

@@ -42,13 +42,13 @@ def test_theta_star_explained_output_carries_full_chain() -> None:
     """The first explained output should ship the accepted theta_* theorem chain."""
 
     explained = explain_active_branch_theta_star().as_dict()
-    assert explained["claim_status"].startswith("derived / scoped")
-    assert explained["provenance_status"] == "full"
-    assert explained["zero_fitted_parameters"] is True
+    assert explained["claim_status"].startswith("REQUIRES_RERUN / quarantined")
+    assert explained["provenance_status"] == "quarantined"
+    assert explained["zero_fitted_parameters"] is False
     assert explained["conditional_on_premises"] == ["premise.1", "premise.2"]
     assert math.isclose(
         explained["theta_star_100"],
-        1.048683904878751,
+            1.0369744577818896,
         rel_tol=0.0,
         abs_tol=1.0e-12,
     )
@@ -73,7 +73,7 @@ def test_theta_star_explained_output_carries_full_chain() -> None:
     assert len(theta_node["proof_outline"]) == 3
     assert theta_node["scope_boundary"][0] == "Fixed active Paper 10 legacy projected branch only."
     assert theta_node["reference_note"].startswith("Supporting references only.")
-    assert "`100theta_* = 1.048683904879`" in theta_node["statement"]
+    assert "`100theta_* = 1.036974457782`" in theta_node["statement"]
     comparison = explained["direct_observable_comparison"]
     assert math.isclose(
         comparison["predicted_value"],
@@ -226,15 +226,15 @@ def test_bare_clock_scalar_and_bbn_cards_preserve_status_and_formulas() -> None:
         "provenance"
     ]["nodes"]["paper32.modular_dtn_field_transfer"]["statement"]
 
-    assert math.isclose(fb["f_b"], 0.3127083362150252, rel_tol=0.0, abs_tol=1.0e-15)
+    assert math.isclose(fb["f_b"], 0.3057634768970132, rel_tol=0.0, abs_tol=1.0e-15)
     assert fb["provenance"]["root_node"] == "paper12.baryon_dictionary_fraction"
-    assert "`f_b = 2 gamma_BI / x = 0.312708336215025`" in fb["provenance"]["nodes"][
+    assert "`f_b = 2 gamma_BI / x = 0.305763476897013`" in fb["provenance"]["nodes"][
         "paper12.baryon_dictionary_fraction"
     ]["statement"]
 
     assert math.isclose(dh["D_H_ratio"], 2.509e-05, rel_tol=0.0, abs_tol=1.0e-16)
     assert math.isclose(yp["Y_p"], 0.2477, rel_tol=0.0, abs_tol=1.0e-12)
-    assert li["claim_status"].startswith("conditional / scoped")
+    assert li["claim_status"].startswith("OPEN_REDERIVATION_REQUIRED")
     assert math.isclose(li["Li7_H_ratio"], 1.7500878203658553e-10, rel_tol=0.0, abs_tol=1.0e-24)
     assert li["provenance"]["root_node"] == "paper24.conditional_lithium_scorecard"
 
@@ -243,7 +243,8 @@ def test_background_snapshot_explained_output_carries_full_chain() -> None:
     """The parameterized background snapshot should ship a full theorem chain."""
 
     explained = explain_background_snapshot(0.57).as_dict()
-    assert explained["provenance_status"] == "full"
+    assert explained["provenance_status"] == "quarantined"
+    assert explained["claim_status"].startswith("OPEN_REDERIVATION_REQUIRED")
     assert math.isclose(
         explained["DM_mpc"],
         2165.6006007820824,
@@ -309,23 +310,29 @@ def test_provenance_specs_and_graph_expose_theta_and_scaffolds() -> None:
 
     specs = explained_output_specs()
     graph = theorem_graph()
-    assert specs["theta_star_theorem"]["provenance_status"] == "full"
-    assert specs["tt_first_peak_support"]["provenance_status"] == "full"
+    assert specs["theta_star_theorem"]["provenance_status"] == "quarantined"
+    assert specs["tt_first_peak_support"]["provenance_status"] == "quarantined"
+    assert specs["tt_first_peak_support"]["claim_status"].startswith("OPEN_REDERIVATION_REQUIRED")
     assert specs["branch_rd_mpc"]["provenance_status"] == "full"
-    assert specs["branch_h0"]["provenance_status"] == "full"
-    assert specs["branch_omega_m"]["provenance_status"] == "full"
-    assert specs["branch_omega_k"]["provenance_status"] == "full"
-    assert specs["branch_omega_lambda"]["provenance_status"] == "full"
+    assert specs["branch_h0"]["provenance_status"] == "quarantined"
+    assert specs["branch_h0"]["claim_status"].startswith("INVALID / quarantined")
+    assert specs["branch_omega_m"]["provenance_status"] == "quarantined"
+    assert specs["branch_omega_k"]["provenance_status"] == "quarantined"
+    assert specs["branch_omega_lambda"]["provenance_status"] == "quarantined"
     assert specs["active_t_cmb"]["provenance_status"] == "full"
     assert specs["bare_master_clock_age"]["provenance_status"] == "full"
     assert specs["scalar_tilt_ns"]["provenance_status"] == "full"
     assert specs["native_scalar_amplitude_as"]["provenance_status"] == "full"
-    assert specs["bbn_deuterium_ratio"]["provenance_status"] == "full"
-    assert specs["bbn_helium_fraction"]["provenance_status"] == "full"
-    assert specs["bbn_lithium_ratio"]["provenance_status"] == "full"
+    assert specs["bbn_deuterium_ratio"]["provenance_status"] == "quarantined"
+    assert specs["bbn_deuterium_ratio"]["claim_status"].startswith("OPEN_REDERIVATION_REQUIRED")
+    assert specs["bbn_helium_fraction"]["provenance_status"] == "quarantined"
+    assert specs["bbn_helium_fraction"]["claim_status"].startswith("OPEN_REDERIVATION_REQUIRED")
+    assert specs["bbn_lithium_ratio"]["provenance_status"] == "quarantined"
+    assert specs["bbn_lithium_ratio"]["claim_status"].startswith("OPEN_REDERIVATION_REQUIRED")
     assert specs["baryon_fraction_fb"]["provenance_status"] == "full"
     assert specs["eta_io_late"]["provenance_status"] == "full"
-    assert specs["background_snapshot"]["provenance_status"] == "full"
+    assert specs["background_snapshot"]["provenance_status"] == "quarantined"
+    assert specs["background_snapshot"]["claim_status"].startswith("OPEN_REDERIVATION_REQUIRED")
     assert specs["recombination_point"]["provenance_status"] == "full"
     assert "paper12.baryon_dictionary_fraction" in graph
     assert "paper17.gttp_thermal_readout" in graph
@@ -337,7 +344,7 @@ def test_provenance_specs_and_graph_expose_theta_and_scaffolds() -> None:
     assert "paper24.conditional_lithium_scorecard" in graph
     assert "calculator.active_branch_theta_star" in graph
     assert graph["paper12.baryon_dictionary_fraction"].label == "Paper 12 Baryon Dictionary Fraction Theorem"
-    assert "`f_b = 2 gamma_BI / x = 0.312708336215025`" in graph[
+    assert "`f_b = 2 gamma_BI / x = 0.305763476897013`" in graph[
         "paper12.baryon_dictionary_fraction"
     ].statement
     assert graph["paper17.gttp_thermal_readout"].label == "Paper 17 FIRAS-fixed Thermal Readout Normalization"
@@ -346,7 +353,8 @@ def test_provenance_specs_and_graph_expose_theta_and_scaffolds() -> None:
     assert "`n_s = 1 - K_gauge / x = 0.9639`" in graph[
         "paper28.boundary_fixed_point_scalar_tilt"
     ].statement
-    assert graph["paper30.active_branch_parameter_package"].label == "Paper 30 Active-branch Parameter Package"
+    assert graph["paper30.active_branch_parameter_package"].label == "Quarantined Paper 30 legacy projection package"
+    assert graph["paper30.active_branch_parameter_package"].claim_status == "INVALID / quarantined by Q45"
     assert "`Omega_k = -0.045791125760`" in graph["paper30.active_branch_parameter_package"].statement
     assert graph["paper30.bare_master_clock"].label == "Paper 30 Bare Master-clock Theorem"
     assert "`t_bare(a) = H0_bare^-1 integral_0^a da' / sqrt(Omega_r + Omega_m a' + Omega_k a'^2 + Omega_Lambda a'^4)`" in graph[

@@ -53,7 +53,7 @@ from .model import rho_crit_h2_si
 
 STRICT_BARE_SELECTOR_Z_MIN = 900.0
 STRICT_BARE_SELECTOR_Z_MAX = 1300.0
-STRICT_BARE_J_THETA = 1.51899 ** (-0.5) * math.sqrt(1.0 + 0.2375**2)
+STRICT_BARE_J_THETA = 1.5534883525673302 ** (-0.5) * math.sqrt(1.0 + 0.2375**2)
 
 
 @dataclass(frozen=True)

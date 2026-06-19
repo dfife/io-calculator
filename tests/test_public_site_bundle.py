@@ -119,12 +119,13 @@ def test_public_site_prerenders_when_site_clone_is_present() -> None:
     assert "Nucleosynthesis" in html
     assert "Structure" in html
     assert "Recombination" in html
-    assert "Canonical TT first-peak support" in html
-    assert "Conditional/scoped/verified TT first-peak support on the repaired active-branch canonical carrier (n_max = 501), with inherited-FULL Stage-2 history and equal-rate typed Thomson specialization." in html
+    assert "TT first-peak support under active re-derivation" in html
+    assert "OPEN_REDERIVATION_REQUIRED / Q46 acoustic rerun" in html
     assert "shell-ceiling drift remains open" in html
-    assert "Active-branch H0" in html
+    assert "Quarantined historical H0" in html
     assert "Baryon dictionary fraction" in html
-    assert "Conditional BBN lithium scorecard" in html
+    assert "BBN lithium calculator card under active re-derivation" in html
+    assert "Redshift calculator paused for re-derivation" in html
     assert "Phase-equivalent Selector Theorem" in html
     assert "Packet Coefficient Fixing Theorem" in html
     assert "Why this differs from Planck" in html

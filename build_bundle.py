@@ -149,16 +149,10 @@ def _write_optional_public_site_copy(
 def main() -> None:
     """Rebuild the publishable static bundle from local authority files."""
 
-    model = CurvedBackgroundModel()
-
     paper30 = load_json(AUTHORITY_PATHS["paper30_legacy_recompute"])
     paper31 = load_json(AUTHORITY_PATHS["paper31_legacy_recompute"])
     paper35_de = load_json(AUTHORITY_PATHS["paper35_dark_energy"])
     paper35_eta = load_json(AUTHORITY_PATHS["paper35_eta_closure"])
-
-    snapshot_057 = model.snapshot(0.57, n=4096)
-    snapshot_051 = model.snapshot(0.51, n=4096)
-    snapshot_233 = model.snapshot(2.33, n=4096)
     recombination_state_1100 = local_background_state(1100.0)
     x_e_saha_1100 = saha_equilibrium_xe(1100.0)
 
@@ -168,18 +162,21 @@ def main() -> None:
         "metadata": {
             "name": "AIO Calculator",
             "generated_at_utc": datetime.now(timezone.utc).isoformat(),
-            "branch_status": "active_paper10_legacy_branch",
+            "branch_status": "q46_q39_ru_x_propagated_observer_package_open_rederivation",
             "calculator_scope": [
-                "derived or verified closed-FRW background geometry",
-                "active-branch BAO distance observables",
+                "Q39 banked R_U/x terminal surface",
+                "Q45/Q46 hygiene overlay and quarantine provenance",
                 "late-time eta_IO closure",
                 "theorem-grade local recombination primitives on omega_b,geom",
                 "conditional exact inherited-FULL Stage-2 dynamic-network history builder",
                 "typed visibility-packet operators on supplied exact Stage-2 histories",
-                "active-branch vacuum mapping summary",
-                "theorem-grade active-branch theta_* with full provenance",
+                "historical observer-side H0 and density package preserved only as quarantined provenance",
             ],
             "calculator_boundaries": [
+                "no live Kerr observer-projection H0 package after Q45/Q46",
+                "no active-consumable Omega density package after Q45/Q46",
+                "no active-consumable acoustic scorecard until Q39 x propagation rerun",
+                "no active-consumable BBN scorecard until Q39 x propagation rerun",
                 "no universal IO-native Stage-2 renormalization theorem in the live package beyond the conditional inherited-FULL builder",
                 "no theorem-grade full TT/TE/EE spectrum solver in the live package",
                 "no theorem-grade Planck acoustic extractor in the live package",
@@ -188,15 +185,22 @@ def main() -> None:
                 "no theorem-grade exact TDCOSMO lens-normalization selector",
             ],
         },
-        "branch": ACTIVE_BRANCH.as_dict(),
+        "q39_terminals": {
+            "R_U_m": 4.302281527351925e26,
+            "x": ACTIVE_IO_CONSTANTS.x,
+            "result_id": "R_U.BARYON_PHOTON_INVENTORY.Q39",
+            "label": "DERIVED/CONDITIONAL_VERIFIED",
+        },
+        "quarantined_historical_branch": {
+            "status": "INVALID / quarantined by Q45/Q46 for active Kerr consumption",
+            "not_active_consumable": True,
+            "values": ACTIVE_BRANCH.as_dict(),
+        },
         "baryons": ACTIVE_BARYON_SLOTS.as_dict(),
         "io_constants": ACTIVE_IO_CONSTANTS.as_dict(),
         "derived_examples": {
-            "age_today_gyr": model.age_today_gyr(n=4096),
+            "status": "observer-side H0/density/acoustic/BBN examples paused pending Q46 rerun",
             "eta_io_late": late_eta_io(),
-            "z_0_57": snapshot_057,
-            "z_0_51": snapshot_051,
-            "z_2_33": snapshot_233,
             "recombination_local_z_1100": {
                 "z": 1100.0,
                 "u": recombination_state_1100.u,
@@ -215,8 +219,12 @@ def main() -> None:
                 "c_s_local_m_s": local_sound_speed_m_s(1100.0),
             },
         },
-        "curves": sample_curve(model),
+        "curves": {
+            "status": "paused / not active-consumable until observer-side package rerun on Q39 R_U/x",
+            "samples": [],
+        },
         "paper30_summary": {
+            "status": "quarantined historical branch summary",
             "active_inputs": paper30["inputs"]["io_background"],
             "pantheon_delta_chi2": paper30["tests"]["pantheon"]["planck"]["chi2"]
             - paper30["tests"]["pantheon"]["io"]["chi2"],

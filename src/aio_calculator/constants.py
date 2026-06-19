@@ -345,7 +345,7 @@ class IOConstants:
 
 
 ACTIVE_BRANCH = BranchParameters(
-    label="active_paper10_legacy_projected_branch",
+    label="legacy_paper10_projected_branch_quarantined_q45",
     H0=67.57585653582628,
     Omega_m=0.34868395067621694,
     Omega_k=-0.04579112576013168,
@@ -398,13 +398,14 @@ ACTIVE_BARYON_SLOTS = BaryonSlots(
     omega_b_struct_h2=0.02143434229616185,
 )
 
-# Reconstruct the reduced-stack constants from the carried gamma / f_b pair
-# rather than hardcoding duplicated decimal approximations.
+# Q45 branch hygiene: carry the Cosmo-accepted Q39/Q40 radius terminal.
+# The old x ~= 1.519 value came from the quarantined historical projection
+# package; `f_b` is now derived from the banked compactness, not vice versa.
 _GAMMA = 0.2375
 _Q = 1.0 + _GAMMA**2
 _K_GAUGE = math.log(_Q)
-_F_B = 0.3127083362150252
-_X = 2.0 * _GAMMA / _F_B
+_X = 1.5534883525673302
+_F_B = 2.0 * _GAMMA / _X
 
 ACTIVE_IO_CONSTANTS = IOConstants(
     x=_X,

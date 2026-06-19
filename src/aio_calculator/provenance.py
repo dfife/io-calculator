@@ -513,31 +513,35 @@ def theorem_graph() -> dict[str, TheoremNode]:
         "paper30.active_branch_parameter_package": TheoremNode(
             node_id="paper30.active_branch_parameter_package",
             kind="theorem",
-            label="Paper 30 Active-branch Parameter Package",
-            claim_status="derived / scoped",
+            label="Quarantined Paper 30 legacy projection package",
+            claim_status="INVALID / quarantined by Q45",
             statement=(
-                "The carried public runtime branch fixes "
+                "The historical carried public runtime branch fixed "
                 f"`H0 = {ACTIVE_BRANCH.H0:.12f} km/s/Mpc`, "
                 f"`Omega_m = {ACTIVE_BRANCH.Omega_m:.12f}`, "
                 f"`Omega_k = {ACTIVE_BRANCH.Omega_k:.12f}`, "
                 f"`Omega_Lambda = {ACTIVE_BRANCH.Omega_lambda:.12f}`, "
-                f"`Y_p = {ACTIVE_BRANCH.YHe:.4f}`."
+                f"`Y_p = {ACTIVE_BRANCH.YHe:.4f}`. Q44/Q45 quarantine this "
+                "package for Kerr active consumption because the H0 projection "
+                "requires killed normalizers, retired branch mixing, or an "
+                "unbanked free normalization."
             ),
-            scope="Fixed active runtime parameter package carried by the public calculator.",
+            scope="Quarantined historical runtime package. Not active-consumable for Kerr H0.",
             authority_paths=(str(AUTHORITY_PATHS["paper30_published"]),),
             depends_on=("paper21.branch_assignment",),
             premises=(
-                "`paper21.branch_assignment` fixes the carried active branch rather than refitting a branch per observable.",
-                "The public calculator exposes one reviewed runtime package as its active numerical surface.",
+                "Q43 supplies the only live Kerr-consumable scoped H0 value: 62.96277381531285 km/s/Mpc.",
+                "Q44 rejects the enumerated homogeneous observer projections from Q43 to historical H0=67.58.",
             ),
             proof_outline=(
-                "Read the active branch constants from the reviewed Paper 30 runtime package.",
-                "Carry those values unchanged into the calculator constants layer.",
-                "Expose them as public theorem-grade or scoped-active package values rather than hiding them behind an opaque backend.",
+                "Preserve the historical package as provenance.",
+                "Remove theorem-grade and zero-fit active-consumable language from the public calculator surface.",
+                "Route live H0 use to Q43 until a new primitive-observable projector is derived.",
             ),
             scope_boundary=(
-                "Fixed active runtime package only.",
-                "Does not claim that the active package is the unique surviving branch outside the reviewed public calculator surface.",
+                "Not a load-bearing H0 terminal.",
+                "Does not invalidate Q43 scoped bare-torsion/global-readout H0.",
+                "Does not close the primitive-observable projector frontier.",
             ),
         ),
         "paper30.bare_master_clock": TheoremNode(
@@ -1844,15 +1848,16 @@ def explained_output_specs() -> dict[str, dict[str, Any]]:
 
     return {
         "theta_star_theorem": {
-            "label": "Theorem-grade active-branch theta_*",
-            "claim_status": "derived / scoped",
-            "provenance_status": "full",
-            "zero_fitted_parameters": True,
+            "label": "Quarantined active-branch theta_*",
+            "claim_status": "REQUIRES_RERUN / quarantined after Q39 x propagation",
+            "provenance_status": "quarantined",
+            "zero_fitted_parameters": False,
             "conditional_on_premises": ["premise.1", "premise.2"],
             "parameters": {},
             "note": (
-                "First fully explained calculator output; includes the complete "
-                "accepted theorem chain and the direct-observable peak comparison."
+                "The previous theta_* card was tied to the retired x ~= 1.519 "
+                "active package. After Q39 x propagation it requires a fresh "
+                "paper/calculator rerun before active consumption."
             ),
         },
         "branch_rd_mpc": {
@@ -1868,22 +1873,22 @@ def explained_output_specs() -> dict[str, dict[str, Any]]:
             ),
         },
         "branch_h0": {
-            "label": "Active-branch H0",
-            "claim_status": "derived / scoped",
-            "provenance_status": "full",
-            "zero_fitted_parameters": True,
+            "label": "Quarantined historical H0",
+            "claim_status": "INVALID / quarantined by Q45",
+            "provenance_status": "quarantined",
+            "zero_fitted_parameters": False,
             "conditional_on_premises": ["premise.1", "premise.2"],
             "parameters": {},
             "note": (
-                "Carried active-branch Hubble constant exposed as its own "
-                "explained output card."
+                "Historical H0=67.58 is retained as provenance only. The live "
+                "Kerr-consumable scoped H0 is Q43: 62.96277381531285 km/s/Mpc."
             ),
         },
         "branch_omega_m": {
-            "label": "Active-branch Omega_m",
-            "claim_status": "derived / scoped",
-            "provenance_status": "full",
-            "zero_fitted_parameters": True,
+            "label": "Quarantined historical Omega_m",
+            "claim_status": "INVALID / quarantined by Q45 with the legacy H0 package",
+            "provenance_status": "quarantined",
+            "zero_fitted_parameters": False,
             "conditional_on_premises": ["premise.1", "premise.2"],
             "parameters": {},
             "note": (
@@ -1892,10 +1897,10 @@ def explained_output_specs() -> dict[str, dict[str, Any]]:
             ),
         },
         "branch_omega_k": {
-            "label": "Active-branch Omega_k",
-            "claim_status": "derived / scoped",
-            "provenance_status": "full",
-            "zero_fitted_parameters": True,
+            "label": "Quarantined historical Omega_k",
+            "claim_status": "INVALID / quarantined by Q45 with the legacy H0 package",
+            "provenance_status": "quarantined",
+            "zero_fitted_parameters": False,
             "conditional_on_premises": ["premise.1", "premise.2"],
             "parameters": {},
             "note": (
@@ -1903,10 +1908,10 @@ def explained_output_specs() -> dict[str, dict[str, Any]]:
             ),
         },
         "branch_omega_lambda": {
-            "label": "Active-branch Omega_Lambda",
-            "claim_status": "derived / scoped",
-            "provenance_status": "full",
-            "zero_fitted_parameters": True,
+            "label": "Quarantined historical Omega_Lambda",
+            "claim_status": "INVALID / quarantined by Q45 with the legacy H0 package",
+            "provenance_status": "quarantined",
+            "zero_fitted_parameters": False,
             "conditional_on_premises": ["premise.1", "premise.2"],
             "parameters": {},
             "note": (
@@ -1963,39 +1968,40 @@ def explained_output_specs() -> dict[str, dict[str, Any]]:
             ),
         },
         "bbn_deuterium_ratio": {
-            "label": "Active BBN deuterium scorecard",
-            "claim_status": "derived / scoped",
-            "provenance_status": "full",
+            "label": "BBN deuterium scorecard under active re-derivation",
+            "claim_status": "OPEN_REDERIVATION_REQUIRED / Q46 x propagation rerun",
+            "provenance_status": "quarantined",
             "zero_fitted_parameters": True,
             "conditional_on_premises": ["premise.1", "premise.2"],
             "parameters": {},
             "note": (
-                "Fixed active deuterium prediction surfaced as a standalone "
-                "BBN output card."
+                "The pre-Q39 deuterium card is retained as provenance only "
+                "until the BBN scorecard is rerun on the Q39 R_U/x terminal."
             ),
         },
         "bbn_helium_fraction": {
-            "label": "Active BBN helium scorecard",
-            "claim_status": "derived / scoped",
-            "provenance_status": "full",
+            "label": "BBN helium scorecard under active re-derivation",
+            "claim_status": "OPEN_REDERIVATION_REQUIRED / Q46 x propagation rerun",
+            "provenance_status": "quarantined",
             "zero_fitted_parameters": True,
             "conditional_on_premises": ["premise.1", "premise.2"],
             "parameters": {},
             "note": (
-                "Primordial helium mass fraction carried by the active branch "
-                "package is surfaced as its own BBN card."
+                "The pre-Q39 helium card is retained as provenance only until "
+                "the BBN scorecard is rerun on the Q39 R_U/x terminal."
             ),
         },
         "bbn_lithium_ratio": {
-            "label": "Conditional BBN lithium scorecard",
-            "claim_status": "conditional / scoped",
-            "provenance_status": "full",
+            "label": "BBN lithium calculator card under active re-derivation",
+            "claim_status": "OPEN_REDERIVATION_REQUIRED / Q46 x propagation rerun",
+            "provenance_status": "quarantined",
             "zero_fitted_parameters": True,
             "conditional_on_premises": ["premise.1", "premise.2"],
             "parameters": {},
             "note": (
-                "Lithium remains explicitly conditional on the Paper 22 premise "
-                "package plus cluster-deformation input."
+                "The calculator BBN card is retained as provenance only until "
+                "the BBN scorecard is rerun on Q39 R_U/x. The lithium story "
+                "page remains a separate scoped paper-facing surface."
             ),
         },
         "baryon_fraction_fb": {
@@ -2023,17 +2029,17 @@ def explained_output_specs() -> dict[str, dict[str, Any]]:
             ),
         },
         "background_snapshot": {
-            "label": "Closed-FRW background snapshot",
-            "claim_status": "derived / scoped",
-            "provenance_status": "full",
-            "zero_fitted_parameters": True,
+            "label": "Background snapshot under active re-derivation",
+            "claim_status": "OPEN_REDERIVATION_REQUIRED / Q46 observer package rerun",
+            "provenance_status": "quarantined",
+            "zero_fitted_parameters": False,
             "conditional_on_premises": ["premise.1", "premise.2"],
             "parameters": {
                 "z": {"type": "float", "default": 0.57, "meaning": "observer-side redshift"}
             },
             "note": (
-                "Full theorem chain installed for parameterized background "
-                "snapshots, including the carried active-branch `r_d` slot."
+                "Pre-Q39 background snapshots are retained as provenance only "
+                "until the observer-side package is rerun on Q39 R_U/x."
             ),
         },
         "recombination_point": {
@@ -2056,28 +2062,27 @@ def explained_output_specs() -> dict[str, dict[str, Any]]:
             ),
         },
         "tt_first_peak_support": {
-            "label": "Canonical TT first-peak support",
-            "claim_status": TT_FIRST_PEAK_APPROVED_STATUS,
-            "provenance_status": "full",
-            "zero_fitted_parameters": True,
+            "label": "TT first-peak support under active re-derivation",
+            "claim_status": "OPEN_REDERIVATION_REQUIRED / Q46 acoustic rerun",
+            "provenance_status": "quarantined",
+            "zero_fitted_parameters": False,
             "conditional_on_premises": ["premise.1", "premise.2"],
             "parameters": {},
             "note": (
-                "First published IO-native CMB TT spectrum card on the "
-                "repaired active-branch canonical carrier, with the surviving "
-                "`n_max >= 601` drift surfaced explicitly."
+                "Pre-Q39 TT first-peak support is retained as provenance only "
+                "until the acoustic package is rerun on Q39 R_U/x."
             ),
         },
     }
 
 
 def explain_active_branch_theta_star() -> ExplainedValue:
-    """Return the first fully explained published calculator output."""
+    """Return the quarantined theta-star calculator output."""
 
     theta = compute_active_branch_theta_star()
     direct_peak = ObservableComparison(
         label="First TT peak position",
-        claim_status="verified / scoped direct-observable comparison",
+        claim_status="REQUIRES_RERUN / quarantined after Q39 x propagation",
         predicted_value=ACTIVE_BRANCH_THETA_STAR_ELL_PEAK,
         observed_reference=OBSERVED_FIRST_TT_PEAK_ELL_REFERENCE,
         delta=ACTIVE_BRANCH_THETA_STAR_ELL_PEAK - OBSERVED_FIRST_TT_PEAK_ELL_REFERENCE,
@@ -2095,14 +2100,12 @@ def explain_active_branch_theta_star() -> ExplainedValue:
     )
     return ExplainedValue(
         output_id="theta_star_theorem",
-        label="Theorem-grade active-branch theta_*",
+        label="Quarantined active-branch theta_*",
         primary_key="theta_star_100",
         primary_value=theta.theta_star_100,
         units="100theta_*",
-        claim_status=(
-            "derived / scoped, zero fitted parameters, conditional on Premises 1 and 2"
-        ),
-        provenance_status="full",
+        claim_status="REQUIRES_RERUN / quarantined after Q39 x propagation",
+        provenance_status="quarantined",
         payload={
             **theta.as_dict(),
             "ell_peak": ACTIVE_BRANCH_THETA_STAR_ELL_PEAK,
@@ -2112,8 +2115,8 @@ def explain_active_branch_theta_star() -> ExplainedValue:
             ),
         },
         scope_boundary=(
-            "Fixed active Paper 10 legacy projected branch only.",
-            "Theorem-grade numeric closure on the carried selector leaf only.",
+            "Historical active Paper 10 legacy projected branch only.",
+            "Not active-consumable after Q39/Q45 until rerun and reviewed.",
         ),
         conditional_on=("premise.1", "premise.2"),
         provenance_root_id="calculator.active_branch_theta_star",
@@ -2130,15 +2133,15 @@ def explain_active_branch_theta_star() -> ExplainedValue:
         ),
         premise_ids=("premise.1", "premise.2"),
         supporting_node_ids=("paper32.closed_s3_solver_spec",),
-        zero_fitted_parameters=True,
+        zero_fitted_parameters=False,
         non_claims=(
             "Not a universal off-branch transfer theorem.",
             "Not a universal reduction theorem for arbitrary TT parent-profile deformations.",
             "Not a theorem-grade full TT/TE/EE solver closure.",
         ),
         notes=(
-            "This number is published as a theorem-grade calculator output.",
-            "The direct observable is the first TT peak location; `100theta_*` is a geometry-dependent extraction.",
+            "Q45 changed the carried compactness from the retired x ~= 1.519 to Q39 x = 1.5534883525673302.",
+            "The resulting theta_* value is a rerun target, not a theorem-grade active output.",
         ),
         geometry_explanation=(
             "This number differs from Planck's reported value because Planck "
@@ -2169,7 +2172,7 @@ def explain_tt_first_peak_support() -> ExplainedValue:
 
     direct_peak = ObservableComparison(
         label="First TT peak position",
-        claim_status=TT_FIRST_PEAK_APPROVED_STATUS,
+        claim_status="OPEN_REDERIVATION_REQUIRED / Q46 acoustic rerun",
         predicted_value=TT_FIRST_PEAK_CANONICAL_ELL_PEAK,
         observed_reference=OBSERVED_FIRST_TT_PEAK_ELL_REFERENCE,
         delta=TT_FIRST_PEAK_CANONICAL_ELL_PEAK - OBSERVED_FIRST_TT_PEAK_ELL_REFERENCE,
@@ -2185,12 +2188,12 @@ def explain_tt_first_peak_support() -> ExplainedValue:
     )
     return ExplainedValue(
         output_id="tt_first_peak_support",
-        label="Canonical TT first-peak support",
+        label="TT first-peak support under active re-derivation",
         primary_key="ell_peak",
         primary_value=TT_FIRST_PEAK_CANONICAL_ELL_PEAK,
         units="ell",
-        claim_status=TT_FIRST_PEAK_APPROVED_STATUS,
-        provenance_status="full",
+        claim_status="OPEN_REDERIVATION_REQUIRED / Q46 acoustic rerun",
+        provenance_status="quarantined",
         payload={
             "ell_peak": TT_FIRST_PEAK_CANONICAL_ELL_PEAK,
             "observed_first_peak_ell_reference": OBSERVED_FIRST_TT_PEAK_ELL_REFERENCE,
@@ -2211,8 +2214,8 @@ def explain_tt_first_peak_support() -> ExplainedValue:
             "neighbor_c_220_over_peak": TT_FIRST_PEAK_NEIGHBOR_C220_OVER_PEAK,
         },
         scope_boundary=(
-            "Canonical repaired first-peak carrier only.",
-            "Not a theorem-grade full high-`ell` TT closure.",
+            "Pre-Q39 acoustic provenance only.",
+            "Not active-consumable until the acoustic package is rerun on Q39 R_U/x.",
             TT_FIRST_PEAK_OPEN_FRONTIER,
         ),
         conditional_on=("premise.1", "premise.2"),
@@ -2230,15 +2233,15 @@ def explain_tt_first_peak_support() -> ExplainedValue:
         ),
         premise_ids=("premise.1", "premise.2"),
         supporting_node_ids=("calculator.peak_functional_separation",),
-        zero_fitted_parameters=True,
+        zero_fitted_parameters=False,
         non_claims=(
             "Not a theorem-grade full high-`ell` TT closure.",
             "Not a theorem-grade full `C_l` spectrum closure.",
             "Not a theorem-grade Planck extractor.",
         ),
         notes=(
-            "This card publishes the verified canonical repaired-carrier TT result without hiding the surviving high-shell ceiling drift.",
-            "The CLI `tt-spectrum` command computes the same repaired carrier directly; this card is the public explained snapshot.",
+            "Q46 marks the acoustic scorecard as OPEN_REDERIVATION_REQUIRED after Q39 x propagation.",
+            "This card preserves the pre-Q39 TT carrier as provenance only.",
         ),
         direct_observable_comparisons=(direct_peak,),
     )
@@ -2282,23 +2285,23 @@ def explain_branch_rd_mpc() -> ExplainedValue:
 
 
 def explain_branch_h0() -> ExplainedValue:
-    """Return the full explained value for the active-branch `H0`."""
+    """Return the quarantined historical `H0` card."""
 
     return ExplainedValue(
         output_id="branch_h0",
-        label="Active-branch H0",
+        label="Quarantined historical H0",
         primary_key="H0",
         primary_value=ACTIVE_BRANCH.H0,
         units="km/s/Mpc",
-        claim_status="derived / scoped active-branch carried Hubble constant",
-        provenance_status="full",
+        claim_status="INVALID / quarantined historical H0 projection",
+        provenance_status="quarantined",
         payload={
             "branch_label": ACTIVE_BRANCH.label,
             "H0_km_s_mpc": ACTIVE_BRANCH.H0,
         },
         scope_boundary=(
-            "Fixed active runtime package only.",
-            "Public calculator carry value rather than a per-query fitted parameter.",
+            "Historical Paper 10/Paper 29/Paper 30 package only.",
+            "Not active-consumable on Kerr after Q44/Q45.",
         ),
         conditional_on=("premise.1", "premise.2"),
         provenance_root_id="paper30.active_branch_parameter_package",
@@ -2309,31 +2312,32 @@ def explain_branch_h0() -> ExplainedValue:
             "paper30.active_branch_parameter_package",
         ),
         premise_ids=("premise.1", "premise.2"),
-        zero_fitted_parameters=True,
+        zero_fitted_parameters=False,
         notes=(
-            "This card surfaces the active-branch Hubble constant directly from the reviewed runtime package.",
+            "Q43 supplies the live scoped Kerr H0: 62.96277381531285 km/s/Mpc.",
+            "Q44 shows that lifting Q43 to historical 67.58 requires killed normalizers, retired branch mixing, or a free normalization.",
         ),
     )
 
 
 def explain_branch_omega_m() -> ExplainedValue:
-    """Return the full explained value for the active-branch `Omega_m`."""
+    """Return the quarantined historical `Omega_m` card."""
 
     return ExplainedValue(
         output_id="branch_omega_m",
-        label="Active-branch Omega_m",
+        label="Quarantined historical Omega_m",
         primary_key="Omega_m",
         primary_value=ACTIVE_BRANCH.Omega_m,
         units=None,
-        claim_status="derived / scoped active-branch carried matter density",
-        provenance_status="full",
+        claim_status="INVALID / quarantined historical density package",
+        provenance_status="quarantined",
         payload={
             "branch_label": ACTIVE_BRANCH.label,
             "Omega_m": ACTIVE_BRANCH.Omega_m,
         },
         scope_boundary=(
-            "Fixed active runtime package only.",
-            "Public calculator carry value rather than a per-query fitted parameter.",
+            "Historical Paper 10/Paper 29/Paper 30 package only.",
+            "Not active-consumable on Kerr after the Q45 H0 package quarantine.",
         ),
         conditional_on=("premise.1", "premise.2"),
         provenance_root_id="paper30.active_branch_parameter_package",
@@ -2344,31 +2348,32 @@ def explain_branch_omega_m() -> ExplainedValue:
             "paper30.active_branch_parameter_package",
         ),
         premise_ids=("premise.1", "premise.2"),
-        zero_fitted_parameters=True,
+        zero_fitted_parameters=False,
         notes=(
-            "This card surfaces the active-branch matter density directly from the reviewed runtime package.",
+            "This density belonged to the same historical projection package as the quarantined H0=67.58 value.",
+            "A full Kerr observer-projection density package remains open.",
         ),
     )
 
 
 def explain_branch_omega_k() -> ExplainedValue:
-    """Return the full explained value for the active-branch `Omega_k`."""
+    """Return the quarantined historical `Omega_k` card."""
 
     return ExplainedValue(
         output_id="branch_omega_k",
-        label="Active-branch Omega_k",
+        label="Quarantined historical Omega_k",
         primary_key="Omega_k",
         primary_value=ACTIVE_BRANCH.Omega_k,
         units=None,
-        claim_status="derived / scoped active-branch carried curvature density",
-        provenance_status="full",
+        claim_status="INVALID / quarantined historical density package",
+        provenance_status="quarantined",
         payload={
             "branch_label": ACTIVE_BRANCH.label,
             "Omega_k": ACTIVE_BRANCH.Omega_k,
         },
         scope_boundary=(
-            "Fixed active runtime package only.",
-            "Closed-space curvature density on the public calculator branch.",
+            "Historical Paper 10/Paper 29/Paper 30 package only.",
+            "Not active-consumable on Kerr after the Q45 H0 package quarantine.",
         ),
         conditional_on=("premise.1", "premise.2"),
         provenance_root_id="paper30.active_branch_parameter_package",
@@ -2379,31 +2384,32 @@ def explain_branch_omega_k() -> ExplainedValue:
             "paper30.active_branch_parameter_package",
         ),
         premise_ids=("premise.1", "premise.2"),
-        zero_fitted_parameters=True,
+        zero_fitted_parameters=False,
         notes=(
-            "This is the carried closed-space curvature density of the active branch.",
+            "This density belonged to the same historical projection package as the quarantined H0=67.58 value.",
+            "A full Kerr observer-projection density package remains open.",
         ),
     )
 
 
 def explain_branch_omega_lambda() -> ExplainedValue:
-    """Return the full explained value for the active-branch `Omega_Lambda`."""
+    """Return the quarantined historical `Omega_Lambda` card."""
 
     return ExplainedValue(
         output_id="branch_omega_lambda",
-        label="Active-branch Omega_Lambda",
+        label="Quarantined historical Omega_Lambda",
         primary_key="Omega_Lambda",
         primary_value=ACTIVE_BRANCH.Omega_lambda,
         units=None,
-        claim_status="derived / scoped active-branch carried dark-energy density",
-        provenance_status="full",
+        claim_status="INVALID / quarantined historical density package",
+        provenance_status="quarantined",
         payload={
             "branch_label": ACTIVE_BRANCH.label,
             "Omega_Lambda": ACTIVE_BRANCH.Omega_lambda,
         },
         scope_boundary=(
-            "Fixed active runtime package only.",
-            "Public calculator carry value rather than a per-query fitted parameter.",
+            "Historical Paper 10/Paper 29/Paper 30 package only.",
+            "Not active-consumable on Kerr after the Q45 H0 package quarantine.",
         ),
         conditional_on=("premise.1", "premise.2"),
         provenance_root_id="paper30.active_branch_parameter_package",
@@ -2414,9 +2420,10 @@ def explain_branch_omega_lambda() -> ExplainedValue:
             "paper30.active_branch_parameter_package",
         ),
         premise_ids=("premise.1", "premise.2"),
-        zero_fitted_parameters=True,
+        zero_fitted_parameters=False,
         notes=(
-            "This card surfaces the carried dark-energy density of the active runtime package.",
+            "This density belonged to the same historical projection package as the quarantined H0=67.58 value.",
+            "A full Kerr observer-projection density package remains open.",
         ),
     )
 
@@ -2585,22 +2592,23 @@ def explain_native_scalar_amplitude_as() -> ExplainedValue:
 
 
 def explain_bbn_deuterium_ratio() -> ExplainedValue:
-    """Return the full explained value for the active deuterium scorecard."""
+    """Return the explained value for the quarantined deuterium scorecard."""
 
     return ExplainedValue(
         output_id="bbn_deuterium_ratio",
-        label="Active BBN deuterium scorecard",
+        label="BBN deuterium scorecard under active re-derivation",
         primary_key="D/H",
         primary_value=ACTIVE_BBN_DEUTERIUM_RATIO,
         units=None,
-        claim_status="derived / scoped active deuterium scorecard",
-        provenance_status="full",
+        claim_status="OPEN_REDERIVATION_REQUIRED / Q46 x propagation rerun",
+        provenance_status="quarantined",
         payload={
             "D_H_ratio": ACTIVE_BBN_DEUTERIUM_RATIO,
+            "status": "pre-Q39 value retained as provenance only",
         },
         scope_boundary=(
-            "Active repaired deuterium scorecard only.",
-            "Does not claim a live calculator BBN network integration on demand.",
+            "Pre-Q39 BBN scorecard provenance only.",
+            "Not active-consumable until the BBN network/scorecard is rerun on Q39 R_U/x.",
         ),
         conditional_on=("premise.1", "premise.2"),
         provenance_root_id="paper30.deuterium_scorecard",
@@ -2613,29 +2621,30 @@ def explain_bbn_deuterium_ratio() -> ExplainedValue:
         premise_ids=("premise.1", "premise.2"),
         zero_fitted_parameters=True,
         notes=(
-            "This is the fixed active deuterium prediction carried by the repaired BBN scorecard.",
+            "Q46 marks the BBN scorecard as OPEN_REDERIVATION_REQUIRED after Q39 x propagation.",
         ),
     )
 
 
 def explain_bbn_helium_fraction() -> ExplainedValue:
-    """Return the full explained value for the active helium scorecard."""
+    """Return the explained value for the quarantined helium scorecard."""
 
     return ExplainedValue(
         output_id="bbn_helium_fraction",
-        label="Active BBN helium scorecard",
+        label="BBN helium scorecard under active re-derivation",
         primary_key="Y_p",
         primary_value=ACTIVE_BRANCH.YHe,
         units=None,
-        claim_status="derived / scoped active primordial helium scorecard",
-        provenance_status="full",
+        claim_status="OPEN_REDERIVATION_REQUIRED / Q46 x propagation rerun",
+        provenance_status="quarantined",
         payload={
             "branch_label": ACTIVE_BRANCH.label,
             "Y_p": ACTIVE_BRANCH.YHe,
+            "status": "pre-Q39 value retained as provenance only",
         },
         scope_boundary=(
-            "Active carried helium scorecard only.",
-            "Does not claim a live calculator BBN network solve for `Y_p`.",
+            "Pre-Q39 BBN scorecard provenance only.",
+            "Not active-consumable until the BBN network/scorecard is rerun on Q39 R_U/x.",
         ),
         conditional_on=("premise.1", "premise.2"),
         provenance_root_id="paper30.primordial_helium_scorecard",
@@ -2649,28 +2658,29 @@ def explain_bbn_helium_fraction() -> ExplainedValue:
         premise_ids=("premise.1", "premise.2"),
         zero_fitted_parameters=True,
         notes=(
-            "This is the active primordial helium mass fraction carried by the runtime package.",
+            "Q46 marks the BBN scorecard as OPEN_REDERIVATION_REQUIRED after Q39 x propagation.",
         ),
     )
 
 
 def explain_bbn_lithium_ratio() -> ExplainedValue:
-    """Return the full explained value for the conditional lithium scorecard."""
+    """Return the explained value for the quarantined calculator lithium card."""
 
     return ExplainedValue(
         output_id="bbn_lithium_ratio",
-        label="Conditional BBN lithium scorecard",
+        label="BBN lithium calculator card under active re-derivation",
         primary_key="Li-7/H",
         primary_value=ACTIVE_BBN_LI7_RATIO,
         units=None,
-        claim_status="conditional / scoped channel-resolved lithium scorecard",
-        provenance_status="full",
+        claim_status="OPEN_REDERIVATION_REQUIRED / Q46 x propagation rerun",
+        provenance_status="quarantined",
         payload={
             "Li7_H_ratio": ACTIVE_BBN_LI7_RATIO,
+            "status": "pre-Q39 calculator value retained as provenance only",
         },
         scope_boundary=(
-            "Conditional lithium-repair scorecard only.",
-            "The current stack does not license this value as an unconditional theorem independent of the Paper 22 premise package and cluster-deformation input.",
+            "Pre-Q39 calculator BBN scorecard provenance only.",
+            "Not active-consumable until the BBN network/scorecard is rerun on Q39 R_U/x.",
         ),
         conditional_on=("premise.1", "premise.2"),
         provenance_root_id="paper24.conditional_lithium_scorecard",
@@ -2683,10 +2693,11 @@ def explain_bbn_lithium_ratio() -> ExplainedValue:
         premise_ids=("premise.1", "premise.2"),
         zero_fitted_parameters=True,
         non_claims=(
-            "Not an unconditional lithium theorem.",
+            "Not a live calculator BBN scorecard row after Q46.",
         ),
         notes=(
-            "This card keeps the lithium scorecard explicitly conditional on the surviving Paper 22 premise package and cluster-deformation input.",
+            "Q46 marks the calculator BBN scorecard as OPEN_REDERIVATION_REQUIRED after Q39 x propagation.",
+            "The paper-facing lithium story remains separate from this withdrawn calculator scorecard row.",
         ),
     )
 
@@ -2765,23 +2776,23 @@ def explain_eta_io_late() -> ExplainedValue:
 
 
 def explain_background_snapshot(z: float) -> ExplainedValue:
-    """Return a full explained background snapshot at one redshift."""
+    """Return a quarantined background snapshot at one redshift."""
 
     model = CurvedBackgroundModel()
     snapshot = model.snapshot(z)
     snapshot["eta_IO_late"] = late_eta_io()
     return ExplainedValue(
         output_id="background_snapshot",
-        label="Closed-FRW background snapshot",
+        label="Background snapshot under active re-derivation",
         primary_key="DM_mpc",
         primary_value=snapshot["DM_mpc"],
         units="Mpc",
-        claim_status="derived / scoped active-branch background snapshot",
-        provenance_status="full",
-        payload={"z": z, **snapshot},
+        claim_status="OPEN_REDERIVATION_REQUIRED / Q46 observer package rerun",
+        provenance_status="quarantined",
+        payload={"z": z, "status": "pre-Q39 snapshot retained as provenance only", **snapshot},
         scope_boundary=(
-            "Closed-FRW observer-side background geometry on the fixed active branch.",
-            "BAO ratios inherit the carried active-branch `r_d` slot.",
+            "Pre-Q39 background snapshot provenance only.",
+            "Not active-consumable until the observer-side package is rerun on Q39 R_U/x.",
         ),
         conditional_on=("premise.1", "premise.2"),
         provenance_root_id="paper30.background_surface",
@@ -2794,10 +2805,10 @@ def explain_background_snapshot(z: float) -> ExplainedValue:
             "paper31.geometric_pre_drag_ruler",
         ),
         premise_ids=("premise.1", "premise.2"),
-        zero_fitted_parameters=True,
+        zero_fitted_parameters=False,
         notes=(
-            "This snapshot is evaluated on the theorem-grade active closed-FRW branch.",
-            "The BAO ratios in the payload inherit the carried pre-drag ruler `r_d`.",
+            "Q46 marks observer-side background snapshots as OPEN_REDERIVATION_REQUIRED after Q39 x propagation.",
+            "The old values remain in the payload solely for provenance and audit traceability.",
         ),
     )
 

@@ -13,19 +13,16 @@ import math
 import re
 from pathlib import Path
 
-from .model import CurvedBackgroundModel
-
-
 _INLINE_CODE_RE = re.compile(r"`([^`]+)`")
 _PAPER_SINGLE_RE = re.compile(r"\bPaper (\d+)\b")
 FRAMEWORK_MOTTO = "If the theory is correct, the math will just work."
 PREDICTION_SUMMARY_ITEMS = (
-    "H0 (0.35σ from Planck)",
-    "Omega_k within 1σ of Planck CMB-only",
-    "BBN triple (chi^2 = 1.13)",
-    "Hubble tension resolved (max 0.57σ across 6 methods)",
-    "40-year lithium problem resolved",
-    "CMB first peak ell = 224",
+    "R_U = 4.302281527351925e26 m (Q39 banked)",
+    "x = 1.5534883525673302 (Q39 banked)",
+    "H0 and Hubble-method observer rows under active re-derivation",
+    "Omega density package under active re-derivation",
+    "Acoustic and BBN scorecard rows under active re-derivation",
+    "40-year lithium result remains on its scoped theorem card",
 )
 OUTPUT_SCHEMA_COMPARISONS: dict[str, dict[str, object]] = {
     "active_t_cmb": {
@@ -33,34 +30,6 @@ OUTPUT_SCHEMA_COMPARISONS: dict[str, dict[str, object]] = {
         "measured_value": 2.7255,
         "units": "K",
         "reference_name": "FIRAS",
-    },
-    "branch_h0": {
-        "measured_label": "Planck H0 reference",
-        "measured_value": 67.4,
-        "units": "km/s/Mpc",
-        "tension_sigma": 0.35,
-        "reference_name": "Planck",
-    },
-    "branch_omega_k": {
-        "measured_label": "Planck CMB-only non-flat Omega_k reference",
-        "measured_value": -0.044,
-        "tension_sigma": 1.0,
-        "reference_name": "Planck CMB-only",
-    },
-    "bbn_deuterium_ratio": {
-        "measured_label": "Cooke et al. deuterium reference",
-        "tension_sigma": 0.61,
-        "reference_name": "Cooke et al.",
-    },
-    "bbn_helium_fraction": {
-        "measured_label": "Aver et al. helium reference",
-        "tension_sigma": 0.68,
-        "reference_name": "Aver et al.",
-    },
-    "bbn_lithium_ratio": {
-        "measured_label": "Spite plateau lithium reference",
-        "tension_sigma": 0.55,
-        "reference_name": "Spite plateau",
     },
     "scalar_tilt_ns": {
         "measured_label": "Planck scalar tilt reference",
@@ -79,12 +48,6 @@ OUTPUT_SCHEMA_COMPARISONS: dict[str, dict[str, object]] = {
         "measured_value": 2.1e-9,
         "tension_sigma": 3.09,
         "reference_name": "Planck",
-    },
-    "tt_first_peak_support": {
-        "measured_label": "Observed first TT peak reference",
-        "measured_value": 220.0,
-        "units": "ell",
-        "reference_name": "Observed first TT peak",
     },
 }
 SOURCE_REPO_URL = "https://github.com/dfife/io-calculator"
@@ -829,57 +792,40 @@ def prediction_summary_markup() -> str:
 
 
 def redshift_widget_markup() -> str:
-    """Render the precomputed redshift widget shell for the calculator page."""
+    """Render the public redshift-panel placeholder while observer rows rerun."""
 
-    z_default = 0.57
-    model = CurvedBackgroundModel()
-    snapshot = model.snapshot(z_default)
-    widget_rows = (
-        ("H(z)", snapshot["H_km_s_mpc"], "km/s/Mpc"),
-        ("D_M(z)", snapshot["DM_mpc"], "Mpc"),
-        ("D_A(z)", snapshot["DA_mpc"], "Mpc"),
-        ("D_L(z)", snapshot["DL_mpc"], "Mpc"),
-        ("Age(z)", snapshot["age_gyr"], "Gyr"),
-    )
     row_markup = "".join(
         "<tr>"
-        f'<th scope="row"><a class="calc-inline-link" href="#output-background_snapshot_z_0_57">{escape_html(label)}</a></th>'
+        f'<th scope="row">{escape_html(label)}</th>'
         f"<td>{format_scalar(value)}</td>"
-        f"<td>{escape_html(unit)}</td>"
-        f'<td><a class="calc-inline-link" href="{escape_html(paper_url_map().get(30, "calculator-theorems.html#paper30.background_surface"))}" target="_blank" rel="noreferrer">Paper 30</a> background surface</td>'
+        f"<td>{escape_html(status)}</td>"
         "</tr>"
-        for label, value, unit in widget_rows
+        for label, value, status in (
+            ("R_U", "4.302281527351925e26 m", "Q39 banked terminal"),
+            ("x = r_s/R_U", "1.5534883525673302", "Q39 banked terminal"),
+            ("H0 observer projection", "under active re-derivation", "Q45/Q46 quarantine active"),
+            ("Omega density package", "under active re-derivation", "Q45/Q46 quarantine active"),
+            ("Acoustic and BBN scorecard rows", "under active re-derivation", "Q46 open rerun queue"),
+        )
     )
     return (
-        f'<section class="calc-widget-shell" id="redshift-widget" '
-        f'data-h0="{escape_html(model.branch.H0)}" '
-        f'data-omega-m="{escape_html(model.branch.Omega_m)}" '
-        f'data-omega-r="{escape_html(model.branch.Omega_r)}" '
-        f'data-omega-k="{escape_html(model.branch.Omega_k)}" '
-        f'data-omega-lambda="{escape_html(model.branch.Omega_lambda)}" '
-        f'data-rd="{escape_html(model.branch.rd_mpc)}" '
-        f'data-z-default="{escape_html(z_default)}">'
+        '<section class="calc-widget-shell" id="redshift-widget-paused">'
         '<div class="calc-widget-head">'
         '<div>'
-        '<p class="calc-section-label">Try it yourself</p>'
-        '<h2 class="calc-widget-title">Redshift calculator</h2>'
+        '<p class="calc-section-label">Observer package status</p>'
+        '<h2 class="calc-widget-title">Redshift calculator paused for re-derivation</h2>'
         '<p class="calc-widget-copy">'
-        "Client-side mirror of the active-branch background engine from "
-        '<code>aio_calculator/model.py</code>. Enter a redshift and the page '
-        "computes the same closed-FRW background quantities in the browser, "
-        "with clickable links back to the theorem-bearing background card and "
-        "the theorem dictionary."
+        "Q45/Q46 quarantined the historical observer-side H0 and density "
+        "package after the Q39 R_U update. The interactive background widget "
+        "will return after the Kerr observer projection and dependent acoustic "
+        "and BBN rows are rerun."
         "</p>"
         "</div>"
-        '<label class="calc-widget-input-wrap" for="redshift-widget-input">'
-        '<span class="calc-widget-label">Redshift z</span>'
-        f'<input id="redshift-widget-input" class="calc-widget-input" type="number" min="0" step="0.001" value="{escape_html(z_default)}">'
-        "</label>"
         "</div>"
         '<div class="calc-table-wrap">'
-        '<table class="calc-table" aria-label="Redshift calculator outputs">'
-        "<thead><tr><th>Observable</th><th>Value</th><th>Unit</th><th>Theorem</th></tr></thead>"
-        f'<tbody id="redshift-widget-results">{row_markup}</tbody>'
+        '<table class="calc-table" aria-label="Observer package re-derivation status">'
+        "<thead><tr><th>Item</th><th>Current public value</th><th>Status</th></tr></thead>"
+        f"<tbody>{row_markup}</tbody>"
         "</table>"
         "</div>"
         "</section>"
